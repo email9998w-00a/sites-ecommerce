@@ -1878,9 +1878,8 @@
     /* Cabeçalho de produto no padrão ecommerce: contexto antes da imagem e da decisão. */
     .product-heading {
       max-width: 820px;
-      margin: 8px 0 2px;
+      margin: 8px 0 0;
     }
-    .product-heading .badge-row { margin-bottom: 11px; }
     .product-heading h1 {
       max-width: 760px;
       margin-bottom: 8px;
@@ -1891,10 +1890,16 @@
       font-size: 14px;
       line-height: 1.55;
     }
-    .product-heading .offer-proof { margin-top: 11px; }
     .product-heading .rating-row { margin: 11px 0 0; }
     .product-shell { padding-top: 20px; }
     .product-info { padding-top: 0; }
+    .purchase-badges { margin-bottom: 12px; }
+    .price-box .offer-proof {
+      width: 100%;
+      justify-content: center;
+      margin: 0 0 13px;
+      padding: 7px 9px;
+    }
     @media (max-width: 620px) {
       .offer-proof { width: fit-content; margin: 10px 0 2px; padding: 7px 9px; }
       .offer-proof strong { font-size: 9px; }
@@ -1914,12 +1919,19 @@
       .variant-name,
       .variant-card.is-selected .variant-name { font-size: 10px; }
       .product-heading { margin-top: 4px; margin-bottom: 0; }
-      .product-heading .badge-row { margin-bottom: 9px; }
       .product-heading h1 { margin-bottom: 7px; font-size: 27px; }
-      .product-heading .positioning { font-size: 13px; line-height: 1.55; }
-      .product-heading .offer-proof { margin-top: 9px; }
+      .product-heading .positioning {
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        font-size: 13px;
+        line-height: 1.48;
+      }
       .product-heading .rating-row { margin-top: 10px; }
-      .product-shell { padding-top: 17px; }
+      .product-shell { gap: 15px; padding-top: 14px; }
+      .purchase-badges { margin-bottom: 10px; }
+      .price-box .offer-proof { margin-bottom: 11px; }
     }
 
   </style>
@@ -1949,13 +1961,8 @@
       </nav>
 
       <div class="product-heading" aria-labelledby="productTitle">
-        <div class="badge-row">
-          <span class="badge available"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Disponível</span>
-          <span class="badge shipping"><i class="fa-solid fa-truck" aria-hidden="true"></i> Envio rastreado</span>
-        </div>
         <h1 id="productTitle">Body Protein Equaliv BODYBALANCE®</h1>
         <p class="positioning">Suplemento de proteína à base de peptídeos bioativos de colágeno, com diferentes sabores e pesos para adaptar à sua rotina.</p>
-        <div class="offer-proof" aria-label="Oferta atual"><i class="fa-solid fa-tag" aria-hidden="true"></i><strong>OFERTA NO PIX</strong><span>até 48% de desconto</span></div>
         <div class="rating-row rating-row-prominent" aria-label="Avaliação média 4,9 de 5">
           <span class="stars" aria-hidden="true">★★★★★</span>
           <strong>4,9/5</strong>
@@ -1973,6 +1980,10 @@
         </div>
 
         <div class="product-info">
+          <div class="badge-row purchase-badges">
+            <span class="badge available"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Disponível</span>
+            <span class="badge shipping"><i class="fa-solid fa-truck" aria-hidden="true"></i> Envio rastreado</span>
+          </div>
           <section class="choice-box" aria-labelledby="choiceTitle">
             <div class="choice-heading">
               <strong id="choiceTitle">Escolha o sabor</strong>
@@ -1982,6 +1993,7 @@
           </section>
 
           <div class="price-box" id="priceBox" aria-live="polite">
+            <div class="offer-proof" aria-label="Oferta atual"><i class="fa-solid fa-tag" aria-hidden="true"></i><strong>OFERTA NO PIX</strong><span>até 48% de desconto</span></div>
             <div class="old-price-row"><span class="old-price">De R$ <span id="oldPrice">205,60</span></span><span class="discount" id="discount">48% OFF</span></div>
             <div class="current-price">R$ <span id="currentPrice">104,90</span><span class="pix-label">no Pix</span></div>
             <div class="price-urgency"><i class="fa-solid fa-bolt" aria-hidden="true"></i><strong>Você economiza <span id="savingsValueInline">R$ 100,70</span></strong> nesta condição</div>
