@@ -87,18 +87,16 @@
     .gallery-dot.is-active { transform: scale(1.35); background: var(--brand); }
 
     .product-info { min-width: 0; }
+    .status-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; color: var(--ink-soft); font-size: 12.5px; }
+    .status-row span { display: inline-flex; align-items: center; gap: 6px; }
+    .status-row i { color: var(--success); font-size: 12px; }
 
     h1 { margin: 0 0 8px; color: var(--ink); font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: -.02em; }
     .positioning { max-width: 480px; margin: 0; color: var(--ink-soft); font-size: 14.5px; line-height: 1.6; }
-
-    /* Rating + stock share one line so social proof and availability cost a single row, not two */
-    .info-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin: 14px 0 22px; font-size: 13px; }
-    .rating-inline { display: inline-flex; align-items: center; gap: 8px; }
+    .rating-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 22px; font-size: 13px; }
     .stars { color: #e0951a; letter-spacing: 1px; font-size: 14px; }
-    .rating-inline strong { color: var(--ink); }
+    .rating-row strong { color: var(--ink); }
     .rating-link { color: var(--accent); font-weight: 600; text-underline-offset: 3px; font-size: 13px; }
-    .stock-inline { display: inline-flex; align-items: center; gap: 6px; color: var(--success-dark); font-size: 12.5px; font-weight: 600; }
-    .stock-inline i { font-size: 7px; }
 
     /* Variant selector */
     .choice-box { margin: 0 0 20px; }
@@ -139,12 +137,17 @@
     .btn-ghost { border-color: #cbd8e2; background: #fff; color: var(--brand); }
     .btn-ghost:hover { border-color: var(--brand); background: var(--surface); }
 
-    /* One trust line covers payment, shipping and methods; one caption covers the delivery-timing note. No repeats. */
-    .trust-row { display: flex; flex-wrap: wrap; gap: 10px 18px; justify-content: center; margin: 14px 0 0; }
+    .purchase-note { margin: 10px 0 0; color: var(--ink-soft); font-size: 12px; text-align: center; }
+    .purchase-note i { color: var(--success); margin-right: 4px; }
+
+    .trust-row { display: flex; flex-wrap: wrap; gap: 14px 20px; justify-content: center; margin: 16px 0 0; padding-top: 16px; border-top: 1px solid var(--line); }
     .trust-row span { display: inline-flex; align-items: center; gap: 7px; color: var(--ink-soft); font-size: 12px; font-weight: 600; }
     .trust-row i { color: var(--success); font-size: 12px; }
 
-    .purchase-note { margin: 8px 0 0; color: #8b98a3; font-size: 11.5px; text-align: center; }
+    .shipping-note { display: flex; align-items: flex-start; gap: 12px; margin-top: 16px; padding: 14px 15px; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; }
+    .shipping-note-icon { flex: 0 0 34px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #e6f4ec; color: var(--success-dark); }
+    .shipping-note strong { display: block; color: var(--ink); font-size: 13px; }
+    .shipping-note span { display: block; margin-top: 3px; color: var(--ink-soft); font-size: 12px; line-height: 1.4; }
 
     /* ===================== Details tabs ===================== */
     .details { border-top: 1px solid var(--line); }
@@ -314,7 +317,7 @@
       .product-shell { padding-bottom: 32px; }
       h1 { font-size: 25px; }
       .positioning { font-size: 13.5px; }
-      .info-row { margin: 12px 0 18px; }
+      .rating-row { margin: 12px 0 18px; }
       .price-box { padding: 15px 16px; }
       .current-price { font-size: 30px; }
       .btn { min-height: 50px; }
@@ -365,16 +368,18 @@
         </div>
 
         <div class="product-info">
+          <div class="status-row">
+            <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Em estoque</span>
+            <span><i class="fa-solid fa-truck" aria-hidden="true"></i> Envio rastreado</span>
+          </div>
+
           <h1 id="productTitle">Body Protein Equaliv BODYBALANCE®</h1>
           <p class="positioning">Suplemento à base de peptídeos bioativos de colágeno, disponível em diferentes sabores e pesos para se adaptar à sua rotina.</p>
 
-          <div class="info-row">
-            <span class="rating-inline" aria-label="Avaliação média 4,9 de 5">
-              <span class="stars" aria-hidden="true">★★★★★</span>
-              <strong>4,9/5</strong>
-              <a class="rating-link" href="#reviews">Ver avaliações</a>
-            </span>
-            <span class="stock-inline"><i class="fa-solid fa-circle" aria-hidden="true"></i> Em estoque</span>
+          <div class="rating-row" aria-label="Avaliação média 4,9 de 5">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <strong>4,9/5</strong>
+            <a class="rating-link" href="#reviews">Ver avaliações e fotos de clientes</a>
           </div>
 
           <section class="choice-box" aria-labelledby="choiceTitle">
@@ -396,13 +401,18 @@
           </div>
 
           <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Adicionar ao carrinho</button>
+          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento processado com segurança. Frete e prazo aparecem no carrinho.</p>
 
           <div class="trust-row">
             <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra protegida</span>
             <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Envio rastreado</span>
             <span><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Pix ou cartão</span>
           </div>
-          <p class="purchase-note">Frete e prazo aparecem no próximo passo, antes do pagamento.</p>
+
+          <div class="shipping-note">
+            <div class="shipping-note-icon"><i class="fa-solid fa-truck" aria-hidden="true"></i></div>
+            <div><strong>Frete e prazo no checkout</strong><span>Confira as opções de entrega antes de concluir o pagamento.</span></div>
+          </div>
         </div>
       </section>
     </div>
