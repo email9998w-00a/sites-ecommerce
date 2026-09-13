@@ -1771,22 +1771,62 @@
 
 
     /* ===== Ajustes finais de conversão: uma ação, menos ruído, mais clareza ===== */
-    .offer-proof, .price-urgency, .savings-line, .offer-validity, .decision-points { display: none !important; }
+    .savings-line, .offer-validity, .decision-points { display: none !important; }
+    .offer-proof {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 7px;
+      margin: 13px 0 4px;
+      padding: 8px 11px;
+      border: 1px solid #f0c58e;
+      border-radius: 7px;
+      background: #fff7ed;
+      color: #9a4f12;
+    }
+    .offer-proof i { color: #d97706; font-size: 11px; }
+    .offer-proof strong { font-size: 10px; letter-spacing: .04em; }
+    .offer-proof span { color: #805d3a; font-size: 10px; font-weight: 600; }
+    .price-urgency {
+      display: flex !important;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      color: #17633d;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .price-urgency i { color: #d97706; }
     .choice-heading { align-items: center; gap: 12px; }
     .choice-heading strong { flex: 1 1 auto; }
     .choice-heading #selectedOptionLabel { flex: 0 1 auto; color: #315c79; font-size: 10px; font-weight: 700; text-align: right; }
-    .price-box { margin-top: 15px; }
-    .price-cta { margin-top: 14px; }
+    .price-box {
+      margin-top: 15px;
+      border: 2px solid #cde6d7;
+      background: linear-gradient(135deg, #fff, #f5fbf7);
+      box-shadow: 0 8px 22px rgba(21,115,71,.10);
+    }
+    .price-box .discount { background: #fff0e8; color: #a43d15; }
+    .price-box .current-price { color: #0f6f42; }
+    .price-cta { margin-top: 14px; box-shadow: 0 8px 18px rgba(19,138,82,.24); }
+    .price-cta:hover { box-shadow: 0 10px 22px rgba(19,138,82,.30); }
     .cta-group { display: none !important; }
     .purchase-note { margin-top: 10px; }
-    .conversion-trust { margin-top: 9px; }
+    .conversion-trust {
+      margin-top: 11px;
+      padding-top: 10px;
+      border-top: 1px solid #e3ebef;
+    }
     .reviews-header > div:first-child { margin-bottom: 20px !important; }
     .carousel-item { display: block; padding: 0; }
     @media (max-width: 620px) {
+      .offer-proof { width: fit-content; margin: 10px 0 2px; padding: 7px 9px; }
+      .offer-proof strong { font-size: 9px; }
+      .offer-proof span { font-size: 9px; }
       .choice-heading { align-items: flex-start; gap: 6px; }
       .choice-heading #selectedOptionLabel { max-width: 48%; line-height: 1.25; }
       .price-cta { margin-top: 12px; }
       .purchase-note { margin-top: 8px; }
+      .price-box { border-width: 1px; box-shadow: 0 5px 15px rgba(21,115,71,.09); }
     }
 
   </style>
@@ -1832,6 +1872,8 @@
 
           <h1 id="productTitle">Body Protein Equaliv BODYBALANCE®</h1>
           <p class="positioning">Suplemento de proteína à base de peptídeos bioativos de colágeno, com diferentes sabores e pesos para adaptar à sua rotina.</p>
+
+          <div class="offer-proof" aria-label="Oferta atual"><i class="fa-solid fa-tag" aria-hidden="true"></i><strong>OFERTA NO PIX</strong><span>até 48% de desconto</span></div>
 
                     <div class="rating-row rating-row-prominent" aria-label="Avaliação média 4,9 de 5">
             <span class="stars" aria-hidden="true">★★★★★</span>
