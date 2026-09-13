@@ -1818,6 +1818,63 @@
     }
     .reviews-header > div:first-child { margin-bottom: 20px !important; }
     .carousel-item { display: block; padding: 0; }
+    /* Seletor de sabor em pills: decisão rápida, sem painel competindo com o preço. */
+    .choice-box {
+      margin: 16px 0 12px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+    .choice-heading {
+      margin-bottom: 9px;
+      gap: 12px;
+    }
+    .choice-heading strong { font-size: 13px; }
+    .choice-heading #selectedOptionLabel {
+      color: #607382;
+      font-size: 10px;
+      font-weight: 600;
+    }
+    .variant-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .variant-card,
+    .variant-card.is-selected {
+      flex: 0 0 auto;
+      min-height: 0;
+      justify-content: center;
+      padding: 9px 16px;
+      border: 1px solid #cbd8e2;
+      border-radius: 999px;
+      background: #fff;
+      color: #294b63;
+      box-shadow: none;
+      text-align: center;
+    }
+    .variant-card:hover {
+      border-color: #7295ad;
+      background: #f7fafc;
+    }
+    .variant-card.is-selected {
+      border-color: #1c659f;
+      background: #eaf3f8;
+      color: #123b63;
+      box-shadow: inset 0 0 0 1px rgba(28,101,159,.12);
+    }
+    .variant-copy { width: auto; padding: 0; }
+    .variant-name,
+    .variant-card.is-selected .variant-name {
+      color: inherit;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .variant-weight { display: none; }
+    .variant-card.is-selected::after { display: none; }
     @media (max-width: 620px) {
       .offer-proof { width: fit-content; margin: 10px 0 2px; padding: 7px 9px; }
       .offer-proof strong { font-size: 9px; }
@@ -1827,6 +1884,15 @@
       .price-cta { margin-top: 12px; }
       .purchase-note { margin-top: 8px; }
       .price-box { border-width: 1px; box-shadow: 0 5px 15px rgba(21,115,71,.09); }
+      .choice-box { margin-top: 14px; margin-bottom: 11px; }
+      .choice-heading { margin-bottom: 8px; }
+      .choice-heading strong { font-size: 12px; }
+      .choice-heading #selectedOptionLabel { max-width: 48%; font-size: 9px; line-height: 1.25; }
+      .variant-grid { gap: 6px; }
+      .variant-card,
+      .variant-card.is-selected { padding: 8px 13px; }
+      .variant-name,
+      .variant-card.is-selected .variant-name { font-size: 10px; }
     }
 
   </style>
@@ -1883,8 +1949,8 @@
 
           <section class="choice-box" aria-labelledby="choiceTitle">
             <div class="choice-heading">
-              <strong id="choiceTitle">Escolha sabor e tamanho</strong>
-              <span id="selectedOptionLabel" aria-live="polite">Selecionado: Cacau · 600 g</span>
+              <strong id="choiceTitle">Escolha o sabor</strong>
+              <span id="selectedOptionLabel" aria-live="polite">Selecionado: Cacau</span>
             </div>
             <div class="variant-grid" id="variantGrid" role="radiogroup" aria-labelledby="choiceTitle"></div>
           </section>
@@ -2159,7 +2225,7 @@
           button.dataset.variantId = variant.id;
           button.setAttribute('role', 'radio');
           button.setAttribute('aria-checked', String(variant.id === selectedVariant.id));
-          button.innerHTML = `<span class="variant-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span><span class="variant-copy"><span class="variant-name">${esc(variant.name)}</span><span class="variant-weight">${variant.weight} g</span></span>`;
+          button.innerHTML = `<span class="variant-copy"><span class="variant-name">${esc(variant.name)}</span></span>`;
           button.addEventListener('click', () => selectVariant(variant.id));
           container.appendChild(button);
         });
@@ -2215,7 +2281,7 @@
       }
 
       function updateProductView() {
-        $('#selectedOptionLabel').textContent = `Selecionado: ${selectedVariant.name} · ${selectedVariant.weight} g`;
+        $('#selectedOptionLabel').textContent = `Selecionado: ${selectedVariant.name}`;
         $('#oldPrice').textContent = selectedVariant.oldPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#currentPrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
