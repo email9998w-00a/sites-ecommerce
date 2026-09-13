@@ -78,8 +78,8 @@
     .gallery-frame { position: relative; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
     .gallery-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border: 0; background: transparent; }
     .gallery-slider::-webkit-scrollbar { display: none; }
-    .gallery-slide { flex: 0 0 100%; display: grid; place-items: center; aspect-ratio: 1 / 1; padding: 0; scroll-snap-align: start; background: transparent; }
-    .gallery-slide img { width: 100%; height: 100%; object-fit: contain; cursor: zoom-in; filter: none; background: transparent; }
+    .gallery-slide { flex: 0 0 100%; display: grid; place-items: center; aspect-ratio: 16 / 10; padding: 0; scroll-snap-align: start; background: transparent; }
+    .gallery-slide img { width: 88%; height: 88%; max-width: 480px; object-fit: contain; cursor: zoom-in; filter: none; background: transparent; }
     .gallery-arrow { position: absolute; top: 50%; z-index: 2; display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(203,216,226,.9); border-radius: 50%; background: rgba(255,255,255,.92); color: var(--brand); box-shadow: 0 4px 12px rgba(16,40,64,.10); opacity: .9; transform: translateY(-50%); transition: border-color .15s ease, background-color .15s ease, opacity .15s ease; }
     .gallery-arrow:hover { border-color: var(--brand); background: #fff; opacity: 1; }
     .gallery-arrow:disabled { visibility: hidden; }
@@ -125,14 +125,13 @@
     .variant-pill[aria-disabled="true"] { opacity: .6; cursor: wait; }
 
     /* Price */
-    .price-box { margin: 0 0 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
-    .old-price-row { display: flex; align-items: center; gap: 9px; margin-bottom: 5px; min-height: 20px; }
-    .old-price { color: var(--ink-soft); font-size: 13.5px; text-decoration: line-through; }
-    .discount-tag { padding: 3px 8px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 11.5px; font-weight: 700; }
-    .current-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; color: var(--brand); font-size: clamp(30px, 3.6vw, 38px); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
-    .pix-tag { padding: 4px 8px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 13px; font-weight: 700; letter-spacing: 0; }
-    .installments { margin-top: 7px; color: var(--ink-soft); font-size: 13px; }
-    .unit-price { margin-top: 4px; color: #7c8894; font-size: 11.5px; }
+    .price-box { margin: 0 0 18px; padding: 19px 21px 18px; border: 1px solid #d5e2e9; border-left: 4px solid var(--success); border-radius: var(--radius-lg); background: linear-gradient(135deg, #f8fbfc 0%, #f4f9f7 100%); }
+    .old-price-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 7px; min-height: 22px; }
+    .old-price { color: var(--ink-soft); font-size: 12.5px; }
+    .discount-tag { padding: 5px 9px; border: 1px solid #bfe0cc; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 10.5px; font-weight: 800; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; }
+    .current-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 7px; color: var(--brand); font-size: clamp(34px, 4vw, 42px); font-weight: 800; letter-spacing: -.04em; line-height: 1.05; }
+    .current-price .currency { font-size: .52em; font-weight: 700; letter-spacing: -.01em; }
+    .installments { margin-top: 8px; color: var(--ink-soft); font-size: 12.5px; }
 
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; min-height: 54px; padding: 13px 16px; border: 1px solid transparent; border-radius: 10px; font-size: 14px; font-weight: 700; transition: background-color .15s ease, border-color .15s ease; }
     .btn-primary { border-color: var(--success); background: var(--success); color: #fff; }
@@ -148,7 +147,7 @@
     .trust-row span { display: inline-flex; align-items: center; gap: 7px; color: var(--ink-soft); font-size: 12px; font-weight: 600; }
     .trust-row i { color: var(--success); font-size: 12px; }
 
-    .shipping-note { display: flex; align-items: flex-start; gap: 12px; margin-top: 16px; padding: 14px 15px; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; }
+    .shipping-note { display: flex; align-items: flex-start; gap: 12px; margin-top: 16px; padding: 14px 15px; border: 1px solid #d6e7df; border-radius: var(--radius-md); background: #fbfefd; }
     .shipping-note-icon { flex: 0 0 34px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #e6f4ec; color: var(--success-dark); }
     .shipping-note strong { display: block; color: var(--ink); font-size: 13px; }
     .shipping-note span { display: block; margin-top: 3px; color: var(--ink-soft); font-size: 12px; line-height: 1.4; }
@@ -261,20 +260,21 @@
 
     .cart-content { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 20px 22px; }
 
-    .cart-item { display: grid; grid-template-columns: 60px minmax(0,1fr); gap: 12px; padding: 0 0 16px; margin-bottom: 16px; border-bottom: 1px solid var(--line); }
+    .cart-item { display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 13px; padding: 0 0 18px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
     .cart-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
-    .cart-item img { width: 60px; height: 60px; padding: 5px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); object-fit: contain; }
+    .cart-item img { width: 64px; height: 64px; padding: 5px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); object-fit: contain; }
     .cart-item-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
     .cart-item-name { margin: 0 0 3px; color: var(--ink); font-size: 13px; font-weight: 700; line-height: 1.3; }
     .cart-item-meta { color: var(--ink-soft); font-size: 11.5px; }
     .cart-item-price { margin-top: 6px; color: var(--ink); font-size: 13px; font-weight: 700; }
-    .cart-item-bottom { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; }
-    .remove-item { flex: 0 0 24px; width: 24px; height: 24px; border-radius: 50%; color: #9aa9b5; font-size: 12px; }
-    .remove-item:hover { background: #fdeeee; color: #c0392b; }
-    .qty-control { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); }
-    .qty-control button { width: 26px; height: 26px; color: var(--brand); font-weight: 700; }
-    .qty-control button:hover { background: #e9eef2; }
-    .qty-control span { min-width: 24px; color: var(--ink); font-size: 12px; font-weight: 700; text-align: center; }
+    .cart-item-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; }
+    .remove-item { flex: 0 0 30px; width: 30px; height: 30px; display: inline-grid; place-items: center; border: 1px solid #dbe3e9; border-radius: 8px; background: #fff; color: #7f8d98; font-size: 11px; transition: border-color .15s ease, background-color .15s ease, color .15s ease; }
+    .remove-item:hover { border-color: #e3a4a0; background: #fff6f5; color: #b33a32; }
+    .qty-control { display: inline-flex; align-items: center; height: 34px; padding: 3px; border: 1px solid #d5e0e7; border-radius: 999px; background: #f7f9fb; }
+    .qty-control button { width: 27px; height: 26px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; color: var(--brand); font-size: 16px; font-weight: 600; line-height: 1; transition: background-color .15s ease, color .15s ease, transform .15s ease; }
+    .qty-control button:hover { background: #e5eef3; color: var(--brand-dark); }
+    .qty-control button:active { transform: scale(.92); }
+    .qty-control span { min-width: 29px; height: 26px; display: grid; place-items: center; color: var(--ink); font-size: 12.5px; font-weight: 700; text-align: center; }
 
     .empty-cart { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px; padding: 30px 16px; text-align: center; }
     .empty-cart i { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 12px; border-radius: 50%; background: var(--surface); color: #8fa0ae; font-size: 17px; }
@@ -294,13 +294,13 @@
     .cart-footer-note i { color: var(--success); margin-right: 3px; }
 
     /* ===================== Redirect loading ===================== */
-    .redirect-loading { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 24px; background: linear-gradient(135deg, #0b2338, #0c3a4c); color: #fff; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s ease, visibility .2s ease; }
+    .redirect-loading { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 24px; background: rgba(246,248,250,.94); color: var(--ink); opacity: 0; visibility: hidden; pointer-events: none; backdrop-filter: blur(5px); transition: opacity .2s ease, visibility .2s ease; }
     .redirect-loading.is-visible { opacity: 1; visibility: visible; pointer-events: auto; }
-    .redirect-loading-card { display: grid; justify-items: center; gap: 13px; width: min(100%, 340px); padding: 30px 26px; border: 1px solid rgba(255,255,255,.16); border-radius: 16px; background: rgba(255,255,255,.06); text-align: center; }
-    .redirect-loading-brand { font-size: 17px; font-weight: 800; letter-spacing: .1em; }
-    .redirect-loading-spinner { width: 30px; height: 30px; border: 3px solid rgba(255,255,255,.22); border-top-color: #8fe0c8; border-radius: 50%; animation: spin .8s linear infinite; }
-    .redirect-loading-text { margin: 0; font-size: 14px; font-weight: 700; }
-    .redirect-loading-subtext { margin: -6px 0 0; color: rgba(255,255,255,.72); font-size: 11.5px; }
+    .redirect-loading-card { display: grid; justify-items: center; gap: 14px; width: min(100%, 340px); padding: 28px 26px 25px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-md); text-align: center; }
+    .redirect-loading-brand { color: var(--brand); font-size: 16px; font-weight: 800; letter-spacing: .12em; }
+    .redirect-loading-spinner { width: 34px; height: 34px; border: 3px solid #dcebe6; border-top-color: var(--success); border-radius: 50%; animation: spin .85s linear infinite; }
+    .redirect-loading-text { margin: 0; color: var(--ink); font-size: 14px; font-weight: 700; }
+    .redirect-loading-subtext { max-width: 245px; margin: -5px 0 0; color: var(--ink-soft); font-size: 11.5px; line-height: 1.55; }
     @keyframes spin { to { transform: rotate(360deg); } }
     @media (prefers-reduced-motion: reduce) { .redirect-loading-spinner { animation: none; } }
 
@@ -398,25 +398,24 @@
           <div class="price-box" id="priceBox" aria-live="polite">
             <div class="old-price-row">
               <span class="old-price">De R$ <span id="oldPrice">205,60</span></span>
-              <span class="discount-tag" id="discount">48% OFF</span>
+              <span class="discount-tag" id="discount">49% OFF no Pix</span>
             </div>
-            <div class="current-price">R$ <span id="currentPrice">104,90</span><span class="pix-tag">no Pix</span></div>
+            <div class="current-price"><span class="currency">R$</span><span id="currentPrice">104,90</span></div>
             <div class="installments" id="installments">ou em até 3x de R$ 34,97 sem juros</div>
-            <div class="unit-price" id="unitPrice">R$ 17,48 por 100 g</div>
           </div>
 
           <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Adicionar ao carrinho</button>
-          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento processado com segurança. Frete e prazo aparecem no carrinho.</p>
+          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Você revisa o total antes de pagar.</p>
 
           <div class="trust-row">
-            <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra protegida</span>
+            <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Pagamento seguro</span>
             <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Envio rastreado</span>
-            <span><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Pix ou cartão</span>
+            <span><i class="fa-solid fa-receipt" aria-hidden="true"></i> Pedido revisável</span>
           </div>
 
           <div class="shipping-note">
             <div class="shipping-note-icon"><i class="fa-solid fa-truck" aria-hidden="true"></i></div>
-            <div><strong>Frete e prazo no checkout</strong><span>Confira as opções de entrega antes de concluir o pagamento.</span></div>
+            <div><strong>Frete econômico grátis</strong><span>Prazo calculado pelo CEP. Você escolhe a entrega antes de pagar.</span></div>
           </div>
         </div>
       </section>
@@ -516,17 +515,17 @@
   <div class="cart-overlay" id="cartOverlay" aria-hidden="true">
     <aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
       <header class="cart-header">
-        <div><h2 id="cartTitle">Seu carrinho</h2><p>Revise os itens antes de continuar</p></div>
+        <div><h2 id="cartTitle">Seu carrinho</h2><p>Revise o pedido antes de escolher a entrega</p></div>
         <button class="close-cart" id="closeCart" type="button" aria-label="Fechar carrinho"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
       </header>
       <div class="cart-content" id="cartItems"></div>
       <footer class="cart-footer" id="cartFooter" hidden>
         <p class="cart-error" id="cartError" role="alert"></p>
         <div class="order-line"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
-        <div class="order-line"><span>Entrega</span><strong>A calcular no próximo passo</strong></div>
+        <div class="order-line"><span>Entrega</span><strong>Frete grátis no econômico</strong></div>
         <div class="total-row"><span class="total-label">Total dos produtos</span><span class="total-value" id="cartTotal">R$ 0,00</span></div>
         <button class="btn btn-primary" id="continueCheckout" type="button">Continuar para entrega <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
-        <p class="cart-footer-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento seguro, pedido revisável</p>
+        <p class="cart-footer-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Você revisa frete e total antes de pagar</p>
       </footer>
     </aside>
   </div>
@@ -661,7 +660,7 @@
       function updateGalleryControls() {
         const lastImage = selectedVariant.images.length - 1;
         $('#galleryPrev').disabled = currentImage === 0;
-        $('#galleryNext').disabled = currentImage === lastImage;
+        $('#galleryNext').disabled = currentImage === 0 || currentImage === lastImage;
       }
 
       function goToImage(index) {
@@ -680,9 +679,8 @@
         $('#selectedOptionLabel').textContent = `${selectedVariant.name} selecionado`;
         $('#oldPrice').textContent = selectedVariant.oldPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#currentPrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-        $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
+        $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF no Pix`;
         $('#installments').textContent = `ou em até 3x de ${money(selectedVariant.price / 3)} sem juros`;
-        $('#unitPrice').textContent = `${money(getUnitPrice(selectedVariant))} por 100 g`;
         $('#mobilePrice').textContent = money(selectedVariant.price);
         renderVariants();
         renderGallery();
