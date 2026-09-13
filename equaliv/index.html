@@ -267,7 +267,10 @@
     .cart-item-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
     .cart-item-name { margin: 0 0 3px; color: var(--ink); font-size: 13px; font-weight: 700; line-height: 1.3; }
     .cart-item-meta { color: var(--ink-soft); font-size: 11.5px; }
-    .cart-item-price { margin-top: 6px; color: var(--ink); font-size: 13px; font-weight: 700; }
+    .cart-item-price-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 7px; }
+    .cart-item-old-price { color: #8b98a3; font-size: 11px; text-decoration: line-through; text-decoration-thickness: 1px; }
+    .cart-item-price { margin-top: 0; color: var(--ink); font-size: 13px; font-weight: 700; }
+    .cart-item-discount { display: inline-flex; align-items: center; min-height: 20px; padding: 3px 7px; border-radius: 5px; background: #e8f4ed; color: var(--success-dark); font-size: 10px; font-weight: 800; letter-spacing: .02em; line-height: 1; white-space: nowrap; }
     .cart-item-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; }
     .remove-item { flex: 0 0 30px; width: 30px; height: 30px; display: inline-grid; place-items: center; border: 1px solid #dbe3e9; border-radius: 8px; background: #fff; color: #7f8d98; font-size: 11px; transition: border-color .15s ease, background-color .15s ease, color .15s ease; }
     .remove-item:hover { border-color: #e3a4a0; background: #fff6f5; color: #b33a32; }
@@ -757,7 +760,11 @@
                   </div>
                   <button class="remove-item" type="button" aria-label="Remover ${esc(item.name)}" data-action="remove" data-index="${index}"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
                 </div>
-                <div class="cart-item-price">${money(item.price)}</div>
+                  <div class="cart-item-price-row">
+                    ${Number(item.discount) > 0 && Number(item.oldPrice) > Number(item.price) ? `<span class="cart-item-old-price">${money(item.oldPrice)}</span>` : ''}
+                    <div class="cart-item-price">${money(item.price)}</div>
+                    ${Number(item.discount) > 0 ? `<span class="cart-item-discount" aria-label="${Number(item.discount)}% de desconto">${Number(item.discount)}% OFF</span>` : ''}
+                  </div>
                 <div class="cart-item-bottom">
                   <div class="qty-control">
                     <button type="button" aria-label="Diminuir quantidade" data-action="decrease" data-index="${index}">−</button>
