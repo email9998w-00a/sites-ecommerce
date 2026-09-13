@@ -1769,6 +1769,25 @@
       .cta-group { margin-top:6px; }
     }
 
+
+    /* ===== Ajustes finais de conversão: uma ação, menos ruído, mais clareza ===== */
+    .offer-proof, .price-urgency, .savings-line, .offer-validity, .decision-points { display: none !important; }
+    .choice-heading { align-items: center; gap: 12px; }
+    .choice-heading strong { flex: 1 1 auto; }
+    .choice-heading #selectedOptionLabel { flex: 0 1 auto; color: #315c79; font-size: 10px; font-weight: 700; text-align: right; }
+    .price-box { margin-top: 15px; }
+    .price-cta { margin-top: 14px; }
+    .cta-group { display: none !important; }
+    .purchase-note { margin-top: 10px; }
+    .conversion-trust { margin-top: 9px; }
+    .reviews-header > div:first-child { margin-bottom: 20px !important; }
+    .carousel-item { display: block; padding: 0; }
+    @media (max-width: 620px) {
+      .choice-heading { align-items: flex-start; gap: 6px; }
+      .choice-heading #selectedOptionLabel { max-width: 48%; line-height: 1.25; }
+      .price-cta { margin-top: 12px; }
+      .purchase-note { margin-top: 8px; }
+    }
   </style>
 </head>
 <body>
@@ -1811,11 +1830,9 @@
           </div>
 
           <h1 id="productTitle">Body Protein Equaliv BODYBALANCE®</h1>
-          <p class="positioning">Proteína prática para sua rotina, com até 48% OFF no Pix. Escolha a versão ideal, revise frete e prazo e finalize com segurança.</p>
+          <p class="positioning">Suplemento de proteína à base de peptídeos bioativos de colágeno, com diferentes sabores e pesos para adaptar à sua rotina.</p>
 
-          <div class="offer-proof" aria-label="Resumo da oferta"><strong>ATÉ 48% OFF NO PIX</strong><span>Desconto aplicado conforme a opção escolhida</span></div>
-
-          <div class="rating-row rating-row-prominent" aria-label="Avaliação média 4,9 de 5">
+                    <div class="rating-row rating-row-prominent" aria-label="Avaliação média 4,9 de 5">
             <span class="stars" aria-hidden="true">★★★★★</span>
             <strong>4,9/5</strong>
             <a class="rating-link" href="#reviews">Ver avaliações e fotos de clientes</a>
@@ -1823,8 +1840,8 @@
 
           <section class="choice-box" aria-labelledby="choiceTitle">
             <div class="choice-heading">
-              <strong id="choiceTitle">Escolha sua opção</strong><span class="choice-helper"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> compare pesos e sabores</span>
-              <span id="selectedOptionLabel" aria-live="polite">Cacau · 600 g</span>
+              <strong id="choiceTitle">Escolha sabor e tamanho</strong>
+              <span id="selectedOptionLabel" aria-live="polite">Selecionado: Cacau · 600 g</span>
             </div>
             <div class="variant-grid" id="variantGrid" role="radiogroup" aria-labelledby="choiceTitle"></div>
           </section>
@@ -1837,11 +1854,11 @@
             <div class="unit-price" id="unitPrice">R$ 17,48 por 100 g</div>
             <div class="savings-line"><i class="fa-solid fa-piggy-bank" aria-hidden="true"></i><span>Economia total: <strong id="savingsValue">R$ 100,70</strong></span></div>
             <div class="offer-validity"><i class="fa-regular fa-clock" aria-hidden="true"></i> Condição promocional sujeita à disponibilidade</div>
-            <button class="btn btn-primary price-cta" id="buyNow" type="button"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Garantir oferta no Pix</button>
+            <button class="btn btn-primary price-cta" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Adicionar ao carrinho</button>
           </div>
 
-          <div class="cta-group" id="mainCta">
-            <button class="btn btn-secondary" id="addToCart" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Adicionar ao carrinho</button>
+          <div class="cta-group" id="mainCta" aria-hidden="true">
+            <button class="btn btn-secondary" id="addToCart" type="button" tabindex="-1"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Adicionar ao carrinho</button>
           </div>
           <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i> Leva menos de 1 minuto para revisar pedido, frete e pagamento.</p>
           <div class="conversion-trust"><span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra protegida</span><span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Envio rastreado</span><span><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Pix ou cartão</span></div>
@@ -1940,8 +1957,8 @@
   </footer>
 
   <div class="mobile-cta" id="mobileCta" aria-hidden="true">
-    <div class="mobile-cta-info"><span class="mobile-cta-label">Total</span><span class="mobile-cta-price" id="mobilePrice">R$ 104,90</span></div>
-    <button class="btn btn-primary" id="mobileBuy" type="button">Garantir oferta</button>
+    <div class="mobile-cta-info"><span class="mobile-cta-label">A partir de</span><span class="mobile-cta-price" id="mobilePrice">R$ 104,90</span></div>
+    <button class="btn btn-primary" id="mobileBuy" type="button">Adicionar ao carrinho</button>
   </div>
 
 
@@ -2155,7 +2172,7 @@
       }
 
       function updateProductView() {
-        $('#selectedOptionLabel').textContent = `${selectedVariant.name} · ${selectedVariant.weight} g`;
+        $('#selectedOptionLabel').textContent = `Selecionado: ${selectedVariant.name} · ${selectedVariant.weight} g`;
         $('#oldPrice').textContent = selectedVariant.oldPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#currentPrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
@@ -2389,7 +2406,7 @@ https://http2.mlstatic.com/D_NQ_NP_2X_707934-MLA98922122948_112025-F.webp
 https://http2.mlstatic.com/D_NQ_NP_2X_748828-MLA97709975419_112025-F.webp
 `;
 
-      const reviewImages = reviewImagesRaw.trim().split('\n').map((url) => url.trim()).filter(Boolean);
+      const reviewImages = reviewImagesRaw.trim().split('\n').map((url) => url.trim()).filter(Boolean).slice(0, 12);
       const allReviews = [
     { 'name': 'Gustavo Martins', 'date': 'Hoje', 'rating': 5, 'content': 'TOP Demais! Só usso essa marca. Só comprem e sejam felizes!' },
     { 'name': 'Luciana Gomes', 'date': 'Hoje', 'rating': 5, 'content': 'Chegou rápido e muito bem embalado. Realmente é o Equaliv original, validade super longa.' },
@@ -2397,9 +2414,6 @@ https://http2.mlstatic.com/D_NQ_NP_2X_748828-MLA97709975419_112025-F.webp
     { 'name': 'Viviane Rocha', 'date': 'Ontem', 'rating': 5, 'content': 'Recomendo, chegou rápido e o preço é justo por um suplemento com tecnologia alemã. Vale cada centavo.' },
     { 'name': 'João Costa', 'date': 'Ontem', 'rating': 5, 'content': 'Melhor proteína que já usei nessa faixa de preço. Muito leve para o estômago e não tem aquele gosto forte de Whey.' },
     { 'name': 'Rodrigo Oliveira', 'date': 'Ontem', 'rating': 4, 'content': 'Sempre compro aqui, o único lugar que confio que é original. Ótimo para bater com frutas.' },
-    { 'name': 'Daiane Santos', 'date': 'Ontem', 'rating': 5, 'content': 'Excelente atendimento via WhatsApp. O pote veio super protegido na caixa original e bem lacrado.' },
-    { 'name': 'Alexandra Teixeira', 'date': 'Ontem', 'rating': 5, 'content': 'Sem sabor marcante, dá para misturar até em receitas quentes sem estragar. Muito satisfeita!' },
-    { 'name': 'Mateus Costa', 'date': 'Ontem', 'rating': 5, 'content': 'Produto original mesmo. Verifiquei o lote e a qualidade do pó é impecável, bem fininho.' },
     { 'name': 'Daiane Santos', 'date': 'Ontem', 'rating': 5, 'content': 'Excelente atendimento via WhatsApp. O pote veio super protegido na caixa original e bem lacrado.' },
     { 'name': 'Alexandra Teixeira', 'date': 'Ontem', 'rating': 5, 'content': 'Sem sabor marcante, dá para misturar até em receitas quentes sem estragar. Muito satisfeita!' },
     { 'name': 'Mateus Costa', 'date': 'Ontem', 'rating': 5, 'content': 'Produto original mesmo. Verifiquei o lote e a qualidade do pó é impecável, bem fininho.' },
@@ -2421,15 +2435,16 @@ https://http2.mlstatic.com/D_NQ_NP_2X_748828-MLA97709975419_112025-F.webp
 
       function renderCarousel() {
         const container = $('#reviewCarousel');
-        const tripleImages = [...reviewImages, ...reviewImages, ...reviewImages];
-        container.innerHTML = tripleImages.map((img) => `<div class="carousel-item"><img src="${esc(img)}" alt="Avaliação do cliente" loading="lazy"></div>`).join('');
-        $$('.carousel-item', container).forEach((item) => item.addEventListener('click', () => openLightbox($('img', item).src, $('img', item).alt)));
-        let isResetting = false;
-        const setInitialPosition = () => { const item = $('.carousel-item', container); if (!item) return; container.style.scrollBehavior = 'auto'; container.scrollLeft = reviewImages.length * (item.offsetWidth + 12); container.style.scrollBehavior = 'smooth'; };
-        const resetLoop = () => { if (isResetting) return; const item = $('.carousel-item', container); if (!item) return; const totalWidth = reviewImages.length * (item.offsetWidth + 12); if (container.scrollLeft <= 5 || container.scrollLeft >= totalWidth * 2 - 5) { isResetting = true; container.style.scrollBehavior = 'auto'; container.scrollLeft = totalWidth; container.offsetHeight; container.style.scrollBehavior = 'smooth'; isResetting = false; } };
-        container.addEventListener('scroll', resetLoop, { passive:true });
-        setInitialPosition();
-        setTimeout(setInitialPosition, 100);
+        container.replaceChildren();
+        reviewImages.forEach((img, index) => {
+          const item = document.createElement('button');
+          item.type = 'button';
+          item.className = 'carousel-item';
+          item.setAttribute('aria-label', `Ampliar foto de cliente ${index + 1}`);
+          item.innerHTML = `<img src="${esc(img)}" alt="Foto de avaliação de cliente" loading="lazy">`;
+          item.addEventListener('click', () => openLightbox(img, 'Foto de avaliação de cliente'));
+          container.appendChild(item);
+        });
       }
 
       function renderReviews(page) {
@@ -2507,7 +2522,7 @@ https://http2.mlstatic.com/D_NQ_NP_2X_748828-MLA97709975419_112025-F.webp
 
       function setupMobileCta() {
         const cta = $('#mobileCta');
-        const mainCta = $('#mainCta');
+        const mainCta = $('#priceBox');
         if (!mainCta || !('IntersectionObserver' in window)) return;
         const observer = new IntersectionObserver(([entry]) => {
           const hasPassedMainCta = !entry.isIntersecting && entry.boundingClientRect.bottom < 0;
