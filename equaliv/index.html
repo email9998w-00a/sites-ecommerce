@@ -353,6 +353,54 @@
       .shipping-preview { margin-bottom: 2px; }
     }
 
+    /* Carregamento exibido somente durante a transição para o checkout. */
+    .redirect-loading {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(11, 45, 77, .92);
+      color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .2s ease, visibility .2s ease;
+    }
+    .redirect-loading.is-visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .redirect-loading-card {
+      display: grid;
+      justify-items: center;
+      gap: 14px;
+      min-width: min(100%, 280px);
+      padding: 28px 30px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 16px;
+      background: rgba(255,255,255,.1);
+      box-shadow: 0 18px 48px rgba(0,0,0,.18);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .redirect-loading-spinner {
+      width: 38px;
+      height: 38px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: redirect-loading-spin .8s linear infinite;
+    }
+    .redirect-loading-text { margin: 0; font-size: 14px; font-weight: 700; }
+    .redirect-loading-subtext { margin: -8px 0 0; color: rgba(255,255,255,.78); font-size: 11px; }
+    @keyframes redirect-loading-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .redirect-loading-spinner { animation: none; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
@@ -1908,6 +1956,14 @@
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada" aria-hidden="true"><button class="lightbox-close" id="closeLightbox" type="button" aria-label="Fechar imagem">×</button><img id="lightboxImage" alt=""></div>
 
+  <div class="redirect-loading" id="redirectLoading" role="status" aria-live="polite" aria-label="Preparando o checkout" aria-hidden="true">
+    <div class="redirect-loading-card">
+      <span class="redirect-loading-spinner" aria-hidden="true"></span>
+      <p class="redirect-loading-text">Preparando seu checkout...</p>
+      <p class="redirect-loading-subtext">Você será redirecionado em instantes.</p>
+    </div>
+  </div>
+
   <script type="application/ld+json" id="productSchema"></script>
   <script>
     (() => {
@@ -1916,6 +1972,7 @@
       const CHECKOUT_URL = 'https://llpag-seguro.onrender.com/';
       const STORAGE_KEY = 'equaliv_cart_v2';
       const ENTRY_PROMO_SEEN_KEY = 'equaliv_entry_promo_seen_v1';
+      const REDIRECT_LOADING_DURATION = 1000;
       const variants = [
         { id: 'Cacau', name: 'Cacau', weight: 600, price: 104.90, oldPrice: 205.60, images: [
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/HoxlgYaSrtsemCJE.webp',
@@ -2215,6 +2272,14 @@
 
       function setCartError(message = '') { $('#cartError').textContent = message; }
 
+      function setRedirectLoading(isVisible) {
+        const loading = $('#redirectLoading');
+        if (!loading) return;
+        loading.classList.toggle('is-visible', isVisible);
+        loading.setAttribute('aria-hidden', String(!isVisible));
+        document.body.classList.toggle('no-scroll', isVisible);
+      }
+
       function continueToCheckout() {
         setCartError('');
         if (!cart.length) { setCartError('Adicione uma opção ao carrinho para continuar.'); return; }
@@ -2254,7 +2319,10 @@
           products: JSON.stringify(products),
           order: JSON.stringify(order)
         });
-        window.location.href = `${CHECKOUT_URL}?${params.toString()}`;
+        setRedirectLoading(true);
+        window.setTimeout(() => {
+          window.location.assign(`${CHECKOUT_URL}?${params.toString()}`);
+        }, REDIRECT_LOADING_DURATION);
       }
 
       function updateSchema() {
@@ -2470,6 +2538,10 @@ https://http2.mlstatic.com/D_NQ_NP_2X_748828-MLA97709975419_112025-F.webp
       $('#closeLightbox').addEventListener('click', closeLightbox);
       $('#lightbox').addEventListener('click', (event) => { if (event.target === $('#lightbox')) closeLightbox(); });
       document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { if ($('#lightbox').classList.contains('is-open')) closeLightbox(); else if ($('#entryPromoModal').classList.contains('is-open')) closeEntryPromo(); else if ($('#cartOverlay').classList.contains('is-open')) closeCart(); } });
+
+      // O bfcache pode restaurar a página com o DOM no estado anterior.
+      // Sempre remova o carregamento ao retornar pelo histórico.
+      window.addEventListener('pageshow', () => setRedirectLoading(false));
 
       renderCarousel();
       renderReviews(1);
