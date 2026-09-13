@@ -126,13 +126,14 @@
 
     /* Price */
     .price-box { margin: 0 0 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
-    .old-price-row { display: flex; align-items: center; gap: 9px; margin-bottom: 5px; min-height: 20px; }
-    .old-price { color: var(--ink-soft); font-size: 13.5px; text-decoration: line-through; }
-    .discount-tag { padding: 3px 8px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 11.5px; font-weight: 700; }
+    .old-price-row { display: flex; align-items: center; gap: 9px; margin-bottom: 6px; min-height: 20px; }
+    .old-price { color: var(--ink-soft); font-size: 13px; text-decoration: line-through; }
+    .discount-tag { padding: 3px 7px; border-radius: 5px; background: #e6f4ec; color: var(--success-dark); font-size: 11px; font-weight: 700; }
     .current-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; color: var(--brand); font-size: clamp(30px, 3.6vw, 38px); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
     .pix-tag { padding: 4px 8px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 13px; font-weight: 700; letter-spacing: 0; }
     .installments { margin-top: 7px; color: var(--ink-soft); font-size: 13px; }
-    .unit-price { margin-top: 4px; color: #7c8894; font-size: 11.5px; }
+    .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 600; }
+    .savings-note i { color: var(--success); font-size: 11px; }
 
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; min-height: 54px; padding: 13px 16px; border: 1px solid transparent; border-radius: 10px; font-size: 14px; font-weight: 700; transition: background-color .15s ease, border-color .15s ease; }
     .btn-primary { border-color: var(--success); background: var(--success); color: #fff; }
@@ -403,7 +404,7 @@
             </div>
             <div class="current-price">R$ <span id="currentPrice">104,90</span><span class="pix-tag">no Pix</span></div>
             <div class="installments" id="installments">ou em até 3x de R$ 34,97 sem juros</div>
-            <div class="unit-price" id="unitPrice">R$ 17,48 por 100 g</div>
+            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 100,70</div>
           </div>
 
           <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Adicionar ao carrinho</button>
@@ -683,7 +684,7 @@
         $('#currentPrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
         $('#installments').textContent = `ou em até 3x de ${money(selectedVariant.price / 3)} sem juros`;
-        $('#unitPrice').textContent = `${money(getUnitPrice(selectedVariant))} por 100 g`;
+        $('#savingsNote').innerHTML = `<i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza ${money(selectedVariant.oldPrice - selectedVariant.price)}`;
         $('#mobilePrice').textContent = money(selectedVariant.price);
         renderVariants();
         renderGallery();
