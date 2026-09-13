@@ -361,8 +361,8 @@
       display: grid;
       place-items: center;
       padding: 24px;
-      background: rgba(245, 248, 251, .96);
-      color: var(--text);
+      background: linear-gradient(135deg, rgba(7, 35, 58, .98), rgba(12, 67, 82, .98));
+      color: #fff;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
@@ -379,14 +379,15 @@
       gap: 13px;
       width: min(100%, 350px);
       padding: 30px 28px 26px;
-      border: 1px solid #e1e9ef;
+      border: 1px solid rgba(143, 232, 213, .28);
       border-radius: 18px;
-      background: #fff;
-      box-shadow: 0 18px 45px rgba(20, 63, 104, .12), 0 2px 8px rgba(20, 63, 104, .05);
+      background: rgba(255, 255, 255, .1);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .12);
       text-align: center;
+      backdrop-filter: blur(12px);
     }
     .redirect-loading-brand {
-      color: var(--brand);
+      color: #fff;
       font-size: 18px;
       font-weight: 800;
       letter-spacing: .12em;
@@ -398,21 +399,21 @@
       height: 3px;
       margin: 7px auto 0;
       border-radius: 99px;
-      background: var(--success);
+      background: #8fe8d5;
     }
     .redirect-loading-spinner {
       width: 34px;
       height: 34px;
-      border: 3px solid #dce8ef;
-      border-top-color: var(--success);
-      border-right-color: var(--accent);
+      border: 3px solid rgba(255, 255, 255, .22);
+      border-top-color: #8fe8d5;
+      border-right-color: #d9fff7;
       border-radius: 50%;
       animation: redirect-loading-spin .8s linear infinite;
     }
-    .redirect-loading-text { margin: 0; color: var(--brand); font-size: 14px; font-weight: 800; }
-    .redirect-loading-subtext { margin: -5px 0 0; color: var(--muted); font-size: 11px; }
-    .redirect-loading-progress { width: min(100%, 220px); height: 4px; overflow: hidden; border-radius: 99px; background: #eaf0f4; }
-    .redirect-loading-progress::after { content: ""; display: block; width: 45%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--brand), var(--success)); animation: redirect-loading-progress 1s ease-in-out infinite; }
+    .redirect-loading-text { margin: 0; color: #fff; font-size: 14px; font-weight: 800; }
+    .redirect-loading-subtext { margin: -5px 0 0; color: rgba(255, 255, 255, .76); font-size: 11px; }
+    .redirect-loading-progress { width: min(100%, 220px); height: 4px; overflow: hidden; border-radius: 99px; background: rgba(255, 255, 255, .18); }
+    .redirect-loading-progress::after { content: ""; display: block; width: 45%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #8fe8d5, #fff); animation: redirect-loading-progress 1s ease-in-out infinite; }
     @keyframes redirect-loading-spin { to { transform: rotate(360deg); } }
     @keyframes redirect-loading-progress { 0% { transform: translateX(-115%); } 100% { transform: translateX(245%); } }
     @media (prefers-reduced-motion: reduce) {
