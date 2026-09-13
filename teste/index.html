@@ -75,16 +75,21 @@
     .product-shell { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(340px,.95fr); gap: clamp(32px, 5vw, 64px); padding: 14px 0 60px; align-items: start; }
 
     .gallery { position: sticky; top: 92px; }
-    .gallery-frame { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+    .gallery-frame { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-sm); }
     .gallery-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
     .gallery-slider::-webkit-scrollbar { display: none; }
-    .gallery-slide { flex: 0 0 100%; display: grid; place-items: center; aspect-ratio: 1 / 1; padding: clamp(20px, 4vw, 48px); scroll-snap-align: start; }
-    .gallery-slide img { width: 100%; height: 100%; object-fit: contain; cursor: zoom-in; }
-    .gallery-hint { padding: 0 12px 12px; color: var(--ink-soft); font-size: 11.5px; text-align: center; }
-    .gallery-dots { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 26px; margin-top: 8px; }
-    .gallery-dot { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: #ccd6de; transition: background-color .15s ease, transform .15s ease; }
+    .gallery-slide { flex: 0 0 100%; display: grid; place-items: center; aspect-ratio: 1 / 1; padding: clamp(24px, 5vw, 56px); scroll-snap-align: start; background: linear-gradient(145deg, #fff 0%, #f7fafc 100%); }
+    .gallery-slide img { width: 100%; height: 100%; object-fit: contain; cursor: zoom-in; filter: drop-shadow(0 12px 18px rgba(16,40,64,.10)); }
+    .gallery-hint { padding: 10px 16px 13px; border-top: 1px solid rgba(225,231,236,.72); color: #71808c; font-size: 11px; text-align: center; }
+    .gallery-arrow { position: absolute; top: 50%; z-index: 2; display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(203,216,226,.9); border-radius: 50%; background: rgba(255,255,255,.92); color: var(--brand); box-shadow: 0 4px 12px rgba(16,40,64,.10); opacity: .9; transform: translateY(-50%); transition: border-color .15s ease, background-color .15s ease, opacity .15s ease; }
+    .gallery-arrow:hover { border-color: var(--brand); background: #fff; opacity: 1; }
+    .gallery-arrow:disabled { visibility: hidden; }
+    .gallery-arrow--prev { left: 14px; }
+    .gallery-arrow--next { right: 14px; }
+    .gallery-dots { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 30px; margin-top: 10px; }
+    .gallery-dot { width: 24px; height: 4px; padding: 0; border: 0; border-radius: 99px; background: #d6e0e7; transition: background-color .15s ease, width .15s ease; }
     .gallery-dot:hover { background: #9fb0bd; }
-    .gallery-dot.is-active { transform: scale(1.35); background: var(--brand); }
+    .gallery-dot.is-active { width: 34px; background: var(--brand); }
 
     .product-info { min-width: 0; }
     .status-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; color: var(--ink-soft); font-size: 12.5px; }
@@ -361,8 +366,10 @@
       <section class="product-shell" id="product" aria-labelledby="productTitle">
         <div class="gallery">
           <div class="gallery-frame" id="galleryFrame">
+            <button class="gallery-arrow gallery-arrow--prev" id="galleryPrev" type="button" aria-label="Imagem anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
             <div class="gallery-slider" id="gallerySlider" aria-label="Fotos do produto"></div>
-            <div class="gallery-hint">Deslize para ver mais fotos, toque na imagem para ampliar</div>
+            <button class="gallery-arrow gallery-arrow--next" id="galleryNext" type="button" aria-label="Próxima imagem"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+            <div class="gallery-hint">Deslize ou use as setas para ver mais fotos · toque para ampliar</div>
           </div>
           <div class="gallery-dots" id="galleryDots" aria-label="Selecionar foto"></div>
         </div>
@@ -650,6 +657,13 @@
           dots.appendChild(dot);
         });
         slider.scrollLeft = 0;
+        updateGalleryControls();
+      }
+
+      function updateGalleryControls() {
+        const lastImage = selectedVariant.images.length - 1;
+        $('#galleryPrev').disabled = currentImage === 0;
+        $('#galleryNext').disabled = currentImage === lastImage;
       }
 
       function goToImage(index) {
@@ -661,6 +675,7 @@
           dot.classList.toggle('is-active', isActive);
           dot.setAttribute('aria-current', String(isActive));
         });
+        updateGalleryControls();
       }
 
       function updateProductView() {
@@ -1029,8 +1044,11 @@
             dot.classList.toggle('is-active', isActive);
             dot.setAttribute('aria-current', String(isActive));
           });
+          updateGalleryControls();
         }
       }, { passive: true });
+      $('#galleryPrev').addEventListener('click', () => goToImage(currentImage - 1));
+      $('#galleryNext').addEventListener('click', () => goToImage(currentImage + 1));
       $('#closeLightbox').addEventListener('click', closeLightbox);
       $('#lightbox').addEventListener('click', (event) => { if (event.target === $('#lightbox')) closeLightbox(); });
       document.addEventListener('keydown', (event) => {
