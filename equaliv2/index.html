@@ -436,7 +436,7 @@
             <img class="shipping-note-logo" src="https://cdn.shopify.com/s/files/1/0611/1471/2252/files/correios-logo_1.svg?v=1648167047" alt="" aria-hidden="true">
             <div class="shipping-note-copy">
               <p class="shipping-title"><strong>Frete Grátis</strong> <span class="shipping-region" id="shippingRegion">para sua região</span></p>
-              <p class="shipping-estimated" id="shippingEstimated"><strong>Receba até</strong> até <strong>03 dias úteis</strong></p>
+              <p class="shipping-estimated" id="shippingEstimated"><strong>Receba em</strong> até <strong>03 dias úteis</strong></p>
             </div>
           </div>
 
@@ -1109,7 +1109,7 @@
         const deliveryDate = addBusinessDays(new Date(), days);
         const month = deliveryDate.toLocaleDateString('pt-BR', { month: 'long' });
         const day = String(deliveryDate.getDate()).padStart(2, '0');
-        estimate.innerHTML = `<strong>Frete grátis</strong> até <strong>${day} de ${month}</strong>`;
+        estimate.innerHTML = `<strong>Receba</strong> até <strong>${day} de ${month}</strong>`;
         const cartEstimate = $('#cartShippingEstimate');
         if (cartEstimate) cartEstimate.textContent = `${day} de ${month}`;
       }
