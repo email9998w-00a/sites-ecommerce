@@ -136,10 +136,13 @@
     .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 600; }
     .savings-note i { color: var(--success); font-size: 11px; }
 
-    .shipping-note { display: flex; align-items: center; gap: 11px; margin: 0 0 16px; padding: 11px 13px; border: 1px solid #cfe8d9; border-radius: var(--radius-md); background: #f5fbf7; }
-    .shipping-note-icon { flex: 0 0 30px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #dff2e7; color: var(--success-dark); font-size: 13px; }
-    .shipping-note strong { display: block; color: var(--success-dark); font-size: 12.5px; line-height: 1.3; }
-    .shipping-note span { display: block; margin-top: 2px; color: var(--ink-soft); font-size: 11px; line-height: 1.35; }
+    .shipping-note { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; padding: 9px 12px; border: 1px solid #bfe5cf; border-radius: var(--radius-md); background: #f5fbf7; }
+    .shipping-note-logo { flex: 0 0 40px; width: 40px; height: 38px; object-fit: contain; }
+    .shipping-note-copy { flex: 1; min-width: 0; }
+    .shipping-note strong { display: block; color: var(--ink); font-size: 12px; line-height: 1.3; }
+    .shipping-note span { display: block; margin-top: 2px; color: var(--success-dark); font-size: 11px; line-height: 1.35; }
+    .shipping-note .shipping-region { display: inline; margin: 0; color: var(--success-dark); font-size: inherit; font-weight: 500; }
+    .shipping-note-free { flex: 0 0 auto; color: var(--success-dark); font-size: 11.5px; font-weight: 800; text-align: right; white-space: nowrap; }
 
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; min-height: 54px; padding: 13px 16px; border: 1px solid transparent; border-radius: 10px; font-size: 14px; font-weight: 700; transition: background-color .15s ease, border-color .15s ease; }
     .btn-primary { border-color: var(--success); background: var(--success); color: #fff; }
@@ -332,6 +335,10 @@
       .rating-row { margin: 12px 0 18px; }
       .price-box { padding: 15px 16px; }
       .current-price { font-size: 30px; }
+      .shipping-note { gap: 8px; padding: 8px 10px; }
+      .shipping-note-logo { flex-basis: 36px; width: 36px; height: 34px; }
+      .shipping-note strong { font-size: 11.5px; }
+      .shipping-note span, .shipping-note-free { font-size: 10.5px; }
       .btn { min-height: 50px; }
       .highlight-grid, .footer-grid { grid-template-columns: 1fr; }
       .tab-panel { padding: 28px 0 36px; }
@@ -413,9 +420,10 @@
             <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 100,70</div>
           </div>
 
-          <div class="shipping-note" aria-label="Entrega grátis em 03 dias com envio rastreado">
-            <div class="shipping-note-icon"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i></div>
-            <div><strong>Entrega grátis em 03 dias</strong><span>Despacho rápido com rastreamento do pedido.</span></div>
+          <div class="shipping-note" aria-label="Entrega grátis via Correios em 03 dias">
+            <img class="shipping-note-logo" src="https://cdn.shopify.com/s/files/1/0611/1471/2252/files/correios-logo_1.svg?v=1648167047" alt="" aria-hidden="true">
+            <div class="shipping-note-copy"><strong>Entrega via Correios <span class="shipping-region" id="shippingRegion">para sua região</span></strong><span>Entrega grátis em 03 dias · envio rastreado</span></div>
+            <strong class="shipping-note-free">Frete grátis</strong>
           </div>
 
           <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Garantir oferta por <span id="buyCtaPrice">R$ 104,90</span></button>
@@ -1028,6 +1036,23 @@
         observer.observe(priceBox);
       }
 
+      function loadShippingRegion() {
+        const region = $('#shippingRegion');
+        if (!region) return;
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 3500);
+        fetch('https://ipapi.co/json/', { signal: controller.signal, headers: { Accept: 'application/json' } })
+          .then((response) => response.ok ? response.json() : Promise.reject(new Error('location unavailable')))
+          .then((location) => {
+            const city = String(location.city || '').trim();
+            const state = String(location.region_code || location.region || '').trim();
+            const destination = [city, state].filter(Boolean).join(' - ');
+            if (destination) region.textContent = `para ${destination}`;
+          })
+          .catch(() => { /* Mantém o texto genérico quando a localização não estiver disponível. */ })
+          .finally(() => clearTimeout(timeout));
+      }
+
       $('#buyNow').addEventListener('click', addSelectedVariant);
       $('#mobileBuy').addEventListener('click', addSelectedVariant);
       $('#cartTrigger').addEventListener('click', openCart);
@@ -1074,6 +1099,7 @@
       setupTabs();
       setupFaq();
       setupMobileCta();
+      loadShippingRegion();
       preloadVariantImages();
       renderVariants();
       updateProductView();
