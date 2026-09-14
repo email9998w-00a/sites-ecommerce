@@ -136,16 +136,17 @@
     .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 600; }
     .savings-note i { color: var(--success); font-size: 11px; }
 
-    .shipping-note { display: flex; align-items: center; gap: 11px; margin: 0 0 16px; padding: 3px 0; background: transparent; }
-    .shipping-note-logo { flex: 0 0 34px; width: 34px; height: 30px; object-fit: contain; }
+    .shipping-note { display: flex; align-items: flex-start; gap: 11px; margin: 0 0 17px; padding: 5px 0 2px; background: transparent; }
+    .shipping-note-logo { flex: 0 0 34px; width: 34px; height: 30px; margin-top: 1px; object-fit: contain; }
     .shipping-note-copy { flex: 1; min-width: 0; }
     .shipping-note-copy p { margin: 0; color: var(--ink-soft); font-size: 11px; line-height: 1.35; }
     .shipping-note-copy .shipping-title { color: var(--ink); font-size: 12px; line-height: 1.3; }
     .shipping-note-copy .shipping-title strong { font-weight: 700; }
     .shipping-note-copy .shipping-region { color: var(--ink-soft); font-weight: 500; }
-    .shipping-note-copy .shipping-estimated { margin-top: 2px; color: var(--success-dark); }
+    .shipping-note-copy .shipping-estimated { margin-top: 3px; color: var(--success-dark); }
     .shipping-note-copy .shipping-estimated strong { font-weight: 800; }
-    .shipping-note-free { flex: 0 0 auto; padding: 5px 7px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 10px; font-weight: 800; letter-spacing: .02em; text-align: center; white-space: nowrap; }
+    .shipping-note-free { flex: 0 0 auto; padding: 1px 0 0 10px; color: var(--success-dark); font-size: 10.5px; font-weight: 700; letter-spacing: 0; text-align: right; white-space: nowrap; }
+    .shipping-note-free::before { content: "✓"; margin-right: 4px; font-size: 11px; font-weight: 800; }
 
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; min-height: 54px; padding: 13px 16px; border: 1px solid transparent; border-radius: 10px; font-size: 14px; font-weight: 700; transition: background-color .15s ease, border-color .15s ease; }
     .btn-primary { border-color: var(--success); background: var(--success); color: #fff; }
@@ -338,17 +339,23 @@
       .rating-row { margin: 12px 0 18px; }
       .price-box { padding: 15px 16px; }
       .current-price { font-size: 30px; }
-      .shipping-note { gap: 8px; padding: 3px 0; }
+      .shipping-note { gap: 8px; padding: 4px 0 2px; }
       .shipping-note-logo { flex-basis: 32px; width: 32px; height: 28px; }
       .shipping-note-copy .shipping-title { font-size: 11.5px; }
       .shipping-note-copy p, .shipping-note-free { font-size: 10.5px; }
-      .shipping-note-free { padding: 5px 6px; font-size: 9.5px; }
+      .shipping-note-free { padding-left: 6px; font-size: 10px; }
       .btn { min-height: 50px; }
       .highlight-grid, .footer-grid { grid-template-columns: 1fr; }
       .tab-panel { padding: 28px 0 36px; }
       .reviews-section, .faq-section { padding: 42px 0; }
       .cart-header, .cart-content, .cart-footer { padding-left: 18px; padding-right: 18px; }
       body:has(.mobile-cta.is-visible) { padding-bottom: 76px; }
+    }
+    @media (max-width: 420px) {
+      .shipping-note { display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: start; column-gap: 8px; row-gap: 2px; }
+      .shipping-note-logo { grid-column: 1; grid-row: 1 / span 2; }
+      .shipping-note-copy { grid-column: 2; grid-row: 1; }
+      .shipping-note-free { grid-column: 2; grid-row: 2; justify-self: start; padding: 0; font-size: 10px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -428,9 +435,9 @@
             <img class="shipping-note-logo" src="https://cdn.shopify.com/s/files/1/0611/1471/2252/files/correios-logo_1.svg?v=1648167047" alt="" aria-hidden="true">
             <div class="shipping-note-copy">
               <p class="shipping-title"><strong>Entrega via Correios</strong> <span class="shipping-region" id="shippingRegion">para sua região</span></p>
-              <p class="shipping-estimated" id="shippingEstimated">Entrega grátis em até <strong>03 dias úteis</strong> · rastreio incluso</p>
+              <p class="shipping-estimated" id="shippingEstimated">Entrega grátis em até <strong>03 dias úteis</strong> · rastreamento incluído</p>
             </div>
-            <strong class="shipping-note-free">FRETE GRÁTIS</strong>
+            <strong class="shipping-note-free">Frete grátis</strong>
           </div>
 
           <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Garantir oferta por <span id="buyCtaPrice">R$ 104,90</span></button>
@@ -1098,7 +1105,7 @@
         const deliveryDate = addBusinessDays(new Date(), days);
         const month = deliveryDate.toLocaleDateString('pt-BR', { month: 'long' });
         const day = String(deliveryDate.getDate()).padStart(2, '0');
-        estimate.innerHTML = `Entrega grátis até <strong>${day} de ${month}</strong> · rastreio incluso`;
+        estimate.innerHTML = `Entrega grátis até <strong>${day} de ${month}</strong> · rastreamento incluído`;
       }
 
       $('#buyNow').addEventListener('click', addSelectedVariant);
