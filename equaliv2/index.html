@@ -145,8 +145,6 @@
     .shipping-note-copy .shipping-region { color: var(--ink-soft); font-weight: 500; }
     .shipping-note-copy .shipping-estimated { margin-top: 3px; color: var(--success-dark); }
     .shipping-note-copy .shipping-estimated strong { font-weight: 800; }
-    .shipping-note-free { flex: 0 0 auto; padding: 1px 0 0 10px; color: var(--success-dark); font-size: 10.5px; font-weight: 700; letter-spacing: 0; text-align: right; white-space: nowrap; }
-    .shipping-note-free::before { content: "✓"; margin-right: 4px; font-size: 11px; font-weight: 800; }
 
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; min-height: 54px; padding: 13px 16px; border: 1px solid transparent; border-radius: 10px; font-size: 14px; font-weight: 700; transition: background-color .15s ease, border-color .15s ease; }
     .btn-primary { border-color: var(--success); background: var(--success); color: #fff; }
@@ -342,8 +340,7 @@
       .shipping-note { gap: 8px; padding: 4px 0 2px; }
       .shipping-note-logo { flex-basis: 32px; width: 32px; height: 28px; }
       .shipping-note-copy .shipping-title { font-size: 11.5px; }
-      .shipping-note-copy p, .shipping-note-free { font-size: 10.5px; }
-      .shipping-note-free { padding-left: 6px; font-size: 10px; }
+      .shipping-note-copy p { font-size: 10.5px; }
       .btn { min-height: 50px; }
       .highlight-grid, .footer-grid { grid-template-columns: 1fr; }
       .tab-panel { padding: 28px 0 36px; }
@@ -352,10 +349,9 @@
       body:has(.mobile-cta.is-visible) { padding-bottom: 76px; }
     }
     @media (max-width: 420px) {
-      .shipping-note { display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: start; column-gap: 8px; row-gap: 2px; }
-      .shipping-note-logo { grid-column: 1; grid-row: 1 / span 2; }
+      .shipping-note { display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: start; column-gap: 8px; }
+      .shipping-note-logo { grid-column: 1; grid-row: 1; }
       .shipping-note-copy { grid-column: 2; grid-row: 1; }
-      .shipping-note-free { grid-column: 2; grid-row: 2; justify-self: start; padding: 0; font-size: 10px; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -435,13 +431,12 @@
             <img class="shipping-note-logo" src="https://cdn.shopify.com/s/files/1/0611/1471/2252/files/correios-logo_1.svg?v=1648167047" alt="" aria-hidden="true">
             <div class="shipping-note-copy">
               <p class="shipping-title"><strong>Entrega via Correios</strong> <span class="shipping-region" id="shippingRegion">para sua região</span></p>
-              <p class="shipping-estimated" id="shippingEstimated">Entrega grátis em até <strong>03 dias úteis</strong> · rastreamento incluído</p>
+              <p class="shipping-estimated" id="shippingEstimated"><strong>Frete grátis</strong> até <strong>03 dias úteis</strong></p>
             </div>
-            <strong class="shipping-note-free">Frete grátis</strong>
           </div>
 
           <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Garantir oferta por <span id="buyCtaPrice">R$ 104,90</span></button>
-          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento processado com segurança. Rastreamento enviado após o despacho.</p>
+          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento processado com segurança.</p>
 
           <div class="trust-row">
             <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra protegida</span>
@@ -1105,7 +1100,7 @@
         const deliveryDate = addBusinessDays(new Date(), days);
         const month = deliveryDate.toLocaleDateString('pt-BR', { month: 'long' });
         const day = String(deliveryDate.getDate()).padStart(2, '0');
-        estimate.innerHTML = `Entrega grátis até <strong>${day} de ${month}</strong> · rastreamento incluído`;
+        estimate.innerHTML = `<strong>Frete grátis</strong> até <strong>${day} de ${month}</strong>`;
       }
 
       $('#buyNow').addEventListener('click', addSelectedVariant);
