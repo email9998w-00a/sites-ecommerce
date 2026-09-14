@@ -264,23 +264,24 @@
 
     .cart-content { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 20px 22px; }
 
-    .cart-item { display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 13px; padding: 0 0 18px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+    .cart-item { display: grid; grid-template-columns: 60px minmax(0,1fr); gap: 12px; padding: 0 0 15px; margin-bottom: 15px; border-bottom: 1px solid var(--line); }
     .cart-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
-    .cart-item img { width: 64px; height: 64px; padding: 5px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); object-fit: contain; }
+    .cart-item img { width: 60px; height: 60px; padding: 5px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); object-fit: contain; }
     .cart-item-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
-    .cart-item-name { margin: 0 0 3px; color: var(--ink); font-size: 13px; font-weight: 700; line-height: 1.3; }
+    .cart-item-name { margin: 0 0 2px; color: var(--ink); font-size: 12.5px; font-weight: 700; line-height: 1.3; }
     .cart-item-meta { color: var(--ink-soft); font-size: 11.5px; }
-    .cart-item-price { margin-top: 6px; color: var(--ink); font-size: 13px; font-weight: 700; }
-    .cart-item-promo { display: inline-flex; align-items: center; gap: 5px; width: fit-content; margin-top: 7px; padding: 4px 7px; border: 1px solid #cfe8d9; border-radius: 999px; background: #f0faf4; color: var(--success-dark); font-size: 10.5px; font-weight: 700; }
-    .cart-item-promo i { font-size: 10px; }
-    .cart-item-price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 7px; }
+    .cart-item-promo { display: inline-flex; align-items: center; gap: 4px; width: fit-content; margin: 0; padding: 3px 7px; border: 1px solid #cfe8d9; border-radius: 999px; background: #f0faf4; color: var(--success-dark); font-size: 9.5px; font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
+    .cart-item-promo i { font-size: 9px; }
+    .cart-item-commercial { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; margin-top: 7px; }
+    .cart-item-price-row { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 6px; }
+    .cart-item-price { color: var(--brand); font-size: 15px; font-weight: 800; letter-spacing: -.02em; }
     .cart-item-old-price { color: var(--ink-soft); font-size: 11px; font-weight: 500; text-decoration: line-through; }
-    .cart-item-saving { margin-top: 4px; color: var(--success-dark); font-size: 11px; font-weight: 600; }
-    .cart-item-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; }
-    .remove-item { flex: 0 0 30px; width: 30px; height: 30px; display: inline-grid; place-items: center; border: 1px solid #dbe3e9; border-radius: 8px; background: #fff; color: #7f8d98; font-size: 11px; transition: border-color .15s ease, background-color .15s ease, color .15s ease; }
+    .cart-item-saving { color: var(--success-dark); font-size: 10px; font-weight: 600; white-space: nowrap; }
+    .cart-item-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 9px; }
+    .remove-item { display: inline-flex; align-items: center; gap: 5px; min-height: 30px; padding: 5px 8px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: #7f8d98; font-size: 11px; transition: border-color .15s ease, background-color .15s ease, color .15s ease; }
     .remove-item:hover { border-color: #e3a4a0; background: #fff6f5; color: #b33a32; }
-    .qty-control { display: inline-flex; align-items: center; height: 34px; padding: 3px; border: 1px solid #d5e0e7; border-radius: 999px; background: #f7f9fb; }
-    .qty-control button { width: 27px; height: 26px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; color: var(--brand); font-size: 16px; font-weight: 600; line-height: 1; transition: background-color .15s ease, color .15s ease, transform .15s ease; }
+    .qty-control { display: inline-flex; align-items: center; height: 34px; padding: 3px; border: 1px solid #d5e0e7; border-radius: 9px; background: #f7f9fb; }
+    .qty-control button { width: 27px; height: 26px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 6px; color: var(--brand); font-size: 16px; font-weight: 600; line-height: 1; transition: background-color .15s ease, color .15s ease, transform .15s ease; }
     .qty-control button:hover { background: #e5eef3; color: var(--brand-dark); }
     .qty-control button:active { transform: scale(.92); }
     .qty-control span { min-width: 29px; height: 26px; display: grid; place-items: center; color: var(--ink); font-size: 12.5px; font-weight: 700; text-align: center; }
@@ -766,17 +767,19 @@
                     <div class="cart-item-name">${esc(item.name)}</div>
                     <div class="cart-item-meta">${esc(item.variant || '')}</div>
                   </div>
-                  <button class="remove-item" type="button" aria-label="Remover ${esc(item.name)}" data-action="remove" data-index="${index}"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
                 </div>
-                <div class="cart-item-promo"><i class="fa-solid fa-tag" aria-hidden="true"></i> Oferta especial · ${esc(String(item.discount || 0))}% OFF</div>
-                <div class="cart-item-price-row"><span class="cart-item-price">${money(item.price)}</span><span class="cart-item-old-price">${money(item.oldPrice || item.price)}</span></div>
-                <div class="cart-item-saving">Você economiza ${money(Math.max(0, (Number(item.oldPrice) || Number(item.price)) - Number(item.price)))}</div>
+                <div class="cart-item-commercial">
+                  <div class="cart-item-promo"><i class="fa-solid fa-tag" aria-hidden="true"></i> ${esc(String(item.discount || 0))}% OFF</div>
+                  <div class="cart-item-price-row"><span class="cart-item-price">${money(item.price)}</span><span class="cart-item-old-price">${money(item.oldPrice || item.price)}</span></div>
+                  <div class="cart-item-saving">Economia de ${money(Math.max(0, (Number(item.oldPrice) || Number(item.price)) - Number(item.price)))}</div>
+                </div>
                 <div class="cart-item-bottom">
                   <div class="qty-control">
                     <button type="button" aria-label="Diminuir quantidade" data-action="decrease" data-index="${index}">−</button>
                     <span aria-live="polite">${item.quantity}</span>
                     <button type="button" aria-label="Aumentar quantidade" data-action="increase" data-index="${index}">+</button>
                   </div>
+                  <button class="remove-item" type="button" aria-label="Remover ${esc(item.name)}" data-action="remove" data-index="${index}"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Remover</span></button>
                 </div>
               </div>`;
             container.appendChild(row);
