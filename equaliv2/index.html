@@ -1048,15 +1048,20 @@
         if (!region) return;
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 3500);
-        fetch('https://ipapi.co/json/', { signal: controller.signal, headers: { Accept: 'application/json' } })
-          .then((response) => response.ok ? response.json() : Promise.reject(new Error('location unavailable')))
-          .then((location) => {
+        const applyLocation = (location) => {
             const city = String(location.city || '').trim();
-            const state = String(location.region_code || location.region || '').trim();
+            const state = String(location.region_code || location.region || location.region_name || '').trim();
             const destination = [city, state].filter(Boolean).join(' - ');
             if (destination) region.textContent = `para ${destination} e Região`;
-          })
-          .catch(() => { /* Mantém o texto genérico quando a localização não estiver disponível. */ })
+        };
+        const readLocation = (response) => response.ok
+          ? response.json().then((data) => data.error || data.success === false ? Promise.reject(new Error('location unavailable')) : data)
+          : Promise.reject(new Error(`location http ${response.status}`));
+        fetch('https://ipapi.co/json/', { signal: controller.signal, headers: { Accept: 'application/json' } })
+          .then(readLocation)
+          .catch(() => fetch('https://ipwho.is/', { signal: controller.signal, headers: { Accept: 'application/json' } }).then(readLocation))
+          .then(applyLocation)
+          .catch(() => { /* Mantém o texto genérico quando os serviços não estiverem disponíveis. */ })
           .finally(() => clearTimeout(timeout));
       }
 
