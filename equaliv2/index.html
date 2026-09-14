@@ -54,7 +54,7 @@
     .skip-link:focus { transform: translateY(0); }
 
     /* ===================== Announcement + header ===================== */
-    .announcement { padding: 9px 16px; background: var(--brand-dark); color: #eef4f8; font-size: 12.5px; text-align: center; }
+    .announcement { padding: 9px 16px; background: var(--brand-dark); color: #eef4f8; font-size: 12.5px; font-weight: 600; text-align: center; letter-spacing: .005em; }
 
     .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
     .header-row { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
@@ -347,7 +347,7 @@
 <body>
   <a class="skip-link" href="#product">Ir direto ao produto</a>
 
-  <div class="announcement">Condição especial no Pix, até 48% de desconto. Frete e prazo aparecem no carrinho.</div>
+  <div class="announcement">Entrega grátis em 03 dias <span aria-hidden="true">•</span> Condição especial no Pix, até 48% de desconto.</div>
 
   <header class="site-header">
     <div class="container header-row">
@@ -413,13 +413,13 @@
             <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 100,70</div>
           </div>
 
-          <div class="shipping-note" aria-label="Entrega grátis em 03 dias">
+          <div class="shipping-note" aria-label="Entrega grátis em 03 dias com envio rastreado">
             <div class="shipping-note-icon"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i></div>
-            <div><strong>Entrega grátis em 03 dias</strong><span>Despacho rápido e envio rastreado para você receber sem preocupação.</span></div>
+            <div><strong>Entrega grátis em 03 dias</strong><span>Despacho rápido com rastreamento do pedido.</span></div>
           </div>
 
           <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Garantir oferta por <span id="buyCtaPrice">R$ 104,90</span></button>
-          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento processado com segurança. Frete e prazo aparecem no carrinho.</p>
+          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento processado com segurança. Rastreamento enviado após o despacho.</p>
 
           <div class="trust-row">
             <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra protegida</span>
