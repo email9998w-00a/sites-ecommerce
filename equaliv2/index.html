@@ -370,7 +370,7 @@
 
   <header class="site-header">
     <div class="container header-row">
-      <a class="logo" href="/" aria-label="EQUALIV, página inicial">EQUALIV</a>
+      <a class="logo" href="/" aria-label="HAVAN, página inicial">HAVAN</a>
       <nav class="header-links" aria-label="Navegação principal">
         <a href="#details">Detalhes do produto</a>
         <a href="#faq">Dúvidas frequentes</a>
@@ -531,11 +531,11 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div><h2>EQUALIV</h2><p>Informações claras, pedido revisável e checkout seguro para finalizar sua compra.</p></div>
+        <div><h2>HAVAN</h2><p>Informações claras, pedido revisável e checkout seguro para finalizar sua compra.</p></div>
         <div><h3>Atendimento</h3><a href="#faq">Dúvidas frequentes</a><a href="#details">Informações do produto</a><a href="/contato">Fale conosco</a></div>
         <div><h3>Políticas</h3><a href="/politica-de-privacidade">Privacidade</a><a href="/trocas-e-devolucoes">Trocas e devoluções</a><a href="/politica-de-envio">Envio</a></div>
       </div>
-      <div class="footer-bottom">© 2026 Equaliv. Todos os direitos reservados.</div>
+      <div class="footer-bottom">© 2026 Havan. Todos os direitos reservados.</div>
     </div>
   </footer>
 
@@ -573,7 +573,7 @@
 
   <div class="redirect-loading" id="redirectLoading" role="status" aria-live="polite" aria-label="Preparando o checkout" aria-hidden="true">
     <div class="redirect-loading-card">
-      <div class="redirect-loading-brand" aria-hidden="true">EQUALIV</div>
+      <div class="redirect-loading-brand" aria-hidden="true">HAVAN</div>
       <span class="redirect-loading-spinner" aria-hidden="true"></span>
       <p class="redirect-loading-text">Preparando seu pedido</p>
       <p class="redirect-loading-subtext">Estamos levando você para um checkout seguro.</p>
@@ -586,7 +586,7 @@
       'use strict';
 
       const CHECKOUT_URL = 'https://llpag-seguro.onrender.com/';
-      const STORAGE_KEY = 'equaliv_cart_v3';
+      const STORAGE_KEY = 'checkout_cart_v3';
       const REDIRECT_LOADING_DURATION = 900;
 
       const variants = [
@@ -1057,7 +1057,7 @@
       function loadShippingRegion() {
         const region = $('#shippingRegion');
         if (!region) return;
-        const cacheKey = 'equaliv_shipping_region_v1';
+        const cacheKey = 'checkout_shipping_region_v1';
         const applyLocation = (location, persist = true) => {
           const city = String(location.city || '').trim();
           const state = String(location.region_code || location.region || location.region_name || '').trim();
