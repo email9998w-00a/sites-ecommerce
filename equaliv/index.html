@@ -58,6 +58,7 @@
 
     .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
     .header-row { min-height: 68px; display: grid; grid-template-columns: auto minmax(280px, 1fr) auto; align-items: center; gap: clamp(18px, 3vw, 42px); }
+    .header-top { display: contents; }
     .logo { color: var(--brand); font-size: 22px; font-weight: 800; letter-spacing: .04em; text-decoration: none; }
     .header-links { display: flex; align-items: center; gap: 22px; }
     .header-links a { color: var(--ink-soft); font-size: 13.5px; font-weight: 600; text-decoration: none; }
@@ -354,11 +355,12 @@
     @media (max-width: 620px) {
       .container { width: min(100% - 24px, 520px); }
       .announcement { min-height: 34px; display: grid; place-items: center; padding: 8px 12px; font-size: 10.5px; }
-      .site-header { background: rgba(255,255,255,.985); }
-      .header-row { min-height: 0; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "logo actions" "search search"; gap: 10px 12px; padding-top: 10px; padding-bottom: 11px; }
-      .logo { grid-area: logo; align-self: center; font-size: 19px; line-height: 1; }
-      .header-links { grid-area: actions; gap: 0; }
-      .search-form { grid-area: search; max-width: none; }
+      .site-header { position: static; background: transparent; border-bottom: 0; backdrop-filter: none; }
+      .header-row { min-height: 0; display: block; }
+      .header-top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; min-height: 58px; margin-inline: -12px; padding: 9px 12px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.985); box-shadow: 0 3px 12px rgba(16,40,64,.06); backdrop-filter: blur(10px); }
+      .logo { font-size: 19px; line-height: 1; }
+      .header-links { gap: 0; }
+      .search-form { max-width: none; margin: 10px 0 11px; }
       .search-input { min-height: 42px; padding: 10px 45px 10px 15px; border-color: #d2dde5; background: #f7f9fb; font-size: 12px; }
       .search-submit { right: 5px; width: 32px; height: 32px; }
       .search-results { top: calc(100% + 6px); max-height: min(46vh, 300px); overflow-y: auto; border-radius: 12px; }
@@ -435,22 +437,24 @@
 
   <header class="site-header">
     <div class="container header-row">
-      <a class="logo" href="/" aria-label="HAVAN, página inicial">HAVAN</a>
+      <div class="header-top">
+        <a class="logo" href="/" aria-label="HAVAN, página inicial">HAVAN</a>
+        <nav class="header-links" aria-label="Navegação principal">
+          <a href="#details">Detalhes do produto</a>
+          <a href="#faq">Dúvidas frequentes</a>
+          <button class="cart-trigger" id="cartTrigger" type="button" aria-controls="cartOverlay" aria-expanded="false" aria-label="Abrir carrinho">
+            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            <span>Carrinho</span>
+            <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+          </button>
+        </nav>
+      </div>
       <form class="search-form" id="searchForm" role="search" autocomplete="off">
         <label for="searchInput">Buscar na loja</label>
         <input class="search-input" id="searchInput" type="search" placeholder="O que você está procurando?" aria-controls="searchResults" aria-expanded="false">
         <button class="search-submit" type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
         <div class="search-results" id="searchResults" role="listbox" aria-label="Resultados da busca"></div>
       </form>
-      <nav class="header-links" aria-label="Navegação principal">
-        <a href="#details">Detalhes do produto</a>
-        <a href="#faq">Dúvidas frequentes</a>
-        <button class="cart-trigger" id="cartTrigger" type="button" aria-controls="cartOverlay" aria-expanded="false" aria-label="Abrir carrinho">
-          <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-          <span>Carrinho</span>
-          <span class="cart-count" id="cartCount" aria-live="polite">0</span>
-        </button>
-      </nav>
     </div>
   </header>
 
