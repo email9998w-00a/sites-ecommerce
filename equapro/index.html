@@ -13,91 +13,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Confira a oferta especial do Body Protein Equaliv.">
-  <title>Body Protein Equaliv | Oferta especial</title>
+  <meta name="description" content="Confira a condição especial do Body Protein Equaliv.">
+  <title>Body Protein Equaliv | Confira a oferta</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --blue: #126b8c;
-      --blue-dark: #0b5471;
-      --navy: #183247;
-      --text: #243746;
-      --muted: #6f7f89;
-      --line: #e5ebee;
-      --soft: #f6f9fa;
-      --green: #16835b;
-      --discount: #d95142;
+      --blue: #0f6f91;
+      --blue-dark: #0a5875;
+      --navy: #173247;
+      --text: #2a3d4a;
+      --muted: #687984;
+      --line: #e4eaed;
+      --soft: #f7fafb;
+      --red: #ce4a3c;
+      --green: #247657;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { min-height: 100%; }
+    html { scroll-behavior: smooth; }
     body { min-height: 100vh; background: #fff; color: var(--text); font-family: 'Inter', Arial, sans-serif; }
 
-    .page { width: min(100%, 520px); min-height: 100vh; margin: auto; padding: 0 16px 30px; }
+    .page { width: min(100%, 540px); min-height: 100vh; margin: auto; padding: 0 18px 30px; }
 
-    .header { display: flex; align-items: center; justify-content: space-between; min-height: 64px; border-bottom: 1px solid var(--line); }
-    .brand { display: flex; align-items: center; gap: 9px; color: var(--navy); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .announcement {
+      margin: 0 -18px;
+      padding: 8px 18px;
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand { display: flex; align-items: center; gap: 9px; color: var(--navy); font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     .brand img { width: 34px; height: 34px; padding: 5px; border: 1px solid var(--line); border-radius: 50%; object-fit: contain; }
-    .secure { display: flex; align-items: center; gap: 5px; color: var(--green); font-size: .66rem; font-weight: 600; }
-    .secure::before { content: '✓'; font-weight: 800; }
+    .secure { display: flex; align-items: center; gap: 6px; color: var(--green); font-size: .65rem; font-weight: 600; }
+    .secure::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #36a77b; box-shadow: 0 0 0 3px #e4f3ed; }
 
-    .main { padding: 38px 0 24px; text-align: center; }
-    .product-label { margin-bottom: 12px; color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    h1 { color: var(--navy); font-size: clamp(2rem, 9vw, 2.8rem); font-weight: 800; line-height: 1.06; letter-spacing: -.055em; }
+    .main { padding: 34px 0 24px; text-align: center; }
+    .product-label { margin-bottom: 12px; color: var(--blue); font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { color: var(--navy); font-family: 'Manrope', sans-serif; font-size: clamp(2rem, 9vw, 2.75rem); font-weight: 800; line-height: 1.05; letter-spacing: -.06em; }
     h1 span { display: block; color: var(--blue); }
-    .subtitle { max-width: 310px; margin: 12px auto 0; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+    .subtitle { max-width: 335px; margin: 12px auto 0; color: var(--muted); font-size: .88rem; line-height: 1.45; }
 
-    .product-card { margin-top: 25px; padding: 24px 20px 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--soft); box-shadow: 0 8px 25px rgba(24,50,71,.06); }
-    .deal-label { color: var(--discount); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-    .offer { margin: 7px 0 6px; color: var(--discount); font-size: clamp(3.7rem, 18vw, 5.2rem); font-weight: 800; line-height: .9; letter-spacing: -.09em; }
-    .offer-note { color: var(--muted); font-size: .74rem; }
+    .offer-card { margin-top: 24px; padding: 25px 21px 21px; border: 1px solid var(--line); border-radius: 18px; background: var(--soft); box-shadow: 0 10px 28px rgba(23,50,71,.07); }
+    .offer-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 15px; border-bottom: 1px solid var(--line); text-align: left; }
+    .offer-label { color: var(--red); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .offer-status { color: var(--muted); font-size: .65rem; white-space: nowrap; }
+    .offer-status::before { content: '•'; margin-right: 4px; color: #36a77b; font-size: 1rem; vertical-align: -1px; }
+    .offer { margin: 22px 0 7px; color: var(--red); font-family: 'Manrope', sans-serif; font-size: clamp(3.7rem, 17vw, 5.1rem); font-weight: 800; line-height: .86; letter-spacing: -.1em; }
+    .offer-note { color: var(--muted); font-size: .73rem; }
 
-    .cta { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 58px; margin-top: 20px; padding: 15px 18px; border-radius: 9px; background: var(--blue); color: #fff; font-size: .97rem; font-weight: 800; text-decoration: none; box-shadow: 0 7px 15px rgba(18,107,140,.2); transition: background .18s, transform .18s; }
-    .cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .cta { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 59px; margin-top: 20px; padding: 15px 18px; border-radius: 9px; background: var(--blue); color: #fff; text-decoration: none; font-size: .96rem; font-weight: 800; letter-spacing: .01em; box-shadow: 0 8px 17px rgba(15,111,145,.22); transition: background .18s, transform .18s, box-shadow .18s; }
+    .cta:hover { background: var(--blue-dark); box-shadow: 0 10px 21px rgba(15,111,145,.27); transform: translateY(-1px); }
     .cta:active { transform: scale(.985); }
     .arrow { margin-left: 10px; font-size: 1.25rem; line-height: 0; }
 
-    .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
-    .benefit { color: var(--muted); font-size: .63rem; line-height: 1.35; }
-    .benefit strong { display: block; margin-bottom: 3px; color: var(--green); font-size: .72rem; }
+    .reassurance { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--line); }
+    .reassurance-item { color: var(--muted); font-size: .62rem; line-height: 1.35; }
+    .reassurance-item strong { display: block; margin-bottom: 3px; color: var(--navy); font-size: .69rem; font-weight: 700; }
 
     .footer { padding: 20px 4px 0; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .63rem; line-height: 1.5; }
     .footer a { color: var(--blue); text-decoration: none; }
-    .legal { margin-top: 8px; font-size: .58rem; }
+    .legal { max-width: 420px; margin: 8px auto 0; font-size: .58rem; }
 
-    @media (max-width: 360px) {
-      .page { padding-right: 13px; padding-left: 13px; }
-      .secure { font-size: .6rem; }
-      .product-card { padding-right: 15px; padding-left: 15px; }
+    @media (max-width: 370px) {
+      .page { padding-right: 14px; padding-left: 14px; }
+      .announcement { margin-right: -14px; margin-left: -14px; }
+      .offer-card { padding-right: 16px; padding-left: 16px; }
+      .secure { font-size: .59rem; }
+      .offer-status { font-size: .6rem; }
     }
 
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
   </style>
 </head>
 <body>
   <main class="page">
+    <div class="announcement">Condição especial disponível online</div>
+
     <header class="header">
       <div class="brand"><img src="https://i.postimg.cc/kXgctC1b/logo-0.png" alt="Equaliv"><span>Equaliv</span></div>
-      <div class="secure">Compra segura</div>
+      <div class="secure">Acesso seguro</div>
     </header>
 
     <section class="main" aria-labelledby="title">
-      <p class="product-label">Oferta especial online</p>
+      <p class="product-label">Oferta especial</p>
       <h1 id="title">Body Protein <span>Equaliv</span></h1>
-      <p class="subtitle">Uma opção prática para complementar sua rotina de treino.</p>
+      <p class="subtitle">Proteína à base de colágeno para complementar sua rotina de treino.</p>
 
-      <div class="product-card">
-        <p class="deal-label">Condição especial</p>
+      <div class="offer-card">
+        <div class="offer-top">
+          <span class="offer-label">Condição atual</span>
+          <span class="offer-status">Consulte no próximo passo</span>
+        </div>
         <div class="offer">40% OFF</div>
-        <p class="offer-note">Consulte preço, sabores e disponibilidade.</p>
-        <a class="cta" href="https://promocional-havan.onrender.com/equaliv" aria-label="Conferir oferta do Body Protein Equaliv">CONFERIR OFERTA <span class="arrow" aria-hidden="true">→</span></a>
-        <div class="benefits">
-          <div class="benefit"><strong>✓ Seguro</strong>Pagamento protegido</div>
-          <div class="benefit"><strong>✓ Direto</strong>Confira em 1 clique</div>
-          <div class="benefit"><strong>✓ Online</strong>Oferta disponível</div>
+        <p class="offer-note">Confira preço, sabores e disponibilidade.</p>
+        <a class="cta" href="https://promocional-havan.onrender.com/equaliv" aria-label="Conferir oferta atual do Body Protein Equaliv">VER OFERTA ATUAL <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="reassurance">
+          <div class="reassurance-item"><strong>Rápido</strong>Confira em 1 clique</div>
+          <div class="reassurance-item"><strong>Transparente</strong>Veja os detalhes</div>
+          <div class="reassurance-item"><strong>Seguro</strong>Navegação protegida</div>
         </div>
       </div>
     </section>
@@ -113,7 +141,7 @@
     const cta = document.querySelector('.cta');
     cta.addEventListener('click', () => {
       if (typeof gtag === 'function') {
-        gtag('event', 'cta_click', { event_category: 'conversion', event_label: 'conferir_oferta', transport_type: 'beacon' });
+        gtag('event', 'cta_click', { event_category: 'conversion', event_label: 'ver_oferta_atual', transport_type: 'beacon' });
       }
     });
   </script>
