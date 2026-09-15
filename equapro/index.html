@@ -12,66 +12,108 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0d2942">
-  <meta name="description" content="Confira agora a oferta especial do Body Protein Equaliv.">
-  <title>Body Protein Equaliv | Confira a oferta</title>
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Confira a oferta especial do Body Protein Equaliv.">
+  <title>Body Protein Equaliv | Oferta especial</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root { --navy:#0d2942; --deep:#081d31; --aqua:#73e1e7; --gold:#f6cd5d; --gold-light:#ffdf80; --text-soft:#d8e9ed; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html,body { min-height:100%; }
-    body { min-height:100vh; overflow-x:hidden; background:var(--deep); color:#fff; font-family:'DM Sans',Arial,sans-serif; }
-    .page { position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px 62px; background:radial-gradient(circle at 92% 5%,rgba(55,183,193,.22),transparent 29%),radial-gradient(circle at 0 100%,rgba(17,127,159,.22),transparent 28%),linear-gradient(145deg,var(--navy),var(--deep)); }
-    .page:before { content:none; }
-    .card { position:relative; z-index:1; width:min(100%,430px); padding:30px 24px 25px; border:1px solid rgba(255,255,255,.14); border-radius:24px; background:rgba(255,255,255,.06); box-shadow:0 24px 70px rgba(0,0,0,.23),inset 0 1px 0 rgba(255,255,255,.08); text-align:center; backdrop-filter:blur(8px); }
-    .brand { display:inline-flex; align-items:center; gap:9px; margin-bottom:24px; color:#eaf8fa; font-size:.72rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
-    .brand img { width:34px; height:34px; padding:5px; border-radius:50%; background:#fff; object-fit:contain; }
-    .eyebrow { display:inline-flex; align-items:center; gap:7px; margin-bottom:13px; color:var(--aqua); font-size:.68rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
-    .eyebrow:before,.eyebrow:after { content:''; width:17px; height:1px; background:rgba(115,225,231,.65); }
-    h1 { margin-bottom:9px; font-family:'Manrope',sans-serif; font-size:clamp(2rem,9vw,2.9rem); font-weight:800; line-height:1.03; letter-spacing:-.06em; }
-    h1 span { display:block; color:var(--aqua); }
-    .subtitle { max-width:300px; margin:auto; color:var(--text-soft); font-size:.88rem; line-height:1.42; }
-    .offer { display:inline-flex; flex-direction:column; align-items:center; margin:24px 0 22px; color:var(--gold-light); font-family:'Manrope',sans-serif; font-size:clamp(3.8rem,18vw,5.7rem); font-weight:800; line-height:.8; letter-spacing:-.1em; }
-    .offer small { margin-bottom:10px; color:#e4f1f3; font-family:'DM Sans',sans-serif; font-size:.66rem; font-weight:800; letter-spacing:.13em; line-height:1; text-transform:uppercase; }
-    .cta { display:flex; align-items:center; justify-content:center; width:100%; min-height:61px; padding:16px 18px; border:0; border-radius:14px; background:linear-gradient(135deg,var(--gold-light),var(--gold)); color:#152e40; text-decoration:none; font-size:1rem; font-weight:800; letter-spacing:.01em; box-shadow:0 13px 25px rgba(0,0,0,.23); transition:transform .18s ease,filter .18s ease; }
-    .cta:hover { filter:brightness(1.06); transform:translateY(-2px); }
-    .cta:active { transform:scale(.985); }
-    .arrow { margin-left:10px; font-size:1.35rem; line-height:0; }
-    .trust { display:flex; justify-content:center; flex-wrap:wrap; gap:8px 18px; margin-top:14px; color:#c8dfe4; font-size:.67rem; }
-    .trust span { display:inline-flex; align-items:center; gap:5px; }
-    .trust span:before { content:'✓'; color:#78e1b5; font-weight:800; }
-    .hint { margin-top:11px; color:rgba(216,233,237,.73); font-size:.66rem; }
-    .legal { position:absolute; z-index:1; right:16px; bottom:12px; left:16px; color:rgba(216,233,237,.63); text-align:center; font-size:.58rem; line-height:1.4; }
-    @media (max-height:650px) { .page { padding-top:16px; } .card { padding-top:23px; } .brand { margin-bottom:16px; } .offer { margin:18px 0 17px; } }
-    @media (max-width:360px) { .card { padding-right:19px; padding-left:19px; } .trust { gap:7px 12px; } }
-    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { transition:none!important; } }
+    :root {
+      --blue: #126b8c;
+      --blue-dark: #0b5471;
+      --navy: #183247;
+      --text: #243746;
+      --muted: #6f7f89;
+      --line: #e5ebee;
+      --soft: #f6f9fa;
+      --green: #16835b;
+      --discount: #d95142;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100%; }
+    body { min-height: 100vh; background: #fff; color: var(--text); font-family: 'Inter', Arial, sans-serif; }
+
+    .page { width: min(100%, 520px); min-height: 100vh; margin: auto; padding: 0 16px 30px; }
+
+    .header { display: flex; align-items: center; justify-content: space-between; min-height: 64px; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 9px; color: var(--navy); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .brand img { width: 34px; height: 34px; padding: 5px; border: 1px solid var(--line); border-radius: 50%; object-fit: contain; }
+    .secure { display: flex; align-items: center; gap: 5px; color: var(--green); font-size: .66rem; font-weight: 600; }
+    .secure::before { content: '✓'; font-weight: 800; }
+
+    .main { padding: 38px 0 24px; text-align: center; }
+    .product-label { margin-bottom: 12px; color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { color: var(--navy); font-size: clamp(2rem, 9vw, 2.8rem); font-weight: 800; line-height: 1.06; letter-spacing: -.055em; }
+    h1 span { display: block; color: var(--blue); }
+    .subtitle { max-width: 310px; margin: 12px auto 0; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+
+    .product-card { margin-top: 25px; padding: 24px 20px 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--soft); box-shadow: 0 8px 25px rgba(24,50,71,.06); }
+    .deal-label { color: var(--discount); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .offer { margin: 7px 0 6px; color: var(--discount); font-size: clamp(3.7rem, 18vw, 5.2rem); font-weight: 800; line-height: .9; letter-spacing: -.09em; }
+    .offer-note { color: var(--muted); font-size: .74rem; }
+
+    .cta { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 58px; margin-top: 20px; padding: 15px 18px; border-radius: 9px; background: var(--blue); color: #fff; font-size: .97rem; font-weight: 800; text-decoration: none; box-shadow: 0 7px 15px rgba(18,107,140,.2); transition: background .18s, transform .18s; }
+    .cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .cta:active { transform: scale(.985); }
+    .arrow { margin-left: 10px; font-size: 1.25rem; line-height: 0; }
+
+    .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .benefit { color: var(--muted); font-size: .63rem; line-height: 1.35; }
+    .benefit strong { display: block; margin-bottom: 3px; color: var(--green); font-size: .72rem; }
+
+    .footer { padding: 20px 4px 0; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .63rem; line-height: 1.5; }
+    .footer a { color: var(--blue); text-decoration: none; }
+    .legal { margin-top: 8px; font-size: .58rem; }
+
+    @media (max-width: 360px) {
+      .page { padding-right: 13px; padding-left: 13px; }
+      .secure { font-size: .6rem; }
+      .product-card { padding-right: 15px; padding-left: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
   </style>
 </head>
 <body>
   <main class="page">
-    <section class="card" aria-labelledby="title">
+    <header class="header">
       <div class="brand"><img src="https://i.postimg.cc/kXgctC1b/logo-0.png" alt="Equaliv"><span>Equaliv</span></div>
-      <p class="eyebrow">Oferta especial</p>
+      <div class="secure">Compra segura</div>
+    </header>
+
+    <section class="main" aria-labelledby="title">
+      <p class="product-label">Oferta especial online</p>
       <h1 id="title">Body Protein <span>Equaliv</span></h1>
       <p class="subtitle">Uma opção prática para complementar sua rotina de treino.</p>
-      <div class="offer"><small>condição disponível</small>40% OFF</div>
 
-      <!-- Link nativo: funciona mesmo sem JavaScript e reduz o atrito no redirecionamento. -->
-      <a id="cta" class="cta" href="https://promocional-havan.onrender.com/equaliv" aria-label="Conferir oferta do Body Protein Equaliv">CONFERIR OFERTA AGORA <span class="arrow" aria-hidden="true">→</span></a>
-      <div class="trust"><span>Compra segura</span><span>Site protegido</span></div>
-      <p class="hint">Veja preço, sabores e disponibilidade.</p>
+      <div class="product-card">
+        <p class="deal-label">Condição especial</p>
+        <div class="offer">40% OFF</div>
+        <p class="offer-note">Consulte preço, sabores e disponibilidade.</p>
+        <a class="cta" href="https://promocional-havan.onrender.com/equaliv" aria-label="Conferir oferta do Body Protein Equaliv">CONFERIR OFERTA <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="benefits">
+          <div class="benefit"><strong>✓ Seguro</strong>Pagamento protegido</div>
+          <div class="benefit"><strong>✓ Direto</strong>Confira em 1 clique</div>
+          <div class="benefit"><strong>✓ Online</strong>Oferta disponível</div>
+        </div>
+      </div>
     </section>
-    <p class="legal">Este produto não é medicamento. Consulte um profissional de saúde antes de iniciar qualquer suplementação.</p>
+
+    <footer class="footer">
+      <p><strong>Mega Ofertas Ltda.</strong> · CNPJ: 48.019.199/0001-29</p>
+      <p><a href="#termos">Termos de Uso</a> · <a href="#privacidade">Política de Privacidade</a> · <a href="#contato">Contato</a></p>
+      <p class="legal">Este produto não é medicamento. Consulte um profissional de saúde antes de iniciar qualquer suplementação.</p>
+    </footer>
   </main>
 
   <script>
-    const cta = document.getElementById('cta');
+    const cta = document.querySelector('.cta');
     cta.addEventListener('click', () => {
       if (typeof gtag === 'function') {
-        gtag('event', 'cta_click', { event_category:'conversion', event_label:'conferir_oferta_agora', transport_type:'beacon' });
+        gtag('event', 'cta_click', { event_category: 'conversion', event_label: 'conferir_oferta', transport_type: 'beacon' });
       }
     });
   </script>
