@@ -195,6 +195,8 @@
     .highlight-card i { color: var(--brand); font-size: 17px; }
     .highlight-card h3 { margin: 10px 0 6px; font-size: 14px; }
     .highlight-card p { margin: 0; font-size: 12.5px; line-height: 1.55; }
+    .description-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; margin-top: 24px; }
+    .description-photo-slot { display: grid; place-items: center; min-height: 170px; padding: 24px; border: 1px dashed #b8c8d4; border-radius: var(--radius-md); background: #fbfcfd; color: var(--ink-soft); font-size: 12.5px; font-weight: 700; text-align: center; }
     .spec-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px 24px; max-width: 760px; padding: 0; list-style: none; }
     .spec-list li { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); }
     .spec-list strong { color: var(--ink); font-size: 13.5px; }
@@ -203,8 +205,6 @@
     /* ===================== Reviews ===================== */
     .reviews-section { padding: 60px 0; background: var(--surface); border-top: 1px solid var(--line); }
     .reviews-photos h3 { margin: 0 0 14px; font-size: 16px; font-weight: 700; }
-    .carousel-container { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 4px; margin-bottom: 32px; scrollbar-width: none; }
-    .carousel-container::-webkit-scrollbar { display: none; }
     .carousel-item { flex: 0 0 100px; width: 100px; height: 100px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line); }
     .carousel-item:hover { border-color: var(--accent); }
     .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
@@ -226,8 +226,6 @@
     .review-date { color: var(--ink-soft); font-size: 12px; white-space: nowrap; }
     .review-stars { margin-bottom: 10px; color: #e0951a; font-size: 12px; }
     .review-content { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
-    .review-image-container { margin-top: 14px; width: 150px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line); cursor: zoom-in; }
-    .review-image { width: 100%; height: 150px; display: block; object-fit: cover; }
 
     .pagination { display: flex; gap: 8px; justify-content: center; align-items: center; }
     .page-btn { width: 40px; height: 40px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: #fff; color: var(--ink-soft); font-weight: 600; display: flex; align-items: center; justify-content: center; }
@@ -403,7 +401,7 @@
       .trust-row { gap: 9px 12px; margin-top: 14px; padding-top: 13px; }
       .trust-row span { font-size: 10.5px; }
       .trust-row span:last-child { flex-basis: 100%; justify-content: center; }
-      .highlight-grid, .footer-grid { grid-template-columns: 1fr; }
+      .highlight-grid, .description-photo-grid, .footer-grid { grid-template-columns: 1fr; }
       .tab-panel { padding: 28px 0 36px; }
       .reviews-section, .faq-section { padding: 42px 0; }
       .cart-header, .cart-content, .cart-footer { padding-left: 16px; padding-right: 16px; }
@@ -482,7 +480,7 @@
           <div class="rating-row" aria-label="Avaliação média 4,9 de 5">
             <span class="stars" aria-hidden="true">★★★★★</span>
             <strong>4,9/5</strong>
-            <a class="rating-link" href="#reviews">Ver avaliações e fotos de clientes</a>
+            <a class="rating-link" href="#reviews">Ver avaliações de clientes</a>
           </div>
 
           <section class="choice-box" aria-labelledby="choiceTitle">
@@ -534,11 +532,25 @@
 
         <article class="tab-panel" id="descriptionPanel" role="tabpanel" aria-labelledby="descriptionTab">
           <h2>Uma seleção completa de cafés Dolce Gusto</h2>
-          <p>O combo reúne 6 caixas de cápsulas Dolce Gusto para você aproveitar diferentes momentos do dia: Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso. Uma seleção prática e variada, compatível com máquinas Dolce Gusto, para preparar suas bebidas favoritas com facilidade.</p>
+          <p>O Combo Dolce Gusto foi pensado para quem gosta de praticidade, variedade e bebidas saborosas em diferentes momentos do dia. Cada opção reúne caixas de cápsulas para preparo rápido em máquinas do sistema Dolce Gusto, permitindo alternar entre cafés intensos, suaves e bebidas cremosas sem abrir mão da conveniência.</p>
+          <p>Na opção de <strong>6 caixas</strong>, você recebe uma seleção com um caixa de cada sabor descrito abaixo. A opção de <strong>12 caixas</strong> amplia o estoque para sua casa, escritório ou para compartilhar. Consulte sempre as instruções de preparo e as informações completas no rótulo de cada embalagem.</p>
+          <h3>Sabores incluídos no combo</h3>
+          <ul>
+            <li><strong>Capuccino:</strong> bebida cremosa e equilibrada, ideal para um momento mais indulgente.</li>
+            <li><strong>Espresso:</strong> café clássico e versátil para começar o dia ou fazer uma pausa.</li>
+            <li><strong>Espresso Intenso:</strong> sabor mais marcante e encorpado para quem prefere intensidade.</li>
+            <li><strong>Café au Lait:</strong> combinação suave de café com leite para uma bebida delicada.</li>
+            <li><strong>Café Matinal:</strong> opção prática para acompanhar a rotina e o café da manhã.</li>
+            <li><strong>Café au Lait Intenso:</strong> cremosidade com presença maior de café e sabor mais intenso.</li>
+          </ul>
           <div class="highlight-grid">
             <div class="highlight-card"><i class="fa-solid fa-bolt" aria-hidden="true"></i><h3>Preparo rápido</h3><p>Insira a cápsula na sua máquina Dolce Gusto e prepare sua bebida em poucos instantes.</p></div>
             <div class="highlight-card"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i><h3>6 sabores selecionados</h3><p>Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p></div>
             <div class="highlight-card"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><h3>Variedade no dia a dia</h3><p>Tenha diferentes opções de café e cappuccino para escolher conforme a ocasião.</p></div>
+          </div>
+          <div class="description-photo-grid" aria-label="Espaços reservados para fotos do produto">
+            <div class="description-photo-slot">Espaço reservado para foto do combo com 6 caixas</div>
+            <div class="description-photo-slot">Espaço reservado para foto dos sabores e embalagens</div>
           </div>
         </article>
 
@@ -568,8 +580,7 @@
     <section class="reviews-section" id="reviews">
       <div class="container">
         <div class="reviews-photos">
-          <h3>Fotos de clientes</h3>
-          <div class="carousel-container" id="reviewCarousel"></div>
+          <h3>Opiniões de clientes</h3>
         </div>
         <div class="reviews-header">
           <h2>Avaliações de clientes</h2>
@@ -577,7 +588,7 @@
             <span class="rating-number">4,9</span>
             <div>
               <div class="stars-large" aria-label="5 de 5 estrelas">★★★★★</div>
-              <span class="total-reviews-count">Opiniões e fotos compartilhadas por clientes</span>
+              <span class="total-reviews-count">Opiniões compartilhadas por clientes</span>
             </div>
           </div>
         </div>
@@ -1060,21 +1071,6 @@
         });
       }
 
-      const reviewImages = [
-        'https://http2.mlstatic.com/D_NQ_NP_2X_699615-MLA74432480960_022024-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_886374-MLA104440721718_012026-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_835391-MLA83326442374_042025-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_907343-MLA108708097881_032026-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_837363-MLA110631405242_052026-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_768325-MLA98133444073_112025-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_887957-MLA107373859125_022026-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_647134-MLA105218899782_012026-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_657455-MLA76832380979_062024-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_824823-MLA101339668883_122025-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_962779-MLA109778484854_042026-F.webp',
-        'https://http2.mlstatic.com/D_NQ_NP_2X_830568-MLA97743039611_112025-F.webp'
-      ];
-
       const allReviews = [
         { name: 'Gustavo Martins', date: 'Hoje', rating: 5, content: 'Combo completo para deixar vários sabores de café sempre à mão. Gostei muito.' },
         { name: 'Luciana Gomes', date: 'Hoje', rating: 5, content: 'Chegou rápido e muito bem embalado. As caixas vieram lacradas e com boa validade.' },
@@ -1102,30 +1098,15 @@
       let currentPage = 1;
       const reviewsPerPage = 4;
 
-      function renderCarousel() {
-        const container = $('#reviewCarousel');
-        container.replaceChildren();
-        reviewImages.forEach((img, index) => {
-          const item = document.createElement('button');
-          item.type = 'button';
-          item.className = 'carousel-item';
-          item.setAttribute('aria-label', `Ampliar foto de cliente ${index + 1}`);
-          item.innerHTML = `<img src="${esc(img)}" alt="Foto de avaliação de cliente" loading="lazy">`;
-          item.addEventListener('click', () => openLightbox(img, 'Foto de avaliação de cliente'));
-          container.appendChild(item);
-        });
-      }
-
       function renderReviews(page) {
         const grid = $('#reviewsGrid');
         grid.replaceChildren();
         const startIndex = (page - 1) * reviewsPerPage;
-        allReviews.slice(startIndex, startIndex + reviewsPerPage).forEach((review, index) => {
+        allReviews.slice(startIndex, startIndex + reviewsPerPage).forEach((review) => {
           const card = document.createElement('article');
           card.className = 'review-card';
           let starsHtml = '';
           for (let i = 0; i < 5; i++) starsHtml += `<i class="${i < review.rating ? 'fas' : 'far'} fa-star"></i>`;
-          const imageUrl = reviewImages[(startIndex + index) % reviewImages.length];
           card.innerHTML = `
             <div class="review-top">
               <div class="reviewer-info">
@@ -1135,9 +1116,7 @@
               <div class="review-date">${esc(review.date)}</div>
             </div>
             <div class="review-stars">${starsHtml}</div>
-            <p class="review-content">${esc(review.content)}</p>
-            <div class="review-image-container"><img src="${esc(imageUrl)}" alt="Avaliação de cliente" class="review-image" loading="lazy"></div>`;
-          $('.review-image-container', card).addEventListener('click', () => openLightbox(imageUrl, `Avaliação de ${review.name}`));
+            <p class="review-content">${esc(review.content)}</p>`;
           grid.appendChild(card);
         });
         renderPagination(page);
@@ -1317,7 +1296,6 @@
 
       window.addEventListener('pageshow', () => setRedirectLoading(false));
 
-      renderCarousel();
       renderReviews(1);
       setupTabs();
       setupFaq();
