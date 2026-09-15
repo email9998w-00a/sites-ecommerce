@@ -12,261 +12,67 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#102b46">
-  <meta name="description" content="Confira a oferta especial do Body Protein Equaliv.">
-  <title>Body Protein Equaliv | Oferta especial</title>
+  <meta name="theme-color" content="#0d2942">
+  <meta name="description" content="Confira agora a oferta especial do Body Protein Equaliv.">
+  <title>Body Protein Equaliv | Confira a oferta</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --navy: #102b46;
-      --navy-deep: #0b2036;
-      --blue: #117f9f;
-      --blue-soft: #dff3f5;
-      --aqua: #68d7df;
-      --gold: #f5ca58;
-      --gold-light: #ffdc78;
-      --white: #ffffff;
-      --muted: #d6e5ea;
-      --legal: rgba(214,229,234,.68);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { min-height: 100%; }
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      background: var(--navy-deep);
-      color: var(--white);
-      font-family: 'DM Sans', Arial, sans-serif;
-    }
-
-    .page {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 28px 18px 64px;
-      background:
-        radial-gradient(circle at 92% 7%, rgba(52,174,189,.24), transparent 30%),
-        radial-gradient(circle at 5% 95%, rgba(17,127,159,.22), transparent 28%),
-        linear-gradient(145deg, #102b46 0%, #0b2036 100%);
-    }
-
-    .page::before {
-      content: '';
-      position: absolute;
-      inset: 20px;
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 28px;
-      pointer-events: none;
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-      width: min(100%, 430px);
-      padding: 34px 26px 28px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 24px;
-      background: rgba(255,255,255,.055);
-      box-shadow: 0 24px 70px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.08);
-      text-align: center;
-      backdrop-filter: blur(8px);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 28px;
-      color: #eaf8fa;
-      font-size: .74rem;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .brand img {
-      width: 34px;
-      height: 34px;
-      padding: 5px;
-      border-radius: 50%;
-      background: var(--white);
-      object-fit: contain;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-bottom: 14px;
-      color: var(--aqua);
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before, .eyebrow::after {
-      content: '';
-      display: block;
-      width: 18px;
-      height: 1px;
-      background: rgba(104,215,223,.6);
-    }
-
-    h1 {
-      margin-bottom: 10px;
-      font-family: 'Manrope', sans-serif;
-      font-size: clamp(2rem, 9vw, 2.9rem);
-      font-weight: 800;
-      line-height: 1.04;
-      letter-spacing: -.055em;
-    }
-
-    h1 span { display: block; color: var(--aqua); }
-
-    .subtitle {
-      max-width: 310px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: .9rem;
-      line-height: 1.45;
-    }
-
-    .offer {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 25px 0 23px;
-      color: var(--gold-light);
-      font-family: 'Manrope', sans-serif;
-      font-size: clamp(3.8rem, 18vw, 5.7rem);
-      font-weight: 800;
-      line-height: .82;
-      letter-spacing: -.09em;
-    }
-
-    .offer small {
-      margin-bottom: 10px;
-      color: #e6f1f3;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .13em;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 60px;
-      padding: 16px 18px;
-      border: 0;
-      border-radius: 13px;
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      color: #172d3d;
-      cursor: pointer;
-      font: 800 .98rem 'DM Sans', Arial, sans-serif;
-      letter-spacing: .01em;
-      box-shadow: 0 12px 24px rgba(0,0,0,.2);
-      transition: transform .2s ease, filter .2s ease, opacity .2s ease;
-    }
-
-    .cta:hover { filter: brightness(1.06); transform: translateY(-2px); }
-    .cta:active { transform: scale(.985); }
-    .cta:disabled { cursor: wait; opacity: .68; transform: none; }
-    .arrow { margin-left: 11px; font-size: 1.3rem; line-height: 0; }
-
-    .trust {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px 18px;
-      margin-top: 15px;
-      color: #c5dce1;
-      font-size: .68rem;
-    }
-
-    .trust span { display: inline-flex; align-items: center; gap: 5px; }
-    .trust span::before { content: '✓'; color: #77e0b5; font-weight: 800; }
-    .hint { margin-top: 12px; color: rgba(214,229,234,.74); font-size: .68rem; }
-
-    .legal {
-      position: absolute;
-      z-index: 1;
-      right: 18px;
-      bottom: 13px;
-      left: 18px;
-      color: var(--legal);
-      text-align: center;
-      font-size: .59rem;
-      line-height: 1.4;
-    }
-
-    @media (max-height: 650px) {
-      .page { padding-top: 18px; }
-      .content { padding-top: 24px; }
-      .brand { margin-bottom: 18px; }
-      .offer { margin: 19px 0 18px; }
-    }
-
-    @media (max-width: 360px) {
-      .content { padding-right: 20px; padding-left: 20px; }
-      .trust { gap: 7px 12px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { transition: none !important; }
-    }
+    :root { --navy:#0d2942; --deep:#081d31; --aqua:#73e1e7; --gold:#f6cd5d; --gold-light:#ffdf80; --text-soft:#d8e9ed; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html,body { min-height:100%; }
+    body { min-height:100vh; overflow-x:hidden; background:var(--deep); color:#fff; font-family:'DM Sans',Arial,sans-serif; }
+    .page { position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px 62px; background:radial-gradient(circle at 92% 5%,rgba(55,183,193,.22),transparent 29%),radial-gradient(circle at 0 100%,rgba(17,127,159,.22),transparent 28%),linear-gradient(145deg,var(--navy),var(--deep)); }
+    .page:before { content:''; position:absolute; inset:18px; border:1px solid rgba(255,255,255,.075); border-radius:26px; pointer-events:none; }
+    .card { position:relative; z-index:1; width:min(100%,430px); padding:30px 24px 25px; border:1px solid rgba(255,255,255,.14); border-radius:24px; background:rgba(255,255,255,.06); box-shadow:0 24px 70px rgba(0,0,0,.23),inset 0 1px 0 rgba(255,255,255,.08); text-align:center; backdrop-filter:blur(8px); }
+    .brand { display:inline-flex; align-items:center; gap:9px; margin-bottom:24px; color:#eaf8fa; font-size:.72rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    .brand img { width:34px; height:34px; padding:5px; border-radius:50%; background:#fff; object-fit:contain; }
+    .eyebrow { display:inline-flex; align-items:center; gap:7px; margin-bottom:13px; color:var(--aqua); font-size:.68rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .eyebrow:before,.eyebrow:after { content:''; width:17px; height:1px; background:rgba(115,225,231,.65); }
+    h1 { margin-bottom:9px; font-family:'Manrope',sans-serif; font-size:clamp(2rem,9vw,2.9rem); font-weight:800; line-height:1.03; letter-spacing:-.06em; }
+    h1 span { display:block; color:var(--aqua); }
+    .subtitle { max-width:300px; margin:auto; color:var(--text-soft); font-size:.88rem; line-height:1.42; }
+    .offer { display:inline-flex; flex-direction:column; align-items:center; margin:24px 0 22px; color:var(--gold-light); font-family:'Manrope',sans-serif; font-size:clamp(3.8rem,18vw,5.7rem); font-weight:800; line-height:.8; letter-spacing:-.1em; }
+    .offer small { margin-bottom:10px; color:#e4f1f3; font-family:'DM Sans',sans-serif; font-size:.66rem; font-weight:800; letter-spacing:.13em; line-height:1; text-transform:uppercase; }
+    .cta { display:flex; align-items:center; justify-content:center; width:100%; min-height:61px; padding:16px 18px; border:0; border-radius:14px; background:linear-gradient(135deg,var(--gold-light),var(--gold)); color:#152e40; text-decoration:none; font-size:1rem; font-weight:800; letter-spacing:.01em; box-shadow:0 13px 25px rgba(0,0,0,.23); transition:transform .18s ease,filter .18s ease; }
+    .cta:hover { filter:brightness(1.06); transform:translateY(-2px); }
+    .cta:active { transform:scale(.985); }
+    .arrow { margin-left:10px; font-size:1.35rem; line-height:0; }
+    .trust { display:flex; justify-content:center; flex-wrap:wrap; gap:8px 18px; margin-top:14px; color:#c8dfe4; font-size:.67rem; }
+    .trust span { display:inline-flex; align-items:center; gap:5px; }
+    .trust span:before { content:'✓'; color:#78e1b5; font-weight:800; }
+    .hint { margin-top:11px; color:rgba(216,233,237,.73); font-size:.66rem; }
+    .legal { position:absolute; z-index:1; right:16px; bottom:12px; left:16px; color:rgba(216,233,237,.63); text-align:center; font-size:.58rem; line-height:1.4; }
+    @media (max-height:650px) { .page { padding-top:16px; } .card { padding-top:23px; } .brand { margin-bottom:16px; } .offer { margin:18px 0 17px; } }
+    @media (max-width:360px) { .card { padding-right:19px; padding-left:19px; } .trust { gap:7px 12px; } }
+    @media (prefers-reduced-motion:reduce) { *,*:before,*:after { transition:none!important; } }
   </style>
 </head>
 <body>
   <main class="page">
-    <section class="content" aria-labelledby="title">
-      <div class="brand">
-        <img src="https://i.postimg.cc/kXgctC1b/logo-0.png" alt="Equaliv">
-        <span>Equaliv</span>
-      </div>
-
+    <section class="card" aria-labelledby="title">
+      <div class="brand"><img src="https://i.postimg.cc/kXgctC1b/logo-0.png" alt="Equaliv"><span>Equaliv</span></div>
       <p class="eyebrow">Oferta especial</p>
       <h1 id="title">Body Protein <span>Equaliv</span></h1>
       <p class="subtitle">Uma opção prática para complementar sua rotina de treino.</p>
-
       <div class="offer"><small>condição disponível</small>40% OFF</div>
 
-      <button id="cta" class="cta" type="button">
-        APROVEITAR OFERTA <span class="arrow" aria-hidden="true">→</span>
-      </button>
-
+      <!-- Link nativo: funciona mesmo sem JavaScript e reduz o atrito no redirecionamento. -->
+      <a id="cta" class="cta" href="https://promocional-havan.onrender.com/equaliv" aria-label="Conferir oferta do Body Protein Equaliv">CONFERIR OFERTA AGORA <span class="arrow" aria-hidden="true">→</span></a>
       <div class="trust"><span>Compra segura</span><span>Site protegido</span></div>
-      <p class="hint">Consulte preço, sabores e disponibilidade.</p>
+      <p class="hint">Veja preço, sabores e disponibilidade.</p>
     </section>
-
     <p class="legal">Este produto não é medicamento. Consulte um profissional de saúde antes de iniciar qualquer suplementação.</p>
   </main>
 
   <script>
-    const DESTINATION_URL = 'https://promocional-havan.onrender.com/equaliv';
-    const button = document.getElementById('cta');
-    let redirecting = false;
-
-    button.addEventListener('click', () => {
-      if (redirecting) return;
-      redirecting = true;
+    const cta = document.getElementById('cta');
+    cta.addEventListener('click', () => {
       if (typeof gtag === 'function') {
-        gtag('event', 'cta_click', { event_category: 'conversion', event_label: 'aproveitar_oferta', transport_type: 'beacon' });
+        gtag('event', 'cta_click', { event_category:'conversion', event_label:'conferir_oferta_agora', transport_type:'beacon' });
       }
-      button.disabled = true;
-      button.innerHTML = 'CARREGANDO...';
-      setTimeout(() => window.location.assign(DESTINATION_URL), 120);
     });
   </script>
 </body>
