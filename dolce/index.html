@@ -717,7 +717,7 @@
       const esc = (value) => String(value).replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
 
       const searchTargets = [
-        { label: 'Combo de cápsulas Dolce Gusto', detail: 'Produto principal', selector: '#product' },
+        { label: 'Combo Promocional Dolce Gusto', detail: 'Produto principal', selector: '#product' },
         { label: 'Descrição do produto', detail: 'Informações e benefícios', selector: '#descriptionPanel' },
         { label: 'Como usar', detail: 'Modo de preparo e conservação', selector: '#usagePanel' },
         { label: 'Composição', detail: 'Especificações e informações', selector: '#compositionPanel' },
@@ -939,8 +939,8 @@
         } else {
           cart.push({
             id,
-            name: 'Combo de cápsulas Dolce Gusto',
-            variant: `${selectedVariant.name} de cápsulas Dolce Gusto`,
+            name: 'Combo Promocional Dolce Gusto',
+            variant: `${selectedVariant.name} Dolce Gusto`,
             flavor: selectedVariant.name,
             weight: selectedVariant.weight,
             price: selectedVariant.price,
@@ -1083,7 +1083,7 @@
           '@context': 'https://schema.org', '@type': 'Product',
           name: `Combo Dolce Gusto ${selectedVariant.name}`,
           image: selectedVariant.images,
-          description: 'Combo de cápsulas Dolce Gusto com Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.',
+          description: 'Combo Promocional Dolce Gusto com Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.',
           offers: { '@type': 'Offer', priceCurrency: 'BRL', price: selectedVariant.price.toFixed(2), availability: 'https://schema.org/InStock', url: window.location.href }
         });
       }
