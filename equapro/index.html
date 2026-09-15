@@ -14,120 +14,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Confira a condição especial do Body Protein Equaliv.">
-  <title>Body Protein Equaliv | Confira a oferta</title>
+  <title>Body Protein Equaliv | Confira a condição especial</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --blue: #0f6f91;
-      --blue-dark: #0a5875;
-      --navy: #173247;
-      --text: #2a3d4a;
-      --muted: #687984;
-      --line: #e4eaed;
-      --soft: #f7fafb;
-      --red: #ce4a3c;
-      --green: #247657;
+      --ink: #203444;
+      --ink-soft: #536772;
+      --blue: #126e8f;
+      --blue-dark: #0d5873;
+      --blue-pale: #edf7f9;
+      --red: #c94d42;
+      --green: #28765a;
+      --line: #dfe8eb;
+      --canvas: #f8fafb;
+      --white: #fff;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { min-height: 100vh; background: #fff; color: var(--text); font-family: 'Inter', Arial, sans-serif; }
+    body { min-height: 100vh; background: var(--canvas); color: var(--ink); font-family: 'Inter', Arial, sans-serif; }
 
-    .page { width: min(100%, 540px); min-height: 100vh; margin: auto; padding: 0 18px 30px; }
+    .site-header { border-bottom: 1px solid var(--line); background: var(--white); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; width: min(100%, 960px); min-height: 70px; margin: auto; padding: 0 20px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .brand img { width: 36px; height: 36px; padding: 5px; border: 1px solid var(--line); border-radius: 50%; background: var(--white); object-fit: contain; }
+    .header-note { display: flex; align-items: center; gap: 7px; color: var(--green); font-size: .68rem; font-weight: 600; }
+    .header-note::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #39a778; box-shadow: 0 0 0 3px #e4f3ed; }
 
-    .announcement {
-      margin: 0 -18px;
-      padding: 8px 18px;
-      background: var(--navy);
-      color: #fff;
-      text-align: center;
-      font-size: .65rem;
-      font-weight: 600;
-      letter-spacing: .02em;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 68px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .brand { display: flex; align-items: center; gap: 9px; color: var(--navy); font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    .brand img { width: 34px; height: 34px; padding: 5px; border: 1px solid var(--line); border-radius: 50%; object-fit: contain; }
-    .secure { display: flex; align-items: center; gap: 6px; color: var(--green); font-size: .65rem; font-weight: 600; }
-    .secure::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #36a77b; box-shadow: 0 0 0 3px #e4f3ed; }
-
-    .main { padding: 34px 0 24px; text-align: center; }
-    .product-label { margin-bottom: 12px; color: var(--blue); font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    h1 { color: var(--navy); font-family: 'Manrope', sans-serif; font-size: clamp(2rem, 9vw, 2.75rem); font-weight: 800; line-height: 1.05; letter-spacing: -.06em; }
+    .page { width: min(100%, 960px); margin: auto; padding: 52px 20px 34px; }
+    .product-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 390px); align-items: center; gap: clamp(32px, 7vw, 88px); }
+    .intro { padding: 8px 0; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 24px; height: 2px; border-radius: 2px; background: var(--blue); }
+    h1 { max-width: 480px; color: var(--ink); font-family: 'Manrope', sans-serif; font-size: clamp(2.25rem, 6vw, 3.7rem); line-height: 1.03; letter-spacing: -.065em; }
     h1 span { display: block; color: var(--blue); }
-    .subtitle { max-width: 335px; margin: 12px auto 0; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+    .intro-text { max-width: 440px; margin-top: 18px; color: var(--ink-soft); font-size: .98rem; line-height: 1.6; }
+    .highlights { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+    .highlight { padding: 8px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); color: var(--ink-soft); font-size: .68rem; font-weight: 600; }
+    .highlight::before { content: '✓'; margin-right: 5px; color: var(--green); font-weight: 800; }
 
-    .offer-card { margin-top: 24px; padding: 25px 21px 21px; border: 1px solid var(--line); border-radius: 18px; background: var(--soft); box-shadow: 0 10px 28px rgba(23,50,71,.07); }
-    .offer-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 15px; border-bottom: 1px solid var(--line); text-align: left; }
-    .offer-label { color: var(--red); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-    .offer-status { color: var(--muted); font-size: .65rem; white-space: nowrap; }
-    .offer-status::before { content: '•'; margin-right: 4px; color: #36a77b; font-size: 1rem; vertical-align: -1px; }
-    .offer { margin: 22px 0 7px; color: var(--red); font-family: 'Manrope', sans-serif; font-size: clamp(3.7rem, 17vw, 5.1rem); font-weight: 800; line-height: .86; letter-spacing: -.1em; }
-    .offer-note { color: var(--muted); font-size: .73rem; }
-
-    .cta { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 59px; margin-top: 20px; padding: 15px 18px; border-radius: 9px; background: var(--blue); color: #fff; text-decoration: none; font-size: .96rem; font-weight: 800; letter-spacing: .01em; box-shadow: 0 8px 17px rgba(15,111,145,.22); transition: background .18s, transform .18s, box-shadow .18s; }
-    .cta:hover { background: var(--blue-dark); box-shadow: 0 10px 21px rgba(15,111,145,.27); transform: translateY(-1px); }
+    .offer-card { padding: 26px 24px 23px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); box-shadow: 0 14px 34px rgba(32,52,68,.09); }
+    .card-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+    .card-label { color: var(--red); font-size: .69rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .card-status { color: var(--ink-soft); font-size: .63rem; white-space: nowrap; }
+    .card-status::before { content: '•'; margin-right: 4px; color: #39a778; font-size: 1rem; vertical-align: -1px; }
+    .offer { margin: 25px 0 8px; color: var(--red); font-family: 'Manrope', sans-serif; font-size: clamp(4rem, 13vw, 5.5rem); font-weight: 800; line-height: .84; letter-spacing: -.1em; text-align: center; }
+    .offer-caption { color: var(--ink-soft); font-size: .72rem; text-align: center; }
+    .cta { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 58px; margin-top: 21px; padding: 15px 18px; border-radius: 9px; background: var(--blue); color: var(--white); text-decoration: none; font-size: .94rem; font-weight: 800; letter-spacing: .01em; box-shadow: 0 8px 16px rgba(18,110,143,.2); transition: background .18s, transform .18s, box-shadow .18s; }
+    .cta:hover { background: var(--blue-dark); box-shadow: 0 10px 20px rgba(18,110,143,.26); transform: translateY(-1px); }
     .cta:active { transform: scale(.985); }
     .arrow { margin-left: 10px; font-size: 1.25rem; line-height: 0; }
+    .card-foot { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--line); }
+    .card-foot-item { color: var(--ink-soft); font-size: .62rem; line-height: 1.35; }
+    .card-foot-item strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: .68rem; }
+    .card-foot-item strong::before { content: '✓'; margin-right: 5px; color: var(--green); }
 
-    .reassurance { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 18px; padding-top: 17px; border-top: 1px solid var(--line); }
-    .reassurance-item { color: var(--muted); font-size: .62rem; line-height: 1.35; }
-    .reassurance-item strong { display: block; margin-bottom: 3px; color: var(--navy); font-size: .69rem; font-weight: 700; }
+    .trust-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 52px; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: center; }
+    .trust-item { color: var(--ink-soft); font-size: .68rem; line-height: 1.4; }
+    .trust-item strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: .72rem; }
 
-    .footer { padding: 20px 4px 0; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .63rem; line-height: 1.5; }
+    .footer { padding-top: 22px; color: var(--ink-soft); text-align: center; font-size: .64rem; line-height: 1.5; }
     .footer a { color: var(--blue); text-decoration: none; }
-    .legal { max-width: 420px; margin: 8px auto 0; font-size: .58rem; }
+    .legal { max-width: 520px; margin: 8px auto 0; font-size: .58rem; }
 
-    @media (max-width: 370px) {
+    @media (max-width: 700px) {
+      .page { padding-top: 34px; }
+      .product-layout { grid-template-columns: 1fr; gap: 28px; max-width: 520px; margin: auto; }
+      .intro { text-align: center; }
+      .eyebrow { justify-content: center; }
+      h1, .intro-text { margin-right: auto; margin-left: auto; }
+      .highlights { justify-content: center; }
+      .trust-strip { margin-top: 34px; }
+    }
+
+    @media (max-width: 380px) {
+      .header-inner { padding-right: 14px; padding-left: 14px; }
       .page { padding-right: 14px; padding-left: 14px; }
-      .announcement { margin-right: -14px; margin-left: -14px; }
-      .offer-card { padding-right: 16px; padding-left: 16px; }
-      .secure { font-size: .59rem; }
-      .offer-status { font-size: .6rem; }
+      .header-note { font-size: .59rem; }
+      .offer-card { padding-right: 17px; padding-left: 17px; }
+      .trust-strip { gap: 5px; }
     }
 
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
   </style>
 </head>
 <body>
-  <main class="page">
-    <div class="announcement">Condição especial disponível online</div>
-
-    <header class="header">
+  <header class="site-header">
+    <div class="header-inner">
       <div class="brand"><img src="https://i.postimg.cc/kXgctC1b/logo-0.png" alt="Equaliv"><span>Equaliv</span></div>
-      <div class="secure">Acesso seguro</div>
-    </header>
+      <div class="header-note">Acesso seguro</div>
+    </div>
+  </header>
 
-    <section class="main" aria-labelledby="title">
-      <p class="product-label">Oferta especial</p>
-      <h1 id="title">Body Protein <span>Equaliv</span></h1>
-      <p class="subtitle">Proteína à base de colágeno para complementar sua rotina de treino.</p>
-
-      <div class="offer-card">
-        <div class="offer-top">
-          <span class="offer-label">Condição atual</span>
-          <span class="offer-status">Consulte no próximo passo</span>
-        </div>
-        <div class="offer">40% OFF</div>
-        <p class="offer-note">Confira preço, sabores e disponibilidade.</p>
-        <a class="cta" href="https://promocional-havan.onrender.com/equaliv" aria-label="Conferir oferta atual do Body Protein Equaliv">VER OFERTA ATUAL <span class="arrow" aria-hidden="true">→</span></a>
-        <div class="reassurance">
-          <div class="reassurance-item"><strong>Rápido</strong>Confira em 1 clique</div>
-          <div class="reassurance-item"><strong>Transparente</strong>Veja os detalhes</div>
-          <div class="reassurance-item"><strong>Seguro</strong>Navegação protegida</div>
+  <main class="page">
+    <section class="product-layout" aria-labelledby="title">
+      <div class="intro">
+        <p class="eyebrow">Oferta especial</p>
+        <h1 id="title">Body Protein <span>Equaliv</span></h1>
+        <p class="intro-text">Proteína à base de colágeno para complementar sua rotina de treino de forma prática.</p>
+        <div class="highlights" aria-label="Destaques">
+          <span class="highlight">Prático para a rotina</span>
+          <span class="highlight">Consulte os sabores</span>
         </div>
       </div>
+
+      <div class="offer-card">
+        <div class="card-header"><span class="card-label">Condição atual</span><span class="card-status">Disponível online</span></div>
+        <div class="offer">40% OFF</div>
+        <p class="offer-caption">Confira preço, disponibilidade e detalhes.</p>
+        <a class="cta" href="https://promocional-havan.onrender.com/equaliv" aria-label="Conferir oferta atual do Body Protein Equaliv">VER OFERTA ATUAL <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="card-foot">
+          <div class="card-foot-item"><strong>Informação clara</strong>Veja os detalhes antes de avançar.</div>
+          <div class="card-foot-item"><strong>Navegação segura</strong>Acesso protegido durante a consulta.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Informações de confiança">
+      <div class="trust-item"><strong>Compra segura</strong>Ambiente protegido</div>
+      <div class="trust-item"><strong>Oferta online</strong>Condição atualizada</div>
+      <div class="trust-item"><strong>Atendimento</strong>Suporte disponível</div>
     </section>
 
     <footer class="footer">
