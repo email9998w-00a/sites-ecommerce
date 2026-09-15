@@ -93,6 +93,8 @@
 
     .gallery { position: sticky; top: 92px; }
     .gallery-frame { position: relative; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+    .promo-badge { position: absolute; top: 18px; left: 18px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; padding: 8px 11px; border-radius: 999px; background: linear-gradient(135deg, #c84a3e, #a92f28); color: #fff; box-shadow: 0 7px 16px rgba(128,35,29,.22); font-size: 11px; font-weight: 800; letter-spacing: .04em; line-height: 1; }
+    .promo-badge i { font-size: 10px; }
     .gallery-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border: 0; background: transparent; opacity: 1; transition: opacity .18s ease; }
     .gallery-slider::-webkit-scrollbar { display: none; }
     .gallery-slider.is-switching { opacity: .18; }
@@ -195,8 +197,10 @@
     .highlight-card i { color: var(--brand); font-size: 17px; }
     .highlight-card h3 { margin: 10px 0 6px; font-size: 14px; }
     .highlight-card p { margin: 0; font-size: 12.5px; line-height: 1.55; }
-    .description-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; margin-top: 24px; }
-    .description-photo-slot { display: grid; place-items: center; min-height: 170px; padding: 24px; border: 1px dashed #b8c8d4; border-radius: var(--radius-md); background: #fbfcfd; color: var(--ink-soft); font-size: 12.5px; font-weight: 700; text-align: center; }
+    .description-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 24px; }
+    .description-photo-slot { display: grid; place-items: center; min-height: 170px; padding: 12px; overflow: hidden; border: 1px solid #e3eaf0; border-radius: var(--radius-lg); background: linear-gradient(145deg, #fff, #f7fafc); box-shadow: 0 8px 22px rgba(16,40,64,.08); color: var(--ink-soft); font-size: 12.5px; font-weight: 700; text-align: center; }
+    .description-photo-slot--featured { margin-top: 22px; min-height: 0; padding: 10px; }
+    .description-photo-slot img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; border-radius: calc(var(--radius-lg) - 4px); }
     .spec-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px 24px; max-width: 760px; padding: 0; list-style: none; }
     .spec-list li { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); }
     .spec-list strong { color: var(--ink); font-size: 13.5px; }
@@ -369,6 +373,7 @@
       .gallery { margin-inline: -12px; }
       .gallery-slide { aspect-ratio: 1 / .9; padding: 3px 0; }
       .gallery-slide img { width: 92%; height: 92%; }
+      .promo-badge { top: 12px; left: 16px; padding: 7px 9px; font-size: 10px; }
       .gallery-arrow { width: 32px; height: 32px; }
       .gallery-arrow--prev { left: 10px; }
       .gallery-arrow--next { right: 10px; }
@@ -402,6 +407,9 @@
       .trust-row span { font-size: 10.5px; }
       .trust-row span:last-child { flex-basis: 100%; justify-content: center; }
       .highlight-grid, .description-photo-grid, .footer-grid { grid-template-columns: 1fr; }
+      .description-photo-grid { gap: 12px; margin-top: 18px; }
+      .description-photo-slot { min-height: 0; padding: 7px; border-radius: 14px; box-shadow: 0 6px 16px rgba(16,40,64,.07); }
+      .description-photo-slot--featured { margin-top: 18px; padding: 7px; }
       .tab-panel { padding: 28px 0 36px; }
       .reviews-section, .faq-section { padding: 42px 0; }
       .cart-header, .cart-content, .cart-footer { padding-left: 16px; padding-right: 16px; }
@@ -461,6 +469,7 @@
       <section class="product-shell" id="product" aria-labelledby="productTitle">
         <div class="gallery">
           <div class="gallery-frame" id="galleryFrame">
+            <span class="promo-badge"><i class="fa-solid fa-tag" aria-hidden="true"></i> PROMOÇÃO</span>
             <button class="gallery-arrow gallery-arrow--prev" id="galleryPrev" type="button" aria-label="Imagem anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
             <div class="gallery-slider" id="gallerySlider" aria-label="Fotos do produto"></div>
             <button class="gallery-arrow gallery-arrow--next" id="galleryNext" type="button" aria-label="Próxima imagem"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
@@ -534,7 +543,7 @@
           <h2>Uma seleção completa de cafés Dolce Gusto</h2>
           <p>O Combo Dolce Gusto foi pensado para quem gosta de praticidade, variedade e bebidas saborosas em diferentes momentos do dia. Cada opção reúne caixas de cápsulas para preparo rápido em máquinas do sistema Dolce Gusto, permitindo alternar entre cafés intensos, suaves e bebidas cremosas sem abrir mão da conveniência.</p>
           <p>Na opção de <strong>6 caixas</strong>, você recebe uma seleção com um caixa de cada sabor descrito abaixo. A opção de <strong>12 caixas</strong> amplia o estoque para sua casa, escritório ou para compartilhar. Consulte sempre as instruções de preparo e as informações completas no rótulo de cada embalagem.</p>
-          <div class="description-photo-slot"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ncHzzchOMwHWvTJp.webp" alt="Detalhes do combo Dolce Gusto" loading="lazy"></div>
+          <div class="description-photo-slot description-photo-slot--featured"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp" alt="Detalhes do combo Dolce Gusto" loading="lazy"></div>
           <h3>Sabores incluídos no combo</h3>
           <ul>
             <li><strong>Capuccino:</strong> bebida cremosa e equilibrada, ideal para um momento mais indulgente.</li>
@@ -550,7 +559,7 @@
             <div class="highlight-card"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><h3>Variedade no dia a dia</h3><p>Tenha diferentes opções de café e cappuccino para escolher conforme a ocasião.</p></div>
           </div>
           <div class="description-photo-grid" aria-label="Espaços reservados para fotos do produto">
-            <div class="description-photo-slot"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/AXWxVndFTjoGZFBP.webp" alt="Sabores e embalagens do combo Dolce Gusto" loading="lazy"></div>
+            <div class="description-photo-slot"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ttuQACdNJDtVNOrp.webp" alt="Sabores e embalagens do combo Dolce Gusto" loading="lazy"></div>
           </div>
         </article>
 
