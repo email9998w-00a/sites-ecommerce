@@ -76,9 +76,10 @@
 
     .gallery { position: sticky; top: 92px; }
     .gallery-frame { position: relative; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
-    .gallery-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border: 0; background: transparent; }
+    .gallery-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border: 0; background: transparent; opacity: 1; transition: opacity .18s ease; }
     .gallery-slider::-webkit-scrollbar { display: none; }
-    .gallery-slide { flex: 0 0 100%; display: grid; place-items: center; aspect-ratio: 16 / 10; padding: 0; scroll-snap-align: start; background: transparent; }
+    .gallery-slider.is-switching { opacity: .18; }
+    .gallery-slide { flex: 0 0 100%; display: grid; place-items: center; aspect-ratio: 16 / 10; padding: 0; scroll-snap-align: start; background: transparent; contain: layout paint; }
     .gallery-slide img { width: 88%; height: 88%; max-width: 480px; object-fit: contain; cursor: zoom-in; filter: none; background: transparent; }
     .gallery-arrow { position: absolute; top: 50%; z-index: 2; display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(203,216,226,.9); border-radius: 50%; background: rgba(255,255,255,.92); color: var(--brand); box-shadow: 0 4px 12px rgba(16,40,64,.10); opacity: .9; transform: translateY(-50%); transition: border-color .15s ease, background-color .15s ease, opacity .15s ease; }
     .gallery-arrow:hover { border-color: var(--brand); background: #fff; opacity: 1; }
@@ -621,6 +622,8 @@
       let cart = loadCart();
       let lastFocusedElement = null;
       let switchTimer = null;
+      let variantSwitchToken = 0;
+      const imageCache = new Map();
 
       const $ = (selector, root = document) => root.querySelector(selector);
       const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -638,8 +641,28 @@
         try { localStorage.setItem(STORAGE_KEY, JSON.stringify(cart)); } catch (_) { /* localStorage pode estar indisponível */ }
       }
 
+      function preloadImage(src) {
+        if (imageCache.has(src)) return imageCache.get(src);
+        const promise = new Promise((resolve) => {
+          const image = new Image();
+          image.decoding = 'async';
+          image.onload = () => {
+            const decoded = typeof image.decode === 'function' ? image.decode().catch(() => {}) : Promise.resolve();
+            decoded.then(() => resolve(image));
+          };
+          image.onerror = () => resolve(null);
+          image.src = src;
+        });
+        imageCache.set(src, promise);
+        return promise;
+      }
+
       function preloadVariantImages() {
-        variants.forEach((variant) => { const image = new Image(); image.decoding = 'async'; image.src = variant.images[0]; });
+        return Promise.all(variants.flatMap((variant) => variant.images.map(preloadImage)));
+      }
+
+      function preloadVariant(variant) {
+        return Promise.all(variant.images.map(preloadImage));
       }
 
       function getUnitPrice(variant) { return variant.price / (variant.weight / 100); }
@@ -674,9 +697,10 @@
           const image = document.createElement('img');
           image.src = src;
           image.alt = `Body Protein Equaliv ${selectedVariant.name}, imagem ${index + 1}`;
-          image.loading = index === 0 ? 'eager' : 'lazy';
-          if (index === 0) image.fetchPriority = 'high';
+          image.loading = 'eager';
+          image.fetchPriority = index === 0 ? 'high' : 'auto';
           image.decoding = 'async';
+          image.draggable = false;
           image.addEventListener('click', () => openLightbox(src, image.alt));
           slide.appendChild(image);
           slider.appendChild(slide);
@@ -725,15 +749,27 @@
         updateSchema();
       }
 
-      function selectVariant(id) {
+      async function selectVariant(id) {
         const next = variants.find((variant) => variant.id === id);
         if (!next || next.id === selectedVariant.id) return;
         const actionButtons = [$('#buyNow'), $('#mobileBuy')].filter(Boolean);
+        const slider = $('#gallerySlider');
+        const token = ++variantSwitchToken;
         clearTimeout(switchTimer);
         actionButtons.forEach((button) => { button.disabled = true; });
+        slider.classList.add('is-switching');
+
+        // Aguarda o download e a decodificação antes de trocar o DOM.
+        // Assim a primeira troca não mostra um frame branco ou uma piscada.
+        await preloadVariant(next);
+        if (token !== variantSwitchToken) return;
+
         selectedVariant = next;
         updateProductView();
-        switchTimer = setTimeout(() => { actionButtons.forEach((button) => { button.disabled = false; }); }, 150);
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => slider.classList.remove('is-switching'));
+        });
+        switchTimer = setTimeout(() => { actionButtons.forEach((button) => { button.disabled = false; }); }, 220);
       }
 
       function addSelectedVariant() {
@@ -1162,6 +1198,8 @@
       setupMobileCta();
       setupShippingEstimate();
       loadShippingRegion();
+      // Inicia o cache de imagens imediatamente; cada troca também aguarda
+      // sua própria variante para garantir fluidez mesmo no primeiro clique.
       preloadVariantImages();
       renderVariants();
       updateProductView();
