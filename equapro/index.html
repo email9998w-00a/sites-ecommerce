@@ -12,49 +12,244 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#071b2e">
-  <meta name="description" content="Aproveite a oferta do Body Protein Equaliv.">
-  <title>Body Protein Equaliv — 40% OFF</title>
+  <meta name="theme-color" content="#102b46">
+  <meta name="description" content="Confira a oferta especial do Body Protein Equaliv.">
+  <title>Body Protein Equaliv | Oferta especial</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root { --navy:#071b2e; --blue:#087ea4; --cyan:#73e8ed; --yellow:#ffd75e; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html, body { min-height:100%; }
-    body { min-height:100vh; background:linear-gradient(145deg,#071b2e,#0b4968); color:#fff; font-family:'DM Sans',Arial,sans-serif; }
-    .page { position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden; padding:24px 18px; }
-    .page::before { content:''; position:absolute; width:390px; height:390px; top:-170px; right:-180px; border-radius:50%; background:rgba(22,196,210,.24); }
-    .page::after { content:''; position:absolute; width:260px; height:260px; bottom:-150px; left:-140px; border-radius:50%; background:rgba(8,126,164,.45); }
-    .box { position:relative; z-index:1; width:min(100%,440px); text-align:center; }
-    .logo { width:52px; height:52px; margin:0 auto 20px; padding:7px; border-radius:50%; background:#fff; object-fit:contain; }
-    .tag { margin-bottom:14px; color:var(--cyan); font-size:.75rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
-    h1 { margin-bottom:8px; font-size:clamp(2rem,10vw,3.15rem); font-weight:800; line-height:1; letter-spacing:-.065em; }
-    h1 span { display:block; color:var(--cyan); }
-    .offer { margin:28px 0 25px; color:var(--yellow); font-size:clamp(4.4rem,20vw,6.5rem); font-weight:800; line-height:.78; letter-spacing:-.1em; }
-    .offer small { display:block; margin-bottom:10px; color:#d8ecf0; font-size:.72rem; font-weight:700; letter-spacing:.12em; line-height:1; text-transform:uppercase; }
-    .cta { display:flex; align-items:center; justify-content:center; width:100%; min-height:68px; padding:17px 20px; border:0; border-radius:16px; background:var(--yellow); color:#102b3c; cursor:pointer; font:800 1.05rem 'DM Sans',Arial,sans-serif; box-shadow:0 14px 28px rgba(0,0,0,.24); transition:transform .18s,background .18s,opacity .18s; }
-    .cta:hover { background:#ffe48a; transform:translateY(-2px); }
-    .cta:active { transform:scale(.98); }
-    .cta:disabled { cursor:wait; opacity:.7; transform:none; }
-    .arrow { margin-left:10px; font-size:1.4rem; line-height:0; }
-    .hint { margin-top:14px; color:#c9e0e5; font-size:.72rem; }
-    .legal { position:absolute; z-index:1; right:18px; bottom:12px; left:18px; color:rgba(216,236,240,.63); text-align:center; font-size:.6rem; }
-    @media (max-height:620px) { .logo { margin-bottom:10px; } .offer { margin:18px 0 18px; } .hint { margin-top:10px; } }
-    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; } }
+    :root {
+      --navy: #102b46;
+      --navy-deep: #0b2036;
+      --blue: #117f9f;
+      --blue-soft: #dff3f5;
+      --aqua: #68d7df;
+      --gold: #f5ca58;
+      --gold-light: #ffdc78;
+      --white: #ffffff;
+      --muted: #d6e5ea;
+      --legal: rgba(214,229,234,.68);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100%; }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--navy-deep);
+      color: var(--white);
+      font-family: 'DM Sans', Arial, sans-serif;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 18px 64px;
+      background:
+        radial-gradient(circle at 92% 7%, rgba(52,174,189,.24), transparent 30%),
+        radial-gradient(circle at 5% 95%, rgba(17,127,159,.22), transparent 28%),
+        linear-gradient(145deg, #102b46 0%, #0b2036 100%);
+    }
+
+    .page::before {
+      content: '';
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 28px;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 430px);
+      padding: 34px 26px 28px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 24px;
+      background: rgba(255,255,255,.055);
+      box-shadow: 0 24px 70px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.08);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 28px;
+      color: #eaf8fa;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .brand img {
+      width: 34px;
+      height: 34px;
+      padding: 5px;
+      border-radius: 50%;
+      background: var(--white);
+      object-fit: contain;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 14px;
+      color: var(--aqua);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before, .eyebrow::after {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 1px;
+      background: rgba(104,215,223,.6);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(2rem, 9vw, 2.9rem);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -.055em;
+    }
+
+    h1 span { display: block; color: var(--aqua); }
+
+    .subtitle {
+      max-width: 310px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.45;
+    }
+
+    .offer {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 25px 0 23px;
+      color: var(--gold-light);
+      font-family: 'Manrope', sans-serif;
+      font-size: clamp(3.8rem, 18vw, 5.7rem);
+      font-weight: 800;
+      line-height: .82;
+      letter-spacing: -.09em;
+    }
+
+    .offer small {
+      margin-bottom: 10px;
+      color: #e6f1f3;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 60px;
+      padding: 16px 18px;
+      border: 0;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: #172d3d;
+      cursor: pointer;
+      font: 800 .98rem 'DM Sans', Arial, sans-serif;
+      letter-spacing: .01em;
+      box-shadow: 0 12px 24px rgba(0,0,0,.2);
+      transition: transform .2s ease, filter .2s ease, opacity .2s ease;
+    }
+
+    .cta:hover { filter: brightness(1.06); transform: translateY(-2px); }
+    .cta:active { transform: scale(.985); }
+    .cta:disabled { cursor: wait; opacity: .68; transform: none; }
+    .arrow { margin-left: 11px; font-size: 1.3rem; line-height: 0; }
+
+    .trust {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 15px;
+      color: #c5dce1;
+      font-size: .68rem;
+    }
+
+    .trust span { display: inline-flex; align-items: center; gap: 5px; }
+    .trust span::before { content: '✓'; color: #77e0b5; font-weight: 800; }
+    .hint { margin-top: 12px; color: rgba(214,229,234,.74); font-size: .68rem; }
+
+    .legal {
+      position: absolute;
+      z-index: 1;
+      right: 18px;
+      bottom: 13px;
+      left: 18px;
+      color: var(--legal);
+      text-align: center;
+      font-size: .59rem;
+      line-height: 1.4;
+    }
+
+    @media (max-height: 650px) {
+      .page { padding-top: 18px; }
+      .content { padding-top: 24px; }
+      .brand { margin-bottom: 18px; }
+      .offer { margin: 19px 0 18px; }
+    }
+
+    @media (max-width: 360px) {
+      .content { padding-right: 20px; padding-left: 20px; }
+      .trust { gap: 7px 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
   </style>
 </head>
 <body>
   <main class="page">
-    <div class="box">
-      <img class="logo" src="https://i.postimg.cc/kXgctC1b/logo-0.png" alt="Equaliv">
-      <p class="tag">Oferta especial</p>
-      <h1>Body Protein <span>Equaliv</span></h1>
-      <div class="offer"><small>aproveite agora</small>40% OFF</div>
-      <button id="cta" class="cta" type="button">APROVEITAR OFERTA <span class="arrow" aria-hidden="true">→</span></button>
-      <p class="hint">Clique para ver a oferta disponível.</p>
-    </div>
+    <section class="content" aria-labelledby="title">
+      <div class="brand">
+        <img src="https://i.postimg.cc/kXgctC1b/logo-0.png" alt="Equaliv">
+        <span>Equaliv</span>
+      </div>
+
+      <p class="eyebrow">Oferta especial</p>
+      <h1 id="title">Body Protein <span>Equaliv</span></h1>
+      <p class="subtitle">Uma opção prática para complementar sua rotina de treino.</p>
+
+      <div class="offer"><small>condição disponível</small>40% OFF</div>
+
+      <button id="cta" class="cta" type="button">
+        APROVEITAR OFERTA <span class="arrow" aria-hidden="true">→</span>
+      </button>
+
+      <div class="trust"><span>Compra segura</span><span>Site protegido</span></div>
+      <p class="hint">Consulte preço, sabores e disponibilidade.</p>
+    </section>
+
     <p class="legal">Este produto não é medicamento. Consulte um profissional de saúde antes de iniciar qualquer suplementação.</p>
   </main>
 
@@ -62,10 +257,13 @@
     const DESTINATION_URL = 'https://promocional-havan.onrender.com/equaliv';
     const button = document.getElementById('cta');
     let redirecting = false;
+
     button.addEventListener('click', () => {
       if (redirecting) return;
       redirecting = true;
-      if (typeof gtag === 'function') gtag('event', 'cta_click', { event_category:'conversion', event_label:'aproveitar_oferta', transport_type:'beacon' });
+      if (typeof gtag === 'function') {
+        gtag('event', 'cta_click', { event_category: 'conversion', event_label: 'aproveitar_oferta', transport_type: 'beacon' });
+      }
       button.disabled = true;
       button.innerHTML = 'CARREGANDO...';
       setTimeout(() => window.location.assign(DESTINATION_URL), 120);
