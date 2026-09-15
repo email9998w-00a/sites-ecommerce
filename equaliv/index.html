@@ -56,7 +56,7 @@
     /* ===================== Announcement + header ===================== */
     .announcement { padding: 9px 16px; background: var(--brand-dark); color: #eef4f8; font-size: 12.5px; font-weight: 600; text-align: center; letter-spacing: .005em; }
 
-    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+    .site-header { position: relative; z-index: 20; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
     .header-row { min-height: 68px; display: grid; grid-template-columns: auto minmax(280px, 1fr) auto; align-items: center; gap: clamp(18px, 3vw, 42px); }
     .header-top { display: contents; }
     .logo { color: var(--brand); font-size: 22px; font-weight: 800; letter-spacing: .04em; text-decoration: none; }
@@ -357,7 +357,7 @@
       .announcement { min-height: 34px; display: grid; place-items: center; padding: 8px 12px; font-size: 10.5px; }
       .site-header { position: static; background: transparent; border-bottom: 0; backdrop-filter: none; }
       .header-row { min-height: 0; display: block; }
-      .header-top { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; min-height: 58px; margin-inline: -12px; padding: 9px 12px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.985); box-shadow: 0 3px 12px rgba(16,40,64,.06); backdrop-filter: blur(10px); }
+      .header-top { position: relative; z-index: 20; display: flex; align-items: center; justify-content: space-between; min-height: 58px; margin-inline: -12px; padding: 9px 12px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.985); box-shadow: 0 3px 12px rgba(16,40,64,.06); backdrop-filter: blur(10px); }
       .logo { font-size: 19px; line-height: 1; }
       .header-links { gap: 0; }
       .search-form { max-width: none; margin: 10px 0 11px; }
