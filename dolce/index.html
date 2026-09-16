@@ -583,7 +583,7 @@
         <article class="tab-panel" id="compositionPanel" role="tabpanel" aria-labelledby="compositionTab" hidden>
           <h2>Especificações da opção selecionada</h2>
           <ul class="spec-list">
-            <li><strong>Produto</strong><span>Combo de cápsulas Dolce Gusto</span></li>
+            <li><strong>Produto</strong><span>Combo Dolce Gusto em Promoção</span></li>
             <li><strong>Sabores</strong><span>Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso</span></li>
             <li><strong>Opções</strong><span>6 caixas ou 12 caixas</span></li>
             <li><strong>Compatibilidade</strong><span>Máquinas do sistema Dolce Gusto</span></li>
@@ -716,7 +716,7 @@
       const esc = (value) => String(value).replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
 
       const searchTargets = [
-        { label: 'Combo de cápsulas Dolce Gusto', detail: 'Produto principal', selector: '#product' },
+        { label: 'Combo Dolce Gusto em Promoção', detail: 'Produto principal', selector: '#product' },
         { label: 'Descrição do produto', detail: 'Informações e benefícios', selector: '#descriptionPanel' },
         { label: 'Como usar', detail: 'Modo de preparo e conservação', selector: '#usagePanel' },
         { label: 'Composição', detail: 'Especificações e informações', selector: '#compositionPanel' },
@@ -938,7 +938,7 @@
         } else {
           cart.push({
             id,
-            name: 'Combo de cápsulas Dolce Gusto',
+            name: 'Combo Dolce Gusto em Promoção',
             variant: `${selectedVariant.name} de cápsulas Dolce Gusto`,
             flavor: selectedVariant.name,
             weight: selectedVariant.weight,
