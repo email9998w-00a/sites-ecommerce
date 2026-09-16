@@ -93,6 +93,9 @@
 
     .gallery { position: sticky; top: 92px; }
     .gallery-frame { position: relative; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+    .promo-badge { position: absolute; top: 20px; right: 24px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border: 1px solid rgba(22,58,92,.14); border-radius: 999px; background: rgba(255,255,255,.94); color: var(--brand); box-shadow: 0 4px 12px rgba(16,40,64,.10); font-size: 10px; font-weight: 800; letter-spacing: .045em; line-height: 1; }
+    .promo-badge i { color: var(--success); font-size: 10px; }
+    .promo-badge small { display: inline; margin-left: 2px; color: var(--ink-soft); font-size: 9px; font-weight: 600; letter-spacing: 0; }
     .gallery-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border: 0; background: transparent; opacity: 1; transition: opacity .18s ease; }
     .gallery-slider::-webkit-scrollbar { display: none; }
     .gallery-slider.is-switching { opacity: .18; }
@@ -463,6 +466,7 @@
       <section class="product-shell" id="product" aria-labelledby="productTitle">
         <div class="gallery">
           <div class="gallery-frame" id="galleryFrame">
+            <span class="promo-badge" aria-label="Oferta especial no Pix"><i class="fa-solid fa-tag" aria-hidden="true"></i><span>OFERTA NO PIX</span><small>economize</small></span>
             <button class="gallery-arrow gallery-arrow--prev" id="galleryPrev" type="button" aria-label="Imagem anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
             <div class="gallery-slider" id="gallerySlider" aria-label="Fotos do produto"></div>
             <button class="gallery-arrow gallery-arrow--next" id="galleryNext" type="button" aria-label="Próxima imagem"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
