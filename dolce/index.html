@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Combo 6 caixas Dolce Gusto | Café e cappuccino</title>
-  <meta name="description" content="Combo com 6 caixas de cápsulas Dolce Gusto nos sabores Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso. Aproveite a condição no Pix, entrega grátis e checkout seguro.">
+  <title>Body Protein Equaliv BODYBALANCE® | Escolha seu sabor</title>
+  <meta name="description" content="Escolha seu sabor de Body Protein Equaliv BODYBALANCE®. Aproveite a condição no Pix, entrega grátis e checkout seguro.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="preload" as="image" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/HoxlgYaSrtsemCJE.webp" fetchpriority="high">
   <style>
     /* ===================== Tokens ===================== */
     :root {
@@ -91,11 +91,10 @@
     /* ===================== Product ===================== */
     .product-shell { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(340px,.95fr); gap: clamp(32px, 5vw, 64px); padding: 14px 0 60px; align-items: start; }
 
-    #product { scroll-margin-top: 92px; }
     .gallery { position: sticky; top: 92px; }
     .gallery-frame { position: relative; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
     .promo-badge { position: absolute; top: 20px; right: 24px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border: 1px solid rgba(22,58,92,.14); border-radius: 999px; background: rgba(255,255,255,.94); color: var(--brand); box-shadow: 0 4px 12px rgba(16,40,64,.10); font-size: 10px; font-weight: 800; letter-spacing: .045em; line-height: 1; }
-    .promo-badge > i { color: var(--success); font-size: 10px; }
+    .promo-badge i { color: var(--success); font-size: 10px; }
     .promo-badge small { display: inline; margin-left: 2px; color: var(--ink-soft); font-size: 9px; font-weight: 600; letter-spacing: 0; }
     .gallery-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border: 0; background: transparent; opacity: 1; transition: opacity .18s ease; }
     .gallery-slider::-webkit-scrollbar { display: none; }
@@ -199,13 +198,6 @@
     .highlight-card i { color: var(--brand); font-size: 17px; }
     .highlight-card h3 { margin: 10px 0 6px; font-size: 14px; }
     .highlight-card p { margin: 0; font-size: 12.5px; line-height: 1.55; }
-    .description-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 24px; }
-    .description-photo-slot { display: grid; place-items: center; min-height: 170px; padding: 12px; overflow: hidden; border: 1px solid #e3eaf0; border-radius: var(--radius-lg); background: linear-gradient(145deg, #fff, #f7fafc); box-shadow: 0 8px 22px rgba(16,40,64,.08); color: var(--ink-soft); font-size: 12.5px; font-weight: 700; text-align: center; }
-    .description-photo-slot--featured { margin-top: 22px; min-height: 0; padding: 10px; }
-    .description-photo-slot { cursor: pointer; transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease; }
-    .description-photo-slot:hover { border-color: #b9cad6; box-shadow: 0 11px 26px rgba(16,40,64,.12); transform: translateY(-1px); }
-    .description-photo-slot:focus-visible { outline: 3px solid rgba(43,110,150,.35); outline-offset: 3px; }
-    .description-photo-slot img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; border-radius: calc(var(--radius-lg) - 4px); pointer-events: none; }
     .spec-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px 24px; max-width: 760px; padding: 0; list-style: none; }
     .spec-list li { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); }
     .spec-list strong { color: var(--ink); font-size: 13.5px; }
@@ -214,6 +206,8 @@
     /* ===================== Reviews ===================== */
     .reviews-section { padding: 60px 0; background: var(--surface); border-top: 1px solid var(--line); }
     .reviews-photos h3 { margin: 0 0 14px; font-size: 16px; font-weight: 700; }
+    .carousel-container { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 4px; margin-bottom: 32px; scrollbar-width: none; }
+    .carousel-container::-webkit-scrollbar { display: none; }
     .carousel-item { flex: 0 0 100px; width: 100px; height: 100px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line); }
     .carousel-item:hover { border-color: var(--accent); }
     .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
@@ -235,6 +229,8 @@
     .review-date { color: var(--ink-soft); font-size: 12px; white-space: nowrap; }
     .review-stars { margin-bottom: 10px; color: #e0951a; font-size: 12px; }
     .review-content { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
+    .review-image-container { margin-top: 14px; width: 150px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line); cursor: zoom-in; }
+    .review-image { width: 100%; height: 150px; display: block; object-fit: cover; }
 
     .pagination { display: flex; gap: 8px; justify-content: center; align-items: center; }
     .page-btn { width: 40px; height: 40px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: #fff; color: var(--ink-soft); font-weight: 600; display: flex; align-items: center; justify-content: center; }
@@ -376,12 +372,11 @@
       .breadcrumbs { padding: 12px 0 7px; font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
       .product-shell { gap: 18px; padding-top: 4px; padding-bottom: 32px; }
       .gallery { margin-inline: -12px; }
+      .promo-badge { position: relative; top: auto; right: auto; width: fit-content; margin: 0 auto 6px; padding: 5px 8px; font-size: 8.5px; }
+      .promo-badge i { font-size: 8px; }
+      .promo-badge small { font-size: 7.5px; }
       .gallery-slide { aspect-ratio: 1 / .9; padding: 3px 0; }
       .gallery-slide img { width: 92%; height: 92%; }
-      #product { scroll-margin-top: 82px; }
-      .promo-badge { top: 12px; right: 16px; gap: 5px; padding: 6px 9px; font-size: 9px; }
-      .promo-badge > i { font-size: 9px; }
-      .promo-badge small { font-size: 8px; }
       .gallery-arrow { width: 32px; height: 32px; }
       .gallery-arrow--prev { left: 10px; }
       .gallery-arrow--next { right: 10px; }
@@ -414,10 +409,7 @@
       .trust-row { gap: 9px 12px; margin-top: 14px; padding-top: 13px; }
       .trust-row span { font-size: 10.5px; }
       .trust-row span:last-child { flex-basis: 100%; justify-content: center; }
-      .highlight-grid, .description-photo-grid, .footer-grid { grid-template-columns: 1fr; }
-      .description-photo-grid { gap: 12px; margin-top: 18px; }
-      .description-photo-slot { min-height: 0; padding: 7px; border-radius: 14px; box-shadow: 0 6px 16px rgba(16,40,64,.07); }
-      .description-photo-slot--featured { margin-top: 18px; padding: 7px; }
+      .highlight-grid, .footer-grid { grid-template-columns: 1fr; }
       .tab-panel { padding: 28px 0 36px; }
       .reviews-section, .faq-section { padding: 42px 0; }
       .cart-header, .cart-content, .cart-footer { padding-left: 16px; padding-right: 16px; }
@@ -471,7 +463,7 @@
   <main>
     <div class="container">
       <nav class="breadcrumbs" aria-label="Caminho de navegação">
-        <a href="/">Home</a><span>/</span><a href="#product">Cafés e cápsulas</a><span>/</span><strong aria-current="page">Combo Dolce Gusto</strong>
+        <a href="/">Home</a><span>/</span><a href="#product">Proteínas</a><span>/</span><strong aria-current="page">Body Protein</strong>
       </nav>
 
       <section class="product-shell" id="product" aria-labelledby="productTitle">
@@ -491,35 +483,35 @@
             <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra segura</span>
           </div>
 
-          <h1 id="productTitle" tabindex="-1">Combo Promocional Dolce Gusto — 60 cápsulas</h1>
-          <p class="positioning">Seleção com 6 caixas de cápsulas Dolce Gusto nos sabores Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso totalizando 60 cápsulas.</p>
+          <h1 id="productTitle">Promoção - Body Protein Equaliv BODYBALANCE®</h1>
+          <p class="positioning">Suplemento à base de peptídeos bioativos de colágeno. Escolha o sabor ideal para a sua rotina.</p>
 
           <div class="rating-row" aria-label="Avaliação média 4,9 de 5">
             <span class="stars" aria-hidden="true">★★★★★</span>
             <strong>4,9/5</strong>
-            <a class="rating-link" href="#reviews">Ver avaliações de clientes</a>
+            <a class="rating-link" href="#reviews">Ver avaliações e fotos de clientes</a>
           </div>
 
           <section class="choice-box" aria-labelledby="choiceTitle">
             <div class="choice-heading">
-              <strong id="choiceTitle">Escolha a quantidade</strong>
-              <span id="selectedOptionLabel" aria-live="polite">6 caixas selecionado</span>
+              <strong id="choiceTitle">Escolha o sabor</strong>
+              <span id="selectedOptionLabel" aria-live="polite">Cacau selecionado</span>
             </div>
             <div class="variant-grid" id="variantGrid" role="radiogroup" aria-labelledby="choiceTitle"></div>
           </section>
 
           <div class="price-box" id="priceBox" aria-live="polite">
             <div class="old-price-row">
-              <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
-              <span class="discount-tag" id="discount">31% OFF</span>
+              <span class="old-price">De R$ <span id="oldPrice">205,60</span></span>
+              <span class="discount-tag" id="discount">48% OFF</span>
             </div>
-            <div class="current-price">R$ <span id="currentPrice">89,90</span><span class="pix-tag">no Pix</span></div>
-            <div class="installments" id="installments">ou em até 3x de R$ 29,97 sem juros</div>
-            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 40,00</div>
+            <div class="current-price">R$ <span id="currentPrice">104,90</span><span class="pix-tag">no Pix</span></div>
+            <div class="installments" id="installments">ou em até 3x de R$ 34,97 sem juros</div>
+            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 100,70</div>
           </div>
 
           <div class="shipping-note" aria-label="Informações de entrega" data-delivery-days="3">
-            <img class="shipping-note-logo" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/tIThPgQEuHDSybjv.webp" alt="" aria-hidden="true">
+            <img class="shipping-note-logo" src="https://cdn.shopify.com/s/files/1/0611/1471/2252/files/correios-logo_1.svg?v=1648167047" alt="" aria-hidden="true">
             <div class="shipping-note-copy">
               <p class="shipping-title"><strong>Frete Grátis</strong> <span class="shipping-region" id="shippingRegion">para sua região</span></p>
               <p class="shipping-estimated" id="shippingEstimated"><strong>Receba em</strong> até <strong>03 dias úteis</strong></p>
@@ -548,48 +540,34 @@
         </div>
 
         <article class="tab-panel" id="descriptionPanel" role="tabpanel" aria-labelledby="descriptionTab">
-          <h2>Uma seleção completa de cafés Dolce Gusto</h2>
-          <p>O Combo Dolce Gusto foi pensado para quem gosta de praticidade, variedade e bebidas saborosas em diferentes momentos do dia. Cada opção reúne caixas de cápsulas para preparo rápido em máquinas do sistema Dolce Gusto, permitindo alternar entre cafés intensos, suaves e bebidas cremosas sem abrir mão da conveniência.</p>
-          <p>Na opção de <strong>6 caixas</strong>, você recebe uma seleção com um caixa de cada sabor descrito abaixo. A opção de <strong>12 caixas</strong> amplia o estoque para sua casa, escritório ou para compartilhar. Consulte sempre as instruções de preparo e as informações completas no rótulo de cada embalagem.</p>
-          <div class="description-photo-slot description-photo-slot--featured" role="button" tabindex="0" aria-label="Ver oferta do combo Dolce Gusto" data-focus-product><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp" alt="Detalhes do combo Dolce Gusto" loading="lazy"></div>
-          <h3>Sabores incluídos no combo</h3>
-          <ul>
-            <li><strong>1cx Capuccino 10 cáps:</strong> bebida cremosa e equilibrada, ideal para um momento mais indulgente.</li>
-            <li><strong>1cx Espresso 10 cáps:</strong> café clássico e versátil para começar o dia ou fazer uma pausa.</li>
-            <li><strong>1cx Espresso Intenso 10 cáps:</strong> sabor mais marcante e encorpado para quem prefere intensidade.</li>
-            <li><strong>1cx Café au Lait 10 cáps:</strong> combinação suave de café com leite para uma bebida delicada.</li>
-            <li><strong>1cx Café Matinal 10 cáps:</strong> opção prática para acompanhar a rotina e o café da manhã.</li>
-            <li><strong>1cx Café au Lait Intenso 10 cáps:</strong> cremosidade com presença maior de café e sabor mais intenso.</li>
-          </ul>
+          <h2>Complemento prático para a sua rotina</h2>
+          <p>O Body Protein Equaliv BODYBALANCE® foi desenvolvido para facilitar o consumo de proteínas no dia a dia, oferecendo uma opção prática para complementar diferentes momentos da sua rotina. Sua fórmula à base de peptídeos bioativos de colágeno combina facilidade de preparo e versatilidade, podendo ser consumida com água, sucos, vitaminas ou incorporada a receitas. Escolha o sabor que mais combina com você e consulte as informações completas da versão selecionada na embalagem.</p>
           <div class="highlight-grid">
-            <div class="highlight-card"><i class="fa-solid fa-bolt" aria-hidden="true"></i><h3>Preparo rápido</h3><p>Insira a cápsula na sua máquina Dolce Gusto e prepare sua bebida em poucos instantes.</p></div>
-            <div class="highlight-card"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i><h3>6 sabores selecionados</h3><p>Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p></div>
-            <div class="highlight-card"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><h3>Variedade no dia a dia</h3><p>Tenha diferentes opções de café e cappuccino para escolher conforme a ocasião.</p></div>
-          </div>
-          <div class="description-photo-grid" aria-label="Espaços reservados para fotos do produto">
-            <div class="description-photo-slot" role="button" tabindex="0" aria-label="Ver oferta do combo Dolce Gusto" data-focus-product><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ttuQACdNJDtVNOrp.webp" alt="Sabores e embalagens do combo Dolce Gusto" loading="lazy"></div>
+            <div class="highlight-card"><i class="fa-solid fa-bolt" aria-hidden="true"></i><h3>Fácil de preparar</h3><p>Use em água, sucos, vitaminas e outras receitas, conforme a orientação da embalagem.</p></div>
+            <div class="highlight-card"><i class="fa-solid fa-leaf" aria-hidden="true"></i><h3>À base de colágeno</h3><p>Fórmula com peptídeos bioativos de colágeno BODYBALANCE®.</p></div>
+            <div class="highlight-card"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><h3>Informação transparente</h3><p>Confira composição, alergênicos e informações nutricionais no rótulo da opção escolhida.</p></div>
           </div>
         </article>
 
         <article class="tab-panel" id="usagePanel" role="tabpanel" aria-labelledby="usageTab" hidden>
           <h2>Modo de preparo e conservação</h2>
           <ul>
-            <li>Insira uma cápsula na máquina Dolce Gusto, conforme as instruções do fabricante.</li>
-            <li>Escolha a quantidade de água indicada na embalagem da bebida e prepare.</li>
-            <li>Sirva imediatamente e aproveite o café ou cappuccino.</li>
-            <li>Conserve as caixas fechadas, em local seco, fresco e protegido da luz.</li>
+            <li>Siga a porção e as instruções indicadas na embalagem da versão escolhida.</li>
+            <li>Misture em água ou na bebida de sua preferência até a homogeneização.</li>
+            <li>O produto pode ser incorporado a vitaminas, iogurtes e receitas, respeitando as orientações do rótulo.</li>
+            <li>Mantenha a embalagem bem fechada, em local seco, fresco e protegido da luz.</li>
           </ul>
         </article>
 
         <article class="tab-panel" id="compositionPanel" role="tabpanel" aria-labelledby="compositionTab" hidden>
           <h2>Especificações da opção selecionada</h2>
           <ul class="spec-list">
-            <li><strong>Produto</strong><span>Combo Promocional Dolce Gusto</span></li>
-            <li><strong>Sabores</strong><span>Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso</span></li>
-            <li><strong>Opções</strong><span>6 caixas ou 12 caixas</span></li>
-            <li><strong>Compatibilidade</strong><span>Máquinas do sistema Dolce Gusto</span></li>
+            <li><strong>Produto</strong><span>Body Protein Equaliv</span></li>
+            <li><strong>Fórmula</strong><span>Peptídeos bioativos de colágeno BODYBALANCE®</span></li>
+            <li><strong>Pesos disponíveis</strong><span>440 g, 450 g e 600 g</span></li>
+            <li><strong>Alergênicos</strong><span>Consulte o rótulo da versão escolhida</span></li>
           </ul>
-          <p class="legal-note">Cápsulas para preparo de bebidas. Consulte as informações completas, ingredientes e orientações de preparo no rótulo. Imagens meramente ilustrativas.</p>
+          <p class="legal-note">Suplemento alimentar. Não substitui uma alimentação equilibrada. Consulte um médico ou nutricionista para avaliar a indicação adequada ao seu objetivo. Imagens meramente ilustrativas.</p>
         </article>
       </div>
     </section>
@@ -597,7 +575,8 @@
     <section class="reviews-section" id="reviews">
       <div class="container">
         <div class="reviews-photos">
-          <h3>Opiniões de clientes</h3>
+          <h3>Fotos de clientes</h3>
+          <div class="carousel-container" id="reviewCarousel"></div>
         </div>
         <div class="reviews-header">
           <h2>Avaliações de clientes</h2>
@@ -605,7 +584,7 @@
             <span class="rating-number">4,9</span>
             <div>
               <div class="stars-large" aria-label="5 de 5 estrelas">★★★★★</div>
-              <span class="total-reviews-count">Opiniões compartilhadas por clientes</span>
+              <span class="total-reviews-count">Opiniões e fotos compartilhadas por clientes</span>
             </div>
           </div>
         </div>
@@ -689,17 +668,29 @@
       const REDIRECT_LOADING_DURATION = 900;
 
       const variants = [
-        { id: '6-caixas', name: '6 caixas', weight: 6, price: 104.90, oldPrice: 189.90, images: [
-          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
-          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
-          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
-          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp'
+        { id: 'Cacau', name: 'Cacau', weight: 600, price: 104.90, oldPrice: 205.60, images: [
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/HoxlgYaSrtsemCJE.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/grqkfNbLPPiCdbaN.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/iloryKkhRDoooHyV.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/DTmWNiJhvCvXQVah.webp'
         ] },
-        { id: '12-caixas', name: '12 caixas', weight: 12, price: 139.90, oldPrice: 199.90, images: [
-          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
-          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
-          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
-          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp'
+        { id: 'Neutro', name: 'Neutro', weight: 450, price: 114.90, oldPrice: 225.20, images: [
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663079181584/lCHVVsZyMfqvYTka.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/cQxScNkkgGTHiddk.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/xQoySZmyaOpUHZCq.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/taEMKWQwfHBymBWd.webp'
+        ] },
+        { id: 'Baunilha', name: 'Baunilha', weight: 440, price: 109.90, oldPrice: 215.40, images: [
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663079181584/oHLuJJeIbIbxFdqi.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/cFUWVTKpeVkZvqXt.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/EBRpbffdLnXqDYZL.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/JZsTpjEzztBYtWYW.webp'
+        ] },
+        { id: 'Cookies & Cream', name: 'Cookies & Cream', weight: 450, price: 104.90, oldPrice: 205.60, images: [
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/xbyveckgqnrlKoIW.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/HgqWrJzVOUcxlRJS.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/FhrhcZbdDWvVUVpg.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663062474227/nNBPFOZeHGEHhNft.webp'
         ] }
       ];
 
@@ -717,7 +708,7 @@
       const esc = (value) => String(value).replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
 
       const searchTargets = [
-        { label: 'Combo Promocional Dolce Gusto', detail: 'Produto principal', selector: '#product' },
+        { label: 'Body Protein Equaliv BODYBALANCE®', detail: 'Produto principal', selector: '#product' },
         { label: 'Descrição do produto', detail: 'Informações e benefícios', selector: '#descriptionPanel' },
         { label: 'Como usar', detail: 'Modo de preparo e conservação', selector: '#usagePanel' },
         { label: 'Composição', detail: 'Especificações e informações', selector: '#compositionPanel' },
@@ -850,7 +841,7 @@
           slide.className = 'gallery-slide';
           const image = document.createElement('img');
           image.src = src;
-          image.alt = `Combo Dolce Gusto ${selectedVariant.name}, imagem ${index + 1}`;
+          image.alt = `Body Protein Equaliv ${selectedVariant.name}, imagem ${index + 1}`;
           image.loading = 'eager';
           image.fetchPriority = index === 0 ? 'high' : 'auto';
           image.decoding = 'async';
@@ -939,8 +930,8 @@
         } else {
           cart.push({
             id,
-            name: 'Combo Promocional Dolce Gusto',
-            variant: `${selectedVariant.name} Dolce Gusto em Promoção`,
+            name: 'Body Protein Equaliv BODYBALANCE®',
+            variant: `${selectedVariant.name} · ${selectedVariant.weight} g`,
             flavor: selectedVariant.name,
             weight: selectedVariant.weight,
             price: selectedVariant.price,
@@ -967,7 +958,7 @@
         if (!cart.length) {
           const empty = document.createElement('div');
           empty.className = 'empty-cart';
-          empty.innerHTML = '<i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><strong>Seu carrinho está vazio</strong><span>Escolha a quantidade do combo para começar.</span><button class="empty-cart-action" type="button">Ver opções</button>'; 
+          empty.innerHTML = '<i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><strong>Seu carrinho está vazio</strong><span>Escolha um sabor do produto para começar.</span><button class="empty-cart-action" type="button">Ver opções</button>';
           $('.empty-cart-action', empty).addEventListener('click', () => { closeCart(); $('#product').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
           container.appendChild(empty);
         } else {
@@ -1081,49 +1072,79 @@
       function updateSchema() {
         $('#productSchema').textContent = JSON.stringify({
           '@context': 'https://schema.org', '@type': 'Product',
-          name: `Combo Dolce Gusto ${selectedVariant.name}`,
+          name: `Body Protein Equaliv BODYBALANCE® ${selectedVariant.name} ${selectedVariant.weight}g`,
           image: selectedVariant.images,
-          description: 'Combo Promocional Dolce Gusto com Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.',
+          description: 'Suplemento alimentar à base de peptídeos bioativos de colágeno BODYBALANCE®.',
           offers: { '@type': 'Offer', priceCurrency: 'BRL', price: selectedVariant.price.toFixed(2), availability: 'https://schema.org/InStock', url: window.location.href }
         });
       }
 
+      const reviewImages = [
+        'https://http2.mlstatic.com/D_NQ_NP_2X_699615-MLA74432480960_022024-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_886374-MLA104440721718_012026-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_835391-MLA83326442374_042025-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_907343-MLA108708097881_032026-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_837363-MLA110631405242_052026-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_768325-MLA98133444073_112025-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_887957-MLA107373859125_022026-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_647134-MLA105218899782_012026-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_657455-MLA76832380979_062024-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_824823-MLA101339668883_122025-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_962779-MLA109778484854_042026-F.webp',
+        'https://http2.mlstatic.com/D_NQ_NP_2X_830568-MLA97743039611_112025-F.webp'
+      ];
+
       const allReviews = [
-        { name: 'Gustavo Martins', date: 'Hoje', rating: 5, content: 'Combo completo para deixar vários sabores de café sempre à mão. Gostei muito.' },
-        { name: 'Luciana Gomes', date: 'Hoje', rating: 5, content: 'Chegou rápido e muito bem embalado. As caixas vieram lacradas e com boa validade.' },
-        { name: 'Rodrigo Pedroso', date: 'Hoje', rating: 5, content: 'Os cafés são saborosos e o combo rende bastante. Recomendo para quem gosta de variar.' },
-        { name: 'Viviane Rocha', date: 'Ontem', rating: 5, content: 'Recomendo: chegou rápido e o preço do combo é justo pela quantidade de caixas.' },
-        { name: 'João Costa', date: 'Ontem', rating: 5, content: 'O capuccino ficou cremoso e os cafés têm sabor equilibrado. Ótima opção para o dia a dia.' },
-        { name: 'Rodrigo Oliveira', date: 'Ontem', rating: 4, content: 'Sempre compro aqui e os produtos chegam certinhos. A variedade de sabores é ótima.' },
-        { name: 'Daiane Santos', date: 'Ontem', rating: 5, content: 'Excelente atendimento. As caixas vieram bem protegidas e lacradas.' },
-        { name: 'Alexandra Teixeira', date: 'Ontem', rating: 5, content: 'Gostei de ter espresso, café au lait e cappuccino no mesmo combo. Muito prático.' },
-        { name: 'Mateus Costa', date: 'Ontem', rating: 5, content: 'Produto original. Conferi as caixas e a qualidade das cápsulas é impecável.' },
-        { name: 'Thiago S.', date: 'Há 2 dias', rating: 5, content: 'Ótimo combo, com vários sabores e preparo rápido. Já quero comprar novamente.' },
-        { name: 'Diego Almeida', date: 'Há 2 dias', rating: 5, content: 'Os cafés ficam prontos rapidamente e a seleção de sabores passa confiança.' },
-        { name: 'Samanta Lima', date: 'Há 2 dias', rating: 5, content: 'Uso diariamente no café da manhã e a praticidade melhorou muito minha rotina.' },
-        { name: 'Lucas Pedro', date: 'Há 2 dias', rating: 5, content: 'O Espresso Intenso é meu favorito. Recomendo para quem gosta de café mais marcante.' },
-        { name: 'Bruno Melo', date: 'Há 2 dias', rating: 5, content: 'Foi o melhor preço que encontrei para esse conjunto de sabores. Entrega rápida.' },
-        { name: 'Fernanda Silva', date: 'Há 3 dias', rating: 4, content: 'Chegou dentro do prazo e as cápsulas são de ótima qualidade. O café au lait é delicioso.' },
+        { name: 'Gustavo Martins', date: 'Hoje', rating: 5, content: 'Top demais. Só uso essa marca. É só comprar e ficar satisfeito.' },
+        { name: 'Luciana Gomes', date: 'Hoje', rating: 5, content: 'Chegou rápido e muito bem embalado. É o Equaliv original, com validade longa.' },
+        { name: 'Rodrigo Pedroso', date: 'Hoje', rating: 5, content: 'Produto original, não dá nenhum estufamento e o rendimento é excelente. Recomendo.' },
+        { name: 'Viviane Rocha', date: 'Ontem', rating: 5, content: 'Recomendo, chegou rápido e o preço é justo pela qualidade. Vale a compra.' },
+        { name: 'João Costa', date: 'Ontem', rating: 5, content: 'Melhor proteína que já usei nessa faixa de preço. Leve para o estômago e sem gosto forte.' },
+        { name: 'Rodrigo Oliveira', date: 'Ontem', rating: 4, content: 'Sempre compro aqui, é o lugar que confio que é original. Ótimo para bater com frutas.' },
+        { name: 'Daiane Santos', date: 'Ontem', rating: 5, content: 'Excelente atendimento. O pote veio bem protegido na caixa original e lacrado.' },
+        { name: 'Alexandra Teixeira', date: 'Ontem', rating: 5, content: 'Sem sabor marcante, dá para misturar até em receitas quentes sem estragar. Satisfeita.' },
+        { name: 'Mateus Costa', date: 'Ontem', rating: 5, content: 'Produto original mesmo. Conferi o lote e a qualidade do pó é impecável.' },
+        { name: 'Thiago S.', date: 'Há 2 dias', rating: 5, content: 'Ótimo produto, original e com garantia. Já é meu segundo pote, confio na marca.' },
+        { name: 'Diego Almeida', date: 'Há 2 dias', rating: 5, content: 'Resultados bons. Senti evolução na massa magra, a composição passa confiança.' },
+        { name: 'Samanta Lima', date: 'Há 2 dias', rating: 5, content: 'Uso diariamente no pós-treino e sinto que a recuperação muscular melhorou.' },
+        { name: 'Lucas Pedro', date: 'Há 2 dias', rating: 5, content: 'A versão sem sabor é outro nível para misturar no suco. Absorção rápida, recomendo.' },
+        { name: 'Bruno Melo', date: 'Há 2 dias', rating: 5, content: 'Melhor preço que encontrei para o produto original. Entrega antes do prazo.' },
+        { name: 'Fernanda Silva', date: 'Há 3 dias', rating: 4, content: 'Chegou dentro do prazo. Produto de qualidade, zero lactose de verdade.' },
         { name: 'Ricardo Souza', date: 'Há 3 dias', rating: 5, content: 'Atendimento nota dez e produto de boa qualidade. Parabéns pela agilidade.' },
-        { name: 'Gabriela Ramos', date: 'Há 3 dias', rating: 5, content: 'Uso no café da manhã e o combo facilita muito a rotina. As opções são variadas.' },
-        { name: 'Marcelo Vieira', date: 'Há 3 dias', rating: 5, content: 'O café matinal ficou ótimo e a seleção trouxe mais variedade para minha rotina. Boa aquisição.' },
-        { name: 'Aline Alves', date: 'Há 3 dias', rating: 5, content: 'Uso no dia a dia e superou as expectativas. O preparo é rápido no café da manhã.' },
-        { name: 'André Santos', date: 'Há 3 dias', rating: 5, content: 'Comprei, chegou tudo certinho e a qualidade das cápsulas é muito boa.' },
-        { name: 'Felipe Diniz', date: 'Há 3 dias', rating: 5, content: 'Uma das melhores opções para comprar cápsulas e combos de café que já encontrei.' }
+        { name: 'Gabriela Ramos', date: 'Há 3 dias', rating: 5, content: 'Uso na minha dieta com pouco carboidrato e deu certo. Não atrapalha a rotina.' },
+        { name: 'Marcelo Vieira', date: 'Há 3 dias', rating: 5, content: 'O colágeno realmente funciona, percebi melhora na disposição. Boa aquisição.' },
+        { name: 'Aline Alves', date: 'Há 3 dias', rating: 5, content: 'Uso no dia a dia e superou as expectativas. Misturo no café da manhã, ajuda na saciedade.' },
+        { name: 'André Santos', date: 'Há 3 dias', rating: 5, content: 'Comprei, chegou tudo certinho e a qualidade da Equaliv é boa.' },
+        { name: 'Felipe Diniz', date: 'Há 3 dias', rating: 5, content: 'Uma das melhores lojas para comprar suplementos que já usei.' }
       ];
 
       let currentPage = 1;
       const reviewsPerPage = 4;
 
+      function renderCarousel() {
+        const container = $('#reviewCarousel');
+        container.replaceChildren();
+        reviewImages.forEach((img, index) => {
+          const item = document.createElement('button');
+          item.type = 'button';
+          item.className = 'carousel-item';
+          item.setAttribute('aria-label', `Ampliar foto de cliente ${index + 1}`);
+          item.innerHTML = `<img src="${esc(img)}" alt="Foto de avaliação de cliente" loading="lazy">`;
+          item.addEventListener('click', () => openLightbox(img, 'Foto de avaliação de cliente'));
+          container.appendChild(item);
+        });
+      }
+
       function renderReviews(page) {
         const grid = $('#reviewsGrid');
         grid.replaceChildren();
         const startIndex = (page - 1) * reviewsPerPage;
-        allReviews.slice(startIndex, startIndex + reviewsPerPage).forEach((review) => {
+        allReviews.slice(startIndex, startIndex + reviewsPerPage).forEach((review, index) => {
           const card = document.createElement('article');
           card.className = 'review-card';
           let starsHtml = '';
           for (let i = 0; i < 5; i++) starsHtml += `<i class="${i < review.rating ? 'fas' : 'far'} fa-star"></i>`;
+          const imageUrl = reviewImages[(startIndex + index) % reviewImages.length];
           card.innerHTML = `
             <div class="review-top">
               <div class="reviewer-info">
@@ -1133,7 +1154,9 @@
               <div class="review-date">${esc(review.date)}</div>
             </div>
             <div class="review-stars">${starsHtml}</div>
-            <p class="review-content">${esc(review.content)}</p>`;
+            <p class="review-content">${esc(review.content)}</p>
+            <div class="review-image-container"><img src="${esc(imageUrl)}" alt="Avaliação de cliente" class="review-image" loading="lazy"></div>`;
+          $('.review-image-container', card).addEventListener('click', () => openLightbox(imageUrl, `Avaliação de ${review.name}`));
           grid.appendChild(card);
         });
         renderPagination(page);
@@ -1210,23 +1233,6 @@
           cta.setAttribute('aria-hidden', String(!shouldShow));
         }, { threshold: 0.05 });
         observer.observe(priceBox);
-      }
-
-      function setupDescriptionImageFocus() {
-        const product = $('#product');
-        if (!product) return;
-        const focusProduct = () => {
-          product.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          window.setTimeout(() => $('#productTitle')?.focus?.({ preventScroll: true }), 420);
-        };
-        $$('[data-focus-product]').forEach((photo) => {
-          photo.addEventListener('click', focusProduct);
-          photo.addEventListener('keydown', (event) => {
-            if (event.key !== 'Enter' && event.key !== ' ') return;
-            event.preventDefault();
-            focusProduct();
-          });
-        });
       }
 
       function loadShippingRegion() {
@@ -1330,12 +1336,12 @@
 
       window.addEventListener('pageshow', () => setRedirectLoading(false));
 
+      renderCarousel();
       renderReviews(1);
       setupTabs();
       setupFaq();
       setupSearch();
       setupMobileCta();
-      setupDescriptionImageFocus();
       setupShippingEstimate();
       loadShippingRegion();
       // Inicia o cache de imagens imediatamente; cada troca também aguarda
