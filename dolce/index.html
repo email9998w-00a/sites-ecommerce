@@ -126,6 +126,7 @@
 
     .product-info { min-width: 0; }
     .offer-summary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); margin: 18px 0 20px; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .offer-summary-title { grid-column: 1 / -1; margin: 0 0 10px; color: var(--ink); font-size: 12px; font-weight: 700; text-align: left; }
     .offer-summary-item { padding: 0 12px; text-align: center; }
     .offer-summary-item + .offer-summary-item { border-left: 1px solid var(--line); }
     .offer-summary-item strong { display: block; color: var(--brand); font-size: 16px; line-height: 1.15; }
@@ -419,6 +420,7 @@
       .gallery-dot { width: 20px; height: 4px; }
       .gallery-dot.is-active { width: 30px; }
       .offer-summary { margin: 15px 0 17px; padding: 10px 0; }
+      .offer-summary-title { margin-bottom: 9px; font-size: 11.5px; }
       .offer-summary-item { padding: 0 5px; }
       .offer-summary-item strong { font-size: 14px; }
       .offer-summary-item span { font-size: 9.5px; }
@@ -544,8 +546,9 @@
           <h1 id="productTitle" tabindex="-1">Combo Dolce Gusto em Promoção - 60 Cápsulas</h1>
           <p class="positioning">Combo 6 caixas sabores Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p>
           <div class="offer-summary" aria-label="Resumo do conteúdo da oferta">
-            <div class="offer-summary-item"><strong id="summaryBoxCount">6</strong><span>caixas Dolce Gusto</span></div>
-            <div class="offer-summary-item"><strong>10</strong><span>cápsulas por caixa</span></div>
+            <p class="offer-summary-title">Conteúdo da oferta</p>
+            <div class="offer-summary-item"><strong id="summaryBoxCount">6</strong><span>caixas incluídas</span></div>
+            <div class="offer-summary-item"><strong>10</strong><span>cápsulas em cada caixa</span></div>
             <div class="offer-summary-item"><strong id="summaryCapsuleCount">60</strong><span>cápsulas no total</span></div>
           </div>
 
