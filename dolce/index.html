@@ -125,6 +125,17 @@
     .gallery-dot.is-active { width: 34px; background: var(--brand); }
 
     .product-info { min-width: 0; }
+    .offer-summary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin: 18px 0 20px; }
+    .offer-summary-item { padding: 11px 10px; border: 1px solid #dce7ee; border-radius: 10px; background: var(--surface); text-align: center; }
+    .offer-summary-item strong { display: block; color: var(--brand); font-size: 16px; line-height: 1.15; }
+    .offer-summary-item span { display: block; margin-top: 3px; color: var(--ink-soft); font-size: 10.5px; line-height: 1.25; }
+    .contents-box { margin: 20px 0 22px; padding: 16px 18px; border: 1px solid #dce7ee; border-radius: var(--radius-md); background: #fbfcfd; }
+    .contents-box h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; color: var(--brand); font-size: 15px; }
+    .contents-box h3 i { color: var(--success); font-size: 14px; }
+    .contents-box p { margin: 0 0 10px; color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
+    .contents-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 7px 18px; margin: 0; padding: 0; list-style: none; }
+    .contents-list li { position: relative; padding-left: 16px; color: var(--ink); font-size: 12.5px; line-height: 1.4; }
+    .contents-list li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: 800; }
     .status-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; color: var(--ink-soft); font-size: 12.5px; }
     .status-row span { display: inline-flex; align-items: center; gap: 6px; }
     .status-row i { color: var(--success); font-size: 12px; }
@@ -406,6 +417,15 @@
       .gallery-dots { min-height: 28px; margin-top: 7px; }
       .gallery-dot { width: 20px; height: 4px; }
       .gallery-dot.is-active { width: 30px; }
+      .offer-summary { gap: 6px; margin: 15px 0 17px; }
+      .offer-summary-item { padding: 9px 5px; }
+      .offer-summary-item strong { font-size: 14px; }
+      .offer-summary-item span { font-size: 9.5px; }
+      .contents-box { margin: 17px 0 19px; padding: 14px; }
+      .contents-box h3 { font-size: 14px; }
+      .contents-box p { font-size: 12px; }
+      .contents-list { grid-template-columns: 1fr; gap: 6px; }
+      .contents-list li { font-size: 11.5px; }
       .status-row { gap: 8px 14px; margin-bottom: 10px; font-size: 11px; }
       h1 { margin-bottom: 7px; font-size: clamp(23px, 7vw, 28px); line-height: 1.13; }
       .positioning { font-size: 13px; line-height: 1.5; }
@@ -522,6 +542,11 @@
 
           <h1 id="productTitle" tabindex="-1">Combo Dolce Gusto em Promoção - 60 Cápsulas</h1>
           <p class="positioning">Combo 6 caixas sabores Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p>
+          <div class="offer-summary" aria-label="Resumo do conteúdo da oferta">
+            <div class="offer-summary-item"><strong id="summaryBoxCount">6</strong><span>caixas Dolce Gusto</span></div>
+            <div class="offer-summary-item"><strong>10</strong><span>cápsulas por caixa</span></div>
+            <div class="offer-summary-item"><strong id="summaryCapsuleCount">60</strong><span>cápsulas no total</span></div>
+          </div>
 
           <div class="rating-row" aria-label="Avaliação média 4,9 de 5">
             <span class="stars" aria-hidden="true">★★★★★</span>
@@ -578,7 +603,18 @@
 
         <article class="tab-panel" id="descriptionPanel" role="tabpanel" aria-labelledby="descriptionTab">
           <h2>Uma seleção completa de cafés Dolce Gusto</h2>
-          <p>No Combo Promocional de <strong>6 caixas</strong>, você recebe uma seleção com um caixa de cada sabor descrito abaixo. A opção de <strong>12 caixas</strong> possui os mesmos sabores porém com 2 caixas de cada. Consulte sempre as instruções de preparo e as informações completas no rótulo de cada embalagem.</p>
+          <div class="contents-box" aria-labelledby="contentsTitle">
+            <h3 id="contentsTitle"><i class="fa-solid fa-box-open" aria-hidden="true"></i> O que você recebe</h3>
+            <p>Na opção de <strong>6 caixas</strong>, você recebe <strong>1 caixa de cada sabor</strong>, com <strong>10 cápsulas por caixa</strong>: são <strong>60 cápsulas no total</strong>. Na opção de 12 caixas, são 2 caixas de cada sabor, totalizando 120 cápsulas.</p>
+            <ul class="contents-list">
+              <li>1 caixa de Capuccino — 10 cápsulas</li>
+              <li>1 caixa de Espresso — 10 cápsulas</li>
+              <li>1 caixa de Espresso Intenso — 10 cápsulas</li>
+              <li>1 caixa de Café au Lait — 10 cápsulas</li>
+              <li>1 caixa de Café Matinal — 10 cápsulas</li>
+              <li>1 caixa de Café au Lait Intenso — 10 cápsulas</li>
+            </ul>
+          </div>
           <div class="description-photo-slot description-photo-slot--featured" role="button" tabindex="0" aria-label="Ver oferta do combo Dolce Gusto" data-focus-product><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp" alt="Detalhes do combo Dolce Gusto" loading="lazy"></div>
           <h3>Sabores incluídos no combo</h3>
           <ul>
@@ -919,6 +955,8 @@
 
       function updateProductView() {
         $('#selectedOptionLabel').textContent = `${selectedVariant.name} selecionado`;
+        $('#summaryBoxCount').textContent = selectedVariant.weight;
+        $('#summaryCapsuleCount').textContent = selectedVariant.weight * 10;
         $('#oldPrice').textContent = selectedVariant.oldPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#currentPrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
