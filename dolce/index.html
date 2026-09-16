@@ -125,12 +125,6 @@
     .gallery-dot.is-active { width: 34px; background: var(--brand); }
 
     .product-info { min-width: 0; }
-    .offer-summary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); margin: 18px 0 20px; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .offer-summary-title { grid-column: 1 / -1; margin: 0 0 10px; color: var(--ink); font-size: 12px; font-weight: 700; text-align: left; }
-    .offer-summary-item { padding: 0 12px; text-align: center; }
-    .offer-summary-item + .offer-summary-item { border-left: 1px solid var(--line); }
-    .offer-summary-item strong { display: block; color: var(--brand); font-size: 16px; line-height: 1.15; }
-    .offer-summary-item span { display: block; margin-top: 3px; color: var(--ink-soft); font-size: 10.5px; line-height: 1.25; }
     .contents-box { margin: 20px 0 22px; padding: 16px 18px; border: 1px solid #dce7ee; border-radius: var(--radius-md); background: #fbfcfd; }
     .contents-box h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; color: var(--brand); font-size: 15px; }
     .contents-box h3 i { color: var(--success); font-size: 14px; }
@@ -419,11 +413,6 @@
       .gallery-dots { min-height: 28px; margin-top: 7px; }
       .gallery-dot { width: 20px; height: 4px; }
       .gallery-dot.is-active { width: 30px; }
-      .offer-summary { margin: 15px 0 17px; padding: 10px 0; }
-      .offer-summary-title { margin-bottom: 9px; font-size: 11.5px; }
-      .offer-summary-item { padding: 0 5px; }
-      .offer-summary-item strong { font-size: 14px; }
-      .offer-summary-item span { font-size: 9.5px; }
       .contents-box { margin: 17px 0 19px; padding: 14px; }
       .contents-box h3 { font-size: 14px; }
       .contents-box p { font-size: 12px; }
@@ -545,13 +534,6 @@
 
           <h1 id="productTitle" tabindex="-1">Combo Dolce Gusto em Promoção - 60 Cápsulas</h1>
           <p class="positioning">Combo 6 caixas sabores Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p>
-          <div class="offer-summary" aria-label="Resumo do conteúdo da oferta">
-            <p class="offer-summary-title">Conteúdo da oferta</p>
-            <div class="offer-summary-item"><strong id="summaryBoxCount">6</strong><span>caixas incluídas</span></div>
-            <div class="offer-summary-item"><strong>10</strong><span>cápsulas em cada caixa</span></div>
-            <div class="offer-summary-item"><strong id="summaryCapsuleCount">60</strong><span>cápsulas no total</span></div>
-          </div>
-
           <div class="rating-row" aria-label="Avaliação média 4,9 de 5">
             <span class="stars" aria-hidden="true">★★★★★</span>
             <strong>4,9/5</strong>
@@ -959,8 +941,6 @@
 
       function updateProductView() {
         $('#selectedOptionLabel').textContent = `${selectedVariant.name} selecionado`;
-        $('#summaryBoxCount').textContent = selectedVariant.weight;
-        $('#summaryCapsuleCount').textContent = selectedVariant.weight * 10;
         $('#oldPrice').textContent = selectedVariant.oldPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#currentPrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
