@@ -106,13 +106,13 @@
     #product { scroll-margin-top: 92px; }
     .gallery { position: sticky; top: 92px; }
     .gallery-frame { position: relative; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
-    .promo-badge { position: absolute; top: 20px; right: 24px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border: 1px solid rgba(180,83,9,.22); border-radius: 999px; background: linear-gradient(135deg, #fffdf8, #fff7e8); color: var(--brand); box-shadow: 0 6px 16px rgba(180,83,9,.14); font-size: 10px; font-weight: 800; letter-spacing: .045em; line-height: 1; }
-    .promo-badge > i { color: #c2410c; font-size: 10px; }
-    .promo-badge small { display: inline; min-width: 58px; margin-left: 2px; color: #b45309; font-size: 9px; font-weight: 800; letter-spacing: .02em; text-align: center; text-transform: uppercase; }
-    .promo-badge.is-scarcity { border-color: rgba(180,35,24,.28); background: linear-gradient(135deg, #fff8f5, #ffede8); box-shadow: 0 6px 16px rgba(180,35,24,.16); }
-    .promo-badge.is-scarcity > i, .promo-badge.is-scarcity small { color: #b42318; }
-    .promo-badge.is-changing { animation: scarcitySwap .42s ease; }
-    @keyframes scarcitySwap { 0% { opacity: .7; transform: translateY(-2px) scale(.97); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+    .promo-badge { position: absolute; top: 20px; right: 24px; z-index: 3; display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; border: 1px solid #d7e2ea; border-radius: 999px; background: rgba(255,255,255,.97); color: var(--brand); box-shadow: 0 5px 14px rgba(16,40,64,.10); font-size: 10px; font-weight: 800; letter-spacing: .04em; line-height: 1; }
+    .promo-badge > i { color: var(--success); font-size: 10px; }
+    .promo-badge small { display: inline; min-width: 58px; margin-left: 1px; color: var(--success-dark); font-size: 9px; font-weight: 800; letter-spacing: .015em; text-align: center; text-transform: uppercase; }
+    .promo-badge.is-scarcity { border-color: #d8c99f; background: rgba(255,253,246,.98); box-shadow: 0 5px 14px rgba(92,75,34,.10); }
+    .promo-badge.is-scarcity > i, .promo-badge.is-scarcity small { color: #866d2c; }
+    .promo-badge.is-changing { animation: scarcitySwap .3s ease; }
+    @keyframes scarcitySwap { 0% { opacity: .72; } 100% { opacity: 1; } }
     @media (prefers-reduced-motion: reduce) { .promo-badge.is-changing { animation: none; } }
     .gallery-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border: 0; background: transparent; opacity: 1; transition: opacity .18s ease; }
     .gallery-slider::-webkit-scrollbar { display: none; }
