@@ -57,12 +57,24 @@
     .announcement { padding: 9px 16px; background: var(--brand-dark); color: #eef4f8; font-size: 12.5px; font-weight: 600; text-align: center; letter-spacing: .005em; }
 
     .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
-    .header-row { min-height: 68px; display: grid; grid-template-columns: auto minmax(280px, 1fr) auto; align-items: center; gap: clamp(18px, 3vw, 42px); }
-    .logo { color: var(--brand); font-size: 22px; font-weight: 800; letter-spacing: .04em; text-decoration: none; }
-    .header-links { display: flex; align-items: center; gap: 22px; }
+    .header-row { position: relative; min-height: 68px; display: grid; grid-template-columns: 1fr auto 1fr; grid-template-rows: 68px auto; align-items: center; gap: 10px 20px; padding-bottom: 10px; }
+    .logo { grid-column: 2; color: var(--brand); font-size: 22px; font-weight: 800; letter-spacing: .12em; text-decoration: none; }
+    .menu-trigger { position: relative; display: inline-grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 1px solid #c9d5e0; border-radius: 10px; background: #fff; color: var(--brand); font-size: 16px; transition: border-color .15s ease, background-color .15s ease, transform .15s ease; }
+    .menu-trigger:hover, .menu-trigger[aria-expanded="true"] { border-color: var(--brand); background: var(--surface); }
+    .menu-trigger:active { transform: scale(.97); }
+    .menu-trigger .fa-xmark { display: none; }
+    .menu-trigger[aria-expanded="true"] .fa-bars { display: none; }
+    .menu-trigger[aria-expanded="true"] .fa-xmark { display: inline-block; }
+    .menu-panel { position: absolute; top: calc(100% - 4px); left: 0; z-index: 30; display: none; width: min(290px, calc(100vw - 32px)); padding: 8px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: var(--shadow-md); }
+    .menu-panel.is-visible { display: grid; gap: 2px; }
+    .menu-panel a { display: flex; align-items: center; gap: 11px; padding: 12px; border-radius: 9px; color: var(--ink); font-size: 13px; font-weight: 600; text-decoration: none; }
+    .menu-panel a:hover, .menu-panel a:focus-visible { background: var(--surface); color: var(--brand); }
+    .menu-panel a i { width: 18px; color: var(--accent); text-align: center; }
+    .header-tools { grid-column: 1; grid-row: 1; display: flex; align-items: center; gap: 10px; }
+    .header-links { grid-column: 3; grid-row: 1; display: flex; align-items: center; justify-content: flex-end; gap: 22px; }
     .header-links a { color: var(--ink-soft); font-size: 13.5px; font-weight: 600; text-decoration: none; }
     .header-links a:hover { color: var(--brand); }
-    .search-form { position: relative; display: flex; align-items: center; width: 100%; max-width: 520px; justify-self: center; }
+    .search-form { position: relative; grid-column: 1 / -1; grid-row: 2; display: flex; align-items: center; width: 100%; max-width: 520px; justify-self: center; }
     .search-form label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .search-input { width: 100%; min-height: 42px; padding: 10px 48px 10px 17px; border: 1px solid #cbd8e2; border-radius: 999px; background: var(--surface); color: var(--ink); font-size: 13px; outline: none; transition: border-color .15s ease, background-color .15s ease, box-shadow .15s ease; }
     .search-input::placeholder { color: #7d8a95; }
@@ -354,7 +366,7 @@
       .reviews-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 900px) {
-      .header-row { grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; }
+      .header-row { gap: 16px; }
       .header-links { gap: 0; }
       .header-links a { display: none; }
     }
@@ -362,14 +374,16 @@
       .container { width: min(100% - 24px, 520px); }
       .announcement { min-height: 34px; display: grid; place-items: center; padding: 8px 12px; font-size: 10.5px; }
       .site-header { background: rgba(255,255,255,.985); }
-      .header-row { min-height: 0; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "logo actions" "search search"; gap: 10px 12px; padding-top: 10px; padding-bottom: 11px; }
-      .logo { grid-area: logo; align-self: center; font-size: 19px; line-height: 1; }
-      .header-links { grid-area: actions; gap: 0; }
+      .header-row { min-height: 0; grid-template-columns: 1fr auto 1fr; grid-template-areas: "tools logo actions" "search search search"; gap: 10px 12px; padding-top: 10px; padding-bottom: 11px; }
+      .logo { grid-area: logo; align-self: center; justify-self: center; font-size: 19px; line-height: 1; }
+      .header-tools { grid-area: tools; }
+      .header-links { grid-area: actions; gap: 0; justify-self: end; }
       .search-form { grid-area: search; max-width: none; }
       .search-input { min-height: 42px; padding: 10px 45px 10px 15px; border-color: #d2dde5; background: #f7f9fb; font-size: 12px; }
       .search-submit { right: 5px; width: 32px; height: 32px; }
       .search-results { top: calc(100% + 6px); max-height: min(46vh, 300px); overflow-y: auto; border-radius: 12px; }
       .search-result { min-height: 45px; padding: 9px 10px; }
+      .menu-trigger { width: 40px; height: 40px; }
       .cart-trigger { min-width: 44px; min-height: 40px; justify-content: center; padding: 7px 9px; border-radius: 10px; font-size: 0; gap: 6px; }
       .cart-trigger > i { font-size: 16px; }
       .cart-count { min-width: 18px; height: 18px; font-size: 10px; }
@@ -449,6 +463,17 @@
 
   <header class="site-header">
     <div class="container header-row">
+      <div class="header-tools">
+        <button class="menu-trigger" id="menuTrigger" type="button" aria-controls="menuPanel" aria-expanded="false" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav class="menu-panel" id="menuPanel" aria-label="Menu principal">
+          <a href="#product"><i class="fa-solid fa-box-open" aria-hidden="true"></i><span>Ver produto</span></a>
+          <a href="#details"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Detalhes do produto</span></a>
+          <a href="#faq"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Dúvidas frequentes</span></a>
+        </nav>
+      </div>
       <a class="logo" href="/" aria-label="HAVAN, página inicial">HAVAN</a>
       <form class="search-form" id="searchForm" role="search" autocomplete="off">
         <label for="searchInput">Buscar na loja</label>
@@ -1287,6 +1312,19 @@
         const cartEstimate = $('#cartShippingEstimate');
         if (cartEstimate) cartEstimate.textContent = `${day} de ${month}`;
       }
+
+      const menuTrigger = $('#menuTrigger');
+      const menuPanel = $('#menuPanel');
+      const setMenuState = (isOpen) => {
+        menuTrigger.setAttribute('aria-expanded', String(isOpen));
+        menuTrigger.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+        menuPanel.classList.toggle('is-visible', isOpen);
+      };
+      menuTrigger.addEventListener('click', () => setMenuState(menuTrigger.getAttribute('aria-expanded') !== 'true'));
+      menuPanel.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuState(false)));
+      document.addEventListener('click', (event) => {
+        if (!event.target.closest('.header-tools')) setMenuState(false);
+      });
 
       $('#buyNow').addEventListener('click', addSelectedVariant);
       $('#mobileBuy').addEventListener('click', addSelectedVariant);
