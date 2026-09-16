@@ -106,14 +106,9 @@
     #product { scroll-margin-top: 92px; }
     .gallery { position: sticky; top: 92px; }
     .gallery-frame { position: relative; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
-    .promo-badge { position: absolute; top: 20px; right: 24px; z-index: 3; display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; border: 1px solid #d7e2ea; border-radius: 999px; background: rgba(255,255,255,.97); color: var(--brand); box-shadow: 0 5px 14px rgba(16,40,64,.10); font-size: 10px; font-weight: 800; letter-spacing: .04em; line-height: 1; }
+    .promo-badge { position: absolute; top: 20px; right: 24px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border: 1px solid rgba(22,58,92,.14); border-radius: 999px; background: rgba(255,255,255,.94); color: var(--brand); box-shadow: 0 4px 12px rgba(16,40,64,.10); font-size: 10px; font-weight: 800; letter-spacing: .045em; line-height: 1; }
     .promo-badge > i { color: var(--success); font-size: 10px; }
-    .promo-badge small { display: inline; min-width: 58px; margin-left: 1px; color: var(--success-dark); font-size: 9px; font-weight: 800; letter-spacing: .015em; text-align: center; text-transform: uppercase; }
-    .promo-badge.is-scarcity { border-color: #d8c99f; background: rgba(255,253,246,.98); box-shadow: 0 5px 14px rgba(92,75,34,.10); }
-    .promo-badge.is-scarcity > i, .promo-badge.is-scarcity small { color: #866d2c; }
-    .promo-badge.is-changing { animation: scarcitySwap .3s ease; }
-    @keyframes scarcitySwap { 0% { opacity: .72; } 100% { opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) { .promo-badge.is-changing { animation: none; } }
+    .promo-badge small { display: inline; margin-left: 2px; color: var(--ink-soft); font-size: 9px; font-weight: 600; letter-spacing: 0; }
     .gallery-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border: 0; background: transparent; opacity: 1; transition: opacity .18s ease; }
     .gallery-slider::-webkit-scrollbar { display: none; }
     .gallery-slider.is-switching { opacity: .18; }
@@ -509,7 +504,7 @@
       <section class="product-shell" id="product" aria-labelledby="productTitle">
         <div class="gallery">
           <div class="gallery-frame" id="galleryFrame">
-            <span class="promo-badge" id="promoBadge" aria-label="Oferta no Pix: economize"><i class="fa-solid fa-tag" aria-hidden="true"></i><span>OFERTA NO PIX</span><small id="promoBadgeCopy" aria-live="polite">ECONOMIZE</small></span>
+            <span class="promo-badge" aria-label="Oferta especial no Pix"><i class="fa-solid fa-tag" aria-hidden="true"></i><span>OFERTA NO PIX</span><small>economize</small></span>
             <button class="gallery-arrow gallery-arrow--prev" id="galleryPrev" type="button" aria-label="Imagem anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
             <div class="gallery-slider" id="gallerySlider" aria-label="Fotos do produto"></div>
             <button class="gallery-arrow gallery-arrow--next" id="galleryNext" type="button" aria-label="Próxima imagem"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
@@ -558,7 +553,7 @@
             </div>
           </div>
 
-          <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Garantir oferta por <span id="buyCtaPrice">R$ 89,90</span></button>
+          <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Garantir oferta por <span id="buyCtaPrice">R$ 104,90</span></button>
           <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento processado com segurança.</p>
 
           <div class="trust-row">
@@ -670,7 +665,7 @@
   </footer>
 
   <div class="mobile-cta" id="mobileCta" aria-hidden="true">
-    <div><span class="mobile-cta-label">A partir de</span><span class="mobile-cta-price" id="mobilePrice">R$ 89,90</span></div>
+    <div><span class="mobile-cta-label">A partir de</span><span class="mobile-cta-price" id="mobilePrice">R$ 104,90</span></div>
     <button class="btn btn-primary" id="mobileBuy" type="button">Garantir oferta</button>
   </div>
 
@@ -720,7 +715,7 @@
       const REDIRECT_LOADING_DURATION = 900;
 
       const variants = [
-        { id: '6-caixas', name: '6 caixas', weight: 6, price: 89.90, oldPrice: 189.90, images: [
+        { id: '6-caixas', name: '6 caixas', weight: 6, price: 104.90, oldPrice: 189.90, images: [
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
@@ -1210,28 +1205,6 @@
         document.body.classList.remove('no-scroll');
       }
 
-      function setupPromoBadge() {
-        const badge = $('#promoBadge');
-        const copy = $('#promoBadgeCopy');
-        if (!badge || !copy) return;
-        const messages = [
-          { text: 'ECONOMIZE', scarcity: false, label: 'Oferta no Pix: economize' },
-          { text: 'APENAS HOJE', scarcity: true, label: 'Oferta no Pix: apenas hoje' }
-        ];
-        let activeIndex = 0;
-        window.setInterval(() => {
-          activeIndex = (activeIndex + 1) % messages.length;
-          const message = messages[activeIndex];
-          badge.classList.remove('is-changing');
-          window.requestAnimationFrame(() => {
-            copy.textContent = message.text;
-            badge.classList.toggle('is-scarcity', message.scarcity);
-            badge.setAttribute('aria-label', message.label);
-            badge.classList.add('is-changing');
-          });
-        }, 4200);
-      }
-
       function setupTabs() {
         $$('.tab-button').forEach((button) => button.addEventListener('click', () => {
           $$('.tab-button').forEach((item) => { item.classList.remove('is-active'); item.setAttribute('aria-selected', 'false'); });
@@ -1397,7 +1370,6 @@
       window.addEventListener('pageshow', () => setRedirectLoading(false));
 
       renderReviews(1);
-      setupPromoBadge();
       setupTabs();
       setupFaq();
       setupSearch();
