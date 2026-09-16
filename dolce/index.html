@@ -167,9 +167,7 @@
     .variant-pill[aria-disabled="true"] { opacity: .6; cursor: wait; }
 
     /* Price */
-    .price-box { margin: 0 0 18px; padding: 18px 20px; border: 1px solid #d7e2e9; border-radius: var(--radius-lg); background: linear-gradient(145deg, #fbfcfd 0%, #f4f8fa 100%); box-shadow: var(--shadow-sm); }
-    .price-context { display: flex; align-items: center; gap: 7px; margin-bottom: 11px; color: var(--brand); font-size: 12px; font-weight: 800; }
-    .price-context i { color: var(--success); font-size: 12px; }
+    .price-box { margin: 0 0 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
     .old-price-row { display: flex; align-items: center; gap: 9px; margin-bottom: 6px; min-height: 20px; }
     .old-price { color: var(--ink-soft); font-size: 13px; text-decoration: line-through; }
     .discount-tag { padding: 3px 7px; border-radius: 5px; background: #e6f4ec; color: var(--success-dark); font-size: 11px; font-weight: 700; }
@@ -178,16 +176,6 @@
     .installments { margin-top: 7px; color: var(--ink-soft); font-size: 13px; }
     .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 600; }
     .savings-note i { color: var(--success); font-size: 11px; }
-    .included-flavors { margin-top: 15px; padding-top: 14px; border-top: 1px solid #dfe7ec; }
-    .included-flavors-note { margin: -2px 0 10px; color: var(--ink-soft); font-size: 10.5px; line-height: 1.45; }
-    .included-flavors-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 9px; }
-    .included-flavors-title { display: inline-flex; align-items: center; gap: 7px; color: var(--brand); font-size: 12.5px; font-weight: 800; }
-    .included-flavors-title i { color: var(--success); font-size: 12px; }
-    .included-flavors-total { color: var(--ink-soft); font-size: 10.5px; font-weight: 600; text-align: right; }
-    .included-flavors-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 12px; margin: 0; padding: 0; list-style: none; }
-    .included-flavors-list li { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; min-width: 0; color: var(--ink); font-size: 11px; line-height: 1.35; }
-    .included-flavors-list li span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .included-flavors-list li span:last-child { flex: 0 0 auto; color: var(--ink-soft); font-size: 10px; white-space: nowrap; }
 
     .shipping-note { display: flex; align-items: flex-start; gap: 11px; margin: 0 0 17px; padding: 5px 0 2px; background: transparent; }
     .shipping-note-logo { flex: 0 0 34px; width: 34px; height: 30px; margin-top: 1px; object-fit: contain; }
@@ -442,20 +430,11 @@
       .variant-grid { gap: 6px; }
       .variant-pill { min-height: 36px; padding: 8px 12px; font-size: 11.5px; }
       .price-box { margin-bottom: 15px; padding: 15px; border-radius: 13px; }
-      .price-context { margin-bottom: 10px; font-size: 11.5px; }
-      .included-flavors-note { font-size: 10px; }
       .old-price { font-size: 12px; }
       .current-price { gap: 6px; font-size: 29px; }
       .pix-tag { padding: 4px 7px; font-size: 11px; }
       .installments { margin-top: 6px; font-size: 11.5px; }
       .savings-note { margin-top: 8px; font-size: 11px; }
-      .included-flavors { margin-top: 13px; padding-top: 12px; }
-      .included-flavors-heading { align-items: flex-start; }
-      .included-flavors-title { font-size: 11.5px; }
-      .included-flavors-total { font-size: 10px; }
-      .included-flavors-list { grid-template-columns: 1fr; gap: 5px; }
-      .included-flavors-list li { font-size: 10.5px; }
-      .included-flavors-list li span:last-child { font-size: 9.5px; }
       .shipping-note { gap: 8px; margin-bottom: 14px; padding: 3px 2px 2px; }
       .shipping-note-logo { flex-basis: 30px; width: 30px; height: 27px; }
       .shipping-note-copy .shipping-title { font-size: 11.5px; }
@@ -491,99 +470,6 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
-
-    /* ===================== Visual refinement ===================== */
-    :root {
-      --brand: #123b5d;
-      --brand-dark: #09283f;
-      --accent: #2f759c;
-      --success: #188457;
-      --success-dark: #116542;
-      --ink: #172532;
-      --ink-soft: #5d6b76;
-      --line: #dbe5eb;
-      --surface: #f4f7f9;
-      --shadow-sm: 0 2px 6px rgba(16,40,64,.06), 0 1px 2px rgba(16,40,64,.04);
-      --shadow-md: 0 18px 45px rgba(16,40,64,.12), 0 3px 10px rgba(16,40,64,.06);
-    }
-    body { background: linear-gradient(180deg, #ffffff 0%, #f8fafb 58%, #ffffff 100%); }
-    .announcement { background: linear-gradient(90deg, #09283f, #123b5d 55%, #09283f); letter-spacing: .015em; }
-    .site-header { background: rgba(255,255,255,.92); box-shadow: 0 1px 0 rgba(18,59,93,.05); }
-    .logo { letter-spacing: .16em; }
-    .search-input { border-color: #d5e0e7; background: #f6f9fb; box-shadow: inset 0 1px 2px rgba(16,40,64,.025); }
-    .search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(47,117,156,.12); }
-    .cart-trigger { border-color: #d2dee6; box-shadow: 0 2px 5px rgba(16,40,64,.04); }
-    .breadcrumbs { padding-top: 22px; color: #7a8790; }
-    .product-shell { gap: clamp(38px, 6vw, 76px); padding-top: 18px; }
-    .gallery { padding: 12px 0 0; }
-    .gallery-frame { overflow: hidden; border: 1px solid #e0e9ee; border-radius: 24px; background: radial-gradient(circle at 50% 42%, #ffffff 0 36%, #f1f6f8 100%); box-shadow: var(--shadow-md); }
-    .gallery-slide { aspect-ratio: 1 / .86; padding: 18px 30px; }
-    .gallery-slide img { width: 92%; height: 92%; max-width: 520px; filter: drop-shadow(0 18px 18px rgba(16,40,64,.12)); transition: transform .25s ease; }
-    .gallery-slide img:hover { transform: scale(1.025); }
-    .promo-badge { top: 18px; right: 18px; padding: 9px 13px; border-color: rgba(18,59,93,.13); box-shadow: 0 8px 20px rgba(16,40,64,.12); }
-    .gallery-arrow { width: 40px; height: 40px; border-color: #d8e3e9; box-shadow: 0 7px 17px rgba(16,40,64,.12); }
-    .gallery-arrow--prev { left: 16px; }
-    .gallery-arrow--next { right: 16px; }
-    .gallery-dots { margin-top: 14px; }
-    .gallery-dot { background: #cbd9e1; }
-    .gallery-dot.is-active { background: var(--brand); }
-    .product-info { padding-top: 8px; }
-    .status-row { gap: 10px; }
-    .status-row span { padding: 6px 10px; border: 1px solid #dce9e3; border-radius: 999px; background: #f2faf6; color: #3f6e5a; font-size: 11.5px; }
-    .status-row i { color: var(--success); }
-    h1 { max-width: 640px; font-size: clamp(29px, 3.4vw, 43px); letter-spacing: -.035em; }
-    .positioning { max-width: 560px; font-size: 15px; }
-    .rating-row { margin-top: 16px; }
-    .stars { letter-spacing: 2px; }
-    .choice-box { margin-top: 25px; padding: 16px; border: 1px solid #e0e8ed; border-radius: 15px; background: rgba(248,250,251,.8); }
-    .choice-heading { margin-bottom: 12px; }
-    .choice-heading strong { font-size: 14px; }
-    .choice-heading span { color: var(--accent); font-weight: 700; }
-    .variant-grid { gap: 9px; }
-    .variant-pill { min-width: 125px; min-height: 46px; padding: 10px 16px; border-color: #cad9e2; border-radius: 11px; background: #fff; box-shadow: 0 2px 4px rgba(16,40,64,.03); font-size: 13px; }
-    .variant-pill:hover { border-color: var(--accent); background: #f6fbfd; transform: translateY(-1px); }
-    .variant-pill.is-selected { border-color: var(--brand); background: linear-gradient(135deg, #123b5d, #1d5c83); box-shadow: 0 7px 14px rgba(18,59,93,.2); }
-    .price-box { margin-top: 15px; padding: 21px 22px; border-color: #cfdfe6; border-radius: 18px; background: linear-gradient(145deg, #ffffff 0%, #f0f7f6 100%); box-shadow: 0 12px 26px rgba(16,40,64,.09); }
-    .price-context { margin-bottom: 13px; font-size: 12.5px; letter-spacing: .01em; }
-    .old-price-row { margin-bottom: 8px; }
-    .current-price { font-size: clamp(34px, 4vw, 44px); }
-    .pix-tag { padding: 5px 9px; border-radius: 7px; }
-    .installments { margin-top: 9px; }
-    .savings-note { margin-top: 11px; padding: 7px 9px; border-radius: 7px; background: #e9f6ee; }
-    .included-flavors { margin-top: 17px; padding-top: 16px; }
-    .included-flavors-title { font-size: 13px; }
-    .included-flavors-total { padding: 4px 8px; border-radius: 999px; background: #e8f1f5; color: var(--brand); font-size: 10px; }
-    .included-flavors-list li { padding: 6px 8px; border: 1px solid #e3ebef; border-radius: 7px; background: rgba(255,255,255,.65); }
-    .shipping-note { margin-top: 4px; padding: 10px 12px; border: 1px solid #dcebe3; border-radius: 12px; background: #f4fbf7; }
-    .btn-primary { box-shadow: 0 8px 16px rgba(24,132,87,.2); }
-    .btn-primary:hover { box-shadow: 0 10px 20px rgba(20,92,58,.25); transform: translateY(-1px); }
-    .trust-row { margin-top: 19px; padding-top: 18px; }
-    .details { background: #fff; }
-    .contents-box, .highlight-card, .review-card { box-shadow: var(--shadow-sm); }
-    .contents-box { border-color: #dfe8ed; background: linear-gradient(145deg, #fbfdfe, #f4f8fa); }
-    .tabs { border-bottom-color: #dce6eb; }
-    .tab-button.is-active::after { height: 3px; border-radius: 4px 4px 0 0; }
-    .reviews-section { background: linear-gradient(180deg, #f4f8fa, #eef4f6); }
-    @media (max-width: 900px) {
-      .gallery { padding-top: 0; }
-      .product-info { padding-top: 0; }
-    }
-    @media (max-width: 620px) {
-      body { background: #fff; }
-      .breadcrumbs { padding-top: 13px; }
-      .product-shell { padding-top: 5px; }
-      .gallery-frame { border-radius: 19px; }
-      .gallery-slide { aspect-ratio: 1 / .94; padding: 16px 28px; }
-      .status-row span { padding: 5px 8px; font-size: 10.5px; }
-      h1 { font-size: clamp(26px, 8vw, 33px); }
-      .choice-box { margin-top: 18px; padding: 13px; }
-      .variant-pill { min-width: 0; flex: 1 1 calc(50% - 5px); min-height: 42px; padding-inline: 10px; }
-      .price-box { margin-top: 12px; padding: 17px 15px; border-radius: 15px; }
-      .current-price { font-size: 32px; }
-      .included-flavors-list li { padding: 5px 7px; }
-      .shipping-note { padding: 9px 10px; }
-    }
-
   </style>
 </head>
 <body>
@@ -646,8 +532,8 @@
             <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra segura</span>
           </div>
 
-          <h1 id="productTitle" tabindex="-1">Combo Dolce Gusto: 6 caixas e 60 cápsulas</h1>
-          <p class="positioning">Uma seleção pronta com 6 sabores: Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p>
+          <h1 id="productTitle" tabindex="-1">Combo 6 Caixas Dolce Gusto em Promoção - 60 Cápsulas</h1>
+          <p class="positioning">Combo 6 caixas sabores Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p>
           <div class="rating-row" aria-label="Avaliação média 4,9 de 5">
             <span class="stars" aria-hidden="true">★★★★★</span>
             <strong>4,9/5</strong>
@@ -657,28 +543,19 @@
           <section class="choice-box" aria-labelledby="choiceTitle">
             <div class="choice-heading">
               <strong id="choiceTitle">Escolha a quantidade</strong>
-              <span id="selectedOptionLabel" aria-live="polite">6 caixas selecionadas</span>
+              <span id="selectedOptionLabel" aria-live="polite">6 caixas selecionado</span>
             </div>
             <div class="variant-grid" id="variantGrid" role="radiogroup" aria-labelledby="choiceTitle"></div>
           </section>
 
           <div class="price-box" id="priceBox" aria-live="polite">
-            <div class="price-context"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span id="priceContext">Oferta para 6 caixas selecionadas</span></div>
             <div class="old-price-row">
-              <span class="old-price">De R$ <span id="oldPrice">189,90</span></span>
-              <span class="discount-tag" id="discount">53% OFF</span>
+              <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
+              <span class="discount-tag" id="discount">31% OFF</span>
             </div>
             <div class="current-price">R$ <span id="currentPrice">89,90</span><span class="pix-tag">no Pix</span></div>
             <div class="installments" id="installments">ou em até 3x de R$ 29,97 sem juros</div>
-            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 100,00 nesta opção</div>
-            <div class="included-flavors" aria-labelledby="includedFlavorsTitle">
-              <div class="included-flavors-heading">
-                <strong class="included-flavors-title" id="includedFlavorsTitle"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i> O que você recebe</strong>
-                <span class="included-flavors-total" id="includedFlavorsTotal">6 caixas · 60 cápsulas</span>
-              </div>
-              <p class="included-flavors-note">Seleção fixa do combo: cada caixa contém 10 cápsulas e os sabores abaixo já estão incluídos.</p>
-              <ul class="included-flavors-list" id="includedFlavorsList"></ul>
-            </div>
+            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 40,00</div>
           </div>
 
           <div class="shipping-note" aria-label="Informações de entrega" data-delivery-days="3">
@@ -861,17 +738,14 @@
       const STORAGE_KEY = 'checkout_cart_v3';
       const REDIRECT_LOADING_DURATION = 900;
 
-      const flavorNames = ['Capuccino', 'Espresso', 'Espresso Intenso', 'Café au Lait', 'Café Matinal', 'Café au Lait Intenso'];
-      const capsuleCountPerBox = 10;
-
       const variants = [
-        { id: '6-caixas', name: '6 caixas', weight: 6, quantityPerFlavor: 1, price: 89.90, oldPrice: 189.90, images: [
+        { id: '6-caixas', name: '6 caixas', weight: 6, price: 89.90, oldPrice: 189.90, images: [
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ttuQACdNJDtVNOrp.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp'
         ] },
-        { id: '12-caixas', name: '12 caixas', weight: 12, quantityPerFlavor: 2, price: 139.90, oldPrice: 199.90, images: [
+        { id: '12-caixas', name: '12 caixas', weight: 12, price: 139.90, oldPrice: 199.90, images: [
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ttuQACdNJDtVNOrp.webp',
@@ -1066,18 +940,12 @@
       }
 
       function updateProductView() {
-        $('#selectedOptionLabel').textContent = `${selectedVariant.name} selecionadas`;
-        $('#priceContext').textContent = `Oferta para ${selectedVariant.name} selecionadas`;
+        $('#selectedOptionLabel').textContent = `${selectedVariant.name} selecionado`;
         $('#oldPrice').textContent = selectedVariant.oldPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#currentPrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
         $('#installments').textContent = `ou em até 3x de ${money(selectedVariant.price / 3)} sem juros`;
         $('#savingsNote').innerHTML = `<i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza ${money(selectedVariant.oldPrice - selectedVariant.price)}`;
-        const boxesPerFlavor = selectedVariant.quantityPerFlavor || Math.max(1, Math.round(selectedVariant.weight / flavorNames.length));
-        const totalBoxes = boxesPerFlavor * flavorNames.length;
-        const totalCapsules = totalBoxes * capsuleCountPerBox;
-        $('#includedFlavorsTotal').textContent = `${totalBoxes} caixas · ${totalCapsules} cápsulas`;
-        $('#includedFlavorsList').innerHTML = flavorNames.map((flavor) => `<li><span>${boxesPerFlavor}x ${flavor}</span><span>${boxesPerFlavor * capsuleCountPerBox} cáps.</span></li>`).join('');
         $('#mobilePrice').textContent = money(selectedVariant.price);
         $('#buyCtaPrice').textContent = money(selectedVariant.price);
         renderVariants();
