@@ -568,12 +568,12 @@
               </div>
               <p class="included-summary-lead"><strong id="includedBoxes">6 sabores</strong><span>· 1 caixa de cada sabor</span></p>
               <ul class="included-flavors" id="includedFlavors">
-                <li data-flavor="Capuccino"><strong>Capuccino</strong><span>1 caixa · 10 cáps.</span></li>
-                <li data-flavor="Espresso"><strong>Espresso</strong><span>1 caixa · 10 cáps.</span></li>
-                <li data-flavor="Espresso Intenso"><strong>Espresso Intenso</strong><span>1 caixa · 10 cáps.</span></li>
-                <li data-flavor="Café au Lait"><strong>Café au Lait</strong><span>1 caixa · 10 cáps.</span></li>
-                <li data-flavor="Café Matinal"><strong>Café Matinal</strong><span>1 caixa · 10 cáps.</span></li>
-                <li data-flavor="Café au Lait Intenso"><strong>Café au Lait Intenso</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Capuccino"><strong>1x Capuccino</strong><span>10 cápsulas</span></li>
+                <li data-flavor="Espresso"><strong>1x Espresso</strong><span>10 cápsulas</span></li>
+                <li data-flavor="Espresso Intenso"><strong>1x Espresso Intenso</strong><span>10 cápsulas</span></li>
+                <li data-flavor="Café au Lait"><strong>1x Café au Lait</strong><span>10 cápsulas</span></li>
+                <li data-flavor="Café Matinal"><strong>1x Café Matinal</strong><span>10 cápsulas</span></li>
+                <li data-flavor="Café au Lait Intenso"><strong>1x Café au Lait Intenso</strong><span>10 cápsulas</span></li>
               </ul>
             </div>
             <div class="old-price-row">
@@ -979,7 +979,7 @@
         $('#includedBoxes').textContent = '6 sabores';
         $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong id="includedBoxes">6 sabores</strong><span>· ${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} de cada sabor</span>`;
         $$('.included-flavors li', $('#includedFlavors')).forEach((item) => {
-                item.innerHTML = `<strong>${item.dataset.flavor}</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''}</span>`;
+                item.innerHTML = `<strong>${boxesPerFlavor}x ${item.dataset.flavor}</strong><span>${boxesPerFlavor * 10} cápsulas</span>`;
         });
         $('#mobilePrice').textContent = money(selectedVariant.price);
         $('#buyCtaPrice').textContent = money(selectedVariant.price);
