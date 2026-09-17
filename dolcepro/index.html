@@ -1,627 +1,1481 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Cápsulas Dolce Gusto - cafés práticos e saborosos para preparar em poucos minutos. Variedade de sabores e oferta especial por tempo limitado.">
-    <title>Cápsulas Dolce Gusto | Café Prático e Saboroso</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Combo Dolce Gusto: 6 caixas | 60 cápsulas</title>
+  <meta name="description" content="Combo Dolce Gusto com 6 caixas e 60 cápsulas: 1 caixa de cada um dos 6 sabores, com 10 cápsulas por caixa. Pix, cartão e checkout seguro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="preload" as="image" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp" fetchpriority="high">
+  <style>
+    /* ===================== Tokens ===================== */
+    :root {
+      --brand: #163a5c;
+      --brand-dark: #0f2940;
+      --accent: #2b6e96;
+      --success: #1c7a4d;
+      --success-dark: #145c3a;
+      --ink: #182430;
+      --ink-soft: #56636f;
+      --line: #e1e7ec;
+      --paper: #ffffff;
+      --surface: #f6f8fa;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 1px 3px rgba(16,40,64,.07), 0 1px 2px rgba(16,40,64,.04);
+      --shadow-md: 0 10px 28px rgba(16,40,64,.10);
+      --container: 1180px;
+    }
 
-    <!-- Preconnect para fontes externas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.no-scroll { overflow: hidden; }
+    img { max-width: 100%; display: block; }
+    button, input { font: inherit; }
+    button { cursor: pointer; background: none; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid rgba(43,110,150,.35); outline-offset: 2px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .container { width: min(var(--container), calc(100% - 40px)); margin-inline: auto; }
 
-    <style>
-        :root {
-            --primary-navy: #3b2416;
-            --accent-universal: #7b3f20; /* Marrom café */
-            --accent-hover: #5c2d18;
-            --accent-gold: #c98b4a;
-            --text-main: #1f2937;
-            --text-muted: #6b7280;
-            --bg-soft: #fbf6f0;
-            --white: #ffffff;
-            --shadow-soft: 0 20px 40px rgba(0,0,0,0.05);
-            --shadow-strong: 0 10px 30px rgba(123, 63, 32, 0.2);
-            --success-green: #27ae60;
-            --focus-ring: 0 0 0 3px rgba(123, 63, 32, 0.35);
-        }
+    .skip-link { position: fixed; top: 10px; left: 10px; z-index: 100; padding: 10px 14px; border-radius: var(--radius-sm); background: var(--brand); color: #fff; font-size: 13px; font-weight: 700; text-decoration: none; transform: translateY(-160%); transition: transform .15s ease; }
+    .skip-link:focus { transform: translateY(0); }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+    /* ===================== Announcement + header ===================== */
+    .announcement { padding: 9px 16px; background: var(--brand-dark); color: #eef4f8; font-size: 12.5px; font-weight: 600; text-align: center; letter-spacing: .005em; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+    .header-row { position: relative; min-height: 68px; display: grid; grid-template-columns: auto minmax(280px, 1fr) auto; align-items: center; gap: clamp(18px, 3vw, 42px); }
+    .logo { position: absolute; left: 50%; z-index: 1; color: var(--brand); font-size: 22px; font-weight: 800; letter-spacing: .12em; text-decoration: none; transform: translateX(-50%); }
+    .menu-trigger { position: relative; display: inline-grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 1px solid #c9d5e0; border-radius: 10px; background: #fff; color: var(--brand); font-size: 16px; transition: border-color .15s ease, background-color .15s ease, transform .15s ease; }
+    .menu-trigger:hover, .menu-trigger[aria-expanded="true"] { border-color: var(--brand); background: var(--surface); }
+    .menu-trigger:active { transform: scale(.97); }
+    .menu-trigger .fa-xmark { display: none; }
+    .menu-trigger[aria-expanded="true"] .fa-bars { display: none; }
+    .menu-trigger[aria-expanded="true"] .fa-xmark { display: inline-block; }
+    .menu-panel { position: absolute; top: calc(100% - 4px); left: 0; z-index: 30; display: none; width: min(290px, calc(100vw - 32px)); padding: 8px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: var(--shadow-md); }
+    .menu-panel.is-visible { display: grid; gap: 2px; }
+    .menu-panel a { display: flex; align-items: center; gap: 11px; padding: 12px; border-radius: 9px; color: var(--ink); font-size: 13px; font-weight: 600; text-decoration: none; }
+    .menu-panel a:hover, .menu-panel a:focus-visible { background: var(--surface); color: var(--brand); }
+    .menu-panel a i { width: 18px; color: var(--accent); text-align: center; }
+    .header-tools { grid-column: 1; grid-row: 1; display: flex; align-items: center; gap: 10px; }
+    .header-links { grid-column: 3; grid-row: 1; display: flex; align-items: center; justify-content: flex-end; gap: 22px; }
+    .header-links a { color: var(--ink-soft); font-size: 13.5px; font-weight: 600; text-decoration: none; }
+    .header-links a:hover { color: var(--brand); }
+    .search-form { position: relative; grid-column: 2; grid-row: 1; display: flex; align-items: center; width: 100%; max-width: 520px; justify-self: center; }
+    .search-form label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .search-input { width: 100%; min-height: 42px; padding: 10px 48px 10px 17px; border: 1px solid #cbd8e2; border-radius: 999px; background: var(--surface); color: var(--ink); font-size: 13px; outline: none; transition: border-color .15s ease, background-color .15s ease, box-shadow .15s ease; }
+    .search-input::placeholder { color: #7d8a95; }
+    .search-input:focus { border-color: var(--accent); background: #fff; box-shadow: 0 0 0 4px rgba(43,110,150,.1); }
+    .search-submit { position: absolute; right: 5px; display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 50%; background: var(--brand); color: #fff; font-size: 12px; transition: background-color .15s ease, transform .15s ease; }
+    .search-submit:hover { background: var(--brand-dark); }
+    .search-submit:active { transform: scale(.94); }
+    .search-results { position: absolute; top: calc(100% + 8px); right: 0; left: 0; z-index: 25; display: none; padding: 7px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: var(--shadow-md); }
+    .search-results.is-visible { display: block; }
+    .search-result { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 11px; border: 0; border-radius: 9px; color: var(--ink); text-align: left; font-size: 12.5px; }
+    .search-result:hover, .search-result:focus-visible { background: var(--surface); }
+    .search-result i { width: 22px; color: var(--accent); text-align: center; }
+    .search-result small { display: block; margin-top: 2px; color: var(--ink-soft); font-size: 10.5px; }
+    .search-empty { padding: 12px; color: var(--ink-soft); font-size: 12px; text-align: center; }
+    .cart-trigger { display: inline-flex; align-items: center; gap: 9px; min-height: 42px; padding: 9px 13px; border: 1px solid #c9d5e0; border-radius: 10px; background: #fff; color: var(--brand); font-weight: 700; font-size: 13.5px; transition: border-color .15s ease, background-color .15s ease, transform .15s ease; }
+    .cart-trigger:hover { border-color: var(--brand); background: var(--surface); }
+    .cart-trigger:active { transform: scale(.97); }
+    .cart-trigger > i { font-size: 15px; }
+    .cart-count { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding-inline: 5px; border-radius: 99px; background: var(--brand); color: #fff; font-size: 11px; font-weight: 700; }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-soft);
-            color: var(--text-main);
-            overflow-x: hidden;
-            line-height: 1.6;
-            background: radial-gradient(circle at top right, #fff3e4 0%, var(--bg-soft) 50%, #f1dfcc 100%);
-        }
+    .breadcrumbs { padding: 18px 0 8px; color: var(--ink-soft); font-size: 12.5px; }
+    .breadcrumbs a { text-decoration: none; }
+    .breadcrumbs a:hover { color: var(--brand); text-decoration: underline; }
+    .breadcrumbs span { margin-inline: 8px; color: #b6c0c9; }
 
-        /* Elementos de fundo */
-        .bg-elements {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
+    /* ===================== Product ===================== */
+    .product-shell { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(340px,.95fr); gap: clamp(32px, 5vw, 64px); padding: 14px 0 60px; align-items: start; }
 
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.12;
-        }
+    #product { scroll-margin-top: 92px; }
+    .gallery { position: sticky; top: 92px; }
+    .gallery-frame { position: relative; overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+    .promo-badge { position: absolute; top: 20px; right: 24px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border: 1px solid rgba(22,58,92,.14); border-radius: 999px; background: rgba(255,255,255,.94); color: var(--brand); box-shadow: 0 4px 12px rgba(16,40,64,.10); font-size: 10px; font-weight: 800; letter-spacing: .045em; line-height: 1; }
+    .promo-badge > i { color: var(--success); font-size: 10px; }
+    .promo-badge small { display: inline; margin-left: 2px; color: var(--ink-soft); font-size: 9px; font-weight: 600; letter-spacing: 0; }
+    .gallery-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border: 0; background: transparent; opacity: 1; transition: opacity .18s ease; }
+    .gallery-slider::-webkit-scrollbar { display: none; }
+    .gallery-slider.is-switching { opacity: .18; }
+    .gallery-slide { flex: 0 0 100%; display: grid; place-items: center; aspect-ratio: 16 / 10; padding: 0; scroll-snap-align: start; background: transparent; contain: layout paint; }
+    .gallery-slide img { width: 88%; height: 88%; max-width: 480px; object-fit: contain; cursor: zoom-in; filter: none; background: transparent; }
+    .gallery-arrow { position: absolute; top: 50%; z-index: 2; display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid rgba(203,216,226,.9); border-radius: 50%; background: rgba(255,255,255,.92); color: var(--brand); box-shadow: 0 4px 12px rgba(16,40,64,.10); opacity: .9; transform: translateY(-50%); transition: border-color .15s ease, background-color .15s ease, opacity .15s ease; }
+    .gallery-arrow:hover { border-color: var(--brand); background: #fff; opacity: 1; }
+    .gallery-arrow:disabled { visibility: hidden; }
+    .gallery-arrow--prev { left: 14px; }
+    .gallery-arrow--next { right: 14px; }
+    .gallery-dots { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 30px; margin-top: 10px; }
+    .gallery-dot { width: 24px; height: 4px; padding: 0; border: 0; border-radius: 99px; background: #d6e0e7; transition: background-color .15s ease, width .15s ease; }
+    .gallery-dot:hover { background: #9fb0bd; }
+    .gallery-dot.is-active { width: 34px; background: var(--brand); }
 
-        .circle-1 { top: -10%; right: -10%; width: 60vw; height: 60vw; background: var(--accent-universal); }
-        .circle-2 { bottom: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--accent-gold); }
+    .product-info { min-width: 0; }
+    .contents-box { margin: 20px 0 22px; padding: 16px 18px; border: 1px solid #dce7ee; border-radius: var(--radius-md); background: #fbfcfd; }
+    .contents-box h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; color: var(--brand); font-size: 15px; }
+    .contents-box h3 i { color: var(--success); font-size: 14px; }
+    .contents-box p { margin: 0 0 10px; color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
+    .contents-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 7px 18px; margin: 0; padding: 0; list-style: none; }
+    .contents-list li { position: relative; padding-left: 16px; color: var(--ink); font-size: 12.5px; line-height: 1.4; }
+    .contents-list li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: 800; }
+    .status-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; color: var(--ink-soft); font-size: 12.5px; }
+    .status-row span { display: inline-flex; align-items: center; gap: 6px; }
+    .status-row i { color: var(--success); font-size: 12px; }
 
-        /* Container Principal */
-        .container {
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto;
-            padding: 20px 16px 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    h1 { margin: 0 0 8px; color: var(--ink); font-size: clamp(26px, 3vw, 36px); line-height: 1.15; letter-spacing: -.02em; }
+    .positioning { max-width: 480px; margin: 0; color: var(--ink-soft); font-size: 14.5px; line-height: 1.6; }
+    .rating-row { display: flex; flex-wrap: nowrap; align-items: center; gap: 8px; margin: 14px 0 22px; font-size: 13px; }
+    .stars { color: #e0951a; letter-spacing: 1px; font-size: 14px; }
+    .rating-row strong { color: var(--ink); }
+    .rating-link { flex: 0 1 auto; min-width: 0; color: var(--accent); font-weight: 600; text-underline-offset: 3px; font-size: 13px; white-space: nowrap; }
 
-        /* Card de Oferta Principal */
-        .card {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 32px;
-            padding: 2.5rem 1.5rem;
-            box-shadow: var(--shadow-soft);
-            text-align: center;
-            position: relative;
-            margin-bottom: 24px;
-        }
+    /* Variant selector */
+    .choice-box { margin: 0 0 20px; }
+    .choice-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+    .choice-heading strong { color: var(--ink); font-size: 13.5px; font-weight: 700; }
+    .choice-heading span { color: var(--ink-soft); font-size: 12.5px; }
+    .variant-grid { display: flex; flex-wrap: wrap; gap: 7px; }
+    .variant-pill {
+      flex: 0 0 auto;
+      min-height: 38px;
+      padding: 8px 14px;
+      border: 1px solid #cbd8e2;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 12.5px;
+      font-weight: 650;
+      line-height: 1.2;
+      transition: border-color .15s ease, background-color .15s ease, color .15s ease;
+    }
+    .variant-pill:hover { border-color: var(--accent); }
+    .variant-pill.is-selected { border-color: var(--brand); background: var(--brand); color: #fff; }
+    .variant-pill[aria-disabled="true"] { opacity: .6; cursor: wait; }
 
-        .logo-circle {
-            width: 85px;
-            height: 85px;
-            background: var(--white);
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-        }
+    .included-summary { margin: 0 0 14px; padding: 15px 16px 13px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .included-summary-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 9px; }
+    .included-summary-title { color: var(--brand); font-size: 13.5px; font-weight: 800; letter-spacing: -.01em; }
+    .included-summary-title i { margin-right: 7px; color: var(--success); font-size: 12px; }
+    .included-summary-total { padding: 4px 8px; border-radius: 999px; background: #e6f4ec; color: var(--success-dark); font-size: 10px; font-weight: 800; white-space: nowrap; }
+    .included-summary-lead { display: flex; align-items: baseline; gap: 7px; margin: 0 0 9px; padding-bottom: 10px; border-bottom: 1px solid #dfe7ec; color: var(--ink-soft); font-size: 11px; line-height: 1.4; }
+    .included-summary-lead strong { color: var(--ink); font-size: 17px; letter-spacing: -.03em; line-height: 1; }
+    .included-flavors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; margin: 0; padding: 0; list-style: none; color: var(--ink); font-size: 11px; line-height: 1.35; }
+    .included-flavors li { display: flex; align-items: center; gap: 7px; min-width: 0; padding: 5px 0; }
+    .included-flavors li::before { content: "✓"; flex: 0 0 auto; color: var(--success); font-size: 11px; font-weight: 800; }
+    .included-flavors li strong { overflow: hidden; color: var(--ink); font-weight: 650; text-overflow: ellipsis; white-space: nowrap; }
+    .included-flavors li span { margin-left: auto; flex: 0 0 auto; color: var(--ink-soft); font-size: 10px; font-weight: 600; white-space: nowrap; }
 
-        .logo-circle img { width: 100%; height: auto; object-fit: contain; }
+    /* Price */
+    .price-box { margin: 0 0 18px; padding: 15px 18px 17px; border: 1px solid #cfe4d8; border-radius: 14px; background: #f7fbf8; box-shadow: 0 3px 10px rgba(28,122,77,.06); }
+    .price-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 11px; color: var(--brand); font-size: 12.5px; font-weight: 800; }
+    .price-heading i { margin-right: 6px; color: var(--success); font-size: 12px; }
+    .price-heading-note { color: var(--success-dark); font-size: 10px; font-weight: 700; }
+    .old-price-row { display: flex; align-items: center; gap: 9px; margin-bottom: 4px; min-height: 18px; }
+    .old-price { color: var(--ink-soft); font-size: 13px; text-decoration: line-through; }
+    .discount-tag { padding: 3px 7px; border-radius: 5px; background: #e6f4ec; color: var(--success-dark); font-size: 11px; font-weight: 700; }
+    .current-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 7px; color: var(--brand); font-size: clamp(32px, 3.8vw, 40px); font-weight: 800; letter-spacing: -.04em; line-height: 1.05; }
+    .price-prefix { color: var(--ink-soft); font-size: 13px; font-weight: 600; letter-spacing: 0; }
+    .pix-tag { padding: 4px 8px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 13px; font-weight: 700; letter-spacing: 0; }
+    .installments { margin-top: 7px; color: var(--ink-soft); font-size: 13px; }
+    .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 600; }
+    .savings-note i { color: var(--success); font-size: 11px; }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 14px;
-            background: rgba(123, 63, 32, 0.1);
-            color: var(--accent-universal);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            border-radius: 100px;
-            margin-bottom: 1.2rem;
-        }
+    .shipping-note { display: flex; align-items: flex-start; gap: 11px; margin: 0 0 17px; padding: 5px 0 2px; background: transparent; }
+    .shipping-note-logo { flex: 0 0 34px; width: 34px; height: 30px; margin-top: 1px; object-fit: contain; }
+    .shipping-note-copy { flex: 1; min-width: 0; }
+    .shipping-note-copy p { margin: 0; color: var(--ink-soft); font-size: 11px; line-height: 1.35; }
+    .shipping-note-copy .shipping-title { color: var(--ink); font-size: 12px; line-height: 1.3; }
+    .shipping-note-copy .shipping-title strong { font-weight: 700; }
+    .shipping-note-copy .shipping-region { color: var(--ink-soft); font-weight: 500; }
+    .shipping-note-copy .shipping-estimated { margin-top: 3px; color: var(--success-dark); }
+    .shipping-note-copy .shipping-estimated strong { font-weight: 800; }
 
-        .title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: var(--primary-navy);
-            line-height: 1.1;
-            margin-bottom: 0.8rem;
-        }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; width: 100%; min-height: 54px; padding: 13px 16px; border: 1px solid transparent; border-radius: 10px; font-size: 14px; font-weight: 700; transition: background-color .15s ease, border-color .15s ease; }
+    .btn-primary { border-color: var(--success); background: var(--success); color: #fff; }
+    .btn-primary:hover { border-color: var(--success-dark); background: var(--success-dark); }
+    .btn-primary:disabled { opacity: .65; cursor: wait; }
+    .btn-ghost { border-color: #cbd8e2; background: #fff; color: var(--brand); }
+    .btn-ghost:hover { border-color: var(--brand); background: var(--surface); }
 
-        .title span { display: block; color: var(--accent-universal); }
+    .purchase-note { margin: 10px 0 0; color: var(--ink-soft); font-size: 12px; text-align: center; }
+    .purchase-note i { color: var(--success); margin-right: 4px; }
 
-        .offer-value {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 800;
-            color: var(--accent-universal);
-            line-height: 1;
-            margin: 1rem 0;
-            position: relative;
-        }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 14px 20px; justify-content: center; margin: 16px 0 0; padding-top: 16px; border-top: 1px solid var(--line); }
+    .trust-row span { display: inline-flex; align-items: center; gap: 7px; color: var(--ink-soft); font-size: 12px; font-weight: 600; }
+    .trust-row i { color: var(--success); font-size: 12px; }
 
-        .offer-value::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 4px;
-            background: var(--accent-gold);
-            margin: 8px auto 0;
-            border-radius: 2px;
-        }
+    /* ===================== Details tabs ===================== */
+    .details { border-top: 1px solid var(--line); }
+    .tabs { display: flex; gap: 28px; overflow-x: auto; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab-button { position: relative; flex: 0 0 auto; min-height: 52px; padding: 14px 0; border: 0; color: var(--ink-soft); font-size: 13.5px; font-weight: 600; }
+    .tab-button.is-active { color: var(--brand); }
+    .tab-button.is-active::after { content: ""; position: absolute; right: 0; bottom: -1px; left: 0; height: 2px; background: var(--brand); }
+    .tab-panel { padding: 38px 0 48px; }
+    .tab-panel[hidden] { display: none; }
+    .tab-panel h2 { margin: 0 0 14px; font-size: 23px; letter-spacing: -.02em; }
+    .tab-panel p, .tab-panel li { max-width: 760px; color: var(--ink-soft); font-size: 14.5px; line-height: 1.75; }
+    .tab-panel ul { padding-left: 20px; }
+    .highlight-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin-top: 22px; }
+    .highlight-card { padding: 18px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+    .highlight-card i { color: var(--brand); font-size: 17px; }
+    .highlight-card h3 { margin: 10px 0 6px; font-size: 14px; }
+    .highlight-card p { margin: 0; font-size: 12.5px; line-height: 1.55; }
+    .description-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 24px; }
+    .description-photo-slot { display: grid; place-items: center; min-height: 170px; padding: 12px; overflow: hidden; border: 1px solid #e3eaf0; border-radius: var(--radius-lg); background: linear-gradient(145deg, #fff, #f7fafc); box-shadow: 0 8px 22px rgba(16,40,64,.08); color: var(--ink-soft); font-size: 12.5px; font-weight: 700; text-align: center; }
+    .description-photo-slot--featured { margin-top: 22px; min-height: 0; padding: 10px; }
+    .description-photo-slot { cursor: pointer; transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease; }
+    .description-photo-slot:hover { border-color: #b9cad6; box-shadow: 0 11px 26px rgba(16,40,64,.12); transform: translateY(-1px); }
+    .description-photo-slot:focus-visible { outline: 3px solid rgba(43,110,150,.35); outline-offset: 3px; }
+    .description-photo-slot img { width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; border-radius: calc(var(--radius-lg) - 4px); pointer-events: none; }
+    .spec-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px 24px; max-width: 760px; padding: 0; list-style: none; }
+    .spec-list li { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+    .spec-list strong { color: var(--ink); font-size: 13.5px; }
+    .legal-note { margin-top: 20px; color: #7c8894 !important; font-size: 12px !important; }
 
-        .description {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    /* ===================== Reviews ===================== */
+    .reviews-section { padding: 60px 0; background: var(--surface); border-top: 1px solid var(--line); }
+    .reviews-photos h3 { margin: 0 0 14px; font-size: 16px; font-weight: 700; }
+    .carousel-item { flex: 0 0 100px; width: 100px; height: 100px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line); }
+    .carousel-item:hover { border-color: var(--accent); }
+    .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Botão CTA Principal */
-        .btn-primary {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 1.25rem;
-            background: var(--accent-universal);
-            color: var(--white);
-            text-decoration: none;
-            border: none;
-            border-radius: 18px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            box-shadow: var(--shadow-strong);
-            gap: 12px;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
+    .reviews-header { margin-bottom: 28px; }
+    .reviews-header h2 { margin: 0 0 12px; font-size: 26px; letter-spacing: -.02em; }
+    .overall-rating { display: flex; align-items: center; gap: 14px; }
+    .rating-number { font-size: 34px; font-weight: 800; color: var(--ink); }
+    .stars-large { color: #e0951a; font-size: 18px; letter-spacing: 1px; }
+    .total-reviews-count { display: block; margin-top: 2px; color: var(--ink-soft); font-size: 13px; }
 
-        .btn-primary:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(123, 63, 32, 0.3);
-        }
+    .reviews-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-bottom: 30px; }
+    .review-card { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; }
+    .review-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+    .reviewer-info { display: flex; gap: 12px; align-items: center; }
+    .reviewer-avatar { width: 40px; height: 40px; flex-shrink: 0; display: grid; place-items: center; border-radius: 50%; background: var(--surface); color: var(--brand); font-weight: 700; font-size: 15px; border: 1px solid var(--line); }
+    .reviewer-name { font-size: 14px; font-weight: 700; }
+    .verified-badge { margin-top: 2px; color: var(--success-dark); font-size: 11px; font-weight: 600; }
+    .review-date { color: var(--ink-soft); font-size: 12px; white-space: nowrap; }
+    .review-stars { margin-bottom: 10px; color: #e0951a; font-size: 12px; }
+    .review-content { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
 
-        .btn-primary:active { transform: scale(0.96); }
+    .pagination { display: flex; gap: 8px; justify-content: center; align-items: center; }
+    .page-btn { width: 40px; height: 40px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: #fff; color: var(--ink-soft); font-weight: 600; display: flex; align-items: center; justify-content: center; }
+    .page-btn:hover:not(:disabled) { border-color: var(--brand); color: var(--brand); }
+    .page-btn.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+    .page-btn:disabled { opacity: .45; cursor: not-allowed; }
 
-        .btn-primary:focus-visible,
-        .footer-links a:focus-visible {
-            outline: 2px solid var(--primary-navy);
-            outline-offset: 3px;
-            box-shadow: var(--focus-ring);
-        }
+    /* ===================== FAQ ===================== */
+    .faq-section { padding: 60px 0; }
+    .section-heading { max-width: 620px; margin-bottom: 26px; }
+    .section-heading h2 { margin: 0 0 8px; font-size: 26px; letter-spacing: -.02em; }
+    .section-heading p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+    .faq-list { max-width: 800px; }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 0; border: 0; color: var(--ink); font-size: 14.5px; font-weight: 700; text-align: left; }
+    .faq-question i { color: var(--brand); transition: transform .15s ease; flex-shrink: 0; }
+    .faq-item.is-open .faq-question i { transform: rotate(180deg); }
+    .faq-answer { padding: 0 28px 17px 0; }
+    .faq-answer[hidden] { display: none; }
+    .faq-answer p { margin: 0; color: var(--ink-soft); font-size: 13.5px; line-height: 1.7; }
 
-        .btn-primary:disabled {
-            cursor: progress;
-        }
+    /* ===================== Footer ===================== */
+    footer { padding: 40px 0 24px; background: var(--brand-dark); color: #fff; }
+    .footer-grid { display: grid; grid-template-columns: 1.35fr repeat(3, 1fr); gap: 30px; }
+    footer h2, footer h3 { margin: 0 0 12px; font-size: 15px; }
+    footer p, footer a { color: #c1d0dc; font-size: 12.5px; line-height: 1.7; }
+    footer p { max-width: 340px; margin: 0; }
+    footer a { display: block; margin-bottom: 7px; text-decoration: none; }
+    footer a:hover { color: #fff; text-decoration: underline; }
+    .company-data { margin-top: 14px; color: #c1d0dc; font-size: 12px; line-height: 1.65; }
+    .company-data strong { color: #fff; }
+    .legal-section { margin-top: 30px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.14); }
+    .legal-section h3 { margin-bottom: 6px; }
+    .legal-section p { max-width: none; color: #b4c4d0; font-size: 11.5px; line-height: 1.65; }
+    .footer-bottom { margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.14); color: #9fb2c1; font-size: 11.5px; }
 
-        /* Efeito de brilho no botão (dispara uma única vez ao carregar) */
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
-            animation: shine 1.4s ease-in-out 0.6s 1;
-        }
+    /* ===================== Mobile sticky CTA ===================== */
+    .mobile-cta { position: fixed; right: 12px; bottom: calc(10px + env(safe-area-inset-bottom)); left: 12px; z-index: 30; display: grid; grid-template-columns: minmax(70px,.7fr) minmax(0,1.3fr); align-items: center; gap: 12px; min-height: 62px; padding: 8px 9px 8px 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.98); box-shadow: 0 8px 24px rgba(16,40,64,.16); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .18s ease, transform .18s ease; }
+    .mobile-cta.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .mobile-cta-label { display: block; margin-bottom: 2px; color: var(--ink-soft); font-size: 10.5px; }
+    .mobile-cta-price { display: block; color: var(--brand); font-size: 16px; font-weight: 800; white-space: nowrap; }
+    .mobile-cta .btn { min-height: 46px; font-size: 13px; }
 
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
+    /* ===================== Lightbox ===================== */
+    .lightbox { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 26px; background: rgba(9,20,32,.92); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .15s ease, visibility .15s ease; }
+    .lightbox.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
+    .lightbox img { max-width: min(94vw, 880px); max-height: 88vh; object-fit: contain; border-radius: 6px; }
+    .lightbox-close { position: fixed; top: 16px; right: 16px; width: 38px; height: 38px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; background: rgba(0,0,0,.3); color: #fff; font-size: 20px; }
 
-        .trust-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 1.5rem;
-            opacity: 0.8;
-        }
+    /* ===================== Cart drawer ===================== */
+    .cart-overlay { position: fixed; inset: 0; z-index: 50; background: rgba(12,25,40,.42); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s ease, visibility .18s ease; }
+    .cart-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; }
+    .cart-drawer { position: absolute; inset: 0 0 0 auto; width: min(100%, 440px); display: flex; flex-direction: column; background: #fff; transform: translateX(100%); transition: transform .25s cubic-bezier(.22,1,.36,1); box-shadow: -16px 0 40px rgba(9,20,32,.16); }
+    .cart-overlay.is-open .cart-drawer { transform: translateX(0); }
 
-        .trust-item {
-            display: flex;
-            align-items: center;
-            font-size: 0.65rem;
-            color: var(--text-muted);
-            gap: 4px;
-        }
+    .cart-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 20px 22px; border-bottom: 1px solid var(--line); }
+    .cart-header h2 { margin: 0; color: var(--ink); font-size: 18px; letter-spacing: -.01em; }
+    .cart-header p { margin: 4px 0 0; color: var(--ink-soft); font-size: 12px; }
+    .close-cart, .close-lightbox-btn { width: 34px; height: 34px; flex-shrink: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--ink-soft); }
+    .close-cart:hover { color: var(--brand); border-color: var(--brand); }
 
-        .trust-item svg { color: var(--success-green); width: 14px; height: 14px; }
+    .cart-content { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 20px 22px; }
 
-        /* Seção de Benefícios */
-        .info-section {
-            width: 100%;
-            background: var(--white);
-            border-radius: 28px;
-            padding: 1.8rem;
-            box-shadow: var(--shadow-soft);
-            margin-bottom: 20px;
-        }
+    .cart-item { display: grid; grid-template-columns: 72px minmax(0,1fr); gap: 14px; padding: 0 0 20px; margin-bottom: 20px; border-bottom: 1px solid var(--line); }
+    .cart-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+    .cart-item img { width: 72px; height: 72px; padding: 6px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); object-fit: contain; }
+    .cart-item-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+    .cart-item-name { margin: 0 0 4px; color: var(--ink); font-size: 13px; font-weight: 700; line-height: 1.35; }
+    .cart-item-meta { color: var(--ink-soft); font-size: 11.5px; }
+    .cart-item-promo { display: inline-flex; align-items: center; gap: 5px; width: fit-content; margin-top: 9px; padding: 4px 8px; border: 1px solid #cfe8d9; border-radius: 999px; background: #f0faf4; color: var(--success-dark); font-size: 10px; font-weight: 700; letter-spacing: .01em; }
+    .cart-item-promo i { font-size: 9px; }
+    .cart-item-price-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-top: 9px; }
+    .cart-item-price { color: var(--brand); font-size: 16px; font-weight: 800; letter-spacing: -.02em; }
+    .cart-item-old-price { color: var(--ink-soft); font-size: 11px; font-weight: 500; text-decoration: line-through; }
+    .cart-item-saving { margin-top: 3px; color: var(--success-dark); font-size: 10.5px; font-weight: 600; }
+    .cart-item-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 13px; }
+    .remove-item { display: inline-flex; align-items: center; gap: 5px; min-height: 30px; padding: 5px 8px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: #7f8d98; font-size: 11px; transition: border-color .15s ease, background-color .15s ease, color .15s ease; }
+    .remove-item:hover { border-color: #e3a4a0; background: #fff6f5; color: #b33a32; }
+    .qty-control { display: inline-flex; align-items: center; height: 34px; padding: 3px; border: 1px solid #d5e0e7; border-radius: 9px; background: #f7f9fb; }
+    .qty-control button { width: 27px; height: 26px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 6px; color: var(--brand); font-size: 16px; font-weight: 600; line-height: 1; transition: background-color .15s ease, color .15s ease, transform .15s ease; }
+    .qty-control button:hover { background: #e5eef3; color: var(--brand-dark); }
+    .qty-control button:active { transform: scale(.92); }
+    .qty-control span { min-width: 29px; height: 26px; display: grid; place-items: center; color: var(--ink); font-size: 12.5px; font-weight: 700; text-align: center; }
 
-        .info-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--primary-navy);
-            margin-bottom: 1.2rem;
-            text-align: center;
-        }
+    .empty-cart { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px; padding: 30px 16px; text-align: center; }
+    .empty-cart i { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 12px; border-radius: 50%; background: var(--surface); color: #8fa0ae; font-size: 17px; }
+    .empty-cart strong { display: block; margin-bottom: 5px; color: var(--ink); font-size: 14px; }
+    .empty-cart span { max-width: 240px; color: var(--ink-soft); font-size: 12.5px; line-height: 1.5; }
+    .empty-cart-action { margin-top: 16px; min-height: 40px; padding: 9px 16px; border: 1px solid #cbd8e2; border-radius: var(--radius-sm); color: var(--brand); font-size: 12.5px; font-weight: 700; }
+    .empty-cart-action:hover { border-color: var(--brand); background: var(--surface); }
 
-        .benefit-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 1rem;
-            align-items: flex-start;
-        }
+    .cart-footer { padding: 16px 22px 20px; border-top: 1px solid var(--line); background: #fff; }
+    .cart-error { min-height: 16px; margin: 0 0 8px; color: #c0392b; font-size: 12px; }
+    .cart-shipping-note { display: flex; align-items: center; gap: 9px; margin: 0 0 13px; padding: 0 0 12px; border-bottom: 1px solid var(--line); color: var(--success-dark); }
+    .cart-shipping-note i { flex: 0 0 26px; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #e6f4ec; font-size: 11px; }
+    .cart-shipping-note strong { display: block; color: var(--ink); font-size: 12px; line-height: 1.3; }
+    .cart-shipping-note span { display: block; margin-top: 2px; color: var(--ink-soft); font-size: 11px; line-height: 1.3; }
+    .cart-shipping-note .cart-shipping-date { display: inline; margin: 0; color: inherit; font-size: inherit; }
+    .order-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; color: var(--ink-soft); font-size: 12.5px; }
+    .order-line strong { color: var(--ink); font-weight: 600; }
+    .total-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin: 10px 0 14px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .total-label { color: var(--ink-soft); font-size: 12.5px; }
+    .total-value { color: var(--brand); font-size: 23px; font-weight: 800; letter-spacing: -.02em; }
+    .cart-footer-note { margin: 9px 0 0; color: #8b98a3; font-size: 10.5px; text-align: center; }
+    .cart-footer-note i { color: var(--success); margin-right: 3px; }
 
-        .benefit-item:last-child { margin-bottom: 0; }
+    /* ===================== Redirect loading ===================== */
+    .redirect-loading { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 24px; background: rgba(246,248,250,.94); color: var(--ink); opacity: 0; visibility: hidden; pointer-events: none; backdrop-filter: blur(5px); transition: opacity .2s ease, visibility .2s ease; }
+    .redirect-loading.is-visible { opacity: 1; visibility: visible; pointer-events: auto; }
+    .redirect-loading-card { display: grid; justify-items: center; gap: 14px; width: min(100%, 340px); padding: 28px 26px 25px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: #fff; box-shadow: var(--shadow-md); text-align: center; }
+    .redirect-loading-brand { color: var(--brand); font-size: 16px; font-weight: 800; letter-spacing: .12em; }
+    .redirect-loading-spinner { width: 34px; height: 34px; border: 3px solid #dcebe6; border-top-color: var(--success); border-radius: 50%; animation: spin .85s linear infinite; }
+    .redirect-loading-text { margin: 0; color: var(--ink); font-size: 14px; font-weight: 700; }
+    .redirect-loading-subtext { max-width: 245px; margin: -5px 0 0; color: var(--ink-soft); font-size: 11.5px; line-height: 1.55; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .redirect-loading-spinner { animation: none; } }
 
-        .benefit-icon {
-            background: rgba(123, 63, 32, 0.1);
-            padding: 8px;
-            border-radius: 12px;
-            color: var(--accent-universal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .benefit-text h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 2px; }
-        .benefit-text p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
-
-        /* FAQ */
-        .faq-section {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 24px;
-            padding: 1.5rem;
-            margin-bottom: 30px;
-        }
-
-        .faq-section h2 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--primary-navy); text-align: center; }
-        .faq-item { margin-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 8px; }
-        .faq-item:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
-        .faq-item strong { display: block; font-size: 0.85rem; margin-bottom: 4px; color: var(--accent-universal); }
-        .faq-item p { font-size: 0.8rem; color: var(--text-muted); }
-
-        /* Rodapé */
-        .footer {
-            width: 100%;
-            text-align: center;
-            padding: 20px 0;
-            color: var(--text-muted);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px 20px;
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover { color: var(--accent-universal); }
-
-        .company-box {
-            font-size: 0.7rem;
-            line-height: 1.7;
-            background: rgba(0,0,0,0.03);
-            padding: 15px;
-            border-radius: 16px;
-            margin-bottom: 15px;
-        }
-
-        .disclaimer {
-            font-size: 0.6rem;
-            opacity: 0.7;
-            max-width: 320px;
-            margin: 0 auto;
-        }
-
-        /* Botão Flutuante (CRO) */
-        .floating-cta {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            width: calc(100% - 32px);
-            max-width: 400px;
-            z-index: 100;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .floating-cta.visible { transform: translateX(-50%) translateY(0); }
-
-        /* Animações de entrada */
-        .animate-up {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s forwards;
-        }
-
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.3s; }
-        .delay-3 { animation-delay: 0.5s; }
-
-        /* Acessibilidade: respeita preferência do usuário por menos movimento */
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            .animate-up { animation: none; opacity: 1; transform: none; }
-            .btn-primary::before { animation: none; display: none; }
-            .btn-primary:hover { transform: none; }
-            .floating-cta { transition: none; }
-        }
-
-        @media (max-width: 360px) {
-            .title { font-size: 1.8rem; }
-            .offer-value { font-size: 3.2rem; }
-        }
-    </style>
+    /* ===================== Responsive ===================== */
+    @media (max-width: 900px) {
+      .product-shell { grid-template-columns: 1fr; gap: 26px; padding-top: 8px; }
+      .gallery { position: static; }
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .header-row { gap: 16px; }
+      .header-links { gap: 0; }
+      .header-links a { display: none; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 24px, 520px); }
+      .announcement { min-height: 34px; display: grid; place-items: center; padding: 8px 12px; font-size: 10.5px; }
+      .rating-row { gap: 6px; font-size: 12px; }
+      .rating-link { font-size: 11.5px; }
+      .site-header { background: rgba(255,255,255,.985); }
+      .header-row { min-height: 0; grid-template-columns: 1fr auto 1fr; grid-template-areas: "tools logo actions" "search search search"; gap: 10px 12px; padding-top: 10px; padding-bottom: 11px; }
+      .logo { position: static; grid-area: logo; align-self: center; justify-self: center; font-size: 19px; line-height: 1; transform: none; }
+      .header-tools { grid-area: tools; }
+      .header-links { grid-area: actions; gap: 0; justify-self: end; }
+      .search-form { grid-area: search; max-width: none; }
+      .search-input { min-height: 42px; padding: 10px 45px 10px 15px; border-color: #d2dde5; background: #f7f9fb; font-size: 12px; }
+      .search-submit { right: 5px; width: 32px; height: 32px; }
+      .search-results { top: calc(100% + 6px); max-height: min(46vh, 300px); overflow-y: auto; border-radius: 12px; }
+      .search-result { min-height: 45px; padding: 9px 10px; }
+      .menu-trigger { width: 40px; height: 40px; }
+      .cart-trigger { min-width: 44px; min-height: 40px; justify-content: center; padding: 7px 9px; border-radius: 10px; font-size: 0; gap: 6px; }
+      .cart-trigger > i { font-size: 16px; }
+      .cart-count { min-width: 18px; height: 18px; font-size: 10px; }
+      .breadcrumbs { padding: 12px 0 7px; font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .product-shell { gap: 18px; padding-top: 4px; padding-bottom: 32px; }
+      .gallery { margin-inline: -4px; }
+      .gallery-frame { overflow: hidden; border: 1px solid #e0e8ee; border-radius: 18px; background: transparent; box-shadow: none; }
+      .gallery-slider { touch-action: pan-x; }
+      .gallery-slide { aspect-ratio: 1 / .94; padding: 16px 28px; }
+      .gallery-slide img { width: 100%; height: 100%; max-width: 430px; object-fit: contain; filter: none; }
+      #product { scroll-margin-top: 82px; }
+      .promo-badge { top: 12px; right: 12px; gap: 5px; padding: 7px 9px; border-color: rgba(22,58,92,.12); box-shadow: 0 5px 14px rgba(16,40,64,.12); font-size: 9px; }
+      .promo-badge > i { font-size: 9px; }
+      .promo-badge small { font-size: 8px; }
+      .gallery-arrow { width: 34px; height: 34px; border-color: rgba(203,216,226,.98); box-shadow: 0 4px 12px rgba(16,40,64,.12); }
+      .gallery-arrow--prev { left: 9px; }
+      .gallery-arrow--next { right: 9px; }
+      .gallery-dots { min-height: 28px; margin-top: 7px; }
+      .gallery-dot { width: 20px; height: 4px; }
+      .gallery-dot.is-active { width: 30px; }
+      .contents-box { margin: 17px 0 19px; padding: 14px; }
+      .included-summary { margin-bottom: 12px; padding: 14px; border-radius: 13px; }
+      .included-summary-title { font-size: 13px; }
+      .included-summary-lead strong { font-size: 17px; }
+      .included-flavors { grid-template-columns: 1fr; gap: 6px; }
+      .contents-box h3 { font-size: 14px; }
+      .contents-box p { font-size: 12px; }
+      .contents-list { grid-template-columns: 1fr; gap: 6px; }
+      .contents-list li { font-size: 11.5px; }
+      .status-row { gap: 8px 14px; margin-bottom: 10px; font-size: 11px; }
+      h1 { margin-bottom: 7px; font-size: clamp(23px, 7vw, 28px); line-height: 1.13; }
+      .positioning { font-size: 13px; line-height: 1.5; }
+      .rating-row { align-items: center; gap: 6px; margin: 11px 0 17px; font-size: 12px; }
+      .rating-link { margin-top: 0; font-size: 11.5px; }
+      .choice-box { margin-bottom: 16px; }
+      .choice-heading { align-items: flex-start; margin-bottom: 8px; }
+      .choice-heading strong { font-size: 13px; }
+      .choice-heading span { font-size: 11px; text-align: right; }
+      .variant-grid { gap: 6px; }
+      .variant-pill { min-height: 36px; padding: 8px 12px; font-size: 11.5px; }
+      .price-box { margin-bottom: 15px; padding: 14px 15px 15px; border-radius: 13px; }
+      .price-heading { margin-bottom: 12px; padding-bottom: 10px; font-size: 12.5px; }
+      .price-heading-note { font-size: 10px; }
+      .old-price { font-size: 12px; }
+      .current-price { gap: 6px; font-size: 29px; }
+      .pix-tag { padding: 4px 7px; font-size: 11px; }
+      .installments { margin-top: 6px; font-size: 11.5px; }
+      .savings-note { margin-top: 8px; font-size: 11px; }
+      .shipping-note { gap: 8px; margin-bottom: 14px; padding: 3px 2px 2px; }
+      .shipping-note-logo { flex-basis: 30px; width: 30px; height: 27px; }
+      .shipping-note-copy .shipping-title { font-size: 11.5px; }
+      .shipping-note-copy p { font-size: 10.5px; }
+      .btn { min-height: 52px; border-radius: 10px; font-size: 13px; }
+      .purchase-note { margin-top: 8px; font-size: 11px; }
+      .trust-row { gap: 9px 12px; margin-top: 14px; padding-top: 13px; }
+      .trust-row span { font-size: 10.5px; }
+      .trust-row span:last-child { flex-basis: 100%; justify-content: center; }
+      .highlight-grid, .description-photo-grid, .footer-grid { grid-template-columns: 1fr; }
+      .description-photo-grid { gap: 12px; margin-top: 18px; }
+      .description-photo-slot { min-height: 0; padding: 7px; border-radius: 14px; box-shadow: 0 6px 16px rgba(16,40,64,.07); }
+      .description-photo-slot--featured { margin-top: 18px; padding: 7px; }
+      .tab-panel { padding: 28px 0 36px; }
+      .reviews-section, .faq-section { padding: 42px 0; }
+      .cart-header, .cart-content, .cart-footer { padding-left: 16px; padding-right: 16px; }
+      body:has(.mobile-cta.is-visible) { padding-bottom: 76px; }
+    }
+    @media (max-width: 380px) {
+      .container { width: min(100% - 20px, 520px); }
+      .header-row { column-gap: 8px; }
+      .logo { font-size: 18px; }
+      .search-input { font-size: 11.5px; }
+      .current-price { font-size: 27px; }
+      .variant-pill { padding-inline: 10px; }
+      .trust-row span { font-size: 10px; }
+    }
+    @media (max-width: 420px) {
+      .shipping-note { display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: start; column-gap: 8px; }
+      .shipping-note-logo { grid-column: 1; grid-row: 1; }
+      .shipping-note-copy { grid-column: 2; grid-row: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#product">Ir direto ao produto</a>
 
-    <div class="bg-elements" aria-hidden="true">
-        <div class="circle circle-1"></div>
-        <div class="circle circle-2"></div>
-    </div>
+  <div class="announcement">Condição especial no Pix · Frete grátis para sua região</div>
 
-    <main class="container">
-        <!-- Card Principal -->
-        <header class="card animate-up">
-            <div class="logo-circle">
-                <img src="https://i.postimg.cc/kXgctC1b/logo-0.png" alt="Cápsulas Dolce Gusto">
-            </div>
-
-            <span class="badge">Oferta Especial</span>
-            <h1 class="title">Cápsulas <span>Dolce Gusto</span></h1>
-
-            <p class="offer-value" aria-label="40 por cento de desconto">40% OFF</p>
-
-            <p class="description">
-                Cápsulas de café selecionadas para um preparo rápido, prático e saboroso em sua máquina Dolce Gusto.
-            </p>
-
-            <button id="main-cta" type="button" class="btn-primary">
-                <span class="btn-text">Aproveitar Desconto</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </button>
-
-            <div class="trust-icons">
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Pagamento Seguro
-                </div>
-                <div class="trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Envio para todo o Brasil
-                </div>
-            </div>
-        </header>
-
-        <!-- Seção de Benefícios -->
-        <section class="info-section animate-up delay-1" aria-labelledby="beneficios-heading">
-            <h2 id="beneficios-heading">Por que escolher</h2>
-
-            <div class="benefit-item">
-                <div class="benefit-icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-8.93"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                </div>
-                <div class="benefit-text">
-                    <h3>Preparo Rápido</h3>
-                    <p>Café pronto em poucos minutos, ideal para acompanhar sua rotina com praticidade.</p>
-                </div>
-            </div>
-
-            <div class="benefit-item">
-                <div class="benefit-icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                </div>
-                <div class="benefit-text">
-                    <h3>Sabor e Aroma</h3>
-                    <p>Uma experiência equilibrada de café, com aroma envolvente e sabor marcante.</p>
-                </div>
-            </div>
-
-            <div class="benefit-item">
-                <div class="benefit-icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
-                </div>
-                <div class="benefit-text">
-                    <h3>Praticidade no Dia a Dia</h3>
-                    <p>Cápsulas individuais que facilitam o preparo e ajudam a preservar o frescor.</p>
-                </div>
-            </div>
-
-            <div class="benefit-item">
-                <div class="benefit-icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                </div>
-                <div class="benefit-text">
-                    <h3>Compatibilidade</h3>
-                    <p>Compatíveis com máquinas do sistema Dolce Gusto, para preparar seu café favorito.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção de Sabores -->
-        <section class="info-section animate-up delay-2" aria-labelledby="sabores-heading">
-            <h2 id="sabores-heading">Opções Disponíveis</h2>
-
-            <div class="benefit-item">
-                <div class="benefit-icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
-                </div>
-                <div class="benefit-text">
-                    <h3>Café Espresso</h3>
-                    <p>Intenso e encorpado, perfeito para começar o dia.</p>
-                </div>
-            </div>
-
-            <div class="benefit-item">
-                <div class="benefit-icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
-                </div>
-                <div class="benefit-text">
-                    <h3>Café com Leite</h3>
-                    <p>Cremoso e equilibrado, ideal para uma pausa acolhedora.</p>
-                </div>
-            </div>
-
-            <div class="benefit-item">
-                <div class="benefit-icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
-                </div>
-                <div class="benefit-text">
-                    <h3>Chocolate</h3>
-                    <p>Uma bebida cremosa e reconfortante para qualquer hora do dia.</p>
-                </div>
-            </div>
-
-            <div class="benefit-item">
-                <div class="benefit-icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
-                </div>
-                <div class="benefit-text">
-                    <h3>Capuccino</h3>
-                    <p>Espuma cremosa e sabor marcante para uma experiência especial.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="faq-section animate-up delay-3" aria-labelledby="faq-heading">
-            <h2 id="faq-heading">Perguntas Frequentes</h2>
-
-            <div class="faq-item">
-                <strong>Como preparar as cápsulas Dolce Gusto?</strong>
-                <p>Insira a cápsula na sua máquina Dolce Gusto e siga as instruções indicadas na embalagem para preparar sua bebida.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>As cápsulas são compatíveis com qualquer máquina?</strong>
-                <p>As cápsulas são desenvolvidas para máquinas do sistema Dolce Gusto. Consulte a embalagem para confirmar a compatibilidade da opção escolhida.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>Quais opções de bebidas estão disponíveis?</strong>
-                <p>Você pode escolher entre diferentes opções de café e bebidas cremosas, conforme a disponibilidade do produto.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>Qual é o prazo de entrega?</strong>
-                <p>Enviamos para todo o Brasil. O prazo varia conforme a região, geralmente entre 2 e 5 dias úteis após a confirmação do pagamento.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>Posso desistir da compra?</strong>
-                <p>Sim. Conforme o Código de Defesa do Consumidor, você tem até 7 dias corridos após o recebimento para solicitar o cancelamento e o reembolso integral, sem necessidade de justificativa.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>E se eu não ficar satisfeito com o produto?</strong>
-                <p>Além do direito de arrependimento previsto em lei, nossa equipe de suporte está disponível para ajudar com trocas, dúvidas ou qualquer problema com o seu pedido.</p>
-            </div>
-        </section>
-
-        <!-- Rodapé -->
-        <footer class="footer">
-            <nav class="footer-links" aria-label="Links institucionais">
-                <a href="termos-de-uso.html">Termos de Uso</a>
-                <a href="politica-de-privacidade.html">Política de Privacidade</a>
-                <a href="politica-de-trocas-devolucoes.html">Trocas e Devoluções</a>
-                <a href="mailto:contato@equaliv.com.br">Contato</a>
-            </nav>
-
-            <div class="company-box">
-                <strong>Gp Assessoria & Consultoria LTDA.</strong><br>
-                Cafés e bebidas de alta qualidade para tornar sua rotina mais saborosa.<br>
-                CNPJ: 32.998.217/0001-29 | Avenida Joao de Barros 38 Apto 0101 Santo Amaro Recife PE 50100-015<br>
-                Todos os direitos reservados © 2024
-            </div>
-
-            <p class="disclaimer">
-                *As imagens são meramente ilustrativas. Consulte a embalagem para informações sobre ingredientes, preparo e conservação. O consumo deve seguir as orientações do fabricante.
-            </p>
-        </footer>
-    </main>
-
-    <!-- Botão Flutuante CTA -->
-    <div class="floating-cta" id="floating-cta">
-        <button id="floating-btn" type="button" class="btn-primary">
-            <span class="btn-text">Garantir Desconto</span>
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="header-tools">
+        <button class="menu-trigger" id="menuTrigger" type="button" aria-controls="menuPanel" aria-expanded="false" aria-label="Abrir menu">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
         </button>
+        <nav class="menu-panel" id="menuPanel" aria-label="Menu principal">
+          <a href="#product"><i class="fa-solid fa-box-open" aria-hidden="true"></i><span>Ver produto</span></a>
+          <a href="#details"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Detalhes do produto</span></a>
+          <a href="#faq"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Dúvidas frequentes</span></a>
+        </nav>
+      </div>
+      <a class="logo" href="/" aria-label="Gp Assessoria &amp; Consultoria, página inicial">HAVAN</a>
+      <form class="search-form" id="searchForm" role="search" autocomplete="off">
+        <label for="searchInput">Buscar na loja</label>
+        <input class="search-input" id="searchInput" type="search" placeholder="O que você está procurando?" aria-controls="searchResults" aria-expanded="false">
+        <button class="search-submit" type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+        <div class="search-results" id="searchResults" role="listbox" aria-label="Resultados da busca"></div>
+      </form>
+      <nav class="header-links" aria-label="Navegação principal">
+        <a href="#details">Detalhes do produto</a>
+        <a href="#faq">Dúvidas frequentes</a>
+        <button class="cart-trigger" id="cartTrigger" type="button" aria-controls="cartOverlay" aria-expanded="false" aria-label="Abrir carrinho">
+          <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+          <span>Carrinho</span>
+          <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Caminho de navegação">
+        <a href="/">Home</a><span>/</span><a href="#product">Cafés e cápsulas</a><span>/</span><strong aria-current="page">Combo Dolce Gusto</strong>
+      </nav>
+
+      <section class="product-shell" id="product" aria-labelledby="productTitle">
+        <div class="gallery">
+          <div class="gallery-frame" id="galleryFrame">
+            <span class="promo-badge" aria-label="Oferta especial no Pix"><i class="fa-solid fa-tag" aria-hidden="true"></i><span>OFERTA NO PIX</span><small>economize</small></span>
+            <button class="gallery-arrow gallery-arrow--prev" id="galleryPrev" type="button" aria-label="Imagem anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+            <div class="gallery-slider" id="gallerySlider" aria-label="Fotos do produto"></div>
+            <button class="gallery-arrow gallery-arrow--next" id="galleryNext" type="button" aria-label="Próxima imagem"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+          </div>
+          <div class="gallery-dots" id="galleryDots" aria-label="Selecionar foto"></div>
+        </div>
+
+        <div class="product-info">
+          <div class="status-row">
+            <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Em estoque</span>
+            <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra segura</span>
+          </div>
+
+          <h1 id="productTitle" tabindex="-1">Combo Dolce Gusto — 6 Caixas em Promoção</h1>
+          <p class="positioning"><strong>Você recebe 6 caixas (60 cápsulas).</strong> Sabores Capuccino, Expresso, Espresso Intenso, Café au Lait, Café Matinal, Café au Lait Intenso.</p>
+          <div class="rating-row" aria-label="Avaliação média 4,9 de 5">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <strong>4,9/5</strong>
+            <a class="rating-link" href="#reviews">Ver avaliações de clientes</a>
+          </div>
+
+          <div class="included-summary" aria-label="Conteúdo do combo">
+              <div class="included-summary-head">
+                <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> O combo inclui</span>
+                <span class="included-summary-total" id="includedTotal">6 caixas · 60 cápsulas</span>
+              </div>
+              <p class="included-summary-lead"><strong id="includedBoxes">6 caixas</strong><span>60 cápsulas no total · 1 caixa por sabor</span></p>
+              <ul class="included-flavors" id="includedFlavors">
+                <li data-flavor="Capuccino"><strong>Capuccino</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Espresso"><strong>Expresso</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Espresso Intenso"><strong>Espresso Intenso</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Café au Lait"><strong>Café au Lait</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Café Matinal"><strong>Café Matinal</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Café au Lait Intenso"><strong>Café au Lait Intenso</strong><span>1 caixa · 10 cáps.</span></li>
+              </ul>
+          </div>
+          <div class="price-box" id="priceBox" aria-live="polite">
+            <div class="price-heading"><span><i class="fa-solid fa-tag" aria-hidden="true"></i> Preço do combo</span><span class="price-heading-note">Condição no Pix</span></div>
+            <div class="old-price-row">
+              <span class="old-price">De R$ <span id="oldPrice">189,90</span></span>
+              <span class="discount-tag" id="discount">53% OFF</span>
+            </div>
+            <div class="current-price"><span class="price-prefix">por</span> R$ <span id="currentPrice">89,90</span><span class="pix-tag">no Pix</span></div>
+            <div class="installments" id="installments">ou em até 3x de R$ 29,97 sem juros</div>
+            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 100,00</div>
+          </div>
+
+          <div class="shipping-note" aria-label="Informações de entrega" data-delivery-days="3">
+            <img class="shipping-note-logo" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/tIThPgQEuHDSybjv.webp" alt="" aria-hidden="true">
+            <div class="shipping-note-copy">
+              <p class="shipping-title"><strong>Frete Grátis</strong> <span class="shipping-region" id="shippingRegion">para sua região</span></p>
+              <p class="shipping-estimated" id="shippingEstimated"><strong>Previsão de entrega</strong> até <strong>03 dias úteis</strong></p>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Quero meu combo por <span id="buyCtaPrice">R$ 89,90</span></button>
+          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Você poderá revisar o pedido antes de finalizar.</p>
+
+          <div class="trust-row">
+            <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra protegida</span>
+            <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Envio rastreado</span>
+            <span><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Pix ou cartão</span>
+          </div>
+
+        </div>
+      </section>
     </div>
 
-    <script>
-        // Configuração de destino (ALTERAR CONFORME NECESSÁRIO)
-        const DESTINATION_URL = 'https://lmegaofertas.onrender.com/dolce'; // Altere para o link correto
+    <section class="details" id="details">
+      <div class="container">
+        <div class="tabs" role="tablist" aria-label="Informações do produto">
+          <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="descriptionPanel" id="descriptionTab" data-tab="descriptionPanel">Descrição</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="usagePanel" id="usageTab" data-tab="usagePanel">Como usar</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="compositionPanel" id="compositionTab" data-tab="compositionPanel">Composição</button>
+        </div>
 
-        const mainCta = document.getElementById('main-cta');
-        const floatingBtn = document.getElementById('floating-btn');
-        const floatingCta = document.getElementById('floating-cta');
+        <article class="tab-panel" id="descriptionPanel" role="tabpanel" aria-labelledby="descriptionTab">
+          <h2>O que você recebe</h2>
+          <div class="contents-box" aria-labelledby="contentsTitle">
+            <h3 id="contentsTitle"><i class="fa-solid fa-box-open" aria-hidden="true"></i> O que você recebe</h3>
+            <p>Você recebe <strong>6 caixas</strong>, com <strong>1 caixa de cada sabor</strong>, totalizando 60 cápsulas. Cada caixa contém 10 cápsulas.</p>
+            <ul class="contents-list">
+              <li>1 caixa de Capuccino — 10 cápsulas</li>
+              <li>1 caixa de Espresso — 10 cápsulas</li>
+              <li>1 caixa de Espresso Intenso — 10 cápsulas</li>
+              <li>1 caixa de Café au Lait — 10 cápsulas</li>
+              <li>1 caixa de Café Matinal — 10 cápsulas</li>
+              <li>1 caixa de Café au Lait Intenso — 10 cápsulas</li>
+            </ul>
+          </div>
+          <div class="description-photo-slot description-photo-slot--featured" role="button" tabindex="0" aria-label="Ver oferta do combo Dolce Gusto" data-focus-product><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp" alt="Detalhes do combo Dolce Gusto" loading="lazy"></div>
+          <h3>6 caixas, 6 sabores</h3>
+          <ul>
+            <li><strong>1x Capuccino 10 cáps:</strong> bebida cremosa e equilibrada, ideal para um momento mais indulgente.</li>
+            <li><strong>1x Espresso 10 cáps:</strong> café clássico e versátil para começar o dia ou fazer uma pausa.</li>
+            <li><strong>1x Espresso Intenso 10 cáps:</strong> sabor mais marcante e encorpado para quem prefere intensidade.</li>
+            <li><strong>1x Café au Lait 10 cáps:</strong> combinação suave de café com leite para uma bebida delicada.</li>
+            <li><strong>1x Café Matinal 10 cáps:</strong> opção prática para acompanhar a rotina e o café da manhã.</li>
+            <li><strong>1x Café au Lait Intenso 10 cáps:</strong> cremosidade com presença maior de café e sabor mais intenso.</li>
+          </ul>
+          <div class="highlight-grid">
+            <div class="highlight-card"><i class="fa-solid fa-bolt" aria-hidden="true"></i><h3>Preparo simples</h3><p>Coloque a cápsula na sua máquina Dolce Gusto e prepare sua bebida em poucos instantes.</p></div>
+            <div class="highlight-card"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i><h3>6 caixas, 60 cápsulas</h3><p>Você recebe 1 caixa de cada sabor. Cada caixa contém 10 cápsulas.</p></div>
+            <div class="highlight-card"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><h3>6 sabores selecionados</h3><p>Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p></div>
+          </div>
+          <div class="description-photo-grid" aria-label="Espaços reservados para fotos do produto">
+            <div class="description-photo-slot" role="button" tabindex="0" aria-label="Ver oferta do combo Dolce Gusto" data-focus-product><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ttuQACdNJDtVNOrp.webp" alt="Sabores e embalagens do combo Dolce Gusto" loading="lazy"></div>
+          </div>
+        </article>
 
-        function handleRedirect() {
-            const btns = [mainCta, floatingBtn];
+        <article class="tab-panel" id="usagePanel" role="tabpanel" aria-labelledby="usageTab" hidden>
+          <h2>Modo de preparo e conservação</h2>
+          <ul>
+            <li>Insira uma cápsula na máquina Dolce Gusto, conforme as instruções do fabricante.</li>
+            <li>Escolha a quantidade de água indicada na embalagem da bebida e prepare.</li>
+            <li>Sirva imediatamente e aproveite o café ou cappuccino.</li>
+            <li>Conserve as caixas fechadas, em local seco, fresco e protegido da luz.</li>
+          </ul>
+        </article>
 
-            btns.forEach(btn => {
-                btn.disabled = true;
-                const textSpan = btn.querySelector('.btn-text') || btn;
-                textSpan.textContent = 'Aguarde...';
-                btn.style.opacity = '0.7';
+        <article class="tab-panel" id="compositionPanel" role="tabpanel" aria-labelledby="compositionTab" hidden>
+          <h2>Especificações do combo</h2>
+          <ul class="spec-list">
+            <li><strong>Produto</strong><span>Combo Dolce Gusto em Promoção</span></li>
+            <li><strong>Sabores</strong><span>Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso</span></li>
+            <li><strong>Conteúdo</strong><span>6 caixas · 60 cápsulas</span></li>
+            <li><strong>Compatibilidade</strong><span>Máquinas do sistema Dolce Gusto</span></li>
+          </ul>
+          <p class="legal-note">Cápsulas para preparo de bebidas. Consulte as informações completas, ingredientes e orientações de preparo no rótulo. Imagens meramente ilustrativas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="reviews-photos">
+          <h3>Opiniões de clientes</h3>
+        </div>
+        <div class="reviews-header">
+          <h2>Avaliações de clientes</h2>
+          <div class="overall-rating">
+            <span class="rating-number">4,9</span>
+            <div>
+              <div class="stars-large" aria-label="5 de 5 estrelas">★★★★★</div>
+              <span class="total-reviews-count">Opiniões compartilhadas por clientes</span>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-grid" id="reviewsGrid"></div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="container">
+          <div class="section-heading"><h2>Compre com tranquilidade</h2><p>Confira as respostas sobre o conteúdo, a entrega e o pagamento.</p></div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">O que vem no combo?<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" hidden><p>Você recebe <strong>6 caixas Dolce Gusto</strong>, com 1 caixa de cada sabor. Cada caixa contém 10 cápsulas, totalizando <strong>60 cápsulas</strong>.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Qual é o prazo de entrega?<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" hidden><p>A previsão aparece nesta página e é confirmada no checkout após o preenchimento do endereço. O envio é feito com rastreio, conforme a disponibilidade para sua região.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Quais são as formas de pagamento?<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" hidden><p>Você pode pagar via Pix ou cartão, conforme as opções disponíveis no checkout. No cartão, o parcelamento é informado antes da confirmação do pedido.</p></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Posso revisar o pedido antes de pagar?<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" hidden><p>Sim. Ao avançar, você confere os itens, a quantidade, o endereço e as condições de pagamento antes de finalizar.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Gp Assessoria &amp; Consultoria LTDA.</h2>
+          <p>Proteínas e suplementos de alta qualidade para sua saúde e performance.</p>
+          <div class="company-data">
+            <strong>CNPJ:</strong> 32.998.217/0001-29<br>
+            <strong>Endereço:</strong> Avenida João de Barros, 38, Apto 0101<br>
+            Recife - PE, CEP 50100-015
+          </div>
+        </div>
+        <div>
+          <h3>Atendimento</h3>
+          <a href="#faq">Dúvidas frequentes</a>
+          <a href="#details">Informações do produto</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div>
+          <h3>Políticas</h3>
+          <a href="#termos-de-uso">Termos de Uso</a>
+          <a href="#politica-de-privacidade">Política de Privacidade</a>
+          <a href="#trocas-e-devolucoes">Trocas e Devoluções</a>
+        </div>
+        <div>
+          <h3>Dados da empresa</h3>
+          <a href="#dados-da-empresa">Identificação empresarial</a>
+          <a href="#contato">Fale conosco</a>
+          <p>Atendimento e informações do pedido pelos canais informados no checkout.</p>
+        </div>
+      </div>
+      <div class="legal-section" id="termos-de-uso">
+        <h3>Termos de Uso</h3>
+        <p>Ao navegar e realizar uma compra, você concorda com as condições apresentadas nesta loja, incluindo preços, disponibilidade, formas de pagamento, entrega e demais informações exibidas no checkout.</p>
+      </div>
+      <div class="legal-section" id="politica-de-privacidade">
+        <h3>Política de Privacidade</h3>
+        <p>Os dados fornecidos pelo cliente são utilizados para processar pedidos, pagamentos, entrega, atendimento e prevenção a fraudes, conforme a legislação aplicável. Não solicitamos dados além do necessário para essas finalidades.</p>
+      </div>
+      <div class="legal-section" id="trocas-e-devolucoes">
+        <h3>Trocas e Devoluções</h3>
+        <p>Solicitações de troca ou devolução devem ser feitas pelos canais de atendimento informados no checkout, observando os prazos e as condições previstos na legislação aplicável e nas informações do pedido.</p>
+      </div>
+      <div class="legal-section" id="contato">
+        <h3>Contato</h3>
+        <p>Para dúvidas sobre produtos, pedidos, entrega, trocas ou devoluções, utilize o canal de atendimento disponibilizado no checkout.</p>
+      </div>
+      <div class="legal-section" id="dados-da-empresa">
+        <h3>Dados da empresa</h3>
+        <p>Gp Assessoria &amp; Consultoria LTDA. · CNPJ 32.998.217/0001-29 · Avenida João de Barros, 38, Apto 0101, Recife - PE, CEP 50100-015.</p>
+      </div>
+      <div class="footer-bottom">© 2024 Gp Assessoria &amp; Consultoria LTDA. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" id="mobileCta" aria-hidden="true">
+          <div><span class="mobile-cta-label">Combo completo</span><span class="mobile-cta-price" id="mobilePrice">R$ 89,90</span></div>
+          <button class="btn btn-primary" id="mobileBuy" type="button">Adicionar combo</button>
+  </div>
+
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true">
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <header class="cart-header">
+        <div><h2 id="cartTitle">Seu combo</h2><p>Confira sua escolha antes de informar a entrega</p></div>
+        <button class="close-cart" id="closeCart" type="button" aria-label="Fechar carrinho"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      </header>
+      <div class="cart-content" id="cartItems"></div>
+      <footer class="cart-footer" id="cartFooter" hidden>
+        <p class="cart-error" id="cartError" role="alert"></p>
+        <div class="cart-shipping-note" aria-label="Frete grátis e prazo estimado">
+          <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
+          <div><strong>Frete grátis</strong><span>Entrega estimada até <span class="cart-shipping-date" id="cartShippingEstimate">03 dias úteis</span></span></div>
+        </div>
+        <div class="order-line"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+        <div class="order-line"><span>Entrega</span><strong>A calcular no próximo passo</strong></div>
+        <div class="total-row"><span class="total-label">Total dos produtos</span><span class="total-value" id="cartTotal">R$ 0,00</span></div>
+        <button class="btn btn-primary" id="continueCheckout" type="button">Informar entrega e continuar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <p class="cart-footer-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Checkout seguro · pedido revisável</p>
+      </footer>
+    </aside>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada" aria-hidden="true">
+    <button class="lightbox-close" id="closeLightbox" type="button" aria-label="Fechar imagem">×</button>
+    <img id="lightboxImage" alt="">
+  </div>
+
+  <div class="redirect-loading" id="redirectLoading" role="status" aria-live="polite" aria-label="Preparando o checkout" aria-hidden="true">
+    <div class="redirect-loading-card">
+      <div class="redirect-loading-brand" aria-hidden="true">GP ASSESSORIA</div>
+      <span class="redirect-loading-spinner" aria-hidden="true"></span>
+      <p class="redirect-loading-text">Preparando seu pedido</p>
+      <p class="redirect-loading-subtext">Estamos levando você para um checkout seguro.</p>
+    </div>
+  </div>
+
+  <script type="application/ld+json" id="productSchema"></script>
+  <script>
+    (() => {
+      'use strict';
+
+      const CHECKOUT_URL = 'https://llpag-seguro.onrender.com/';
+      const STORAGE_KEY = 'checkout_cart_v3';
+      const REDIRECT_LOADING_DURATION = 900;
+
+      const variants = [
+        { id: '6-caixas', name: '6 caixas · 60 cápsulas', weight: 6, price: 89.90, oldPrice: 189.90, images: [
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ttuQACdNJDtVNOrp.webp',
+          'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp'
+        ] },
+      ];
+
+      let selectedVariant = variants[0];
+      let currentImage = 0;
+      let cart = loadCart();
+      let lastFocusedElement = null;
+      let switchTimer = null;
+      let variantSwitchToken = 0;
+      const imageCache = new Map();
+
+      const $ = (selector, root = document) => root.querySelector(selector);
+      const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+      const money = (value) => Number(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      const esc = (value) => String(value).replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
+
+      const searchTargets = [
+        { label: 'Combo Dolce Gusto em Promoção', detail: 'Produto principal', selector: '#product' },
+        { label: 'Descrição do produto', detail: 'Informações e benefícios', selector: '#descriptionPanel' },
+        { label: 'Como usar', detail: 'Modo de preparo e conservação', selector: '#usagePanel' },
+        { label: 'Composição', detail: 'Especificações e informações', selector: '#compositionPanel' },
+        { label: 'Avaliações de clientes', detail: 'Opiniões e fotos', selector: '#reviews' },
+        { label: 'Dúvidas frequentes', detail: 'Entrega, pagamento e trocas', selector: '#faq' }
+      ];
+
+      function setupSearch() {
+        const form = $('#searchForm');
+        const input = $('#searchInput');
+        const results = $('#searchResults');
+        if (!form || !input || !results) return;
+
+        const closeResults = () => {
+          results.classList.remove('is-visible');
+          input.setAttribute('aria-expanded', 'false');
+        };
+        const goTo = (selector) => {
+          const target = $(selector);
+          if (!target) return;
+          closeResults();
+          input.blur();
+          if (selector === '#descriptionPanel' || selector === '#usagePanel' || selector === '#compositionPanel') {
+            const tab = $(`[data-tab="${selector.slice(1)}"]`);
+            if (tab) tab.click();
+          }
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+        const renderSearchResults = () => {
+          const term = input.value.trim().toLocaleLowerCase('pt-BR');
+          const matches = term ? [
+            ...variants.filter((variant) => variant.name.toLocaleLowerCase('pt-BR').includes(term)).map((variant) => ({ label: variant.name, detail: `${variant.weight * 10} cápsulas · ${money(variant.price)}`, selector: '#product' })),
+            ...searchTargets.filter((target) => target.label.toLocaleLowerCase('pt-BR').includes(term) || target.detail.toLocaleLowerCase('pt-BR').includes(term))
+          ] : searchTargets.slice(0, 4);
+          results.replaceChildren();
+          if (!matches.length) {
+            const empty = document.createElement('div');
+            empty.className = 'search-empty';
+            empty.textContent = 'Nenhum resultado encontrado. Tente outro termo.';
+            results.appendChild(empty);
+          } else {
+            matches.slice(0, 6).forEach((match) => {
+              const button = document.createElement('button');
+              button.type = 'button';
+              button.className = 'search-result';
+              button.setAttribute('role', 'option');
+              button.innerHTML = `<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i><span>${esc(match.label)}<small>${esc(match.detail)}</small></span>`;
+              button.addEventListener('click', () => goTo(match.selector));
+              results.appendChild(button);
             });
+          }
+          results.classList.add('is-visible');
+          input.setAttribute('aria-expanded', 'true');
+        };
+        input.addEventListener('focus', renderSearchResults);
+        input.addEventListener('input', renderSearchResults);
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const first = $('.search-result', results);
+          if (first) first.click();
+        });
+        document.addEventListener('click', (event) => {
+          if (!form.contains(event.target)) closeResults();
+        });
+      }
 
-            // Pequeno delay para feedback visual de clique (melhora UX)
-            setTimeout(() => {
-                window.location.href = DESTINATION_URL;
-            }, 300);
+      function loadCart() {
+        try {
+          const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+          return Array.isArray(stored) ? stored.filter((item) => item && item.id && Number(item.price) > 0 && Number(item.quantity) > 0) : [];
+        } catch (_) { return []; }
+      }
+
+      function saveCart() {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(cart)); } catch (_) { /* localStorage pode estar indisponível */ }
+      }
+
+      function preloadImage(src) {
+        if (imageCache.has(src)) return imageCache.get(src);
+        const promise = new Promise((resolve) => {
+          const image = new Image();
+          image.decoding = 'async';
+          image.onload = () => {
+            const decoded = typeof image.decode === 'function' ? image.decode().catch(() => {}) : Promise.resolve();
+            decoded.then(() => resolve(image));
+          };
+          image.onerror = () => resolve(null);
+          image.src = src;
+        });
+        imageCache.set(src, promise);
+        return promise;
+      }
+
+      function preloadVariantImages() {
+        return Promise.all(variants.flatMap((variant) => variant.images.map(preloadImage)));
+      }
+
+      function preloadVariant(variant) {
+        return Promise.all(variant.images.map(preloadImage));
+      }
+
+      function getUnitPrice(variant) { return variant.price / (variant.weight / 100); }
+      function getDiscount(variant) { return Math.round((1 - variant.price / variant.oldPrice) * 100); }
+      function getSubtotal() { return cart.reduce((sum, item) => sum + item.price * item.quantity, 0); }
+
+      function renderGallery() {
+        const slider = $('#gallerySlider');
+        const dots = $('#galleryDots');
+        slider.replaceChildren();
+        dots.replaceChildren();
+        currentImage = 0;
+
+        selectedVariant.images.forEach((src, index) => {
+          const slide = document.createElement('div');
+          slide.className = 'gallery-slide';
+          const image = document.createElement('img');
+          image.src = src;
+          image.alt = `Combo Dolce Gusto ${selectedVariant.name}, imagem ${index + 1}`;
+          image.loading = 'eager';
+          image.fetchPriority = index === 0 ? 'high' : 'auto';
+          image.decoding = 'async';
+          image.draggable = false;
+          image.addEventListener('click', () => openLightbox(src, image.alt));
+          slide.appendChild(image);
+          slider.appendChild(slide);
+
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = `gallery-dot${index === 0 ? ' is-active' : ''}`;
+          dot.setAttribute('aria-label', `Ver imagem ${index + 1}`);
+          dot.setAttribute('aria-current', String(index === 0));
+          dot.addEventListener('click', () => goToImage(index));
+          dots.appendChild(dot);
+        });
+        slider.scrollLeft = 0;
+        updateGalleryControls();
+      }
+
+      function updateGalleryControls() {
+        const lastImage = selectedVariant.images.length - 1;
+        $('#galleryPrev').disabled = currentImage === 0;
+        $('#galleryNext').disabled = currentImage === lastImage;
+      }
+
+      function goToImage(index) {
+        const slider = $('#gallerySlider');
+        currentImage = Math.max(0, Math.min(index, selectedVariant.images.length - 1));
+        slider.scrollTo({ left: slider.clientWidth * currentImage, behavior: 'smooth' });
+        $$('.gallery-dot', $('#galleryDots')).forEach((dot, i) => {
+          const isActive = i === currentImage;
+          dot.classList.toggle('is-active', isActive);
+          dot.setAttribute('aria-current', String(isActive));
+        });
+        updateGalleryControls();
+      }
+
+      function updateProductView() {
+        $('#oldPrice').textContent = selectedVariant.oldPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+        $('#currentPrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+        $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
+        $('#installments').textContent = `ou em até 3x de ${money(selectedVariant.price / 3)} sem juros`;
+        $('#savingsNote').innerHTML = `<i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza ${money(selectedVariant.oldPrice - selectedVariant.price)}`;
+        const boxesPerFlavor = selectedVariant.weight / 6;
+        const capsulesTotal = selectedVariant.weight * 10;
+        $('#includedTotal').textContent = `${selectedVariant.weight} caixas · ${capsulesTotal} cápsulas`;
+        $('#includedBoxes').textContent = `${selectedVariant.weight} caixas`;
+        $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong id="includedBoxes">${selectedVariant.weight} caixas</strong><span>${capsulesTotal} cápsulas no total · ${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} por sabor</span>`;
+        $$('.included-flavors li', $('#includedFlavors')).forEach((item) => {
+                item.innerHTML = `<strong>${item.dataset.flavor}</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} · ${boxesPerFlavor * 10} cáps.</span>`;
+        });
+        $('#mobilePrice').textContent = money(selectedVariant.price);
+        $('#buyCtaPrice').textContent = money(selectedVariant.price);
+        renderGallery();
+        updateSchema();
+      }
+
+      async function selectVariant(id) {
+        const next = variants.find((variant) => variant.id === id);
+        if (!next || next.id === selectedVariant.id) return;
+        const actionButtons = [$('#buyNow'), $('#mobileBuy')].filter(Boolean);
+        const slider = $('#gallerySlider');
+        const token = ++variantSwitchToken;
+        clearTimeout(switchTimer);
+        actionButtons.forEach((button) => { button.disabled = true; });
+        slider.classList.add('is-switching');
+
+        // Aguarda o download e a decodificação antes de trocar o DOM.
+        // Assim a primeira troca não mostra um frame branco ou uma piscada.
+        try {
+          await preloadVariant(next);
+        } catch (error) {
+          // Mesmo que uma imagem falhe, a variante textual e o preço continuam utilizáveis.
         }
+        if (token !== variantSwitchToken) return;
 
-        mainCta.addEventListener('click', handleRedirect);
-        floatingBtn.addEventListener('click', handleRedirect);
-
-        // Lógica do Botão Flutuante
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                floatingCta.classList.add('visible');
-            } else {
-                floatingCta.classList.remove('visible');
-            }
+        selectedVariant = next;
+        updateProductView();
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => slider.classList.remove('is-switching'));
         });
+        switchTimer = setTimeout(() => { actionButtons.forEach((button) => { button.disabled = false; }); }, 220);
+      }
 
-        // Resetar botões ao voltar (cache do navegador)
-        window.addEventListener('pageshow', (event) => {
-            if (event.persisted) {
-                [mainCta, floatingBtn].forEach(btn => {
-                    const textSpan = btn.querySelector('.btn-text') || btn;
-                    textSpan.textContent = btn === mainCta ? 'Aproveitar Desconto' : 'Garantir Desconto';
-                    btn.disabled = false;
-                    btn.style.opacity = '1';
-                });
-            }
+      function addSelectedVariant() {
+        const id = `body-protein-${selectedVariant.id}`;
+        const existing = cart.find((item) => item.id === id);
+        if (existing) {
+          existing.quantity += 1;
+          existing.images = selectedVariant.images;
+          existing.image = selectedVariant.images[0];
+          existing.weight = selectedVariant.weight;
+          existing.oldPrice = selectedVariant.oldPrice;
+          existing.discount = getDiscount(selectedVariant);
+        } else {
+          cart.push({
+            id,
+            name: 'Combo Dolce Gusto — 6 sabores',
+            variant: `${selectedVariant.name} · Dolce Gusto`,
+            flavor: selectedVariant.name,
+            weight: selectedVariant.weight,
+            price: selectedVariant.price,
+            oldPrice: selectedVariant.oldPrice,
+            discount: getDiscount(selectedVariant),
+            unitPrice: getUnitPrice(selectedVariant),
+            image: selectedVariant.images[0],
+            images: [...selectedVariant.images],
+            quantity: 1
+          });
+        }
+        saveCart();
+        renderCart();
+        openCart();
+      }
+
+      function renderCart() {
+        const container = $('#cartItems');
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        $('#cartCount').textContent = String(totalItems);
+        $('#cartFooter').hidden = cart.length === 0;
+        container.replaceChildren();
+
+        if (!cart.length) {
+          const empty = document.createElement('div');
+          empty.className = 'empty-cart';
+          empty.innerHTML = '<i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><strong>Seu carrinho está vazio</strong><span>Adicione o combo para começar.</span><button class="empty-cart-action" type="button">Ver combo</button>'; 
+          $('.empty-cart-action', empty).addEventListener('click', () => { closeCart(); $('#product').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+          container.appendChild(empty);
+        } else {
+          cart.forEach((item, index) => {
+            const row = document.createElement('article');
+            row.className = 'cart-item';
+            row.innerHTML = `
+              <img src="${esc(item.image)}" alt="${esc(item.name)} — ${esc(item.variant || '')}">
+              <div>
+                <div class="cart-item-head">
+                  <div>
+                    <div class="cart-item-name">${esc(item.name)}</div>
+                    <div class="cart-item-meta">${esc(item.variant || '')}</div>
+                  </div>
+                </div>
+                <div class="cart-item-promo"><i class="fa-solid fa-tag" aria-hidden="true"></i> Oferta especial · ${esc(String(item.discount || 0))}% OFF</div>
+                <div class="cart-item-price-row"><span class="cart-item-price">${money(item.price)}</span><span class="cart-item-old-price">${money(item.oldPrice || item.price)}</span></div>
+                <div class="cart-item-saving">Você economiza ${money(Math.max(0, (Number(item.oldPrice) || Number(item.price)) - Number(item.price)))}</div>
+                <div class="cart-item-bottom">
+                  <div class="qty-control">
+                    <button type="button" aria-label="Diminuir quantidade" data-action="decrease" data-index="${index}">−</button>
+                    <span aria-live="polite">${item.quantity}</span>
+                    <button type="button" aria-label="Aumentar quantidade" data-action="increase" data-index="${index}">+</button>
+                  </div>
+                  <button class="remove-item" type="button" aria-label="Remover ${esc(item.name)}" data-action="remove" data-index="${index}"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Remover</span></button>
+                </div>
+              </div>`;
+            container.appendChild(row);
+          });
+        }
+        updateCartTotal();
+      }
+
+      function updateCartTotal() {
+        const subtotal = getSubtotal();
+        $('#cartSubtotal').textContent = money(subtotal);
+        $('#cartTotal').textContent = money(subtotal);
+      }
+
+      function openCart() {
+        lastFocusedElement = document.activeElement;
+        $('#cartOverlay').classList.add('is-open');
+        $('#cartOverlay').setAttribute('aria-hidden', 'false');
+        $('#cartTrigger').setAttribute('aria-expanded', 'true');
+        document.body.classList.add('no-scroll');
+        renderCart();
+        setTimeout(() => $('#closeCart').focus(), 30);
+      }
+
+      function closeCart() {
+        $('#cartOverlay').classList.remove('is-open');
+        $('#cartOverlay').setAttribute('aria-hidden', 'true');
+        $('#cartTrigger').setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('no-scroll');
+        lastFocusedElement?.focus?.();
+      }
+
+      function setCartError(message = '') { $('#cartError').textContent = message; }
+
+      function setRedirectLoading(isVisible) {
+        const loading = $('#redirectLoading');
+        if (!loading) return;
+        loading.classList.toggle('is-visible', isVisible);
+        loading.setAttribute('aria-hidden', String(!isVisible));
+        document.body.classList.toggle('no-scroll', isVisible);
+      }
+
+      function continueToCheckout() {
+        setCartError('');
+        if (!cart.length) { setCartError('Adicione um item ao carrinho para continuar.'); return; }
+        const subtotal = getSubtotal();
+        const shipping = 0;
+        const total = subtotal + shipping;
+        const products = cart.map((item) => ({
+          id: item.id,
+          name: item.name,
+          variant: item.variant || '',
+          flavor: item.flavor || (item.variant || '').split(' · ')[0],
+          weight: Number(item.weight) || null,
+          quantity: Number(item.quantity),
+          price: Number(item.price),
+          oldPrice: Number(item.oldPrice) || null,
+          discount: Number(item.discount) || null,
+          unitPrice: Number(item.unitPrice) || null,
+          image: item.image || (Array.isArray(item.images) ? item.images[0] : ''),
+          images: Array.isArray(item.images) && item.images.length ? item.images : [item.image].filter(Boolean),
+          lineSubtotal: Number(item.price) * Number(item.quantity)
+        }));
+        const order = {
+          version: 1,
+          createdAt: new Date().toISOString(),
+          currency: 'BRL',
+          itemCount: products.reduce((sum, item) => sum + item.quantity, 0),
+          items: products,
+          subtotal,
+          shipping,
+          total
+        };
+        const params = new URLSearchParams({
+          subtotal: subtotal.toFixed(2),
+          shipping: shipping.toFixed(2),
+          total: total.toFixed(2),
+          itemCount: String(order.itemCount),
+          products: JSON.stringify(products),
+          order: JSON.stringify(order)
         });
-    </script>
+        setRedirectLoading(true);
+        window.setTimeout(() => { window.location.assign(`${CHECKOUT_URL}?${params.toString()}`); }, REDIRECT_LOADING_DURATION);
+      }
 
+      function updateSchema() {
+        $('#productSchema').textContent = JSON.stringify({
+          '@context': 'https://schema.org', '@type': 'Product',
+          name: `Combo Dolce Gusto ${selectedVariant.name}`,
+          image: selectedVariant.images,
+          description: `Combo Dolce Gusto com ${selectedVariant.weight * 10} cápsulas em 6 sabores: Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.`,
+          offers: { '@type': 'Offer', priceCurrency: 'BRL', price: selectedVariant.price.toFixed(2), availability: 'https://schema.org/InStock', url: window.location.href }
+        });
+      }
+
+      const allReviews = [
+        { name: 'Gustavo Martins', date: 'Hoje', rating: 5, content: 'Combo completo para deixar vários sabores de café sempre à mão. Gostei muito.' },
+        { name: 'Luciana Gomes', date: 'Hoje', rating: 5, content: 'Chegou rápido e muito bem embalado. As caixas vieram lacradas e com boa validade.' },
+        { name: 'Rodrigo Pedroso', date: 'Hoje', rating: 5, content: 'Os cafés são saborosos e o combo rende bastante. Recomendo para quem gosta de variar.' },
+        { name: 'Viviane Rocha', date: 'Ontem', rating: 5, content: 'Recomendo: chegou rápido e o preço do combo é justo pela quantidade de caixas.' },
+        { name: 'João Costa', date: 'Ontem', rating: 5, content: 'O capuccino ficou cremoso e os cafés têm sabor equilibrado. Ótima opção para o dia a dia.' },
+        { name: 'Rodrigo Oliveira', date: 'Ontem', rating: 4, content: 'Sempre compro aqui e os produtos chegam certinhos. A variedade de sabores é ótima.' },
+        { name: 'Daiane Santos', date: 'Ontem', rating: 5, content: 'Excelente atendimento. As caixas vieram bem protegidas e lacradas.' },
+        { name: 'Alexandra Teixeira', date: 'Ontem', rating: 5, content: 'Gostei de ter espresso, café au lait e cappuccino no mesmo combo. Muito prático.' },
+        { name: 'Mateus Costa', date: 'Ontem', rating: 5, content: 'Produto original. Conferi as caixas e a qualidade das cápsulas é impecável.' },
+        { name: 'Thiago S.', date: 'Há 2 dias', rating: 5, content: 'Ótimo combo, com vários sabores e preparo rápido. Já quero comprar novamente.' },
+        { name: 'Diego Almeida', date: 'Há 2 dias', rating: 5, content: 'Os cafés ficam prontos rapidamente e a seleção de sabores passa confiança.' },
+        { name: 'Samanta Lima', date: 'Há 2 dias', rating: 5, content: 'Uso diariamente no café da manhã e a praticidade melhorou muito minha rotina.' },
+        { name: 'Lucas Pedro', date: 'Há 2 dias', rating: 5, content: 'O Espresso Intenso é meu favorito. Recomendo para quem gosta de café mais marcante.' },
+        { name: 'Bruno Melo', date: 'Há 2 dias', rating: 5, content: 'Foi o melhor preço que encontrei para esse conjunto de sabores. Entrega rápida.' },
+        { name: 'Fernanda Silva', date: 'Há 3 dias', rating: 4, content: 'Chegou dentro do prazo e as cápsulas são de ótima qualidade. O café au lait é delicioso.' },
+        { name: 'Ricardo Souza', date: 'Há 3 dias', rating: 5, content: 'Atendimento nota dez e produto de boa qualidade. Parabéns pela agilidade.' },
+        { name: 'Gabriela Ramos', date: 'Há 3 dias', rating: 5, content: 'Uso no café da manhã e o combo facilita muito a rotina. As opções são variadas.' },
+        { name: 'Marcelo Vieira', date: 'Há 3 dias', rating: 5, content: 'O café matinal ficou ótimo e a seleção trouxe mais variedade para minha rotina. Boa aquisição.' },
+        { name: 'Aline Alves', date: 'Há 3 dias', rating: 5, content: 'Uso no dia a dia e superou as expectativas. O preparo é rápido no café da manhã.' },
+        { name: 'André Santos', date: 'Há 3 dias', rating: 5, content: 'Comprei, chegou tudo certinho e a qualidade das cápsulas é muito boa.' },
+        { name: 'Felipe Diniz', date: 'Há 3 dias', rating: 5, content: 'Uma das melhores opções para comprar cápsulas e combos de café que já encontrei.' }
+      ];
+
+      let currentPage = 1;
+      const reviewsPerPage = 4;
+
+      function renderReviews(page) {
+        const grid = $('#reviewsGrid');
+        grid.replaceChildren();
+        const startIndex = (page - 1) * reviewsPerPage;
+        allReviews.slice(startIndex, startIndex + reviewsPerPage).forEach((review) => {
+          const card = document.createElement('article');
+          card.className = 'review-card';
+          let starsHtml = '';
+          for (let i = 0; i < 5; i++) starsHtml += `<i class="${i < review.rating ? 'fas' : 'far'} fa-star"></i>`;
+          card.innerHTML = `
+            <div class="review-top">
+              <div class="reviewer-info">
+                <div class="reviewer-avatar">${esc(review.name.charAt(0))}</div>
+                <div><div class="reviewer-name">${esc(review.name)}</div><div class="verified-badge">Cliente verificado</div></div>
+              </div>
+              <div class="review-date">${esc(review.date)}</div>
+            </div>
+            <div class="review-stars">${starsHtml}</div>
+            <p class="review-content">${esc(review.content)}</p>`;
+          grid.appendChild(card);
+        });
+        renderPagination(page);
+      }
+
+      function renderPagination(activePage) {
+        const pagination = $('#pagination');
+        pagination.replaceChildren();
+        const totalPages = Math.ceil(allReviews.length / reviewsPerPage);
+        const prev = document.createElement('button');
+        prev.className = 'page-btn'; prev.innerHTML = '<i class="fas fa-chevron-left"></i>'; prev.disabled = activePage === 1; prev.setAttribute('aria-label', 'Página anterior');
+        prev.addEventListener('click', () => { if (currentPage > 1) { currentPage -= 1; renderReviews(currentPage); scrollToReviews(); } });
+        pagination.appendChild(prev);
+        for (let i = 1; i <= totalPages; i++) {
+          const button = document.createElement('button');
+          button.className = `page-btn${i === activePage ? ' active' : ''}`;
+          button.textContent = i;
+          button.setAttribute('aria-label', `Ir para a página ${i}`);
+          button.setAttribute('aria-current', i === activePage ? 'page' : 'false');
+          button.addEventListener('click', () => { currentPage = i; renderReviews(i); scrollToReviews(); });
+          pagination.appendChild(button);
+        }
+        const next = document.createElement('button');
+        next.className = 'page-btn'; next.innerHTML = '<i class="fas fa-chevron-right"></i>'; next.disabled = activePage === totalPages; next.setAttribute('aria-label', 'Próxima página');
+        next.addEventListener('click', () => { if (currentPage < totalPages) { currentPage += 1; renderReviews(currentPage); scrollToReviews(); } });
+        pagination.appendChild(next);
+      }
+
+      function scrollToReviews() { $('#reviews').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+
+      function openLightbox(src, alt) {
+        $('#lightboxImage').src = src;
+        $('#lightboxImage').alt = alt;
+        $('#lightbox').classList.add('is-open');
+        $('#lightbox').setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
+        $('#closeLightbox').focus();
+      }
+
+      function closeLightbox() {
+        $('#lightbox').classList.remove('is-open');
+        $('#lightbox').setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('no-scroll');
+      }
+
+      function setupTabs() {
+        $$('.tab-button').forEach((button) => button.addEventListener('click', () => {
+          $$('.tab-button').forEach((item) => { item.classList.remove('is-active'); item.setAttribute('aria-selected', 'false'); });
+          $$('.tab-panel').forEach((panel) => { panel.hidden = true; });
+          button.classList.add('is-active');
+          button.setAttribute('aria-selected', 'true');
+          $(`#${button.dataset.tab}`).hidden = false;
+        }));
+      }
+
+      function setupFaq() {
+        $$('.faq-question').forEach((button) => button.addEventListener('click', () => {
+          const item = button.closest('.faq-item');
+          const answer = $('.faq-answer', item);
+          const isOpen = item.classList.toggle('is-open');
+          button.setAttribute('aria-expanded', String(isOpen));
+          answer.hidden = !isOpen;
+        }));
+      }
+
+      function setupMobileCta() {
+        const cta = $('#mobileCta');
+        const priceBox = $('#priceBox');
+        if (!cta || !priceBox || !('IntersectionObserver' in window)) return;
+        const observer = new IntersectionObserver(([entry]) => {
+          const hasScrolledPast = !entry.isIntersecting && entry.boundingClientRect.bottom < 0;
+          const shouldShow = hasScrolledPast && window.matchMedia('(max-width: 620px)').matches;
+          cta.classList.toggle('is-visible', shouldShow);
+          cta.setAttribute('aria-hidden', String(!shouldShow));
+        }, { threshold: 0.05 });
+        observer.observe(priceBox);
+      }
+
+      function setupDescriptionImageFocus() {
+        const product = $('#product');
+        if (!product) return;
+        const focusProduct = () => {
+          product.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.setTimeout(() => $('#productTitle')?.focus?.({ preventScroll: true }), 420);
+        };
+        $$('[data-focus-product]').forEach((photo) => {
+          photo.addEventListener('click', focusProduct);
+          photo.addEventListener('keydown', (event) => {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
+            focusProduct();
+          });
+        });
+      }
+
+      function loadShippingRegion() {
+        const region = $('#shippingRegion');
+        if (!region) return;
+        const cacheKey = 'checkout_shipping_region_v1';
+        const applyLocation = (location, persist = true) => {
+          const city = String(location.city || '').trim();
+          const state = String(location.region_code || location.region || location.region_name || '').trim();
+          const destination = [city, state].filter(Boolean).join(' - ');
+          if (!destination) return false;
+          const label = `para ${destination} e Região`;
+          region.textContent = label;
+          if (persist) {
+            try { localStorage.setItem(cacheKey, label); } catch (_) { /* armazenamento indisponível */ }
+          }
+          return true;
+        };
+        try {
+          const cached = localStorage.getItem(cacheKey);
+          if (cached) region.textContent = cached;
+        } catch (_) { /* armazenamento indisponível */ }
+
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 4500);
+        const readLocation = (response) => response.ok
+          ? response.json().then((data) => data.error || data.success === false ? Promise.reject(new Error('location unavailable')) : data)
+          : Promise.reject(new Error(`location http ${response.status}`));
+        const sources = [
+          fetch('https://ipapi.co/json/', { signal: controller.signal, headers: { Accept: 'application/json' } }).then(readLocation),
+          fetch('https://ipwho.is/', { signal: controller.signal, headers: { Accept: 'application/json' } }).then(readLocation)
+        ];
+        Promise.any(sources)
+          .then((location) => applyLocation(location))
+          .catch(() => { /* Mantém o cache ou o texto genérico. */ })
+          .finally(() => clearTimeout(timeout));
+      }
+
+      function addBusinessDays(date, amount) {
+        const result = new Date(date);
+        let remaining = amount;
+        while (remaining > 0) {
+          result.setDate(result.getDate() + 1);
+          const weekday = result.getDay();
+          if (weekday !== 0 && weekday !== 6) remaining -= 1;
+        }
+        return result;
+      }
+
+      function setupShippingEstimate() {
+        const note = $('.shipping-note');
+        const estimate = $('#shippingEstimated');
+        if (!note || !estimate) return;
+        const days = Number(note.dataset.deliveryDays) || 3;
+        const deliveryDate = addBusinessDays(new Date(), days);
+        const month = deliveryDate.toLocaleDateString('pt-BR', { month: 'long' });
+        const day = String(deliveryDate.getDate()).padStart(2, '0');
+        estimate.innerHTML = `<strong>Receba</strong> até <strong>${day} de ${month}</strong>`;
+        const cartEstimate = $('#cartShippingEstimate');
+        if (cartEstimate) cartEstimate.textContent = `${day} de ${month}`;
+      }
+
+      const menuTrigger = $('#menuTrigger');
+      const menuPanel = $('#menuPanel');
+      const setMenuState = (isOpen) => {
+        menuTrigger.setAttribute('aria-expanded', String(isOpen));
+        menuTrigger.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+        menuPanel.classList.toggle('is-visible', isOpen);
+      };
+      menuTrigger.addEventListener('click', () => setMenuState(menuTrigger.getAttribute('aria-expanded') !== 'true'));
+      menuPanel.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuState(false)));
+      document.addEventListener('click', (event) => {
+        if (!event.target.closest('.header-tools')) setMenuState(false);
+      });
+
+      $('#buyNow').addEventListener('click', addSelectedVariant);
+      $('#mobileBuy').addEventListener('click', addSelectedVariant);
+      $('#cartTrigger').addEventListener('click', openCart);
+      $('#closeCart').addEventListener('click', closeCart);
+      $('#cartOverlay').addEventListener('click', (event) => { if (event.target === $('#cartOverlay')) closeCart(); });
+      $('#continueCheckout').addEventListener('click', continueToCheckout);
+      $('#cartItems').addEventListener('click', (event) => {
+        const control = event.target.closest('[data-action]');
+        if (!control) return;
+        const index = Number(control.dataset.index);
+        if (!cart[index]) return;
+        if (control.dataset.action === 'increase') cart[index].quantity += 1;
+        if (control.dataset.action === 'decrease') cart[index].quantity -= 1;
+        if (control.dataset.action === 'remove' || cart[index].quantity < 1) cart.splice(index, 1);
+        saveCart();
+        renderCart();
+      });
+      $('#gallerySlider').addEventListener('scroll', () => {
+        const index = Math.round($('#gallerySlider').scrollLeft / $('#gallerySlider').clientWidth);
+        if (index !== currentImage) {
+          currentImage = index;
+          $$('.gallery-dot', $('#galleryDots')).forEach((dot, i) => {
+            const isActive = i === currentImage;
+            dot.classList.toggle('is-active', isActive);
+            dot.setAttribute('aria-current', String(isActive));
+          });
+          updateGalleryControls();
+        }
+      }, { passive: true });
+      $('#galleryPrev').addEventListener('click', () => goToImage(currentImage - 1));
+      $('#galleryNext').addEventListener('click', () => goToImage(currentImage + 1));
+      $('#closeLightbox').addEventListener('click', closeLightbox);
+      $('#lightbox').addEventListener('click', (event) => { if (event.target === $('#lightbox')) closeLightbox(); });
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        if ($('#lightbox').classList.contains('is-open')) closeLightbox();
+        else if ($('#cartOverlay').classList.contains('is-open')) closeCart();
+      });
+
+      window.addEventListener('pageshow', () => setRedirectLoading(false));
+
+      renderReviews(1);
+      setupTabs();
+      setupFaq();
+      setupSearch();
+      setupMobileCta();
+      setupDescriptionImageFocus();
+      setupShippingEstimate();
+      loadShippingRegion();
+      // Inicia o cache de imagens imediatamente; cada troca também aguarda
+      // sua própria variante para garantir fluidez mesmo no primeiro clique.
+      preloadVariantImages();
+      updateProductView();
+      renderCart();
+    })();
+  </script>
 </body>
 </html>
