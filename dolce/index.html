@@ -132,7 +132,7 @@
     .contents-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 7px 18px; margin: 0; padding: 0; list-style: none; }
     .contents-list li { position: relative; padding-left: 16px; color: var(--ink); font-size: 12.5px; line-height: 1.4; }
     .contents-list li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: 800; }
-    .status-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; color: var(--ink-soft); font-size: 12.5px; }
+    .status-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 14px; color: var(--ink-soft); font-size: 12px; }
     .status-row span { display: inline-flex; align-items: center; gap: 6px; }
     .status-row i { color: var(--success); font-size: 12px; }
 
@@ -147,7 +147,7 @@
     .choice-box { margin: 0 0 20px; }
     .choice-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
     .choice-heading strong { color: var(--ink); font-size: 13.5px; font-weight: 700; }
-    .choice-heading span { color: var(--ink-soft); font-size: 12.5px; }
+    .choice-heading span { color: var(--brand); font-size: 12px; font-weight: 700; }
     .variant-grid { display: flex; flex-wrap: wrap; gap: 7px; }
     .variant-pill {
       flex: 0 0 auto;
@@ -179,14 +179,15 @@
     .included-flavors li span { flex: 0 0 auto; color: var(--brand); font-size: 10.5px; font-weight: 800; white-space: nowrap; }
 
     /* Price */
-    .price-box { margin: 0 0 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+    .price-box { margin: 0 0 18px; padding: 16px 20px 18px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+    .price-box .included-summary { margin: 0 -5px 17px; background: #fff; }
     .old-price-row { display: flex; align-items: center; gap: 9px; margin-bottom: 6px; min-height: 20px; }
     .old-price { color: var(--ink-soft); font-size: 13px; text-decoration: line-through; }
     .discount-tag { padding: 3px 7px; border-radius: 5px; background: #e6f4ec; color: var(--success-dark); font-size: 11px; font-weight: 700; }
     .current-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; color: var(--brand); font-size: clamp(30px, 3.6vw, 38px); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
     .pix-tag { padding: 4px 8px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 13px; font-weight: 700; letter-spacing: 0; }
     .installments { margin-top: 7px; color: var(--ink-soft); font-size: 13px; }
-    .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 600; }
+    .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 700; }
     .savings-note i { color: var(--success); font-size: 11px; }
 
     .shipping-note { display: flex; align-items: flex-start; gap: 11px; margin: 0 0 17px; padding: 5px 0 2px; background: transparent; }
@@ -540,12 +541,12 @@
 
         <div class="product-info">
           <div class="status-row">
-            <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Em estoque</span>
-            <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra segura</span>
+            <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Disponível para envio</span>
+            <span><i class="fa-solid fa-box" aria-hidden="true"></i> Produto original</span>
           </div>
 
-          <h1 id="productTitle" tabindex="-1">Combo 6 Caixas Dolce Gusto em Promoção - 60 Cápsulas</h1>
-          <p class="positioning">Combo 6 caixas sabores Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p>
+          <h1 id="productTitle" tabindex="-1">Combo de Cápsulas Dolce Gusto</h1>
+          <p class="positioning">Escolha entre 6 ou 12 caixas com uma seleção completa de cafés e cappuccino para variar sua rotina.</p>
           <div class="rating-row" aria-label="Avaliação média 4,9 de 5">
             <span class="stars" aria-hidden="true">★★★★★</span>
             <strong>4,9/5</strong>
@@ -554,8 +555,8 @@
 
           <section class="choice-box" aria-labelledby="choiceTitle">
             <div class="choice-heading">
-              <strong id="choiceTitle">Escolha a quantidade</strong>
-              <span id="selectedOptionLabel" aria-live="polite">6 caixas selecionado</span>
+              <strong id="choiceTitle">Escolha seu combo</strong>
+              <span id="selectedOptionLabel" aria-live="polite">6 caixas selecionadas</span>
             </div>
             <div class="variant-grid" id="variantGrid" role="radiogroup" aria-labelledby="choiceTitle"></div>
           </section>
@@ -577,29 +578,28 @@
               </ul>
             </div>
             <div class="old-price-row">
-              <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
-              <span class="discount-tag" id="discount">31% OFF</span>
+              <span class="old-price">De R$ <span id="oldPrice">189,90</span></span>
+              <span class="discount-tag" id="discount">53% OFF</span>
             </div>
             <div class="current-price">R$ <span id="currentPrice">89,90</span><span class="pix-tag">no Pix</span></div>
             <div class="installments" id="installments">ou em até 3x de R$ 29,97 sem juros</div>
-            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 40,00</div>
+            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 100,00</div>
           </div>
 
           <div class="shipping-note" aria-label="Informações de entrega" data-delivery-days="3">
             <img class="shipping-note-logo" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/tIThPgQEuHDSybjv.webp" alt="" aria-hidden="true">
             <div class="shipping-note-copy">
-              <p class="shipping-title"><strong>Frete Grátis</strong> <span class="shipping-region" id="shippingRegion">para sua região</span></p>
-              <p class="shipping-estimated" id="shippingEstimated"><strong>Receba em</strong> até <strong>03 dias úteis</strong></p>
+              <p class="shipping-title"><strong>Frete grátis</strong> <span class="shipping-region" id="shippingRegion">para sua região</span></p>
+              <p class="shipping-estimated" id="shippingEstimated"><strong>Entrega estimada:</strong> até <strong>3 dias úteis</strong></p>
             </div>
           </div>
 
-          <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Garantir oferta por <span id="buyCtaPrice">R$ 89,90</span></button>
-          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento processado com segurança.</p>
+          <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Comprar agora por <span id="buyCtaPrice">R$ 89,90</span></button>
+          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Checkout seguro · Pix ou cartão</p>
 
           <div class="trust-row">
             <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra protegida</span>
             <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Envio rastreado</span>
-            <span><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Pix ou cartão</span>
           </div>
 
         </div>
@@ -967,7 +967,7 @@
       }
 
       function updateProductView() {
-        $('#selectedOptionLabel').textContent = `${selectedVariant.name} selecionado`;
+        $('#selectedOptionLabel').textContent = `${selectedVariant.name} selecionadas`;
         $('#oldPrice').textContent = selectedVariant.oldPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#currentPrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
