@@ -176,19 +176,6 @@
     .installments { margin-top: 7px; color: var(--ink-soft); font-size: 13px; }
     .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 600; }
     .savings-note i { color: var(--success); font-size: 11px; }
-    .offer-contents { margin-top: 15px; padding-top: 14px; border-top: 1px solid #dce7ee; }
-    .offer-contents-heading { display: flex; align-items: center; gap: 7px; margin-bottom: 9px; color: var(--brand); font-size: 12.5px; font-weight: 800; letter-spacing: -.01em; }
-    .offer-contents-heading i { color: var(--success); font-size: 12px; }
-    .offer-contents-summary { margin: 0 0 10px; color: var(--ink-soft); font-size: 11.5px; line-height: 1.45; }
-    .offer-contents-summary strong { color: var(--ink); font-weight: 800; }
-    .offer-total-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 11px; }
-    .offer-total-badge { display: inline-flex; align-items: center; gap: 5px; padding: 5px 8px; border: 1px solid #cfe8d9; border-radius: 6px; background: #f0faf4; color: var(--success-dark); font-size: 10.5px; font-weight: 800; }
-    .offer-total-badge i { font-size: 10px; }
-    .offer-flavors { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 5px 12px; margin: 0; padding: 0; list-style: none; }
-    .offer-flavors li { position: relative; padding-left: 13px; color: var(--ink); font-size: 11px; line-height: 1.35; }
-    .offer-flavors li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: 800; }
-    .offer-value-line { margin-top: 14px; padding-top: 12px; border-top: 1px solid #dce7ee; color: var(--ink-soft); font-size: 11.5px; line-height: 1.35; }
-    .offer-value-line strong { display: block; margin-top: 3px; color: var(--brand); font-size: 16px; font-weight: 800; }
 
     .shipping-note { display: flex; align-items: flex-start; gap: 11px; margin: 0 0 17px; padding: 5px 0 2px; background: transparent; }
     .shipping-note-logo { flex: 0 0 34px; width: 34px; height: 30px; margin-top: 1px; object-fit: contain; }
@@ -562,22 +549,13 @@
           </section>
 
           <div class="price-box" id="priceBox" aria-live="polite">
-            <div class="offer-contents" aria-live="polite" aria-labelledby="offerContentsTitle">
-              <div class="offer-contents-heading" id="offerContentsTitle"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Você recebe exatamente:</div>
-              <p class="offer-contents-summary" id="offerContentsSummary"><strong>6 caixas</strong> com <strong>60 cápsulas</strong> — 1 caixa de cada sabor.</p>
-              <div class="offer-total-badges" aria-label="Resumo da quantidade incluída">
-                <span class="offer-total-badge"><i class="fa-solid fa-box" aria-hidden="true"></i><span id="offerBoxBadge">6 caixas</span></span>
-                <span class="offer-total-badge"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i><span id="offerCapsuleBadge">60 cápsulas</span></span>
-              </div>
-              <ul class="offer-flavors" id="offerFlavors" aria-label="Sabores incluídos"></ul>
-            </div>
-            <div class="offer-value-line">Tudo isso por apenas<strong>R$ <span id="offerValuePrice">89,90</span> no Pix</strong></div>
             <div class="old-price-row">
-              <span class="old-price">De R$ <span id="oldPrice">189,90</span></span>
-              <span class="discount-tag" id="discount">53% OFF</span>
+              <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
+              <span class="discount-tag" id="discount">31% OFF</span>
             </div>
+            <div class="current-price">R$ <span id="currentPrice">89,90</span><span class="pix-tag">no Pix</span></div>
             <div class="installments" id="installments">ou em até 3x de R$ 29,97 sem juros</div>
-            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 100,00</div>
+            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 40,00</div>
           </div>
 
           <div class="shipping-note" aria-label="Informações de entrega" data-delivery-days="3">
@@ -760,19 +738,14 @@
       const STORAGE_KEY = 'checkout_cart_v3';
       const REDIRECT_LOADING_DURATION = 900;
 
-      const includedFlavors = [
-        'Capuccino', 'Espresso', 'Espresso Intenso',
-        'Café au Lait', 'Café Matinal', 'Café au Lait Intenso'
-      ];
-
       const variants = [
-        { id: '6-caixas', name: '6 caixas', weight: 6, boxesPerFlavor: 1, capsulesPerBox: 10, price: 89.90, oldPrice: 189.90, images: [
+        { id: '6-caixas', name: '6 caixas', weight: 6, price: 89.90, oldPrice: 189.90, images: [
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ttuQACdNJDtVNOrp.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp'
         ] },
-        { id: '12-caixas', name: '12 caixas', weight: 12, boxesPerFlavor: 2, capsulesPerBox: 10, price: 139.90, oldPrice: 199.90, images: [
+        { id: '12-caixas', name: '12 caixas', weight: 12, price: 139.90, oldPrice: 199.90, images: [
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ttuQACdNJDtVNOrp.webp',
@@ -973,17 +946,6 @@
         $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
         $('#installments').textContent = `ou em até 3x de ${money(selectedVariant.price / 3)} sem juros`;
         $('#savingsNote').innerHTML = `<i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza ${money(selectedVariant.oldPrice - selectedVariant.price)}`;
-        const totalCapsules = selectedVariant.weight * selectedVariant.capsulesPerBox;
-        const boxLabel = selectedVariant.boxesPerFlavor === 1 ? '1 caixa de cada sabor' : `${selectedVariant.boxesPerFlavor} caixas de cada sabor`;
-        $('#offerContentsSummary').innerHTML = `<strong>${selectedVariant.name}</strong> com <strong>${totalCapsules} cápsulas</strong> — ${boxLabel}.`;
-        $('#offerBoxBadge').textContent = selectedVariant.name;
-        $('#offerCapsuleBadge').textContent = `${totalCapsules} cápsulas`;
-        $('#offerFlavors').replaceChildren(...includedFlavors.map((flavor) => {
-          const item = document.createElement('li');
-          item.textContent = `${selectedVariant.boxesPerFlavor}x ${flavor} · ${selectedVariant.boxesPerFlavor * selectedVariant.capsulesPerBox} cápsulas`;
-          return item;
-        }));
-        $('#offerValuePrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#mobilePrice').textContent = money(selectedVariant.price);
         $('#buyCtaPrice').textContent = money(selectedVariant.price);
         renderVariants();
@@ -1022,9 +984,6 @@
           existing.images = selectedVariant.images;
           existing.image = selectedVariant.images[0];
           existing.weight = selectedVariant.weight;
-          existing.boxesPerFlavor = selectedVariant.boxesPerFlavor;
-          existing.capsulesPerBox = selectedVariant.capsulesPerBox;
-          existing.includedFlavors = includedFlavors;
           existing.oldPrice = selectedVariant.oldPrice;
           existing.discount = getDiscount(selectedVariant);
         } else {
@@ -1034,9 +993,6 @@
             variant: `${selectedVariant.name} de cápsulas Dolce Gusto`,
             flavor: selectedVariant.name,
             weight: selectedVariant.weight,
-            boxesPerFlavor: selectedVariant.boxesPerFlavor,
-            capsulesPerBox: selectedVariant.capsulesPerBox,
-            includedFlavors: includedFlavors,
             price: selectedVariant.price,
             oldPrice: selectedVariant.oldPrice,
             discount: getDiscount(selectedVariant),
