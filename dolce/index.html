@@ -184,6 +184,7 @@
     .old-price { color: var(--ink-soft); font-size: 13px; text-decoration: line-through; }
     .discount-tag { padding: 3px 7px; border-radius: 5px; background: #e6f4ec; color: var(--success-dark); font-size: 11px; font-weight: 700; }
     .current-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; color: var(--brand); font-size: clamp(30px, 3.6vw, 38px); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
+    .price-prefix { color: var(--ink-soft); font-size: 14px; font-weight: 600; letter-spacing: 0; }
     .pix-tag { padding: 4px 8px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 13px; font-weight: 700; letter-spacing: 0; }
     .installments { margin-top: 7px; color: var(--ink-soft); font-size: 13px; }
     .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 600; }
@@ -580,7 +581,7 @@
               <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
               <span class="discount-tag" id="discount">31% OFF</span>
             </div>
-            <div class="current-price">R$ <span id="currentPrice">89,90</span><span class="pix-tag">no Pix</span></div>
+            <div class="current-price"><span class="price-prefix">por</span> R$ <span id="currentPrice">89,90</span><span class="pix-tag">no Pix</span></div>
             <div class="installments" id="installments">ou em até 3x de R$ 29,97 sem juros</div>
             <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 40,00</div>
           </div>
