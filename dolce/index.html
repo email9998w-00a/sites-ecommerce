@@ -166,19 +166,17 @@
     .variant-pill.is-selected { border-color: var(--brand); background: var(--brand); color: #fff; }
     .variant-pill[aria-disabled="true"] { opacity: .6; cursor: wait; }
 
-    .included-summary { margin: 0 0 16px; padding: 13px 15px 14px; border: 1px solid #dce7ee; border-radius: 12px; background: #fff; }
-    .included-summary-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 3px; }
+    .included-summary { margin: 0 0 16px; padding: 14px 15px 15px; border: 1px solid #dce7ee; border-radius: 12px; background: #fff; }
+    .included-summary-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
     .included-summary-title { color: var(--ink); font-size: 12px; font-weight: 800; letter-spacing: .01em; }
     .included-summary-title i { margin-right: 6px; color: var(--success); font-size: 11px; }
-    .included-summary-total { color: var(--success-dark); font-size: 12px; font-weight: 800; white-space: nowrap; }
-    .included-summary-lead { margin: 0 0 11px; color: var(--brand); font-size: 13px; font-weight: 700; line-height: 1.4; }
-    .included-summary-lead span { color: var(--ink-soft); font-weight: 500; }
-    .included-flavors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px 18px; margin: 0; padding: 10px 0 0; border-top: 1px solid #edf1f4; list-style: none; color: var(--ink); font-size: 11.5px; line-height: 1.35; }
-    .included-flavors li { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
-    .included-flavors li strong { color: var(--brand); font-weight: 700; }
-    .included-flavors li span { color: var(--ink-soft); font-size: 10.5px; white-space: nowrap; }
-    .included-summary-note { display: flex; align-items: flex-start; gap: 6px; margin: 11px 0 0; padding-top: 9px; border-top: 1px solid #edf1f4; color: var(--ink-soft); font-size: 10.5px; line-height: 1.4; }
-    .included-summary-note i { margin-top: 2px; color: var(--success); font-size: 10px; }
+    .included-summary-total { padding: 4px 8px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 11px; font-weight: 800; white-space: nowrap; }
+    .included-summary-lead { display: flex; align-items: baseline; gap: 8px; margin: 0 0 12px; padding-bottom: 11px; border-bottom: 1px solid #edf1f4; color: var(--ink-soft); font-size: 11.5px; line-height: 1.4; }
+    .included-summary-lead strong { color: var(--brand); font-size: 22px; letter-spacing: -.03em; line-height: 1; }
+    .included-flavors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px 18px; margin: 0; padding: 0; list-style: none; color: var(--ink); font-size: 11.5px; line-height: 1.35; }
+    .included-flavors li { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; }
+    .included-flavors li strong { overflow: hidden; color: var(--ink); font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+    .included-flavors li span { flex: 0 0 auto; color: var(--brand); font-size: 10.5px; font-weight: 800; white-space: nowrap; }
 
     /* Price */
     .price-box { margin: 0 0 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
@@ -565,10 +563,10 @@
           <div class="price-box" id="priceBox" aria-live="polite">
             <div class="included-summary" aria-label="Conteúdo do combo">
               <div class="included-summary-head">
-                <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Você recebe exatamente</span>
+                <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Seu combo inclui</span>
                 <span class="included-summary-total" id="includedTotal">60 cápsulas</span>
               </div>
-              <p class="included-summary-lead"><span id="includedBoxes">6 caixas</span> com 10 cápsulas cada · 1 caixa de cada sabor</p>
+              <p class="included-summary-lead"><strong id="includedBoxes">6 caixas</strong><span>· 1 caixa de cada sabor</span></p>
               <ul class="included-flavors" id="includedFlavors">
                 <li data-flavor="Capuccino"><strong>Capuccino</strong><span>1 caixa · 10 cáps.</span></li>
                 <li data-flavor="Espresso"><strong>Espresso</strong><span>1 caixa · 10 cáps.</span></li>
@@ -577,7 +575,6 @@
                 <li data-flavor="Café Matinal"><strong>Café Matinal</strong><span>1 caixa · 10 cáps.</span></li>
                 <li data-flavor="Café au Lait Intenso"><strong>Café au Lait Intenso</strong><span>1 caixa · 10 cáps.</span></li>
               </ul>
-              <p class="included-summary-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Você recebe os 6 sabores descritos acima, sem envio aleatório ou composição surpresa.</span></p>
             </div>
             <div class="old-price-row">
               <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
@@ -980,9 +977,9 @@
         const capsulesTotal = selectedVariant.weight * 10;
         $('#includedTotal').textContent = `${capsulesTotal} cápsulas`;
         $('#includedBoxes').textContent = `${selectedVariant.weight} caixas`;
-        $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<span>${selectedVariant.weight} caixas</span> com 10 cápsulas cada · ${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} de cada sabor`;
+        $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong>${selectedVariant.weight} caixas</strong><span>· ${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} de cada sabor</span>`;
         $$('.included-flavors li', $('#includedFlavors')).forEach((item) => {
-          item.innerHTML = `<strong>${item.dataset.flavor}</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} · ${boxesPerFlavor * 10} cáps.</span>`;
+                item.innerHTML = `<strong>${item.dataset.flavor}</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''}</span>`;
         });
         $('#mobilePrice').textContent = money(selectedVariant.price);
         $('#buyCtaPrice').textContent = money(selectedVariant.price);
