@@ -166,25 +166,29 @@
     .variant-pill.is-selected { border-color: var(--brand); background: var(--brand); color: #fff; }
     .variant-pill[aria-disabled="true"] { opacity: .6; cursor: wait; }
 
-    .included-summary { margin: 0 0 18px; padding: 16px; border: 1px solid #dce7ee; border-radius: var(--radius-md); background: #fbfcfd; }
-    .included-summary-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-    .included-summary-title { color: var(--brand); font-size: 14px; font-weight: 800; letter-spacing: -.01em; }
-    .included-summary-title i { margin-right: 7px; color: var(--success); font-size: 13px; }
-    .included-summary-total { padding: 5px 9px; border-radius: 999px; background: #e6f4ec; color: var(--success-dark); font-size: 10.5px; font-weight: 800; white-space: nowrap; }
-    .included-summary-lead { display: flex; align-items: baseline; gap: 8px; margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid #e7edf1; color: var(--ink-soft); font-size: 11.5px; line-height: 1.4; }
-    .included-summary-lead strong { color: var(--ink); font-size: 18px; letter-spacing: -.03em; line-height: 1; }
-    .included-flavors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px 10px; margin: 0; padding: 0; list-style: none; color: var(--ink); font-size: 11.5px; line-height: 1.35; }
-    .included-flavors li { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; padding: 8px 9px; border: 1px solid #e5ebef; border-radius: 8px; background: #fff; }
+    .included-summary { margin: 0 0 14px; padding: 15px 16px 13px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .included-summary-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 9px; }
+    .included-summary-title { color: var(--brand); font-size: 13.5px; font-weight: 800; letter-spacing: -.01em; }
+    .included-summary-title i { margin-right: 7px; color: var(--success); font-size: 12px; }
+    .included-summary-total { padding: 4px 8px; border-radius: 999px; background: #e6f4ec; color: var(--success-dark); font-size: 10px; font-weight: 800; white-space: nowrap; }
+    .included-summary-lead { display: flex; align-items: baseline; gap: 7px; margin: 0 0 9px; padding-bottom: 10px; border-bottom: 1px solid #dfe7ec; color: var(--ink-soft); font-size: 11px; line-height: 1.4; }
+    .included-summary-lead strong { color: var(--ink); font-size: 17px; letter-spacing: -.03em; line-height: 1; }
+    .included-flavors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; margin: 0; padding: 0; list-style: none; color: var(--ink); font-size: 11px; line-height: 1.35; }
+    .included-flavors li { display: flex; align-items: center; gap: 7px; min-width: 0; padding: 5px 0; }
+    .included-flavors li::before { content: "✓"; flex: 0 0 auto; color: var(--success); font-size: 11px; font-weight: 800; }
     .included-flavors li strong { overflow: hidden; color: var(--ink); font-weight: 650; text-overflow: ellipsis; white-space: nowrap; }
-    .included-flavors li span { flex: 0 0 auto; color: var(--brand); font-size: 10px; font-weight: 800; white-space: nowrap; }
+    .included-flavors li span { margin-left: auto; flex: 0 0 auto; color: var(--ink-soft); font-size: 10px; font-weight: 600; white-space: nowrap; }
 
     /* Price */
-    .price-box { margin: 0 0 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
-    .old-price-row { display: flex; align-items: center; gap: 9px; margin-bottom: 6px; min-height: 20px; }
+    .price-box { margin: 0 0 18px; padding: 15px 18px 17px; border: 1px solid #cfe4d8; border-radius: 14px; background: #f7fbf8; box-shadow: 0 3px 10px rgba(28,122,77,.06); }
+    .price-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 11px; color: var(--brand); font-size: 12.5px; font-weight: 800; }
+    .price-heading i { margin-right: 6px; color: var(--success); font-size: 12px; }
+    .price-heading-note { color: var(--success-dark); font-size: 10px; font-weight: 700; }
+    .old-price-row { display: flex; align-items: center; gap: 9px; margin-bottom: 4px; min-height: 18px; }
     .old-price { color: var(--ink-soft); font-size: 13px; text-decoration: line-through; }
     .discount-tag { padding: 3px 7px; border-radius: 5px; background: #e6f4ec; color: var(--success-dark); font-size: 11px; font-weight: 700; }
-    .current-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; color: var(--brand); font-size: clamp(30px, 3.6vw, 38px); font-weight: 800; letter-spacing: -.03em; line-height: 1.1; }
-    .price-prefix { color: var(--ink-soft); font-size: 14px; font-weight: 600; letter-spacing: 0; }
+    .current-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 7px; color: var(--brand); font-size: clamp(32px, 3.8vw, 40px); font-weight: 800; letter-spacing: -.04em; line-height: 1.05; }
+    .price-prefix { color: var(--ink-soft); font-size: 13px; font-weight: 600; letter-spacing: 0; }
     .pix-tag { padding: 4px 8px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 13px; font-weight: 700; letter-spacing: 0; }
     .installments { margin-top: 7px; color: var(--ink-soft); font-size: 13px; }
     .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 600; }
@@ -427,7 +431,7 @@
       .gallery-dot { width: 20px; height: 4px; }
       .gallery-dot.is-active { width: 30px; }
       .contents-box { margin: 17px 0 19px; padding: 14px; }
-      .included-summary { margin-bottom: 15px; padding: 14px; }
+      .included-summary { margin-bottom: 12px; padding: 14px; border-radius: 13px; }
       .included-summary-title { font-size: 13px; }
       .included-summary-lead strong { font-size: 17px; }
       .included-flavors { grid-template-columns: 1fr; gap: 6px; }
@@ -446,7 +450,9 @@
       .choice-heading span { font-size: 11px; text-align: right; }
       .variant-grid { gap: 6px; }
       .variant-pill { min-height: 36px; padding: 8px 12px; font-size: 11.5px; }
-      .price-box { margin-bottom: 15px; padding: 15px; border-radius: 13px; }
+      .price-box { margin-bottom: 15px; padding: 14px 15px 15px; border-radius: 13px; }
+      .price-heading { margin-bottom: 12px; padding-bottom: 10px; font-size: 12.5px; }
+      .price-heading-note { font-size: 10px; }
       .old-price { font-size: 12px; }
       .current-price { gap: 6px; font-size: 29px; }
       .pix-tag { padding: 4px 7px; font-size: 11px; }
@@ -581,6 +587,7 @@
               </ul>
           </div>
           <div class="price-box" id="priceBox" aria-live="polite">
+            <div class="price-heading"><span><i class="fa-solid fa-tag" aria-hidden="true"></i> Valor do combo</span><span class="price-heading-note">Oferta atual</span></div>
             <div class="old-price-row">
               <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
               <span class="discount-tag" id="discount">31% OFF</span>
