@@ -566,7 +566,7 @@
                 <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Seu combo inclui</span>
                 <span class="included-summary-total" id="includedTotal">60 cápsulas</span>
               </div>
-              <p class="included-summary-lead"><strong id="includedBoxes">6 caixas</strong><span>· 1 caixa de cada sabor</span></p>
+              <p class="included-summary-lead"><strong id="includedBoxes">6 sabores</strong><span>· 1 caixa de cada sabor</span></p>
               <ul class="included-flavors" id="includedFlavors">
                 <li data-flavor="Capuccino"><strong>Capuccino</strong><span>1 caixa · 10 cáps.</span></li>
                 <li data-flavor="Espresso"><strong>Espresso</strong><span>1 caixa · 10 cáps.</span></li>
@@ -976,8 +976,8 @@
         const boxesPerFlavor = selectedVariant.weight / 6;
         const capsulesTotal = selectedVariant.weight * 10;
         $('#includedTotal').textContent = `${capsulesTotal} cápsulas`;
-        $('#includedBoxes').textContent = `${selectedVariant.weight} caixas`;
-        $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong id="includedBoxes">${selectedVariant.weight} caixas</strong><span>· ${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} de cada sabor</span>`;
+        $('#includedBoxes').textContent = `${selectedVariant.weight} sabores`;
+        $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong id="includedBoxes">${selectedVariant.weight} sabores</strong><span>· ${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} de cada sabor</span>`;
         $$('.included-flavors li', $('#includedFlavors')).forEach((item) => {
                 item.innerHTML = `<strong>${item.dataset.flavor}</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''}</span>`;
         });
