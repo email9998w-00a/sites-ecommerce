@@ -563,17 +563,17 @@
           <div class="price-box" id="priceBox" aria-live="polite">
             <div class="included-summary" aria-label="Conteúdo do combo">
               <div class="included-summary-head">
-                <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> O combo inclui</span>
+                <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Seu combo inclui</span>
                 <span class="included-summary-total" id="includedTotal">60 cápsulas</span>
               </div>
               <p class="included-summary-lead"><strong id="includedBoxes">6 sabores</strong><span>· 1 caixa de cada sabor</span></p>
               <ul class="included-flavors" id="includedFlavors">
-                <li data-flavor="Capuccino"><strong>1x Capuccino</strong><span>10 cápsulas</span></li>
-                <li data-flavor="Espresso"><strong>1x Espresso</strong><span>10 cápsulas</span></li>
-                <li data-flavor="Espresso Intenso"><strong>1x Espresso Intenso</strong><span>10 cápsulas</span></li>
-                <li data-flavor="Café au Lait"><strong>1x Café au Lait</strong><span>10 cápsulas</span></li>
-                <li data-flavor="Café Matinal"><strong>1x Café Matinal</strong><span>10 cápsulas</span></li>
-                <li data-flavor="Café au Lait Intenso"><strong>1x Café au Lait Intenso</strong><span>10 cápsulas</span></li>
+                <li data-flavor="Capuccino"><strong>1x Capuccino</strong><span>10 cáps.</span></li>
+                <li data-flavor="Espresso"><strong>1x Espresso</strong><span>10 cáps.</span></li>
+                <li data-flavor="Espresso Intenso"><strong>1x Espresso Intenso</strong><span>10 cáps.</span></li>
+                <li data-flavor="Café au Lait"><strong>1x Café au Lait</strong><span>10 cáps.</span></li>
+                <li data-flavor="Café Matinal"><strong>1x Café Matinal</strong><span>10 cáps.</span></li>
+                <li data-flavor="Café au Lait Intenso"><strong>1x Café au Lait Intenso</strong><span>10 cáps.</span></li>
               </ul>
             </div>
             <div class="old-price-row">
@@ -979,7 +979,7 @@
         $('#includedBoxes').textContent = '6 sabores';
         $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong id="includedBoxes">6 sabores</strong><span>· ${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} de cada sabor</span>`;
         $$('.included-flavors li', $('#includedFlavors')).forEach((item) => {
-                item.innerHTML = `<strong>${boxesPerFlavor}x ${item.dataset.flavor}</strong><span>${boxesPerFlavor * 10} cápsulas</span>`;
+                item.innerHTML = `<strong>${boxesPerFlavor}x ${item.dataset.flavor}</strong><span>${boxesPerFlavor * 10} cáps.</span>`;
         });
         $('#mobilePrice').textContent = money(selectedVariant.price);
         $('#buyCtaPrice').textContent = money(selectedVariant.price);
