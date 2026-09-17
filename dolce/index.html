@@ -566,7 +566,7 @@
           <section class="choice-box" aria-labelledby="choiceTitle">
             <div class="choice-heading">
               <strong id="choiceTitle">Escolha a quantidade</strong>
-              <span id="selectedOptionLabel" aria-live="polite">6 caixas selecionado</span>
+              <span id="selectedOptionLabel" aria-live="polite">6 caixas selecionadas</span>
             </div>
             <div class="variant-grid" id="variantGrid" role="radiogroup" aria-labelledby="choiceTitle"></div>
           </section>
@@ -576,7 +576,7 @@
                 <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Seu combo inclui</span>
                 <span class="included-summary-total" id="includedTotal">60 cápsulas</span>
               </div>
-              <p class="included-summary-lead"><strong id="includedBoxes">6 sabores</strong><span>1 caixa de cada sabor</span></p>
+              <p class="included-summary-lead"><strong id="includedBoxes">6 sabores</strong><span>1 caixa por sabor</span></p>
               <ul class="included-flavors" id="includedFlavors">
                 <li data-flavor="Capuccino"><strong>Capuccino</strong><span>1 caixa · 10 cáps.</span></li>
                 <li data-flavor="Espresso"><strong>Espresso</strong><span>1 caixa · 10 cáps.</span></li>
@@ -587,7 +587,7 @@
               </ul>
           </div>
           <div class="price-box" id="priceBox" aria-live="polite">
-            <div class="price-heading"><span><i class="fa-solid fa-tag" aria-hidden="true"></i> Valor do combo</span><span class="price-heading-note">Oferta atual</span></div>
+            <div class="price-heading"><span><i class="fa-solid fa-tag" aria-hidden="true"></i> Valor do combo</span><span class="price-heading-note">Condição no Pix</span></div>
             <div class="old-price-row">
               <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
               <span class="discount-tag" id="discount">31% OFF</span>
@@ -989,7 +989,7 @@
         const capsulesTotal = selectedVariant.weight * 10;
         $('#includedTotal').textContent = `${capsulesTotal} cápsulas`;
         $('#includedBoxes').textContent = '6 sabores';
-        $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong id="includedBoxes">6 sabores</strong><span>· ${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} de cada sabor</span>`;
+        $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong id="includedBoxes">6 sabores</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} por sabor</span>`;
         $$('.included-flavors li', $('#includedFlavors')).forEach((item) => {
                 item.innerHTML = `<strong>${item.dataset.flavor}</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} · ${boxesPerFlavor * 10} cáps.</span>`;
         });
