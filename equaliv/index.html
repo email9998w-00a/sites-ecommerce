@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Body Protein Equaliv BODYBALANCE® | Loja online</title>
-  <meta name="description" content="Escolha seu sabor de Body Protein Equaliv BODYBALANCE®. Consulte preço, formas de pagamento e condições de entrega no checkout.">
+  <title>Body Protein Equaliv BODYBALANCE® | Escolha seu sabor</title>
+  <meta name="description" content="Escolha seu sabor de Body Protein Equaliv BODYBALANCE®. Aproveite a condição no Pix, entrega grátis e checkout seguro.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -250,7 +250,7 @@
     .page-btn.active { background: var(--brand); border-color: var(--brand); color: #fff; }
     .page-btn:disabled { opacity: .45; cursor: not-allowed; }
 
-    /* ===================== FAQ ===================== */    /* ===================== FAQ ===================== */
+    /* ===================== FAQ ===================== */
     .faq-section { padding: 60px 0; }
     .section-heading { max-width: 620px; margin-bottom: 26px; }
     .section-heading h2 { margin: 0 0 8px; font-size: 26px; letter-spacing: -.02em; }
@@ -266,12 +266,17 @@
 
     /* ===================== Footer ===================== */
     footer { padding: 40px 0 24px; background: var(--brand-dark); color: #fff; }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(2, 1fr); gap: 30px; }
+    .footer-grid { display: grid; grid-template-columns: 1.35fr repeat(3, 1fr); gap: 30px; }
     footer h2, footer h3 { margin: 0 0 12px; font-size: 15px; }
     footer p, footer a { color: #c1d0dc; font-size: 12.5px; line-height: 1.7; }
     footer p { max-width: 340px; margin: 0; }
     footer a { display: block; margin-bottom: 7px; text-decoration: none; }
     footer a:hover { color: #fff; text-decoration: underline; }
+    .company-data { margin-top: 14px; color: #c1d0dc; font-size: 12px; line-height: 1.65; }
+    .company-data strong { color: #fff; }
+    .legal-section { margin-top: 30px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.14); }
+    .legal-section h3 { margin-bottom: 6px; }
+    .legal-section p { max-width: none; color: #b4c4d0; font-size: 11.5px; line-height: 1.65; }
     .footer-bottom { margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.14); color: #9fb2c1; font-size: 11.5px; }
 
     /* ===================== Mobile sticky CTA ===================== */
@@ -359,6 +364,7 @@
     @media (max-width: 900px) {
       .product-shell { grid-template-columns: 1fr; gap: 26px; padding-top: 8px; }
       .gallery { position: static; }
+      .reviews-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 900px) {
       .header-row { gap: 16px; }
@@ -464,13 +470,9 @@
           <a href="#product"><i class="fa-solid fa-box-open" aria-hidden="true"></i><span>Ver produto</span></a>
           <a href="#details"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>Detalhes do produto</span></a>
           <a href="#faq"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Dúvidas frequentes</span></a>
-          <a href="/termos-de-uso.html" class="policy-trigger" data-policy="termos"><i class="fa-solid fa-file-contract" aria-hidden="true"></i><span>Termos de Uso</span></a>
-          <a href="/politica-de-privacidade.html" class="policy-trigger" data-policy="privacidade"><i class="fa-solid fa-user-shield" aria-hidden="true"></i><span>Política de Privacidade</span></a>
-          <a href="/trocas-e-devolucoes.html" class="policy-trigger" data-policy="trocas"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i><span>Trocas e Devoluções</span></a>
-          <a href="/contato.html" class="policy-trigger" data-policy="contato"><i class="fa-solid fa-headset" aria-hidden="true"></i><span>Contato</span></a>
         </nav>
       </div>
-      <a class="logo" href="/" aria-label="GP Assessoria, página inicial">GP ASSESSORIA</a>
+      <a class="logo" href="/" aria-label="Gp Assessoria &amp; Consultoria, página inicial">GP ASSESSORIA</a>
       <form class="search-form" id="searchForm" role="search" autocomplete="off">
         <label for="searchInput">Buscar na loja</label>
         <input class="search-input" id="searchInput" type="search" placeholder="O que você está procurando?" aria-controls="searchResults" aria-expanded="false">
@@ -480,9 +482,6 @@
       <nav class="header-links" aria-label="Navegação principal">
         <a href="#details">Detalhes do produto</a>
         <a href="#faq">Dúvidas frequentes</a>
-        <a href="/politica-de-privacidade.html" class="policy-trigger" data-policy="privacidade">Privacidade</a>
-        <a href="/termos-de-uso.html" class="policy-trigger" data-policy="termos">Termos</a>
-        <a href="/contato.html" class="policy-trigger" data-policy="contato">Contato</a>
         <button class="cart-trigger" id="cartTrigger" type="button" aria-controls="cartOverlay" aria-expanded="false" aria-label="Abrir carrinho">
           <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
           <span>Carrinho</span>
@@ -501,7 +500,7 @@
       <section class="product-shell" id="product" aria-labelledby="productTitle">
         <div class="gallery">
           <div class="gallery-frame" id="galleryFrame">
-            <span class="promo-badge" aria-label="Oferta especial no Pix"><i class="fa-solid fa-tag" aria-hidden="true"></i><span>CONDIÇÃO NO PIX</span><small>consulte no checkout</small></span>
+            <span class="promo-badge" aria-label="Oferta especial no Pix"><i class="fa-solid fa-tag" aria-hidden="true"></i><span>OFERTA NO PIX</span><small>economize</small></span>
             <button class="gallery-arrow gallery-arrow--prev" id="galleryPrev" type="button" aria-label="Imagem anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
             <div class="gallery-slider" id="gallerySlider" aria-label="Fotos do produto"></div>
             <button class="gallery-arrow gallery-arrow--next" id="galleryNext" type="button" aria-label="Próxima imagem"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
@@ -512,10 +511,10 @@
         <div class="product-info">
           <div class="status-row">
             <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Em estoque</span>
-            <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Pagamento via Pix ou cartão</span>
+            <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra segura</span>
           </div>
 
-          <h1 id="productTitle">Body Protein Equaliv BODYBALANCE®</h1>
+          <h1 id="productTitle">Promoção - Body Protein Equaliv BODYBALANCE®</h1>
           <p class="positioning">Suplemento à base de peptídeos bioativos de colágeno. Escolha o sabor ideal para a sua rotina.</p>
 
           <div class="rating-row" aria-label="Avaliação média 4,9 de 5">
@@ -533,13 +532,16 @@
           </section>
 
           <div class="price-box" id="priceBox" aria-live="polite">
-            <div class="old-price-row"><span class="discount-tag" id="discount">Condição no Pix</span></div>
+            <div class="old-price-row">
+              <span class="old-price">De R$ <span id="oldPrice">205,60</span></span>
+              <span class="discount-tag" id="discount">48% OFF</span>
+            </div>
             <div class="current-price">R$ <span id="currentPrice">104,90</span><span class="pix-tag">no Pix</span></div>
             <div class="installments" id="installments">ou em até 3x de R$ 34,97 sem juros</div>
-            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Valor exibido para pagamento via Pix.</div>
+            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 100,70</div>
           </div>
 
-          <div class="shipping-note" aria-label="Frete grátis e prazo estimado" data-delivery-days="3">
+          <div class="shipping-note" aria-label="Informações de entrega" data-delivery-days="3">
             <img class="shipping-note-logo" src="https://cdn.shopify.com/s/files/1/0611/1471/2252/files/correios-logo_1.svg?v=1648167047" alt="" aria-hidden="true">
             <div class="shipping-note-copy">
               <p class="shipping-title"><strong>Frete Grátis</strong> <span class="shipping-region" id="shippingRegion">para sua região</span></p>
@@ -547,12 +549,12 @@
             </div>
           </div>
 
-          <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Comprar por <span id="buyCtaPrice">R$ 104,90</span></button>
-          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Formas de pagamento exibidas no checkout.</p>
+          <button class="btn btn-primary" id="buyNow" type="button"><i class="fa-solid fa-cart-plus" aria-hidden="true"></i> Garantir oferta por <span id="buyCtaPrice">R$ 104,90</span></button>
+          <p class="purchase-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento processado com segurança.</p>
 
           <div class="trust-row">
-            <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Informações do pedido</span>
-            <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Rastreamento quando disponível</span>
+            <span><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Compra protegida</span>
+            <span><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Envio rastreado</span>
             <span><i class="fa-solid fa-credit-card" aria-hidden="true"></i> Pix ou cartão</span>
           </div>
 
@@ -596,7 +598,7 @@
             <li><strong>Pesos disponíveis</strong><span>440 g, 450 g e 600 g</span></li>
             <li><strong>Alergênicos</strong><span>Consulte o rótulo da versão escolhida</span></li>
           </ul>
-          <p class="legal-note">Suplemento alimentar. Não é medicamento. Use conforme as orientações do rótulo. Consulte um profissional de saúde quando necessário. Imagens meramente ilustrativas.</p>
+          <p class="legal-note">Suplemento alimentar. Não substitui uma alimentação equilibrada. Consulte um médico ou nutricionista para avaliar a indicação adequada ao seu objetivo. Imagens meramente ilustrativas.</p>
         </article>
       </div>
     </section>
@@ -629,86 +631,70 @@
           <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Qual é o prazo de entrega?<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" hidden><p>O prazo e o valor do frete são exibidos no checkout, após o preenchimento dos dados de entrega. O pedido é enviado com rastreio, conforme a disponibilidade para a região informada.</p></div></div>
           <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Como posso rastrear meu pedido?<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" hidden><p>Após o despacho, o código de rastreio será enviado pelos canais informados no checkout.</p></div></div>
           <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Quais são as formas de pagamento?<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" hidden><p>As formas disponíveis, incluindo Pix e cartão, são exibidas no checkout. A condição de parcelamento varia conforme o meio de pagamento.</p></div></div>
-          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">O que acontece ao continuar para o checkout?<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" hidden><p>Você será direcionado ao ambiente de finalização do pedido. Antes de pagar, confira o nome do vendedor, os itens, o valor total, as condições de entrega e os dados informados.</p></div></div>
           <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false">Onde encontro as informações nutricionais?<i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button><div class="faq-answer" hidden><p>Consulte a embalagem da opção selecionada para conferir tabela nutricional, ingredientes, alergênicos e demais informações obrigatórias.</p></div></div>
         </div>
       </div>
     </section>
   </main>
 
-    <!-- ===================== Rodapé com Dados da Empresa e Políticas ===================== -->
-  <footer id="rodape-institucional" style="background: #0d1b2a; color: #dce5ed; padding: 48px 0 32px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 13px;">
+  <footer>
     <div class="container">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 36px; margin-bottom: 36px;">
-        <!-- Coluna 1: Dados da Empresa -->
+      <div class="footer-grid">
         <div>
-          <h2 style="color: #ffffff; font-size: 18px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.01em;">Gp Assessoria & Consultoria LTDA.</h2>
-          <p style="color: #9cb1c5; line-height: 1.6; margin-bottom: 14px;">Proteínas e suplementos de alta qualidade para sua saúde e performance.</p>
-          <div style="background: rgba(255,255,255,0.04); padding: 14px 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.07);">
-            <p style="margin: 0 0 6px 0; color: #e4edf5;"><strong>CNPJ:</strong> 32.998.217/0001-29</p>
-            <p style="margin: 0 0 6px 0; color: #c0d1e0;"><strong>Endereço:</strong> Avenida Joao de Barros 38 Apto 0101 Santo Amaro Recife PE 50100-015</p>
-            <p style="margin: 0; color: #a5b8c9;"><strong>Razão Social:</strong> Gp Assessoria & Consultoria LTDA.</p>
+          <h2>Gp Assessoria &amp; Consultoria LTDA.</h2>
+          <p>Proteínas e suplementos de alta qualidade para sua saúde e performance.</p>
+          <div class="company-data">
+            <strong>CNPJ:</strong> 32.998.217/0001-29<br>
+            <strong>Endereço:</strong> Avenida João de Barros, 38, Apto 0101<br>
+            Recife - PE, CEP 50100-015
           </div>
         </div>
-
-        <!-- Coluna 2: Políticas e informações comerciais -->
         <div>
-          <h3 style="color: #ffffff; font-size: 15px; font-weight: 700; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em;">Políticas Institucionais</h3>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
-            <li><a href="/termos-de-uso.html" class="policy-trigger" data-policy="termos" style="color: #cbd7e3; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.15s;"><i class="fa-solid fa-file-contract" style="color: #4da3ff;"></i> <strong>Termos de Uso</strong></a></li>
-            <li><a href="/politica-de-privacidade.html" class="policy-trigger" data-policy="privacidade" style="color: #cbd7e3; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.15s;"><i class="fa-solid fa-user-shield" style="color: #38bdf8;"></i> <strong>Política de Privacidade</strong></a></li>
-            <li><a href="/trocas-e-devolucoes.html" class="policy-trigger" data-policy="trocas" style="color: #cbd7e3; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.15s;"><i class="fa-solid fa-rotate-left" style="color: #34d399;"></i> <strong>Trocas e Devoluções</strong></a></li>
-            <li><a href="/contato.html" class="policy-trigger" data-policy="contato" style="color: #cbd7e3; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.15s;"><i class="fa-solid fa-headset" style="color: #fbbf24;"></i> <strong>Contato / Suporte</strong></a></li>
-          </ul>
+          <h3>Atendimento</h3>
+          <a href="#faq">Dúvidas frequentes</a>
+          <a href="#details">Informações do produto</a>
+          <a href="#contato">Contato</a>
         </div>
-
-        <!-- Coluna 3: Atendimento e Conformidade de Anúncios -->
         <div>
-          <h3 style="color: #ffffff; font-size: 15px; font-weight: 700; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em;">Atendimento ao Cliente</h3>
-          <p style="color: #9cb1c5; line-height: 1.6; margin-bottom: 10px;">Segunda a Sexta-feira, das 09h às 18h (Horário de Brasília).</p>
-         
-          <p style="color: #c8d8e6; margin-bottom: 14px;"><i class="fa-solid fa-location-dot" style="color: #f87171; margin-right: 6px;"></i> Recife - PE | Brasil</p>
-          <div style="font-size: 11.5px; color: #7f95a8; line-height: 1.45; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px;">
-            Direito de arrependimento conforme a legislação aplicável.
-          </div>
+          <h3>Políticas</h3>
+          <a href="#termos-de-uso">Termos de Uso</a>
+          <a href="#politica-de-privacidade">Política de Privacidade</a>
+          <a href="#trocas-e-devolucoes">Trocas e Devoluções</a>
+        </div>
+        <div>
+          <h3>Dados da empresa</h3>
+          <a href="#dados-da-empresa">Identificação empresarial</a>
+          <a href="#contato">Fale conosco</a>
+          <p>Atendimento e informações do pedido pelos canais informados no checkout.</p>
         </div>
       </div>
-
-      <!-- Barra de informações comerciais e legais -->
-      <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; margin-top: 10px; font-size: 11.5px; color: #8296a8; line-height: 1.6;">
-        <p style="margin: 0 0 10px 0;"><strong>Informações comerciais:</strong> Os preços, condições de pagamento e condições de entrega aplicáveis são apresentados no site e no checkout antes da conclusão do pedido. O checkout pode abrir em ambiente externo para finalizar a compra.</p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
-          <div>Todos os direitos reservados © 2024 Gp Assessoria & Consultoria LTDA.</div>
-          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-            <a href="/termos-de-uso.html" class="policy-trigger" data-policy="termos" style="color: #9ab0c4; text-decoration: underline;">Termos de Uso</a>
-            <a href="/politica-de-privacidade.html" class="policy-trigger" data-policy="privacidade" style="color: #9ab0c4; text-decoration: underline;">Política de Privacidade</a>
-            <a href="/trocas-e-devolucoes.html" class="policy-trigger" data-policy="trocas" style="color: #9ab0c4; text-decoration: underline;">Trocas e Devoluções</a>
-            <a href="/contato.html" class="policy-trigger" data-policy="contato" style="color: #9ab0c4; text-decoration: underline;">Contato</a>
-          </div>
-        </div>
+      <div class="legal-section" id="termos-de-uso">
+        <h3>Termos de Uso</h3>
+        <p>Ao navegar e realizar uma compra, você concorda com as condições apresentadas nesta loja, incluindo preços, disponibilidade, formas de pagamento, entrega e demais informações exibidas no checkout.</p>
       </div>
+      <div class="legal-section" id="politica-de-privacidade">
+        <h3>Política de Privacidade</h3>
+        <p>Os dados fornecidos pelo cliente são utilizados para processar pedidos, pagamentos, entrega, atendimento e prevenção a fraudes, conforme a legislação aplicável. Não solicitamos dados além do necessário para essas finalidades.</p>
+      </div>
+      <div class="legal-section" id="trocas-e-devolucoes">
+        <h3>Trocas e Devoluções</h3>
+        <p>Solicitações de troca ou devolução devem ser feitas pelos canais de atendimento informados no checkout, observando os prazos e as condições previstos na legislação aplicável e nas informações do pedido.</p>
+      </div>
+      <div class="legal-section" id="contato">
+        <h3>Contato</h3>
+        <p>Para dúvidas sobre produtos, pedidos, entrega, trocas ou devoluções, utilize o canal de atendimento disponibilizado no checkout.</p>
+      </div>
+      <div class="legal-section" id="dados-da-empresa">
+        <h3>Dados da empresa</h3>
+        <p>Gp Assessoria &amp; Consultoria LTDA. · CNPJ 32.998.217/0001-29 · Avenida João de Barros, 38, Apto 0101, Recife - PE, CEP 50100-015.</p>
+      </div>
+      <div class="footer-bottom">© 2024 Gp Assessoria &amp; Consultoria LTDA. Todos os direitos reservados.</div>
     </div>
   </footer>
 
-  <!-- ===================== Modal de Políticas e Termos Legais ===================== -->
-  <div id="policyModal" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="policyModalTitle" style="z-index: 150; align-items: center; justify-content: center;">
-    <div style="background: #ffffff; color: #1e293b; max-width: 760px; width: 92%; max-height: 85vh; border-radius: 14px; box-shadow: 0 20px 45px rgba(0,0,0,0.35); display: flex; flex-direction: column; overflow: hidden; position: relative;">
-      <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; border-bottom: 1px solid #e2e8f0; background: #f8fafc;">
-        <h3 id="policyModalTitle" style="margin: 0; font-size: 18px; font-weight: 700; color: #0f172a;">Documento Institucional</h3>
-        <button type="button" id="closePolicyModal" aria-label="Fechar modal de políticas" style="background: transparent; border: none; font-size: 24px; color: #64748b; cursor: pointer; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; line-height: 1;">&times;</button>
-      </div>
-      <div id="policyModalBody" style="padding: 24px; overflow-y: auto; line-height: 1.7; font-size: 14px; color: #334155;">
-        <!-- Conteúdo dinâmico -->
-      </div>
-      <div style="padding: 14px 24px; border-top: 1px solid #e2e8f0; background: #f8fafc; display: flex; justify-content: flex-end;">
-        <button type="button" id="okPolicyModal" class="btn btn-primary" style="min-height: 40px; padding: 8px 20px; font-size: 13.5px; width: auto;">Entendido e Fechar</button>
-      </div>
-    </div>
-  </div>
-
   <div class="mobile-cta" id="mobileCta" aria-hidden="true">
-    <div><span class="mobile-cta-label">Preço no Pix</span><span class="mobile-cta-price" id="mobilePrice">R$ 104,90</span></div>
-    <button class="btn btn-primary" id="mobileBuy" type="button">Comprar agora</button>
+    <div><span class="mobile-cta-label">A partir de</span><span class="mobile-cta-price" id="mobilePrice">R$ 104,90</span></div>
+    <button class="btn btn-primary" id="mobileBuy" type="button">Garantir oferta</button>
   </div>
 
   <div class="cart-overlay" id="cartOverlay" aria-hidden="true">
@@ -728,7 +714,7 @@
         <div class="order-line"><span>Entrega</span><strong>A calcular no próximo passo</strong></div>
         <div class="total-row"><span class="total-label">Total dos produtos</span><span class="total-value" id="cartTotal">R$ 0,00</span></div>
         <button class="btn btn-primary" id="continueCheckout" type="button">Continuar para entrega <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
-        <p class="cart-footer-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pedido revisável antes da conclusão</p>
+        <p class="cart-footer-note"><i class="fa-solid fa-lock" aria-hidden="true"></i>Pagamento seguro, pedido revisável</p>
       </footer>
     </aside>
   </div>
@@ -743,7 +729,7 @@
       <div class="redirect-loading-brand" aria-hidden="true">GP ASSESSORIA</div>
       <span class="redirect-loading-spinner" aria-hidden="true"></span>
       <p class="redirect-loading-text">Preparando seu pedido</p>
-      <p class="redirect-loading-subtext">Estamos levando você para o checkout da compra.</p>
+      <p class="redirect-loading-subtext">Estamos levando você para um checkout seguro.</p>
     </div>
   </div>
 
@@ -801,6 +787,7 @@
         { label: 'Descrição do produto', detail: 'Informações e benefícios', selector: '#descriptionPanel' },
         { label: 'Como usar', detail: 'Modo de preparo e conservação', selector: '#usagePanel' },
         { label: 'Composição', detail: 'Especificações e informações', selector: '#compositionPanel' },
+        { label: 'Avaliações de clientes', detail: 'Opiniões e fotos', selector: '#reviews' },
         { label: 'Dúvidas frequentes', detail: 'Entrega, pagamento e trocas', selector: '#faq' }
       ];
 
@@ -970,10 +957,11 @@
 
       function updateProductView() {
         $('#selectedOptionLabel').textContent = `${selectedVariant.name} selecionado`;
+        $('#oldPrice').textContent = selectedVariant.oldPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#currentPrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-        $('#discount').textContent = 'Condição no Pix';
+        $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
         $('#installments').textContent = `ou em até 3x de ${money(selectedVariant.price / 3)} sem juros`;
-        $('#savingsNote').innerHTML = '<i class="fa-solid fa-circle-info" aria-hidden="true"></i> Valor exibido para pagamento via Pix.';
+        $('#savingsNote').innerHTML = `<i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza ${money(selectedVariant.oldPrice - selectedVariant.price)}`;
         $('#mobilePrice').textContent = money(selectedVariant.price);
         $('#buyCtaPrice').textContent = money(selectedVariant.price);
         renderVariants();
@@ -1061,7 +1049,9 @@
                     <div class="cart-item-meta">${esc(item.variant || '')}</div>
                   </div>
                 </div>
-                                <div class="cart-item-price-row"><span class="cart-item-price">${money(item.price)}</span><span class="cart-item-old-price">no Pix</span></div>
+                <div class="cart-item-promo"><i class="fa-solid fa-tag" aria-hidden="true"></i> Oferta especial · ${esc(String(item.discount || 0))}% OFF</div>
+                <div class="cart-item-price-row"><span class="cart-item-price">${money(item.price)}</span><span class="cart-item-old-price">${money(item.oldPrice || item.price)}</span></div>
+                <div class="cart-item-saving">Você economiza ${money(Math.max(0, (Number(item.oldPrice) || Number(item.price)) - Number(item.price)))}</div>
                 <div class="cart-item-bottom">
                   <div class="qty-control">
                     <button type="button" aria-label="Diminuir quantidade" data-action="decrease" data-index="${index}">−</button>
@@ -1160,25 +1150,8 @@
           name: `Body Protein Equaliv BODYBALANCE® ${selectedVariant.name} ${selectedVariant.weight}g`,
           image: selectedVariant.images,
           description: 'Suplemento alimentar à base de peptídeos bioativos de colágeno BODYBALANCE®.',
-          brand: { '@type': 'Brand', name: 'Equaliv' },
-          seller: { '@type': 'Organization', name: 'Gp Assessoria & Consultoria LTDA.', identifier: '32.998.217/0001-29' },
           offers: { '@type': 'Offer', priceCurrency: 'BRL', price: selectedVariant.price.toFixed(2), availability: 'https://schema.org/InStock', url: window.location.href }
         });
-      }
-
-      function openLightbox(src, alt) {
-        $('#lightboxImage').src = src;
-        $('#lightboxImage').alt = alt;
-        $('#lightbox').classList.add('is-open');
-        $('#lightbox').setAttribute('aria-hidden', 'false');
-        document.body.classList.add('no-scroll');
-        $('#closeLightbox').focus();
-      }
-
-      function closeLightbox() {
-        $('#lightbox').classList.remove('is-open');
-        $('#lightbox').setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('no-scroll');
       }
 
       const reviewImages = [
@@ -1456,88 +1429,6 @@
       setupTabs();
       setupFaq();
       setupSearch();
-      setupPoliciesModal();
-
-      const policiesData = {
-        termos: {
-          title: 'Termos de Uso',
-          content: `
-            <p><strong>1. Identificação da Empresa:</strong> Este site é operado pela <strong>Gp Assessoria & Consultoria LTDA.</strong>, inscrita no CNPJ sob o nº <strong>32.998.217/0001-29</strong>, com sede na Avenida Joao de Barros, 38, Apto 0101, Santo Amaro, Recife - PE, CEP 50100-015.</p>
-            <p><strong>2. Aceitação dos Termos:</strong> Ao utilizar este site e realizar compras, o usuário concorda plenamente com as regras, termos e condições aqui estabelecidos, bem como com as leis brasileiras vigentes.</p>
-            <p><strong>3. Ofertas e Produtos:</strong> As ofertas de suplementos e proteínas estão sujeitas à disponibilidade de estoque. Os preços informados podem ser ajustados sem aviso prévio, prevalecendo os valores confirmados no momento da finalização do checkout.</p>
-            <p><strong>4. Pagamento e Segurança:</strong> As formas de pagamento disponíveis e as condições aplicáveis são exibidas no checkout antes da conclusão do pedido.</p>
-            <p><strong>5. Legislação e Foro:</strong> Fica eleito o foro da comarca de Recife/PE para dirimir quaisquer controvérsias decorrentes destes termos.</p>
-          `
-        },
-        privacidade: {
-          title: 'Política de Privacidade e Proteção de Dados',
-          content: `
-            <p><strong>1. Nosso Compromisso:</strong> A <strong>Gp Assessoria & Consultoria LTDA.</strong> tem o compromisso de proteger a privacidade de seus visitantes e clientes, em estrita observância à Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD) e às legislação brasileira aplicável.</p>
-            <p><strong>2. Coleta de Informações:</strong> Coletamos dados cadastrais (nome, CPF, telefone, e-mail e endereço de entrega) fornecidos voluntariamente pelo cliente para faturamento e logística de despacho, além de dados técnicos e cookies para aprimoramento da experiência e prevenção de fraudes.</p>
-            <p><strong>3. Finalidade e Não Compartilhamento:</strong> Seus dados não são comercializados ou cedidos a terceiros. O compartilhamento ocorre única e exclusivamente com os operadores indispensáveis para o cumprimento do pedido (gateways bancários e transportadoras credenciadas).</p>
-            <p><strong>4. Cookies e armazenamento local:</strong> Esta página utiliza armazenamento local do navegador para manter o carrinho. Não são inseridos cookies de publicidade nesta versão. Qualquer ferramenta adicional de análise ou publicidade deverá ser acompanhada de informação e consentimento quando exigidos pela legislação aplicável.</p>
-            <p><strong>5. Solicitação e Exclusão de Dados:</strong> O titular pode solicitar a qualquer momento a conferência, alteração ou exclusão de seus dados utilizando o canal de atendimento informado no checkout ou na confirmação do pedido.</p>
-          `
-        },
-        trocas: {
-          title: 'Política de Trocas e Devoluções',
-          content: `
-            <p><strong>1. Direito de Arrependimento (Artigo 49 do CDC):</strong> O consumidor tem o direito de desistir da compra no prazo de até 7 (sete) dias corridos a contar da data de recebimento do pedido, com reembolso integral.</p>
-            <p><strong>2. Condições para Devolução:</strong> Em razão do controle sanitário de alimentos e suplementos, os produtos deverão ser devolvidos em suas embalagens originais, lacrados, sem sinais de abertura ou consumo.</p>
-            <p><strong>3. Avarias ou Divergência:</strong> Constatada qualquer violação na embalagem ou envio de item divergente, entre em contato imediatamente com nossa equipe para envio das fotos e emissão de código de postagem reversa sem custo.</p>
-            <p><strong>4. Procedimento de Reembolso:</strong> O estorno será realizado no mesmo meio de pagamento selecionado na compra (Pix direto ou estorno na fatura do cartão) em até 3 dias úteis após a conferência técnica do item devolvido.</p>
-            <p><strong>5. Contato para Devoluções:</strong> Solicite pelo canal de atendimento informado no checkout ou na confirmação do pedido, mencionando o número da compra.</p>
-          `
-        },
-        contato: {
-          title: 'Dados da Empresa e Canais de Contato',
-          content: `
-            <p><strong>Razão Social:</strong> Gp Assessoria & Consultoria LTDA.</p>
-            <p><strong>CNPJ:</strong> 32.998.217/0001-29</p>
-            <p><strong>Endereço Comercial:</strong> Avenida Joao de Barros, 38, Apto 0101, Santo Amaro, Recife - PE, CEP: 50100-015</p>
-            <p><strong>Atendimento:</strong> De segunda a sexta, das 09h às 18h.</p>
-            <p><strong>Atividade Principal:</strong> Comércio online de suplementos alimentares e proteínas.</p>
-          `
-        }
-      };
-
-      function setupPoliciesModal() {
-        const modal = $('#policyModal');
-        const modalTitle = $('#policyModalTitle');
-        const modalBody = $('#policyModalBody');
-        const closeBtn = $('#closePolicyModal');
-        const okBtn = $('#okPolicyModal');
-        if (!modal || !modalTitle || !modalBody) return;
-
-        const openPolicy = (key) => {
-          const item = policiesData[key];
-          if (!item) return;
-          modalTitle.textContent = item.title;
-          modalBody.innerHTML = item.content;
-          modal.classList.add('is-open');
-          document.body.classList.add('no-scroll');
-        };
-
-        const closePolicy = () => {
-          modal.classList.remove('is-open');
-          document.body.classList.remove('no-scroll');
-        };
-
-        $$('.policy-trigger').forEach((trigger) => {
-          trigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            const policyKey = trigger.dataset.policy;
-            if (policyKey) openPolicy(policyKey);
-          });
-        });
-
-        if (closeBtn) closeBtn.addEventListener('click', closePolicy);
-        if (okBtn) okBtn.addEventListener('click', closePolicy);
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) closePolicy();
-        });
-      }
-
       setupMobileCta();
       setupShippingEstimate();
       loadShippingRegion();
