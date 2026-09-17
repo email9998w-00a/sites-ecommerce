@@ -166,17 +166,17 @@
     .variant-pill.is-selected { border-color: var(--brand); background: var(--brand); color: #fff; }
     .variant-pill[aria-disabled="true"] { opacity: .6; cursor: wait; }
 
-    .included-summary { margin: 0 0 16px; padding: 14px 15px 15px; border: 1px solid #dce7ee; border-radius: 12px; background: #fff; }
+    .included-summary { margin: 0 0 18px; padding: 16px; border: 1px solid #dce7ee; border-radius: var(--radius-md); background: #fbfcfd; }
     .included-summary-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-    .included-summary-title { color: var(--ink); font-size: 12px; font-weight: 800; letter-spacing: .01em; }
-    .included-summary-title i { margin-right: 6px; color: var(--success); font-size: 11px; }
-    .included-summary-total { padding: 4px 8px; border-radius: 6px; background: #e6f4ec; color: var(--success-dark); font-size: 11px; font-weight: 800; white-space: nowrap; }
-    .included-summary-lead { display: flex; align-items: baseline; gap: 8px; margin: 0 0 12px; padding-bottom: 11px; border-bottom: 1px solid #edf1f4; color: var(--ink-soft); font-size: 11.5px; line-height: 1.4; }
-    .included-summary-lead strong { color: var(--brand); font-size: 22px; letter-spacing: -.03em; line-height: 1; }
-    .included-flavors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px 18px; margin: 0; padding: 0; list-style: none; color: var(--ink); font-size: 11.5px; line-height: 1.35; }
-    .included-flavors li { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; }
-    .included-flavors li strong { overflow: hidden; color: var(--ink); font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
-    .included-flavors li span { flex: 0 0 auto; color: var(--brand); font-size: 10.5px; font-weight: 800; white-space: nowrap; }
+    .included-summary-title { color: var(--brand); font-size: 14px; font-weight: 800; letter-spacing: -.01em; }
+    .included-summary-title i { margin-right: 7px; color: var(--success); font-size: 13px; }
+    .included-summary-total { padding: 5px 9px; border-radius: 999px; background: #e6f4ec; color: var(--success-dark); font-size: 10.5px; font-weight: 800; white-space: nowrap; }
+    .included-summary-lead { display: flex; align-items: baseline; gap: 8px; margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid #e7edf1; color: var(--ink-soft); font-size: 11.5px; line-height: 1.4; }
+    .included-summary-lead strong { color: var(--ink); font-size: 18px; letter-spacing: -.03em; line-height: 1; }
+    .included-flavors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px 10px; margin: 0; padding: 0; list-style: none; color: var(--ink); font-size: 11.5px; line-height: 1.35; }
+    .included-flavors li { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; padding: 8px 9px; border: 1px solid #e5ebef; border-radius: 8px; background: #fff; }
+    .included-flavors li strong { overflow: hidden; color: var(--ink); font-weight: 650; text-overflow: ellipsis; white-space: nowrap; }
+    .included-flavors li span { flex: 0 0 auto; color: var(--brand); font-size: 10px; font-weight: 800; white-space: nowrap; }
 
     /* Price */
     .price-box { margin: 0 0 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
@@ -427,6 +427,10 @@
       .gallery-dot { width: 20px; height: 4px; }
       .gallery-dot.is-active { width: 30px; }
       .contents-box { margin: 17px 0 19px; padding: 14px; }
+      .included-summary { margin-bottom: 15px; padding: 14px; }
+      .included-summary-title { font-size: 13px; }
+      .included-summary-lead strong { font-size: 17px; }
+      .included-flavors { grid-template-columns: 1fr; gap: 6px; }
       .contents-box h3 { font-size: 14px; }
       .contents-box p { font-size: 12px; }
       .contents-list { grid-template-columns: 1fr; gap: 6px; }
@@ -561,22 +565,22 @@
             <div class="variant-grid" id="variantGrid" role="radiogroup" aria-labelledby="choiceTitle"></div>
           </section>
 
-          <div class="price-box" id="priceBox" aria-live="polite">
-            <div class="included-summary" aria-label="Conteúdo do combo">
+          <div class="included-summary" aria-label="Conteúdo do combo">
               <div class="included-summary-head">
                 <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Seu combo inclui</span>
                 <span class="included-summary-total" id="includedTotal">60 cápsulas</span>
               </div>
-              <p class="included-summary-lead"><strong id="includedBoxes">6 sabores</strong><span>· 1 caixa de cada sabor</span></p>
+              <p class="included-summary-lead"><strong id="includedBoxes">6 sabores</strong><span>1 caixa de cada sabor</span></p>
               <ul class="included-flavors" id="includedFlavors">
-                <li data-flavor="Capuccino"><strong>1x Capuccino</strong><span>10 cáps.</span></li>
-                <li data-flavor="Espresso"><strong>1x Espresso</strong><span>10 cáps.</span></li>
-                <li data-flavor="Espresso Intenso"><strong>1x Espresso Intenso</strong><span>10 cáps.</span></li>
-                <li data-flavor="Café au Lait"><strong>1x Café au Lait</strong><span>10 cáps.</span></li>
-                <li data-flavor="Café Matinal"><strong>1x Café Matinal</strong><span>10 cáps.</span></li>
-                <li data-flavor="Café au Lait Intenso"><strong>1x Café au Lait Intenso</strong><span>10 cáps.</span></li>
+                <li data-flavor="Capuccino"><strong>Capuccino</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Espresso"><strong>Espresso</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Espresso Intenso"><strong>Espresso Intenso</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Café au Lait"><strong>Café au Lait</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Café Matinal"><strong>Café Matinal</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Café au Lait Intenso"><strong>Café au Lait Intenso</strong><span>1 caixa · 10 cáps.</span></li>
               </ul>
-            </div>
+          </div>
+          <div class="price-box" id="priceBox" aria-live="polite">
             <div class="old-price-row">
               <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
               <span class="discount-tag" id="discount">31% OFF</span>
@@ -980,7 +984,7 @@
         $('#includedBoxes').textContent = '6 sabores';
         $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong id="includedBoxes">6 sabores</strong><span>· ${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} de cada sabor</span>`;
         $$('.included-flavors li', $('#includedFlavors')).forEach((item) => {
-                item.innerHTML = `<strong>${boxesPerFlavor}x ${item.dataset.flavor}</strong><span>${boxesPerFlavor * 10} cáps.</span>`;
+                item.innerHTML = `<strong>${item.dataset.flavor}</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} · ${boxesPerFlavor * 10} cáps.</span>`;
         });
         $('#mobilePrice').textContent = money(selectedVariant.price);
         $('#buyCtaPrice').textContent = money(selectedVariant.price);
