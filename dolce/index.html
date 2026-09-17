@@ -177,9 +177,13 @@
     .savings-note { display: flex; align-items: center; gap: 6px; margin-top: 9px; color: var(--success-dark); font-size: 11.5px; font-weight: 600; }
     .savings-note i { color: var(--success); font-size: 11px; }
     .offer-contents { margin-top: 15px; padding-top: 14px; border-top: 1px solid #dce7ee; }
-    .offer-contents-heading { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; color: var(--brand); font-size: 12.5px; font-weight: 800; }
+    .offer-contents-heading { display: flex; align-items: center; gap: 7px; margin-bottom: 9px; color: var(--brand); font-size: 12.5px; font-weight: 800; letter-spacing: -.01em; }
     .offer-contents-heading i { color: var(--success); font-size: 12px; }
-    .offer-contents-summary { margin: 0 0 9px; color: var(--ink-soft); font-size: 11.5px; line-height: 1.45; }
+    .offer-contents-summary { margin: 0 0 10px; color: var(--ink-soft); font-size: 11.5px; line-height: 1.45; }
+    .offer-contents-summary strong { color: var(--ink); font-weight: 800; }
+    .offer-total-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 11px; }
+    .offer-total-badge { display: inline-flex; align-items: center; gap: 5px; padding: 5px 8px; border: 1px solid #cfe8d9; border-radius: 6px; background: #f0faf4; color: var(--success-dark); font-size: 10.5px; font-weight: 800; }
+    .offer-total-badge i { font-size: 10px; }
     .offer-flavors { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 5px 12px; margin: 0; padding: 0; list-style: none; }
     .offer-flavors li { position: relative; padding-left: 13px; color: var(--ink); font-size: 11px; line-height: 1.35; }
     .offer-flavors li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: 800; }
@@ -564,9 +568,13 @@
             <div class="installments" id="installments">ou em até 3x de R$ 29,97 sem juros</div>
             <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 40,00</div>
             <div class="offer-contents" aria-live="polite" aria-labelledby="offerContentsTitle">
-              <div class="offer-contents-heading" id="offerContentsTitle"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Você leva neste combo:</div>
-              <p class="offer-contents-summary" id="offerContentsSummary">6 caixas · 60 cápsulas · 1 caixa de cada sabor</p>
-              <ul class="offer-flavors" id="offerFlavors"></ul>
+              <div class="offer-contents-heading" id="offerContentsTitle"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Você recebe exatamente:</div>
+              <p class="offer-contents-summary" id="offerContentsSummary"><strong>6 caixas</strong> com <strong>60 cápsulas</strong> — 1 caixa de cada sabor.</p>
+              <div class="offer-total-badges" aria-label="Resumo da quantidade incluída">
+                <span class="offer-total-badge"><i class="fa-solid fa-box" aria-hidden="true"></i><span id="offerBoxBadge">6 caixas</span></span>
+                <span class="offer-total-badge"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i><span id="offerCapsuleBadge">60 cápsulas</span></span>
+              </div>
+              <ul class="offer-flavors" id="offerFlavors" aria-label="Sabores incluídos"></ul>
             </div>
           </div>
 
@@ -965,7 +973,9 @@
         $('#savingsNote').innerHTML = `<i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza ${money(selectedVariant.oldPrice - selectedVariant.price)}`;
         const totalCapsules = selectedVariant.weight * selectedVariant.capsulesPerBox;
         const boxLabel = selectedVariant.boxesPerFlavor === 1 ? '1 caixa de cada sabor' : `${selectedVariant.boxesPerFlavor} caixas de cada sabor`;
-        $('#offerContentsSummary').textContent = `${selectedVariant.name} · ${totalCapsules} cápsulas · ${boxLabel}`;
+        $('#offerContentsSummary').innerHTML = `<strong>${selectedVariant.name}</strong> com <strong>${totalCapsules} cápsulas</strong> — ${boxLabel}.`;
+        $('#offerBoxBadge').textContent = selectedVariant.name;
+        $('#offerCapsuleBadge').textContent = `${totalCapsules} cápsulas`;
         $('#offerFlavors').replaceChildren(...includedFlavors.map((flavor) => {
           const item = document.createElement('li');
           item.textContent = `${selectedVariant.boxesPerFlavor}x ${flavor} · ${selectedVariant.boxesPerFlavor * selectedVariant.capsulesPerBox} cápsulas`;
