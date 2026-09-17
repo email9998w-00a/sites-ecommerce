@@ -294,12 +294,17 @@
 
     /* ===================== Footer ===================== */
     footer { padding: 40px 0 24px; background: var(--brand-dark); color: #fff; }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(2, 1fr); gap: 30px; }
+    .footer-grid { display: grid; grid-template-columns: 1.35fr repeat(3, 1fr); gap: 30px; }
     footer h2, footer h3 { margin: 0 0 12px; font-size: 15px; }
     footer p, footer a { color: #c1d0dc; font-size: 12.5px; line-height: 1.7; }
     footer p { max-width: 340px; margin: 0; }
     footer a { display: block; margin-bottom: 7px; text-decoration: none; }
     footer a:hover { color: #fff; text-decoration: underline; }
+    .company-data { margin-top: 14px; color: #c1d0dc; font-size: 12px; line-height: 1.65; }
+    .company-data strong { color: #fff; }
+    .legal-section { margin-top: 30px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.14); }
+    .legal-section h3 { margin-bottom: 6px; }
+    .legal-section p { max-width: none; color: #b4c4d0; font-size: 11.5px; line-height: 1.65; }
     .footer-bottom { margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.14); color: #9fb2c1; font-size: 11.5px; }
 
     /* ===================== Mobile sticky CTA ===================== */
@@ -513,7 +518,7 @@
           <a href="#faq"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Dúvidas frequentes</span></a>
         </nav>
       </div>
-      <a class="logo" href="/" aria-label="HAVAN, página inicial">HAVAN</a>
+      <a class="logo" href="/" aria-label="Gp Assessoria &amp; Consultoria, página inicial">GP ASSESSORIA</a>
       <form class="search-form" id="searchForm" role="search" autocomplete="off">
         <label for="searchInput">Buscar na loja</label>
         <input class="search-input" id="searchInput" type="search" placeholder="O que você está procurando?" aria-controls="searchResults" aria-expanded="false">
@@ -711,11 +716,55 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div><h2>HAVAN</h2><p>Receba seu combo de cápsulas com informações claras, pedido revisável e checkout seguro.</p></div>
-        <div><h3>Atendimento</h3><a href="#faq">Dúvidas frequentes</a><a href="#details">Informações do produto</a><a href="/contato">Fale conosco</a></div>
-        <div><h3>Políticas</h3><a href="/politica-de-privacidade">Privacidade</a><a href="/trocas-e-devolucoes">Trocas e devoluções</a><a href="/politica-de-envio">Envio</a></div>
+        <div>
+          <h2>Gp Assessoria &amp; Consultoria LTDA.</h2>
+          <p>Proteínas e suplementos de alta qualidade para sua saúde e performance.</p>
+          <div class="company-data">
+            <strong>CNPJ:</strong> 32.998.217/0001-29<br>
+            <strong>Endereço:</strong> Avenida João de Barros, 38, Apto 0101<br>
+            Recife - PE, CEP 50100-015
+          </div>
+        </div>
+        <div>
+          <h3>Atendimento</h3>
+          <a href="#faq">Dúvidas frequentes</a>
+          <a href="#details">Informações do produto</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div>
+          <h3>Políticas</h3>
+          <a href="#termos-de-uso">Termos de Uso</a>
+          <a href="#politica-de-privacidade">Política de Privacidade</a>
+          <a href="#trocas-e-devolucoes">Trocas e Devoluções</a>
+        </div>
+        <div>
+          <h3>Dados da empresa</h3>
+          <a href="#dados-da-empresa">Identificação empresarial</a>
+          <a href="#contato">Fale conosco</a>
+          <p>Atendimento e informações do pedido pelos canais informados no checkout.</p>
+        </div>
       </div>
-      <div class="footer-bottom">© 2026 Havan. Todos os direitos reservados.</div>
+      <div class="legal-section" id="termos-de-uso">
+        <h3>Termos de Uso</h3>
+        <p>Ao navegar e realizar uma compra, você concorda com as condições apresentadas nesta loja, incluindo preços, disponibilidade, formas de pagamento, entrega e demais informações exibidas no checkout.</p>
+      </div>
+      <div class="legal-section" id="politica-de-privacidade">
+        <h3>Política de Privacidade</h3>
+        <p>Os dados fornecidos pelo cliente são utilizados para processar pedidos, pagamentos, entrega, atendimento e prevenção a fraudes, conforme a legislação aplicável. Não solicitamos dados além do necessário para essas finalidades.</p>
+      </div>
+      <div class="legal-section" id="trocas-e-devolucoes">
+        <h3>Trocas e Devoluções</h3>
+        <p>Solicitações de troca ou devolução devem ser feitas pelos canais de atendimento informados no checkout, observando os prazos e as condições previstos na legislação aplicável e nas informações do pedido.</p>
+      </div>
+      <div class="legal-section" id="contato">
+        <h3>Contato</h3>
+        <p>Para dúvidas sobre produtos, pedidos, entrega, trocas ou devoluções, utilize o canal de atendimento disponibilizado no checkout.</p>
+      </div>
+      <div class="legal-section" id="dados-da-empresa">
+        <h3>Dados da empresa</h3>
+        <p>Gp Assessoria &amp; Consultoria LTDA. · CNPJ 32.998.217/0001-29 · Avenida João de Barros, 38, Apto 0101, Recife - PE, CEP 50100-015.</p>
+      </div>
+      <div class="footer-bottom">© 2024 Gp Assessoria &amp; Consultoria LTDA. Todos os direitos reservados.</div>
     </div>
   </footer>
 
@@ -753,7 +802,7 @@
 
   <div class="redirect-loading" id="redirectLoading" role="status" aria-live="polite" aria-label="Preparando o checkout" aria-hidden="true">
     <div class="redirect-loading-card">
-      <div class="redirect-loading-brand" aria-hidden="true">HAVAN</div>
+      <div class="redirect-loading-brand" aria-hidden="true">GP ASSESSORIA</div>
       <span class="redirect-loading-spinner" aria-hidden="true"></span>
       <p class="redirect-loading-text">Preparando seu pedido</p>
       <p class="redirect-loading-subtext">Estamos levando você para um checkout seguro.</p>
