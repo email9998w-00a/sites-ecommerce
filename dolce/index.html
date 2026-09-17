@@ -166,6 +166,15 @@
     .variant-pill.is-selected { border-color: var(--brand); background: var(--brand); color: #fff; }
     .variant-pill[aria-disabled="true"] { opacity: .6; cursor: wait; }
 
+    .included-summary { margin: 0 0 15px; padding: 12px 13px; border: 1px solid #d7e6df; border-radius: 10px; background: #f7fbf8; }
+    .included-summary-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+    .included-summary-title { display: inline-flex; align-items: center; gap: 7px; color: var(--brand); font-size: 12.5px; font-weight: 800; }
+    .included-summary-title i { color: var(--success); font-size: 12px; }
+    .included-summary-total { color: var(--success-dark); font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .included-flavors { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+    .included-flavors li { padding: 5px 8px; border: 1px solid #dbe9e1; border-radius: 6px; background: #fff; color: var(--ink); font-size: 11px; line-height: 1.25; }
+    .included-flavors li strong { color: var(--brand); font-weight: 800; }
+
     /* Price */
     .price-box { margin: 0 0 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
     .old-price-row { display: flex; align-items: center; gap: 9px; margin-bottom: 6px; min-height: 20px; }
@@ -549,6 +558,20 @@
           </section>
 
           <div class="price-box" id="priceBox" aria-live="polite">
+            <div class="included-summary" aria-label="Sabores e quantidades incluídos">
+              <div class="included-summary-head">
+                <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Você leva no combo</span>
+                <span class="included-summary-total" id="includedTotal">60 cápsulas</span>
+              </div>
+              <ul class="included-flavors" id="includedFlavors">
+                <li data-flavor="Capuccino"><strong>1x</strong> Capuccino</li>
+                <li data-flavor="Espresso"><strong>1x</strong> Espresso</li>
+                <li data-flavor="Espresso Intenso"><strong>1x</strong> Espresso Intenso</li>
+                <li data-flavor="Café au Lait"><strong>1x</strong> Café au Lait</li>
+                <li data-flavor="Café Matinal"><strong>1x</strong> Café Matinal</li>
+                <li data-flavor="Café au Lait Intenso"><strong>1x</strong> Café au Lait Intenso</li>
+              </ul>
+            </div>
             <div class="old-price-row">
               <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
               <span class="discount-tag" id="discount">31% OFF</span>
@@ -946,6 +969,12 @@
         $('#discount').textContent = `${getDiscount(selectedVariant)}% OFF`;
         $('#installments').textContent = `ou em até 3x de ${money(selectedVariant.price / 3)} sem juros`;
         $('#savingsNote').innerHTML = `<i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza ${money(selectedVariant.oldPrice - selectedVariant.price)}`;
+        const boxesPerFlavor = selectedVariant.weight / 6;
+        const capsulesTotal = selectedVariant.weight * 10;
+        $('#includedTotal').textContent = `${capsulesTotal} cápsulas`;
+        $$('.included-flavors li', $('#includedFlavors')).forEach((item) => {
+          item.innerHTML = `<strong>${boxesPerFlavor}x</strong> ${item.dataset.flavor}`;
+        });
         $('#mobilePrice').textContent = money(selectedVariant.price);
         $('#buyCtaPrice').textContent = money(selectedVariant.price);
         renderVariants();
