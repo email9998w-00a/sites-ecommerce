@@ -167,16 +167,18 @@
     .variant-pill[aria-disabled="true"] { opacity: .6; cursor: wait; }
 
     .included-summary { margin: 0 0 16px; padding: 13px 15px 14px; border: 1px solid #dce7ee; border-radius: 12px; background: #fff; }
-    .included-summary-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
+    .included-summary-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 3px; }
     .included-summary-title { color: var(--ink); font-size: 12px; font-weight: 800; letter-spacing: .01em; }
     .included-summary-title i { margin-right: 6px; color: var(--success); font-size: 11px; }
-    .included-summary-total { color: var(--success-dark); font-size: 11px; font-weight: 800; white-space: nowrap; }
-    .included-summary-lead { margin: 0 0 7px; color: var(--brand); font-size: 13px; font-weight: 700; line-height: 1.4; }
+    .included-summary-total { color: var(--success-dark); font-size: 12px; font-weight: 800; white-space: nowrap; }
+    .included-summary-lead { margin: 0 0 11px; color: var(--brand); font-size: 13px; font-weight: 700; line-height: 1.4; }
     .included-summary-lead span { color: var(--ink-soft); font-weight: 500; }
-    .included-flavors { display: block; margin: 0; color: var(--ink-soft); font-size: 11.5px; line-height: 1.55; }
-    .included-flavors li { display: inline; }
-    .included-flavors li:not(:last-child)::after { content: "  •  "; color: #aebbc4; }
-    .included-flavors li strong { color: var(--brand); font-weight: 800; }
+    .included-flavors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px 18px; margin: 0; padding: 10px 0 0; border-top: 1px solid #edf1f4; list-style: none; color: var(--ink); font-size: 11.5px; line-height: 1.35; }
+    .included-flavors li { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+    .included-flavors li strong { color: var(--brand); font-weight: 700; }
+    .included-flavors li span { color: var(--ink-soft); font-size: 10.5px; white-space: nowrap; }
+    .included-summary-note { display: flex; align-items: flex-start; gap: 6px; margin: 11px 0 0; padding-top: 9px; border-top: 1px solid #edf1f4; color: var(--ink-soft); font-size: 10.5px; line-height: 1.4; }
+    .included-summary-note i { margin-top: 2px; color: var(--success); font-size: 10px; }
 
     /* Price */
     .price-box { margin: 0 0 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
@@ -563,18 +565,19 @@
           <div class="price-box" id="priceBox" aria-live="polite">
             <div class="included-summary" aria-label="Conteúdo do combo">
               <div class="included-summary-head">
-                <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Conteúdo do combo</span>
+                <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Você recebe exatamente</span>
                 <span class="included-summary-total" id="includedTotal">60 cápsulas</span>
               </div>
-              <p class="included-summary-lead"><span id="includedBoxes">6 caixas</span> · 10 cápsulas por caixa</p>
+              <p class="included-summary-lead"><span id="includedBoxes">6 caixas</span> com 10 cápsulas cada · 1 caixa de cada sabor</p>
               <ul class="included-flavors" id="includedFlavors">
-                <li data-flavor="Capuccino"><strong>1x</strong> Capuccino</li>
-                <li data-flavor="Espresso"><strong>1x</strong> Espresso</li>
-                <li data-flavor="Espresso Intenso"><strong>1x</strong> Espresso Intenso</li>
-                <li data-flavor="Café au Lait"><strong>1x</strong> Café au Lait</li>
-                <li data-flavor="Café Matinal"><strong>1x</strong> Café Matinal</li>
-                <li data-flavor="Café au Lait Intenso"><strong>1x</strong> Café au Lait Intenso</li>
+                <li data-flavor="Capuccino"><strong>Capuccino</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Espresso"><strong>Espresso</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Espresso Intenso"><strong>Espresso Intenso</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Café au Lait"><strong>Café au Lait</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Café Matinal"><strong>Café Matinal</strong><span>1 caixa · 10 cáps.</span></li>
+                <li data-flavor="Café au Lait Intenso"><strong>Café au Lait Intenso</strong><span>1 caixa · 10 cáps.</span></li>
               </ul>
+              <p class="included-summary-note"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Você recebe os 6 sabores descritos acima, sem envio aleatório ou composição surpresa.</span></p>
             </div>
             <div class="old-price-row">
               <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
@@ -977,8 +980,9 @@
         const capsulesTotal = selectedVariant.weight * 10;
         $('#includedTotal').textContent = `${capsulesTotal} cápsulas`;
         $('#includedBoxes').textContent = `${selectedVariant.weight} caixas`;
+        $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<span>${selectedVariant.weight} caixas</span> com 10 cápsulas cada · ${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} de cada sabor`;
         $$('.included-flavors li', $('#includedFlavors')).forEach((item) => {
-          item.innerHTML = `<strong>${boxesPerFlavor}x</strong> ${item.dataset.flavor}`;
+          item.innerHTML = `<strong>${item.dataset.flavor}</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} · ${boxesPerFlavor * 10} cáps.</span>`;
         });
         $('#mobilePrice').textContent = money(selectedVariant.price);
         $('#buyCtaPrice').textContent = money(selectedVariant.price);
