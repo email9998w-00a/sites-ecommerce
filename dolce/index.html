@@ -187,6 +187,8 @@
     .offer-flavors { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 5px 12px; margin: 0; padding: 0; list-style: none; }
     .offer-flavors li { position: relative; padding-left: 13px; color: var(--ink); font-size: 11px; line-height: 1.35; }
     .offer-flavors li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: 800; }
+    .offer-value-line { margin-top: 14px; padding-top: 12px; border-top: 1px solid #dce7ee; color: var(--ink-soft); font-size: 11.5px; line-height: 1.35; }
+    .offer-value-line strong { display: block; margin-top: 3px; color: var(--brand); font-size: 16px; font-weight: 800; }
 
     .shipping-note { display: flex; align-items: flex-start; gap: 11px; margin: 0 0 17px; padding: 5px 0 2px; background: transparent; }
     .shipping-note-logo { flex: 0 0 34px; width: 34px; height: 30px; margin-top: 1px; object-fit: contain; }
@@ -560,13 +562,6 @@
           </section>
 
           <div class="price-box" id="priceBox" aria-live="polite">
-            <div class="old-price-row">
-              <span class="old-price">De R$ <span id="oldPrice">129,90</span></span>
-              <span class="discount-tag" id="discount">31% OFF</span>
-            </div>
-            <div class="current-price">R$ <span id="currentPrice">89,90</span><span class="pix-tag">no Pix</span></div>
-            <div class="installments" id="installments">ou em até 3x de R$ 29,97 sem juros</div>
-            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 40,00</div>
             <div class="offer-contents" aria-live="polite" aria-labelledby="offerContentsTitle">
               <div class="offer-contents-heading" id="offerContentsTitle"><i class="fa-solid fa-box-open" aria-hidden="true"></i> Você recebe exatamente:</div>
               <p class="offer-contents-summary" id="offerContentsSummary"><strong>6 caixas</strong> com <strong>60 cápsulas</strong> — 1 caixa de cada sabor.</p>
@@ -576,6 +571,13 @@
               </div>
               <ul class="offer-flavors" id="offerFlavors" aria-label="Sabores incluídos"></ul>
             </div>
+            <div class="offer-value-line">Tudo isso por apenas<strong>R$ <span id="offerValuePrice">89,90</span> no Pix</strong></div>
+            <div class="old-price-row">
+              <span class="old-price">De R$ <span id="oldPrice">189,90</span></span>
+              <span class="discount-tag" id="discount">53% OFF</span>
+            </div>
+            <div class="installments" id="installments">ou em até 3x de R$ 29,97 sem juros</div>
+            <div class="savings-note" id="savingsNote"><i class="fa-solid fa-tag" aria-hidden="true"></i> Você economiza R$ 100,00</div>
           </div>
 
           <div class="shipping-note" aria-label="Informações de entrega" data-delivery-days="3">
@@ -981,6 +983,7 @@
           item.textContent = `${selectedVariant.boxesPerFlavor}x ${flavor} · ${selectedVariant.boxesPerFlavor * selectedVariant.capsulesPerBox} cápsulas`;
           return item;
         }));
+        $('#offerValuePrice').textContent = selectedVariant.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         $('#mobilePrice').textContent = money(selectedVariant.price);
         $('#buyCtaPrice').textContent = money(selectedVariant.price);
         renderVariants();
