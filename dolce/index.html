@@ -566,7 +566,7 @@
           <section class="choice-box" aria-labelledby="choiceTitle">
             <div class="choice-heading">
               <strong id="choiceTitle">Escolha a quantidade</strong>
-              <span id="selectedOptionLabel" aria-live="polite">6 caixas selecionadas</span>
+              <span id="selectedOptionLabel" aria-live="polite">60 cápsulas selecionadas</span>
             </div>
             <div class="variant-grid" id="variantGrid" role="radiogroup" aria-labelledby="choiceTitle"></div>
           </section>
@@ -576,7 +576,7 @@
                 <span class="included-summary-title"><i class="fa-solid fa-box-open" aria-hidden="true"></i> O combo inclui</span>
                 <span class="included-summary-total" id="includedTotal">60 cápsulas</span>
               </div>
-              <p class="included-summary-lead"><strong id="includedBoxes">6 sabores</strong><span>1 caixa por sabor</span></p>
+              <p class="included-summary-lead"><strong id="includedBoxes">60 cápsulas</strong><span>1 caixa por sabor</span></p>
               <ul class="included-flavors" id="includedFlavors">
                 <li data-flavor="Capuccino"><strong>Capuccino</strong><span>1 caixa · 10 cáps.</span></li>
                 <li data-flavor="Espresso"><strong>Espresso</strong><span>1 caixa · 10 cáps.</span></li>
@@ -652,7 +652,7 @@
           </ul>
           <div class="highlight-grid">
             <div class="highlight-card"><i class="fa-solid fa-bolt" aria-hidden="true"></i><h3>Preparo rápido</h3><p>Insira a cápsula na sua máquina Dolce Gusto e prepare sua bebida em poucos instantes.</p></div>
-            <div class="highlight-card"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i><h3>6 sabores selecionados</h3><p>Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p></div>
+            <div class="highlight-card"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i><h3>60 e 120 cápsulas</h3><p>Opções com 60 ou 120 cápsulas, distribuídas entre Capuccino, Espresso, Espresso Intenso, Café au Lait, Café Matinal e Café au Lait Intenso.</p></div>
             <div class="highlight-card"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><h3>Variedade no dia a dia</h3><p>Tenha diferentes opções de café e cappuccino para escolher conforme a ocasião.</p></div>
           </div>
           <div class="description-photo-grid" aria-label="Espaços reservados para fotos do produto">
@@ -778,13 +778,13 @@
       const REDIRECT_LOADING_DURATION = 900;
 
       const variants = [
-        { id: '6-caixas', name: '6 caixas', weight: 6, price: 89.90, oldPrice: 189.90, images: [
+        { id: '60-capsulas', name: '60 cápsulas', weight: 6, price: 89.90, oldPrice: 189.90, images: [
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ttuQACdNJDtVNOrp.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp'
         ] },
-        { id: '12-caixas', name: '12 caixas', weight: 12, price: 139.90, oldPrice: 199.90, images: [
+        { id: '120-capsulas', name: '120 cápsulas', weight: 12, price: 139.90, oldPrice: 199.90, images: [
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/HqSJNHyxescVhPtt.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/EVcFdaHyIhaNbkmf.webp',
           'https://files.manuscdn.com/user_upload_by_module/session_file/310519663083302621/ttuQACdNJDtVNOrp.webp',
@@ -988,8 +988,8 @@
         const boxesPerFlavor = selectedVariant.weight / 6;
         const capsulesTotal = selectedVariant.weight * 10;
         $('#includedTotal').textContent = `${capsulesTotal} cápsulas`;
-        $('#includedBoxes').textContent = '6 sabores';
-        $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong id="includedBoxes">6 sabores</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} por sabor</span>`;
+        $('#includedBoxes').textContent = `${capsulesTotal} cápsulas`;
+        $('#includedFlavors').closest('.included-summary').querySelector('.included-summary-lead').innerHTML = `<strong id="includedBoxes">${capsulesTotal} cápsulas</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} por sabor</span>`;
         $$('.included-flavors li', $('#includedFlavors')).forEach((item) => {
                 item.innerHTML = `<strong>${item.dataset.flavor}</strong><span>${boxesPerFlavor} caixa${boxesPerFlavor > 1 ? 's' : ''} · ${boxesPerFlavor * 10} cáps.</span>`;
         });
