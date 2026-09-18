@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Camisa Devocional de Nossa Senhora Aparecida - Presente de Fé</title>
-    <meta name="description" content="Receba gratuitamente a Camisa Devocional de Nossa Senhora Aparecida. Camiseta religiosa em malha 96% poliéster e 4% elastano, benta para você. Pague apenas o frete.">
+    <title>Camisa Casual Corinthians Algodão Preta Licenciada - Presente para o Torcedor</title>
+    <meta name="description" content="Receba gratuitamente a Camisa Casual Corinthians. Camiseta preta licenciada para o torcedor. Pague apenas a contribuição de envio.">
     
     <!-- Google Fonts: Outfit for clean modern UI & Cormorant Garamond for sacred headlines -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3433,6 +3433,353 @@ body {
 
 
 
+
+/* ========================================================================
+   CORINTHIANS MOBILE DESIGN REFINEMENT
+   Visual-only layer: content, prices, offer and checkout remain unchanged.
+   ======================================================================== */
+:root {
+    --clr-navy: #111216;
+    --clr-navy-light: #2a2d35;
+    --clr-gold: #d71920;
+    --clr-gold-light: #ef4444;
+    --clr-gold-dark: #b51218;
+    --clr-gold-glass: rgba(215, 25, 32, 0.07);
+    --clr-bg-grey: #f1f2f4;
+    --clr-border: #e1e3e8;
+    --box-shadow: 0 6px 20px rgba(17, 18, 22, 0.07);
+    --box-shadow-lg: 0 16px 36px rgba(17, 18, 22, 0.14);
+}
+
+html, body {
+    background: #f1f2f4;
+}
+
+body {
+    align-items: flex-start;
+}
+
+.mobile-container {
+    max-width: 520px;
+    background: #ffffff;
+    box-shadow: 0 0 46px rgba(17, 18, 22, 0.14);
+}
+
+.app-header {
+    background: linear-gradient(135deg, #090a0c 0%, #17191f 72%, #252831 100%);
+    min-height: 62px;
+    padding: 14px 18px;
+    box-shadow: 0 3px 16px rgba(0, 0, 0, 0.22);
+}
+
+.logo-cross-symbol {
+    color: #ffffff;
+    font-size: 1.3rem;
+    filter: grayscale(1);
+}
+
+.logo-text {
+    letter-spacing: 0.025em;
+}
+
+.logo-light {
+    color: #f0444b;
+    font-weight: 600;
+}
+
+.header-actions {
+    gap: 14px;
+}
+
+.icon-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.icon-btn:hover,
+.icon-btn:focus-visible {
+    color: #ffffff;
+    background: rgba(215, 25, 32, 0.9);
+    transform: translateY(-1px);
+}
+
+.notification-dot {
+    background: #e3343b;
+    border-color: #17191f;
+}
+
+.badge-count {
+    background: #e3343b;
+    color: #ffffff;
+    border-color: #17191f;
+}
+
+.promo-ribbon {
+    min-height: 46px;
+    padding: 9px 14px;
+    background: linear-gradient(90deg, #fff5f5 0%, #ffffff 100%);
+    border-bottom: 1px solid #f2c7c9;
+    gap: 8px;
+}
+
+.ribbon-tag {
+    background: #d71920;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px 7px;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.ribbon-text {
+    color: #252831;
+    line-height: 1.25;
+}
+
+.gallery-section {
+    background: #ffffff;
+    border-bottom: 1px solid #eceef2;
+}
+
+.carousel-container {
+    aspect-ratio: 1 / 1.03;
+    background: #f8f8f9;
+}
+
+.carousel-slide img {
+    object-fit: contain;
+    padding: 10px;
+}
+
+.carousel-control {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #e0e2e6;
+    box-shadow: 0 4px 12px rgba(17, 18, 22, 0.12);
+}
+
+.carousel-control:hover,
+.carousel-control:focus-visible {
+    background: #d71920;
+    color: #ffffff;
+    border-color: #d71920;
+}
+
+.carousel-dot.active {
+    background: #d71920;
+}
+
+.info-section {
+    padding: 22px 18px 24px;
+}
+
+.rating-info {
+    margin-bottom: 10px;
+    font-size: 0.78rem;
+}
+
+.stars {
+    color: #d71920;
+    letter-spacing: 1.5px;
+}
+
+.rating-val,
+.product-title,
+.price-currency,
+.price-current,
+.price-cents {
+    color: #111216;
+}
+
+.product-title {
+    font-size: clamp(1.72rem, 7vw, 2.05rem);
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+}
+
+.product-subtitle {
+    color: #626773;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.size-selection-container {
+    padding: 15px;
+    margin: 0 0 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fafafa;
+}
+
+.size-title {
+    color: #24262d;
+    margin-bottom: 11px;
+}
+
+.size-buttons {
+    gap: 8px;
+}
+
+.size-btn {
+    width: 46px;
+    height: 42px;
+    border-radius: 9px;
+}
+
+.size-btn.active {
+    background: #d71920 !important;
+    border-color: #d71920 !important;
+    color: #ffffff !important;
+    box-shadow: 0 5px 14px rgba(215, 25, 32, 0.22) !important;
+}
+
+.price-card {
+    background: linear-gradient(145deg, #fffafa 0%, #ffffff 100%);
+    border: 1px solid #efb8bb;
+    border-top: 4px solid #d71920;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 22px rgba(17, 18, 22, 0.06);
+}
+
+.price-current,
+.price-cents {
+    font-weight: 800;
+}
+
+.price-badge {
+    background: #111216;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.price-pix strong {
+    color: #b51218;
+}
+
+.shipping-info {
+    color: #26282f;
+    background: #fff1f1;
+    border: 1px solid #f4d0d1;
+}
+
+.buy-button-cta-inline,
+.submit-step-btn,
+.confirm-payment-btn {
+    background: linear-gradient(135deg, #d71920 0%, #b51218 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(215, 25, 32, 0.25);
+}
+
+.buy-button-cta-inline:hover,
+.buy-button-cta-inline:focus-visible,
+.submit-step-btn:hover,
+.confirm-payment-btn:hover {
+    background: linear-gradient(135deg, #ef4444 0%, #d71920 100%);
+    transform: translateY(-2px);
+}
+
+.pulse-ring {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.features-grid {
+    padding: 0 18px 22px;
+    gap: 10px;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid #e4e6eb;
+    border-top: 3px solid #d71920;
+    border-radius: 11px;
+    padding: 14px;
+    box-shadow: 0 4px 12px rgba(17, 18, 22, 0.04);
+}
+
+.feature-icon {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: #fff0f0;
+    margin-bottom: 9px;
+}
+
+.feature-title {
+    color: #16181d;
+}
+
+.banner-section {
+    padding: 22px 18px;
+}
+
+.action-banner {
+    background-image: url('assets/corinthians_frente.webp');
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    padding: 32px 20px;
+    border-radius: 15px;
+}
+
+.banner-overlay {
+    background: linear-gradient(135deg, rgba(8, 9, 11, 0.9), rgba(90, 8, 12, 0.82));
+}
+
+.banner-content h3 {
+    color: #ffffff;
+    line-height: 1.15;
+}
+
+.banner-content p {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.accordion-section,
+.reviews-section {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.accordion-item {
+    border-radius: 11px;
+    border-color: #e1e3e8;
+}
+
+.accordion-header {
+    background: #fafafa;
+}
+
+.reviews-section h2 {
+    color: #111216;
+}
+
+.review-card,
+.photo-testimonials-section,
+.reputation-card {
+    border-radius: 12px;
+}
+
+.footer {
+    background: #111216;
+}
+
+@media (max-width: 380px) {
+    .app-header { padding-left: 14px; padding-right: 14px; }
+    .info-section, .banner-section, .accordion-section, .reviews-section { padding-left: 14px; padding-right: 14px; }
+    .features-grid { padding-left: 14px; padding-right: 14px; }
+    .size-buttons { gap: 6px; }
+    .size-btn { width: 42px; }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
@@ -3473,8 +3820,8 @@ body {
             <!-- Header -->
             <header class="app-header">
                 <div class="header-logo">
-                    <span class="logo-cross-symbol">†</span>
-                    <span class="logo-text">Salvai-me<span class="logo-light">Rainha</span></span>
+                    <span class="logo-cross-symbol">⚽</span>
+                    <span class="logo-text">Timão<span class="logo-light">Store</span></span>
                 </div>
                 <div class="header-actions">
                     <button class="icon-btn" aria-label="Notificações" onclick="app.showNotificationTip()">
@@ -3491,7 +3838,7 @@ body {
             <main class="product-content">
                 <!-- Promo Ribbon -->
                 <div class="promo-ribbon">
-                    <span class="ribbon-tag">CAMPANHA DE EVANGELIZAÇÃO</span>
+                    <span class="ribbon-tag">CAMPANHA ESPECIAL DO TIMÃO</span>
                     <span class="ribbon-text">🔥 Receba Grátis + Faça doação Benfeitor!</span>
                 </div>
 
@@ -3500,13 +3847,13 @@ body {
                     <div class="carousel-container">
                         <div class="carousel-track" id="carousel-track">
                             <div class="carousel-slide">
-                                <img src="assets/camiseta_frente.jpg" alt="Camisa Devocional de Nossa Senhora Aparecida - Frente">
+                                <img src="assets/corinthians_frente.webp" alt="Camisa Casual Corinthians - Frente">
                             </div>
                             <div class="carousel-slide">
-                                <img src="assets/camiseta_tras.jpg" alt="Camisa Devocional de Nossa Senhora Aparecida - Verso">
+                                <img src="assets/corinthians_verso.webp" alt="Camisa Casual Corinthians - Verso">
                             </div>
                             <div class="carousel-slide">
-                                <img src="assets/camiseta_tabela.jpg" alt="Tabela de Medidas da Camiseta">
+                                <img src="assets/corinthians_detalhe.jpg" alt="Detalhes e medidas da Camiseta Corinthians">
                             </div>
                         </div>
                         <button class="carousel-control prev" id="carousel-prev" aria-label="Foto anterior">
@@ -3527,8 +3874,8 @@ body {
                         <span class="rating-val">4.9</span>
                         <span class="rating-count">(3.420 avaliações)</span>
                     </div>
-                    <h1 class="product-title">Camisa Devocional de Nossa Senhora Aparecida (Benta)</h1>
-                    <p class="product-subtitle">Manifeste sua fé e devoção com esta camiseta religiosa exclusiva. Confeccionada em malha premium 96% poliéster e 4% elastano com estampa detalhada em Ouro Nobre de Nossa Senhora Aparecida, abençoada para proteção do seu lar.</p>
+                    <h1 class="product-title">Camisa Casual Corinthians Algodão Preta Licenciada</h1>
+                    <p class="product-subtitle">Mostre seu orgulho pelo Timão com esta camiseta preta licenciada. Confortável e versátil, ela combina o escudo do Corinthians com um visual discreto para usar no estádio, na rua ou no dia a dia.</p>
                     
                     <!-- Size Selection Box -->
                     <div class="size-selection-container">
@@ -3552,7 +3899,7 @@ body {
                             <span class="price-badge">100% GRÁTIS</span>
                         </div>
                         <div class="price-installments">
-                            *Campanha nacional de evangelização e fortalecimento das paróquias
+                            *Campanha especial do Corinthians e fortalecimento da torcida
                         </div>
                         <div class="price-pix">
                             ✨ Camiseta de presente. Você contribui apenas com o <strong>frete postal</strong> de envio.
@@ -3573,23 +3920,23 @@ body {
                 <section class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">👕</div>
-                        <h3 class="feature-title">Tecido Premium</h3>
-                        <p class="feature-desc">Malha macia 96% Poliéster e 4% Elastano, muito confortável, elástica e durável.</p>
+                        <h3 class="feature-title">Algodão confortável</h3>
+                        <p class="feature-desc">Tecido macio e confortável para usar durante todo o dia.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">✨</div>
-                        <h3 class="feature-title">Estampa Nobre</h3>
-                        <p class="feature-desc">Estampa silk-screen em Ouro Nobre brilhante com alto nível de detalhes.</p>
+                        <h3 class="feature-title">Estilo alvinegro</h3>
+                        <p class="feature-desc">Visual preto com o escudo do Corinthians em destaque discreto.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🙏</div>
-                        <h3 class="feature-title">Brinde Bento</h3>
-                        <p class="feature-desc">Abençoada em intenção solene pelas famílias e pela saúde de quem a veste.</p>
+                        <h3 class="feature-title">Produto licenciado</h3>
+                        <p class="feature-desc">Produto licenciado para quem valoriza autenticidade e paixão pelo clube.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📮</div>
-                        <h3 class="feature-title">Postagem Rápida</h3>
-                        <p class="feature-desc">Envio pelos Correios com código de rastreamento direto para o seu celular.</p>
+                        <h3 class="feature-title">Postagem rápida</h3>
+                        <p class="feature-desc">Envio com código de rastreamento direto para o seu celular.</p>
                     </div>
                 </section>
 
@@ -3598,8 +3945,8 @@ body {
                     <div class="action-banner">
                         <div class="banner-overlay"></div>
                         <div class="banner-content">
-                            <h3>Testemunhe sua fé no dia a dia</h3>
-                            <p>Vestir a estampa de Nossa Senhora Aparecida é um sinal público de consagração e amor filial à Padroeira do Brasil. Receba em sua casa como presente de nossa missão evangelizadora.</p>
+                            <h3>Vista o orgulho de ser Corinthians</h3>
+                            <p>A Camisa Casual Corinthians foi feita para o torcedor que quer levar o Timão para todos os momentos. O design preto combina com diferentes looks e ocasiões.</p>
                         </div>
                     </div>
                 </section>
@@ -3612,7 +3959,7 @@ body {
                             <span class="accordion-arrow">▼</span>
                         </button>
                         <div class="accordion-content">
-                            <p>A campanha Salvai-me Mãe Santíssima apoia projetos de evangelização e sociais. A distribuição gratuita destas camisetas religiosas faz parte da nossa missão de propagar a devoção mariana nos lares. A única contribuição solicitada ao devoto para receber a camiseta física é a doação Benfeitor no valor de R$ 50,00 reais, cobrindo exclusivamente as despesas de envio e a logística de entrega dos Correios. Para as doações de outros valores (como Devoto de R$ 10,00, Protetor de R$ 15,00 ou Padrinho de R$ 20,00), os devotos receberão como agradecimento um maravilhoso Kit Devocional Online de Nossa Senhora Aparecida diretamente no e-mail cadastrado.</p>
+                            <p>A campanha especial do Timão disponibiliza esta camiseta licenciada gratuitamente aos torcedores. A única contribuição solicitada para receber a camiseta física é a doação Benfeitor no valor de R$ 50,00 reais, cobrindo exclusivamente as despesas de envio e a logística de entrega dos Correios. Para as doações de outros valores, os torcedores receberão os benefícios digitais informados na campanha diretamente no e-mail cadastrado.</p>
                         </div>
                     </div>
 
@@ -3625,23 +3972,23 @@ body {
                             <table class="specs-table">
                                 <tr>
                                     <td><strong>Tecido</strong></td>
-                                    <td>Malha Premium (96% Poliéster e 4% Elastano)</td>
+                                    <td>Algodão (consulte a composição na etiqueta)</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Estampa</strong></td>
-                                    <td>Silk-screen em Ouro Metálico de alta resistência</td>
+                                    <td>Estampa do Corinthians com acabamento resistente</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Costura</strong></td>
-                                    <td>Reforço de ombro a ombro e gola careca canelada</td>
+                                    <td>Gola careca e costuras reforçadas</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Modelagem</strong></td>
-                                    <td>Unissex tradicional, caimento solto e confortável</td>
+                                    <td>Modelagem casual, confortável e versátil</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Tamanhos</strong></td>
-                                    <td>P, M, G, GG e EG (Tabela padrão de medidas)</td>
+                                    <td>P, M, G, GG e EG (consulte a tabela de medidas)</td>
                                 </tr>
                             </table>
                         </div>
@@ -3650,23 +3997,23 @@ body {
 
                 <!-- Reviews and Testimonials -->
                 <section class="reviews-section">
-                    <h2>Depoimentos de Fiéis (+3K)</h2>
+                    <h2>Avaliações de torcedores (+3K)</h2>
                     
                     <!-- Photos of clients gallery -->
                     <div class="photo-testimonials-section">
-                        <h3>📸 Fotos de devotos que já receberam</h3>
+                        <h3>📸 Fotos de torcedores que já receberam</h3>
                         <div class="photo-reviews-grid">
-                            <div class="photo-review-item" onclick="app.zoomImage('assets/devoto_1.jpg')">
-                                <img src="assets/devoto_1.jpg" alt="Devota com a camisa">
+                            <div class="photo-review-item" onclick="app.zoomImage('assets/corinthians_frente.webp')">
+                                <img src="assets/corinthians_frente.webp" alt="Torcedora com a camisa">
                             </div>
-                            <div class="photo-review-item" onclick="app.zoomImage('assets/devoto_2.jpg')">
-                                <img src="assets/devoto_2.jpg" alt="Casal com a camisa">
+                            <div class="photo-review-item" onclick="app.zoomImage('assets/corinthians_verso.webp')">
+                                <img src="assets/corinthians_verso.webp" alt="Casal com a camisa do Timão">
                             </div>
-                            <div class="photo-review-item" onclick="app.zoomImage('assets/devoto_3.jpg')">
-                                <img src="assets/devoto_3.jpg" alt="Devoto com a camisa">
+                            <div class="photo-review-item" onclick="app.zoomImage('assets/corinthians_detalhe.jpg')">
+                                <img src="assets/corinthians_detalhe.jpg" alt="Torcedor com a camisa">
                             </div>
-                            <div class="photo-review-item" onclick="app.zoomImage('assets/devoto_4.jpg')">
-                                <img src="assets/devoto_4.jpg" alt="Grupo de devotas">
+                            <div class="photo-review-item" onclick="app.zoomImage('assets/corinthians_frente.webp')">
+                                <img src="assets/corinthians_frente.webp" alt="Grupo de torcedores">
                             </div>
                         </div>
                     </div>
@@ -3684,7 +4031,7 @@ body {
                         </div>
                         <div class="review-stars">★★★★★</div>
                         <div class="review-title">O tecido é maravilhoso, super macio!</div>
-                        <p class="review-text">A camisa é maravilhosa, o tecido é muito macio e confortável. A estampa em ouro brilha muito, é linda! Valeu muito a pena pagar a taxa do envio, chegou super bem embalada e com uma santinha de brinde. Recomendo!</p>
+                        <p class="review-text">A camisa é maravilhosa, o tecido é muito macio e confortável. O escudo do Timão ficou discreto e muito bonito! Valeu muito a pena pagar a taxa do envio, chegou super bem embalada. Recomendo!</p>
                         <span class="review-date">Há 2 dias</span>
                     </div>
 
@@ -3699,7 +4046,7 @@ body {
                         </div>
                         <div class="review-stars">★★★★★</div>
                         <div class="review-title">Veste muito bem, caimento ótimo</div>
-                        <p class="review-text">Pedi o tamanho G e serviu perfeitamente. Costuras reforçadas e a imagem de Nossa Senhora Aparecida é impecável. Entrega super rápida aqui no interior de SP. Parabéns aos organizadores pelo belo projeto.</p>
+                        <p class="review-text">Pedi o tamanho G e serviu perfeitamente. Costuras reforçadas e o escudo do Corinthians é impecável. Entrega super rápida aqui no interior de SP. Parabéns aos organizadores pelo belo projeto.</p>
                         <span class="review-date">Há 5 dias</span>
                     </div>
 
@@ -3714,7 +4061,7 @@ body {
                         </div>
                         <div class="review-stars">★★★★★</div>
                         <div class="review-title">Excelente qualidade, recomendo!</div>
-                        <p class="review-text">Comprei para ir à missa aos domingos. Todos elogiaram o brilho da estampa. O tecido é fresco, confortável e veste muito bem, já lavei três vezes e a estampa continua perfeita como nova. Podem pedir sem medo.</p>
+                        <p class="review-text">Comprei para assistir aos jogos. Todos elogiaram o visual. O tecido é fresco, confortável e veste muito bem. Recomendo!</p>
                         <span class="review-date">Há 1 semana</span>
                     </div>
                 </section>
@@ -3758,7 +4105,7 @@ body {
                     </div>
                     <div class="badge-item">
                         <span class="badge-icon">🛡️</span>
-                        <span>Instituição de Fé desde 1997</span>
+                        <span>Produto licenciado</span>
                     </div>
                     <div class="badge-item">
                         <span class="badge-icon">💬</span>
@@ -3774,8 +4121,8 @@ body {
 
                 <footer class="landing-footer text-center" style="padding: 24px 16px; background-color: #fafafa; border-top: 1px solid var(--clr-border); font-family: 'Outfit', sans-serif;">
                     <p style="font-size: 13px; color: #666; margin-bottom: 12px; line-height: 1.5; font-family: 'Outfit', sans-serif;">
-                        © 2026 Salvai-me Rainha. Todos os direitos reservados.<br>
-                        Campanha de Devoção e Apoio Social a Obras de Caridade.
+                        © 2026 Timão Store. Todos os direitos reservados.<br>
+                        Campanha especial do Corinthians para torcedores.
                     </p>
                     <div style="display: flex; justify-content: center; gap: 16px; font-size: 12px; font-family: 'Outfit', sans-serif;">
                         <a href="javascript:void(0)" onclick="app.openPolicy('privacy')" style="color: var(--clr-primary); text-decoration: none; font-weight: 500;">Política de Privacidade</a>
@@ -3795,7 +4142,7 @@ body {
                 <button class="back-btn" onclick="app.closeCheckout()" aria-label="Voltar">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                 </button>
-                <h2>Solicitar Presente</h2>
+                <h2>Solicitar camiseta grátis</h2>
                 <div class="secure-ssl-badge">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     Seguro
@@ -3812,13 +4159,13 @@ body {
             <div class="checkout-content">
                 <!-- STEP 1: PERSONAL DETAILS -->
                 <div class="checkout-step active" id="step-form-1">
-                    <h3 class="step-title">Dados do Apoiador</h3>
+                    <h3 class="step-title">Dados do torcedor</h3>
                     <p class="step-desc">Seus dados pessoais estão protegidos por criptografia em ambiente seguro.</p>
 
                     <form id="form-personal" onsubmit="app.nextStep(1, event)">
                         <div class="form-group">
                             <label for="input-name">Nome Completo</label>
-                            <input type="text" id="input-name" placeholder="Ex: Maria de Fátima da Silva" required autocomplete="name">
+                            <input type="text" id="input-name" placeholder="Ex: Maria de Felipe da Silva" required autocomplete="name">
                             <span class="error-msg" id="error-name">Insira seu nome completo</span>
                         </div>
 
@@ -3848,7 +4195,7 @@ body {
 
                 <!-- STEP 2: SHIPPING ADDRESS & SHIPPING SELECTION -->
                 <div class="checkout-step" id="step-form-2">
-                    <h3 class="step-title">Endereço para Envio do Brinde</h3>
+                    <h3 class="step-title">Endereço para envio da camiseta</h3>
                     <p class="step-desc">Digite seu CEP para preencher o endereço automaticamente.</p>
 
                     <form id="form-shipping" onsubmit="app.nextStep(2, event)">
@@ -3934,13 +4281,13 @@ body {
 
                 <!-- STEP 3: NATIVE PAYMENT (PIX / BOLETO) -->
                 <div class="checkout-step" id="step-form-3">
-                    <h3 class="step-title">Concluir Doação</h3>
-                    <p class="step-desc">Escolha a forma de pagamento para despacharmos seu brinde bento.</p>
+                    <h3 class="step-title">Concluir doação</h3>
+                    <p class="step-desc">Escolha a forma de pagamento para despacharmos sua camiseta licenciada.</p>
 
                     <div class="order-summary-box">
                         <div class="product-item-row">
                             <div class="product-info-col">
-                                <span class="product-title-bold">1x Camisa N. Sra. Aparecida (Tamanho: <span id="checkoutDisplaySize">M</span>)</span>
+                                <span class="product-title-bold">1x Camisa Corinthians (Tamanho: <span id="checkoutDisplaySize">M</span>)</span>
                                 <span class="product-qty-tag">Qtd: 1x</span>
                             </div>
                             <span class="product-price-bold free-tag">R$ 0,00</span>
@@ -4003,15 +4350,15 @@ body {
                 <!-- TOP DEVOTIONAL HERO HEADER -->
                 <div class="ref-hero-header">
                     <div class="ref-header-bg">
-                        <img src="assets/hero_fatima.jpg" alt="Nossa Senhora Aparecida Header" class="ref-hero-bg-img">
+                        <img src="assets/hero_fatima.jpg" alt="Corinthians Header" class="ref-hero-bg-img">
                         <div class="ref-hero-overlay"></div>
                     </div>
                     <div class="ref-hero-content">
                         <div class="ref-brand-logo">
                             <span class="crown-icon">👑</span>
                             <div class="brand-titles">
-                                <span class="brand-main">Salvai-me Rainha</span>
-                                <span class="brand-sub">Projeto Nossa Senhora Aparecida</span>
+                                <span class="brand-main">Timão Store</span>
+                                <span class="brand-sub">Projeto Corinthians</span>
                             </div>
                         </div>
                         <h1 class="ref-hero-title">
@@ -4130,13 +4477,13 @@ body {
 
                             <!-- Priest Message Audio Player (WhatsApp Style) -->
                             <p style="font-size: 13.5px; font-weight: 700; color: var(--clr-primary); margin: 24px 0 8px 0; font-family: 'Outfit', sans-serif; text-align: center;">
-                                🙏 Escute a bênção especial do Padre Miguel enquanto conclui:
+                                🙏 Acompanhe as atualizações do seu pedido enquanto conclui:
                             </p>
 
                             <div class="wa-audio-container" style="margin-bottom: 24px;">
                                 <div class="wa-audio-bubble">
                                     <div class="wa-avatar-container">
-                                        <img src="assets/padre.jpg" alt="Padre" class="wa-avatar">
+                                        <img src="assets/corinthians_detalhe.jpg" alt="Detalhe da camiseta Corinthians" class="wa-avatar">
                                         <div class="wa-mic-badge">🎙️</div>
                                     </div>
 
@@ -4170,7 +4517,7 @@ body {
                                                     <span class="bar" style="height: 20px;"></span>
                                                     <span class="bar" style="height: 8px;"></span>
                                                 </div>
-                                                <audio id="priest-audio-file" src="assets/padre_miguel.mp3" preload="metadata"></audio>
+                                                <audio id="priest-audio-file" src="" preload="metadata"></audio>
                                             </div>
                                         </div>
 
@@ -4233,13 +4580,13 @@ body {
                         <div class="ref-trust-right">
                             <div class="ref-stars">⭐⭐⭐⭐⭐</div>
                             <div class="ref-avatars-row">
-                                <img src="assets/devoto_1.jpg" alt="Devoto">
-                                <img src="assets/devoto_2.jpg" alt="Devoto">
-                                <img src="assets/devoto_3.jpg" alt="Devoto">
-                                <img src="assets/devoto_4.jpg" alt="Devoto">
-                                <img src="assets/devoto_5.jpg" alt="Devoto">
+                                <img src="assets/corinthians_frente.webp" alt="Devoto">
+                                <img src="assets/corinthians_verso.webp" alt="Devoto">
+                                <img src="assets/corinthians_detalhe.jpg" alt="Devoto">
+                                <img src="assets/corinthians_frente.webp" alt="Devoto">
+                                <img src="assets/corinthians_detalhe.jpg" alt="Devoto">
                             </div>
-                            <span class="ref-social-label">Mais de 25.000 devotos já receberam seu presente com fé e amor!</span>
+                            <span class="ref-social-label">Milhares de torcedores já receberam sua camiseta com orgulho!</span>
                         </div>
                     </div>
 
@@ -4248,9 +4595,9 @@ body {
                         <h3 class="ref-summary-title">🛍️ Resumo do seu pedido</h3>
                         <div class="ref-product-box">
                             <div class="ref-prod-left">
-                                <img src="assets/camiseta_frente.jpg" alt="Camiseta Devocional" class="ref-prod-img">
+                                <img src="assets/corinthians_frente.webp" alt="Camiseta Corinthians" class="ref-prod-img">
                                 <div class="ref-prod-details">
-                                    <h4 class="ref-prod-name">Camiseta Devocional Nossa Senhora Aparecida</h4>
+                                    <h4 class="ref-prod-name">Camiseta Corinthians Corinthians</h4>
                                     <span class="ref-prod-meta">Tamanho: <strong id="successDisplaySize">M</strong></span>
                                     <span class="ref-prod-meta">Quantidade: 1</span>
                                     <span class="ref-prod-meta">Código: <strong id="success-order-id">#SR-136413-BR</strong></span>
@@ -4296,8 +4643,8 @@ body {
 
                     <!-- DEVOTIONAL FOOTER BAR -->
                     <div class="ref-footer-bar">
-                        <span>💛 Nossa Senhora Aparecida abençoe você e sua família!</span>
-                        <small>Sua doação ajuda a manter este projeto de fé.</small>
+                        <span>💛 Corinthians abençoe você e sua família!</span>
+                        <small>Sua doação ajuda a manter este projeto do Timão.</small>
                     </div>
 
                 </div>
@@ -4306,30 +4653,30 @@ body {
 
                 <!-- Testimonials Section -->
                 <div class="success-testimonials-box">
-                    <h3>✨ Quem já recebeu amou!</h3>
+                    <h3>✨ Quem já recebeu aprovou!</h3>
                     <div class="success-testimonials-container">
                         <div class="success-testimonial-item">
-                            <img src="assets/devoto_7.jpg" alt="Maria do Carmo">
+                            <img src="assets/corinthians_frente.webp" alt="Maria do Carmo">
                             <div class="success-testimonial-content">
                                 <div class="success-testimonial-name">Maria do Carmo</div>
                                 <div class="success-testimonial-stars">★★★★★</div>
-                                <div class="success-testimonial-text">"A camiseta é simplesmente maravilhosa! O tecido é muito macio e a estampa de Nossa Senhora é rica em detalhes. Sinto-me abençoada!"</div>
+                                <div class="success-testimonial-text">"A camiseta é simplesmente maravilhosa! O tecido é muito macio e a estampa de Corinthians é rica em detalhes. Fiquei muito satisfeita!"</div>
                             </div>
                         </div>
                         <div class="success-testimonial-item">
-                            <img src="assets/devoto_6.jpg" alt="Francisca Souza">
+                            <img src="assets/corinthians_verso.webp" alt="Francisca Souza">
                             <div class="success-testimonial-content">
                                 <div class="success-testimonial-name">Francisca Souza</div>
                                 <div class="success-testimonial-stars">★★★★★</div>
-                                <div class="success-testimonial-text">"A entrega foi muito rápida e o atendimento excelente. A camiseta é linda e veste muito bem. Vale a pena apoiar essa causa!"</div>
+                                <div class="success-testimonial-text">"A entrega foi muito rápida e o atendimento excelente. A camiseta é linda e veste muito bem. Vale muito a pena garantir a sua!"</div>
                             </div>
                         </div>
                         <div class="success-testimonial-item">
-                            <img src="assets/devoto_5.jpg" alt="Aparecida Lima">
+                            <img src="assets/corinthians_detalhe.jpg" alt="Rafael Lima">
                             <div class="success-testimonial-content">
-                                <div class="success-testimonial-name">Aparecida Lima</div>
+                                <div class="success-testimonial-name">Rafael Lima</div>
                                 <div class="success-testimonial-stars">★★★★★</div>
-                                <div class="success-testimonial-text">"Chegou direitinho aqui em casa! A costura e a qualidade do tecido me surpreenderam. Muito feliz com minha participação!"</div>
+                                <div class="success-testimonial-text">"Chegou direitinho aqui em casa! A costura e a qualidade do tecido me surpreenderam. Muito feliz com minha compra!"</div>
                             </div>
                         </div>
                     </div>
@@ -4343,14 +4690,14 @@ body {
                             <div class="timeline-dot"></div>
                             <div class="timeline-info">
                                 <h4>Pedido Solicitado</h4>
-                                <p id="timeline-step-1-desc">Aguardando confirmação do pagamento da taxa de envio.</p>
+                                <p id="timeline-step-1-desc">Aguardando confirmação do pagamento da contribuição de envio.</p>
                             </div>
                         </div>
                         <div class="timeline-item pending" id="timeline-step-2">
                             <div class="timeline-dot"></div>
                             <div class="timeline-info">
                                 <h4>Separação em Estoque</h4>
-                                <p>Embalagem da camisa no tamanho selecionado e despacho.</p>
+                                <p>Embalagem da camiseta no tamanho selecionado e despacho.</p>
                             </div>
                         </div>
                         <div class="timeline-item pending" id="timeline-step-3">
@@ -4373,7 +4720,7 @@ body {
         <div class="toast-notification" id="toast-tip">
             <div class="toast-content">
                 <span class="toast-icon">✨</span>
-                <span class="toast-msg">Maria acabou de solicitar a pulseira grátis em Curitiba/PR.</span>
+                <span class="toast-msg">Carlos acabou de solicitar a camiseta grátis em Curitiba/PR.</span>
             </div>
         </div>
 
@@ -5192,7 +5539,7 @@ const app = {
 
             // Reset Timeline steps
             document.getElementById('timeline-step-1').className = 'timeline-item active';
-            document.getElementById('timeline-step-1-desc').textContent = 'Aguardando confirmação do pagamento da taxa de envio.';
+            document.getElementById('timeline-step-1-desc').textContent = 'Aguardando confirmação do pagamento da contribuição de envio.';
             document.getElementById('timeline-step-2').className = 'timeline-item pending';
             document.getElementById('timeline-step-3').className = 'timeline-item pending';
             
@@ -5700,7 +6047,7 @@ const app = {
                 html: `
                     <p>A sua privacidade é de extrema importância para nós. Esta política descreve como coletamos, usamos e protegemos as suas informações pessoais em conformidade com a Lei Geral de Proteção de Dados (LGPD).</p>
                     <h4 style="margin: 16px 0 8px; color: var(--clr-primary); font-family: 'Outfit', sans-serif;">1. Coleta de Informações</h4>
-                    <p>Coletamos dados básicos fornecidos voluntariamente por você ao solicitar o presente sagrado, tais como: nome completo, endereço de e-mail, número de celular e endereço postal de entrega.</p>
+                    <p>Coletamos dados básicos fornecidos voluntariamente por você ao solicitar o presente especial, tais como: nome completo, endereço de e-mail, número de celular e endereço postal de entrega.</p>
                     <h4 style="margin: 16px 0 8px; color: var(--clr-primary); font-family: 'Outfit', sans-serif;">2. Uso dos Dados</h4>
                     <p>Seus dados pessoais são utilizados unicamente para processar sua doação voluntária, gerenciar o envio postal do seu brinde e enviar as atualizações automáticas de rastreamento do pacote através do WhatsApp.</p>
                     <h4 style="margin: 16px 0 8px; color: var(--clr-primary); font-family: 'Outfit', sans-serif;">3. Segurança e Sigilo</h4>
@@ -5710,9 +6057,9 @@ const app = {
             terms: {
                 title: "Termos de Uso",
                 html: `
-                    <p>Bem-vindo à nossa comunidade de fé. Ao acessar esta página e realizar uma doação voluntária, você concorda com os seguintes termos e condições:</p>
+                    <p>Bem-vindo à nossa comunidade de torcedores. Ao acessar esta página e realizar uma doação voluntária, você concorda com os seguintes termos e condições:</p>
                     <h4 style="margin: 16px 0 8px; color: var(--clr-primary); font-family: 'Outfit', sans-serif;">1. Caráter das Doações</h4>
-                    <p>Todas as transações financeiras realizadas por meio deste funil representam doações voluntárias destinadas ao custeio de nossas obras de caridade e devoção social. As contribuições não configuram uma transação de compra comercial.</p>
+                    <p>Todas as transações financeiras realizadas por meio deste funil representam doações voluntárias destinadas ao custeio de nossas projetos e ações da torcida. As contribuições não configuram uma transação de compra comercial.</p>
                     <h4 style="margin: 16px 0 8px; color: var(--clr-primary); font-family: 'Outfit', sans-serif;">2. Responsabilidade sobre os Dados</h4>
                     <p>O usuário é inteiramente responsável pela veracidade e exatidão dos dados inseridos nos campos de cadastro (como nome, endereço postal de envio e CPF), garantindo a viabilidade da entrega física do presente oferecido.</p>
                     <h4 style="margin: 16px 0 8px; color: var(--clr-primary); font-family: 'Outfit', sans-serif;">3. Propriedade Intelectual</h4>
@@ -5723,10 +6070,10 @@ const app = {
                 title: "Política de Envio e Doação",
                 html: `
                     <p style="font-style: italic; color: #555; border-left: 3px solid var(--clr-primary); padding-left: 10px; margin-bottom: 16px;">
-                        "A nossa obra se sustenta puramente através da fé e do coração generoso de nossos devotos. A Camisa Devocional de Nossa Senhora Aparecida é um presente especial de agradecimento, confeccionado com muito amor e devoção."
+                        "A Camisa Casual Corinthians é um presente especial para os torcedores, confeccionado com cuidado e qualidade."
                     </p>
-                    <p>Para viabilizar a fabricação, o controle de qualidade, a embalagem protetora e o envio postal de forma sustentável para nossa obra de evangelização, o brinde físico da <strong>Camisa Devocional de Nossa Senhora Aparecida</strong> é enviado exclusivamente como agradecimento aos devotos que realizarem a contribuição/doação <strong>Benfeitor de R$ 50,00</strong>.</p>
-                    <p>Doações nos demais valores (como Devoto de R$ 10,00, Protetor de R$ 15,00 ou Padrinho de R$ 20,00) são imensamente bem-vindas e integralmente revertidas para a manutenção dos nossos projetos sociais. Como forma de agradecimento, <strong>os devotos dessas categorias receberão um maravilhoso Kit Devocional Online de Nossa Senhora Aparecida diretamente no e-mail cadastrado</strong>.</p>
+                    <p>Para viabilizar a fabricação, o controle de qualidade, a embalagem protetora e o envio postal de forma sustentável para nossa campanha do Corinthians, o brinde físico da <strong>Camisa Casual Corinthians</strong> é enviado exclusivamente como agradecimento aos torcedores que realizarem a contribuição/doação <strong>Benfeitor de R$ 50,00</strong>.</p>
+                    <p>Doações nos demais valores (como Devoto de R$ 10,00, Protetor de R$ 15,00 ou Padrinho de R$ 20,00) são imensamente bem-vindas e integralmente revertidas para a manutenção dos nossos projetos sociais. Como forma de agradecimento, <strong>os torcedores dessas categorias receberão um maravilhoso benefícios digitais da campanha do Corinthians diretamente no e-mail cadastrado</strong>.</p>
                     <p>Agradecemos profundamente de coração a sua compreensão e generosidade, que nos ajudam a manter viva essa abençoada missão de fé.</p>
                 `
             }
@@ -5791,7 +6138,7 @@ function initNotifications() {
     
     const names = [
         'Maria', 'Ana', 'Francisca', 'José', 'João', 'Antônio', 'Clara',
-        'Sebastião', 'Geraldo', 'Teresa', 'Fátima', 'Aparecida', 'Felipe'
+        'Sebastião', 'Geraldo', 'Teresa', 'Felipe', 'Rafaela', 'Felipe'
     ];
     
     const toast = document.getElementById('toast-tip');
