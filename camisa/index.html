@@ -3780,6 +3780,257 @@ body {
     .size-btn { width: 42px; }
 }
 
+
+/* ========================================================================
+   E-COMMERCE TYPOGRAPHY & UI POLISH
+   Visual-only layer: no content, pricing, offer or behavior changes.
+   ======================================================================== */
+:root {
+    --font-ui: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-serif: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --clr-text-main: #17191f;
+    --clr-text-muted: #69707d;
+}
+
+body {
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.app-header {
+    min-height: 64px;
+}
+
+.logo-text {
+    font-family: var(--font-ui);
+    font-size: 1.04rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+.logo-light {
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.promo-ribbon {
+    font-size: 0.73rem;
+    letter-spacing: -0.01em;
+}
+
+.ribbon-tag {
+    font-size: 0.58rem;
+    letter-spacing: 0.055em;
+    white-space: nowrap;
+}
+
+.product-title {
+    font-family: var(--font-ui);
+    font-size: clamp(1.55rem, 6.8vw, 1.95rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+}
+
+.product-subtitle {
+    font-size: 0.88rem;
+    line-height: 1.58;
+    color: #69707d;
+}
+
+.rating-info {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.rating-val {
+    font-size: 0.78rem;
+}
+
+.size-title {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.065em;
+}
+
+.size-btn {
+    font-size: 0.82rem;
+    font-weight: 800;
+    border-width: 1px;
+}
+
+.price-card {
+    padding: 17px 18px;
+}
+
+.price-old {
+    font-size: 0.76rem;
+    font-weight: 500;
+}
+
+.price-row {
+    align-items: baseline;
+    gap: 3px;
+}
+
+.price-currency {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.price-current {
+    font-size: 3.15rem;
+    letter-spacing: -0.08em;
+}
+
+.price-cents {
+    font-size: 1.05rem;
+}
+
+.price-badge {
+    font-size: 0.62rem;
+    letter-spacing: 0.045em;
+    padding: 5px 7px;
+}
+
+.price-installments,
+.shipping-info {
+    font-size: 0.72rem;
+}
+
+.price-pix {
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.buy-button-cta-inline {
+    min-height: 54px;
+    font-size: 0.92rem;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+}
+
+.feature-title {
+    font-size: 0.82rem;
+    letter-spacing: -0.01em;
+}
+
+.feature-desc {
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.banner-content h3 {
+    font-family: var(--font-ui);
+    font-size: 1.26rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+.banner-content p {
+    font-size: 0.78rem;
+}
+
+.accordion-header {
+    padding: 15px 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.accordion-content {
+    font-size: 0.8rem;
+    line-height: 1.58;
+}
+
+.reviews-section h2 {
+    font-family: var(--font-ui);
+    font-size: 1.22rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+/* Checkout: compact commerce hierarchy */
+.checkout-header,
+.step-title,
+.checkout-subtitle,
+.product-title-bold,
+.summary-line-label,
+.summary-line-value,
+.submit-step-btn,
+.back-step-btn,
+.confirm-payment-btn {
+    font-family: var(--font-ui);
+}
+
+.step-title {
+    font-size: 1.38rem;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+}
+
+.step-desc,
+.form-group label,
+.form-group input,
+.form-group select,
+.shipping-option-card,
+.order-summary-box,
+.payment-method-card {
+    font-family: var(--font-ui);
+}
+
+.form-group label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+    color: #363a44;
+}
+
+.form-group input,
+.form-group select {
+    min-height: 46px;
+    border-radius: 9px;
+    font-size: 0.82rem;
+}
+
+.shipping-option-card {
+    min-height: 66px;
+    border-radius: 10px;
+}
+
+.option-name,
+.option-price {
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.submit-step-btn,
+.confirm-payment-btn {
+    min-height: 50px;
+    font-size: 0.84rem;
+    font-weight: 800;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+}
+
+.back-step-btn {
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+@media (min-width: 481px) {
+    .mobile-container {
+        max-width: 520px;
+        border-radius: 18px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        height: calc(100% - 28px);
+        min-height: calc(100% - 28px);
+    }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
