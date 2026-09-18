@@ -4031,6 +4031,33 @@ body {
     }
 }
 
+
+/* Address row safety and phone input polish */
+.form-row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(92px, 0.85fr);
+    gap: 12px;
+    width: 100%;
+}
+.form-row .form-group,
+.form-row .form-group input {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+}
+.form-group input {
+    box-sizing: border-box;
+}
+#input-number {
+    min-width: 0;
+}
+@media (max-width: 360px) {
+    .form-row {
+        grid-template-columns: minmax(0, 1fr) minmax(84px, 0.72fr);
+        gap: 8px;
+    }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
@@ -4434,7 +4461,7 @@ body {
 
                         <div class="form-group">
                             <label for="input-phone">WhatsApp / Celular</label>
-                            <input type="tel" id="input-phone" placeholder="Ex: (11) 99999-9999" required autocomplete="tel">
+                            <input type="tel" id="input-phone" placeholder="(11) 99999-9999" maxlength="15" inputmode="tel" oninput="app.onPhoneInput(this)" required autocomplete="tel">
                             <span class="error-msg" id="error-phone">Insira um celular válido</span>
                         </div>
 
@@ -5226,6 +5253,26 @@ function initCarousel() {
 const app = {
     onCpfInput(input) {
         this.formatCpf(input);
+    },
+
+    onPhoneInput(input) {
+        this.formatPhone(input);
+    },
+
+    formatPhone(input) {
+        let value = input.value.replace(/\D/g, '').slice(0, 11);
+        if (value.length <= 10) {
+            value = value.replace(/^(\d{0,2})(\d{0,4})(\d{0,4}).*/, (match, ddd, first, last) => {
+                let result = ddd ? `(${ddd}` : '';
+                if (ddd.length === 2) result += ') ';
+                result += first;
+                if (last) result += '-' + last;
+                return result;
+            });
+        } else {
+            value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+        }
+        input.value = value;
     },
 
     formatCpf(input) {
