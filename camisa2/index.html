@@ -4164,6 +4164,113 @@ body {
     }
 }
 
+
+/* Daily offer / scarcity strip above the product gallery */
+.scarcity-strip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 9px 14px;
+    color: #ffffff;
+    background: linear-gradient(100deg, #b51218 0%, #d71920 52%, #a90f16 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 3px 10px rgba(17, 18, 22, 0.12);
+}
+
+.scarcity-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 31px;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    color: #d71920;
+    background: #ffffff;
+    font-size: 0.9rem;
+}
+
+.scarcity-copy {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.2;
+}
+
+.scarcity-copy strong {
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+}
+
+.scarcity-copy span {
+    margin-top: 3px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.68rem;
+    font-weight: 500;
+}
+
+.scarcity-arrow {
+    margin-left: auto;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.72rem;
+}
+
+@media (max-width: 380px) {
+    .scarcity-strip {
+        min-height: 50px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .scarcity-copy strong { font-size: 0.66rem; }
+    .scarcity-copy span { font-size: 0.63rem; }
+}
+
+
+/* Countdown timer for the daily offer */
+.scarcity-countdown {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+    padding: 5px 7px;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.16);
+    white-space: nowrap;
+}
+
+.scarcity-countdown small {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.58rem;
+    font-weight: 600;
+}
+
+.scarcity-countdown strong {
+    min-width: 37px;
+    color: #ffffff;
+    font-size: 0.86rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.035em;
+}
+
+.scarcity-strip.is-expired {
+    background: linear-gradient(100deg, #50535a 0%, #34363c 100%);
+}
+
+.scarcity-strip.is-expired .scarcity-countdown strong {
+    color: #ffffff;
+}
+
+@media (max-width: 380px) {
+    .scarcity-countdown {
+        gap: 3px;
+        padding: 4px 5px;
+    }
+    .scarcity-countdown small { display: none; }
+    .scarcity-countdown strong { font-size: 0.8rem; }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
@@ -4224,6 +4331,20 @@ body {
                 <div class="promo-ribbon">
                     <span class="ribbon-tag">CAMPANHA ESPECIAL DO TIMÃO</span>
                     <span class="ribbon-text">🔥 Receba Grátis + Faça doação Benfeitor!</span>
+                </div>
+
+                <!-- Product Scarcity / Daily Offer -->
+                <div class="scarcity-strip" role="status" aria-label="Oferta do dia">
+                    <span class="scarcity-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <span class="scarcity-copy">
+                        <strong>OFERTA DO DIA</strong>
+                        <span>Condição especial por tempo limitado</span>
+                    </span>
+                    <span class="scarcity-countdown" aria-label="Tempo restante da oferta">
+                        <small>Termina em</small>
+                        <strong id="scarcity-timer">27:34</strong>
+                    </span>
+                    <span class="scarcity-arrow"><i class="fa-solid fa-chevron-right"></i></span>
                 </div>
 
                 <!-- Product Image Gallery (Carousel) -->
@@ -6574,6 +6695,41 @@ function initNotifications() {
 }
 window.app = app;
 
+    
+
+/* Daily offer countdown: 27 minutes and 34 seconds per visitor session. */
+(() => {
+    const timer = document.getElementById('scarcity-timer');
+    const strip = document.querySelector('.scarcity-strip');
+    if (!timer || !strip) return;
+
+    const storageKey = 'timao_store_offer_deadline_v1';
+    const durationMs = (27 * 60 + 34) * 1000;
+    let deadline = Number(sessionStorage.getItem(storageKey));
+    if (!Number.isFinite(deadline) || deadline <= 0) {
+        deadline = Date.now() + durationMs;
+        sessionStorage.setItem(storageKey, String(deadline));
+    }
+
+    let intervalId = null;
+    const updateCountdown = () => {
+        const remaining = Math.max(0, deadline - Date.now());
+        const totalSeconds = Math.ceil(remaining / 1000);
+        const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+        const seconds = String(totalSeconds % 60).padStart(2, '0');
+        timer.textContent = `${minutes}:${seconds}`;
+
+        if (remaining <= 0) {
+            strip.classList.add('is-expired');
+            timer.textContent = '00:00';
+            timer.setAttribute('aria-label', 'Oferta encerrada');
+            window.clearInterval(intervalId);
+        }
+    };
+
+    updateCountdown();
+    intervalId = window.setInterval(updateCountdown, 1000);
+})();
     </script>
 </body>
 </html>
