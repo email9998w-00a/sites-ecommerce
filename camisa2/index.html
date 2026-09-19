@@ -5141,6 +5141,53 @@ body {
     .price-badge { padding-left: 8px; padding-right: 8px; font-size: 0.55rem; }
 }
 
+
+/* Credible free-benefit typography */
+.price-free-label {
+    color: #1e293b;
+    font-family: var(--font-ui);
+    font-size: clamp(1.45rem, 6.5vw, 1.85rem);
+    font-weight: 750;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    text-transform: none;
+}
+
+.price-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-height: 24px;
+    padding: 5px 9px;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    background: #f0fdf4 !important;
+    color: #166534 !important;
+    box-shadow: none;
+    font-size: 0.61rem;
+    font-weight: 800;
+    letter-spacing: 0.015em;
+    text-transform: none;
+}
+
+.price-badge::before {
+    content: '✓';
+    margin-right: 0;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+.price-installments {
+    max-width: 330px;
+    color: #64748b;
+    font-size: 0.68rem;
+}
+
+@media (max-width: 380px) {
+    .price-free-label { font-size: 1.3rem; }
+    .price-badge { font-size: 0.56rem; padding-left: 7px; padding-right: 7px; }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
@@ -5275,8 +5322,8 @@ body {
                         <div class="price-eyebrow"><i class="fa-solid fa-circle-check"></i> Benefício da campanha</div>
                         <div class="price-old">Valor original: R$ 79,90</div>
                         <div class="price-row">
-                            <span class="price-free-label">CAMISETA GRÁTIS</span>
-                            <span class="price-badge">100% GRÁTIS</span>
+                            <span class="price-free-label">Camiseta grátis</span>
+                            <span class="price-badge">Produto grátis</span>
                         </div>
                         <div class="price-installments">
                             *Campanha especial do Corinthians e fortalecimento da torcida
