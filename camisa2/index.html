@@ -4676,6 +4676,80 @@ body {
     }
 }
 
+
+/* Clear free-product communication */
+.free-product-callout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0 16px;
+    padding: 12px 13px;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #c1121f;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.free-product-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 33px;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #111827;
+    font-size: 0.86rem;
+}
+
+.free-product-copy {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.25;
+}
+
+.free-product-copy strong {
+    color: #111827;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.025em;
+}
+
+.free-product-copy span {
+    margin-top: 3px;
+    color: #475569;
+    font-size: 0.68rem;
+}
+
+.free-product-check {
+    flex: 0 0 auto;
+    margin-left: auto;
+    color: #15803d;
+    font-size: 1rem;
+}
+
+.price-badge {
+    background: #111827 !important;
+    color: #ffffff !important;
+}
+
+.price-pix {
+    padding: 9px 10px;
+    border-radius: 8px;
+    background: #f8fafc;
+    color: #334155;
+}
+
+@media (max-width: 380px) {
+    .free-product-callout {
+        gap: 8px;
+        padding: 11px 10px;
+    }
+    .free-product-copy strong { font-size: 0.72rem; }
+    .free-product-copy span { font-size: 0.63rem; }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
@@ -4792,6 +4866,15 @@ body {
                     </div>
                     <h1 class="product-title">Camisa Casual Corinthians Algodão Preta Licenciada</h1>
                     <p class="product-subtitle">Mostre seu orgulho pelo Timão com esta camiseta preta licenciada. Confortável e versátil, ela combina o escudo do Corinthians com um visual discreto para usar no estádio, na rua ou no dia a dia.</p>
+
+                    <div class="free-product-callout" role="note" aria-label="Informação sobre a oferta gratuita">
+                        <span class="free-product-icon"><i class="fa-solid fa-gift"></i></span>
+                        <span class="free-product-copy">
+                            <strong>SUA CAMISETA É GRÁTIS</strong>
+                            <span>Você não paga pelo produto. No checkout, são exibidos os custos de envio e logística da entrega.</span>
+                        </span>
+                        <i class="fa-solid fa-circle-check free-product-check"></i>
+                    </div>
                     
                     <!-- Size Selection Box -->
                     <div class="size-selection-container">
