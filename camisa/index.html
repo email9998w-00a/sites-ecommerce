@@ -6984,11 +6984,16 @@ const app = {
             const scrollableChild = toView.querySelector('.product-content, .checkout-content, .success-screen-content');
             if (scrollableChild) {
                 scrollableChild.scrollTop = 0;
+                scrollableChild.scrollLeft = 0;
                 scrollableChild.style.overflowY = 'hidden';
                 setTimeout(() => {
                     scrollableChild.style.overflowY = 'auto';
+                    scrollableChild.scrollTop = 0;
+                    scrollableChild.scrollLeft = 0;
                 }, 15);
             }
+            toView.scrollTop = 0;
+            toView.scrollLeft = 0;
         }
     },
 
@@ -7028,7 +7033,27 @@ const app = {
         document.getElementById('step-form-3').classList.toggle('active', step === 3);
         
         const checkoutView = document.getElementById('view-checkout');
-        if (checkoutView) checkoutView.scrollTop = 0;
+        const checkoutContent = checkoutView ? checkoutView.querySelector('.checkout-content') : null;
+        const activeStep = document.getElementById(`step-form-${step}`);
+
+        // The checkout content is the actual scrolling container on mobile.
+        // Reset both containers after the step becomes active so every new
+        // stage opens at its own top, without changing any entered values.
+        const resetCheckoutPosition = () => {
+            if (checkoutView) {
+                checkoutView.scrollTop = 0;
+                checkoutView.scrollLeft = 0;
+            }
+            if (checkoutContent) {
+                checkoutContent.scrollTop = 0;
+                checkoutContent.scrollLeft = 0;
+            }
+            if (activeStep) activeStep.scrollIntoView({ block: 'start', inline: 'nearest' });
+        };
+
+        resetCheckoutPosition();
+        requestAnimationFrame(resetCheckoutPosition);
+        setTimeout(resetCheckoutPosition, 40);
     },
 
     prevStep(step) {
