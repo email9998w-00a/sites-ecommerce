@@ -4093,6 +4093,77 @@ body {
     }
 }
 
+
+/* Top product area refinement: stronger visual connection between campaign and gallery */
+.promo-ribbon {
+    position: relative;
+    z-index: 2;
+    min-height: 48px;
+    border-bottom: 0;
+    box-shadow: 0 2px 8px rgba(17, 18, 22, 0.06);
+}
+
+.gallery-section {
+    position: relative;
+    padding: 10px 10px 12px;
+    background: linear-gradient(180deg, #f4f5f7 0%, #ffffff 100%);
+    border-bottom: 1px solid #e3e5e9;
+}
+
+.gallery-section::before {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 54px;
+    margin: 0 auto 8px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #111216, #d71920, #111216);
+}
+
+.carousel-container {
+    width: 100%;
+    aspect-ratio: 1 / 1.01;
+    border: 1px solid #e3e5e9;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(17, 18, 22, 0.09);
+}
+
+.carousel-slide img {
+    padding: 6px;
+}
+
+.carousel-control {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 4px 12px rgba(17, 18, 22, 0.16);
+}
+
+.carousel-dots {
+    margin-top: 9px;
+}
+
+@media (max-width: 600px) {
+    .gallery-section {
+        padding: 8px 8px 11px;
+    }
+
+    .gallery-section::before {
+        margin-bottom: 7px;
+    }
+
+    .carousel-container {
+        min-height: 0;
+        aspect-ratio: 1 / 1.02;
+        border-radius: 12px;
+    }
+
+    .carousel-slide img {
+        min-height: 0;
+        padding: 4px;
+    }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
