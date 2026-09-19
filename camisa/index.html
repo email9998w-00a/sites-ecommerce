@@ -5475,6 +5475,62 @@ body {
     .price-free-label { font-size: 1.42rem; }
 }
 
+
+/* Strong but credible emphasis for the free benefit */
+.price-row {
+    align-items: center;
+    min-height: 48px;
+}
+
+.price-free-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 13px;
+    border: 1px solid #86efac;
+    border-radius: 9px;
+    background: #ecfdf5;
+    color: #166534;
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 1;
+    box-shadow: 0 3px 10px rgba(21, 128, 61, 0.1);
+}
+
+.price-free-label::before {
+    content: '✓';
+    display: grid;
+    place-items: center;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #15803d;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0;
+}
+
+.price-badge {
+    align-self: center;
+}
+
+@media (max-width: 380px) {
+    .price-free-label {
+        gap: 5px;
+        padding: 7px 10px;
+        font-size: 1.55rem;
+    }
+    .price-free-label::before {
+        flex-basis: 19px;
+        width: 19px;
+        height: 19px;
+        font-size: 0.68rem;
+    }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
