@@ -4949,6 +4949,198 @@ body {
     }
 }
 
+
+/* Credibility pass for the free-product block */
+.price-card {
+    border-top-width: 2px;
+    border-top-color: #334155;
+}
+
+.price-old {
+    color: #64748b;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.price-card::after {
+    content: 'BENEFÍCIO DA CAMPANHA';
+    background: #334155;
+    box-shadow: none;
+    font-size: 0.46rem;
+    letter-spacing: 0.06em;
+}
+
+.price-free-label {
+    letter-spacing: -0.035em;
+}
+
+.price-badge {
+    background: #166534 !important;
+    box-shadow: none;
+}
+
+.price-pix {
+    align-items: center;
+    border-color: #dbe3ec;
+    background: #f8fafc;
+    color: #475569;
+}
+
+.price-note-icon {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 19px;
+    width: 19px;
+    height: 19px;
+    color: #334155;
+    font-size: 0.78rem;
+}
+
+.shipping-info {
+    background: #f8fafc;
+}
+
+.shipping-icon {
+    background: #334155;
+}
+
+
+/* Clean premium price card */
+.price-card {
+    position: relative;
+    overflow: hidden;
+    margin-top: 18px;
+    padding: 18px 16px 16px;
+    border: 1px solid #dbe3ec;
+    border-top: 1px solid #cbd5e1;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.065);
+}
+
+.price-card::after {
+    display: none;
+    content: none;
+}
+
+.price-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eef2f6;
+    color: #475569;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+}
+
+.price-eyebrow i {
+    color: #15803d;
+    font-size: 0.76rem;
+}
+
+.price-old {
+    margin-top: 13px;
+    margin-bottom: 7px;
+    color: #64748b;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 38px;
+}
+
+.price-free-label {
+    color: #0f172a;
+    font-size: clamp(1.48rem, 7vw, 1.95rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.price-badge {
+    flex: 0 0 auto;
+    margin-left: auto;
+    min-height: 25px;
+    padding: 5px 10px;
+    border: 1px solid #bbf7d0;
+    border-radius: 999px;
+    background: #166534 !important;
+    color: #ffffff !important;
+    box-shadow: none;
+    font-size: 0.6rem;
+    font-weight: 900;
+    letter-spacing: 0.025em;
+}
+
+.price-installments {
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 0.68rem;
+    line-height: 1.4;
+}
+
+.price-pix {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 11px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 0.7rem;
+    line-height: 1.42;
+}
+
+.price-note-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 19px;
+    width: 19px;
+    height: 19px;
+    color: #334155;
+    font-size: 0.78rem;
+}
+
+.shipping-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 9px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 7px;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 0.67rem;
+}
+
+.shipping-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 21px;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #334155;
+    font-size: 0.6rem;
+}
+
+@media (max-width: 380px) {
+    .price-card { padding: 16px 13px 14px; }
+    .price-free-label { font-size: 1.34rem; }
+    .price-badge { padding-left: 8px; padding-right: 8px; font-size: 0.55rem; }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
@@ -5080,7 +5272,8 @@ body {
 
                     <!-- Pricing Card (Free + Shipping) -->
                     <div class="price-card">
-                        <div class="price-old">De R$ 79,90</div>
+                        <div class="price-eyebrow"><i class="fa-solid fa-circle-check"></i> Benefício da campanha</div>
+                        <div class="price-old">Valor original: R$ 79,90</div>
                         <div class="price-row">
                             <span class="price-free-label">CAMISETA GRÁTIS</span>
                             <span class="price-badge">100% GRÁTIS</span>
@@ -5089,10 +5282,10 @@ body {
                             *Campanha especial do Corinthians e fortalecimento da torcida
                         </div>
                         <div class="price-pix">
-                            ✨ Camiseta de presente. Você contribui apenas com o <strong>frete postal</strong> de envio.
+                            <span class="price-note-icon"><i class="fa-solid fa-circle-info"></i></span><span>Camiseta enviada como presente. No checkout, você confere a contribuição de envio e logística antes de confirmar.</span>
                         </div>
                         <div class="shipping-info">
-                            <span class="shipping-icon">⚡</span>
+                            <span class="shipping-icon"><i class="fa-solid fa-truck-fast"></i></span>
                             <span class="shipping-text">Frete calculado no checkout</span>
                         </div>
                     </div>
