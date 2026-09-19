@@ -5531,6 +5531,136 @@ body {
     }
 }
 
+
+/* Harmonized campaign-condition block */
+.price-card {
+    display: block;
+    padding: 17px 16px 15px;
+    border: 1px solid #dbe3ec;
+    border-top: 2px solid #334155;
+    border-radius: 13px;
+    background: #ffffff;
+    box-shadow: 0 7px 20px rgba(15, 23, 42, 0.055);
+}
+
+.price-eyebrow {
+    min-height: 25px;
+    padding-bottom: 11px;
+    border-bottom: 1px solid #edf1f5;
+    color: #475569;
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.065em;
+}
+
+.price-eyebrow i {
+    color: #15803d;
+}
+
+.price-old {
+    margin: 12px 0 8px;
+    color: #64748b;
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 51px;
+    padding: 8px 10px;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    background: #f0fdf4;
+}
+
+.price-free-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #166534;
+    font-size: clamp(1.55rem, 7vw, 2rem);
+    font-weight: 850;
+    letter-spacing: -0.04em;
+    box-shadow: none;
+}
+
+.price-free-label::before {
+    display: grid;
+    place-items: center;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #15803d;
+    font-size: 0.75rem;
+}
+
+.price-badge {
+    margin-left: auto;
+    padding: 5px 8px;
+    border: 1px solid #bbf7d0;
+    border-radius: 6px;
+    background: #ffffff !important;
+    color: #166534 !important;
+    font-size: 0.56rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.price-installments {
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 0.67rem;
+    line-height: 1.35;
+}
+
+.price-pix {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 13px;
+    padding: 10px 11px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    background: #f8fafc;
+    color: #475569;
+    font-size: 0.68rem;
+    line-height: 1.42;
+}
+
+.shipping-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 7px 2px 0;
+    border-top: 1px solid #edf1f5;
+    background: transparent;
+    color: #64748b;
+    font-size: 0.65rem;
+}
+
+.shipping-icon {
+    width: 20px;
+    height: 20px;
+    background: #334155;
+    font-size: 0.58rem;
+}
+
+@media (max-width: 380px) {
+    .price-card { padding: 15px 13px 13px; }
+    .price-row { gap: 7px; padding-left: 8px; padding-right: 8px; }
+    .price-free-label { font-size: 1.42rem; }
+    .price-badge { padding-left: 6px; padding-right: 6px; font-size: 0.51rem; }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
@@ -5669,7 +5799,7 @@ body {
                             <span class="price-badge">Sem custo do produto</span>
                         </div>
                         <div class="price-installments">
-                            *Campanha especial do Corinthians e fortalecimento da torcida
+                            Campanha especial do Corinthians
                         </div>
                         <div class="price-pix">
                             <span class="price-note-icon"><i class="fa-solid fa-circle-info"></i></span><span>O produto é oferecido sem custo. A contribuição de envio e logística é exibida no checkout antes da confirmação.</span>
