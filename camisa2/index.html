@@ -4789,6 +4789,166 @@ body {
     font-size: 0.72rem;
 }
 
+
+/* Direct free-price communication */
+.price-row {
+    align-items: center;
+    gap: 9px;
+}
+
+.price-free-label {
+    color: #111827;
+    font-size: clamp(1.55rem, 7vw, 2.1rem);
+    font-weight: 950;
+    letter-spacing: -0.035em;
+    line-height: 1;
+}
+
+.price-badge {
+    margin-left: auto;
+}
+
+.price-pix::first-letter {
+    color: #15803d;
+}
+
+@media (max-width: 380px) {
+    .price-free-label {
+        font-size: 1.35rem;
+    }
+    .price-badge {
+        font-size: 0.58rem;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+}
+
+
+/* Premium free-product price block */
+.price-card {
+    padding: 18px 16px 15px;
+    border: 1px solid #dbe3ec;
+    border-top: 3px solid #111827;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.075);
+}
+
+.price-old {
+    margin-bottom: 8px;
+    color: #94a3b8;
+    font-size: 0.72rem;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 38px;
+}
+
+.price-free-label {
+    color: #111827;
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 1;
+}
+
+.price-badge {
+    flex: 0 0 auto;
+    margin-left: auto;
+    min-height: 25px;
+    padding: 5px 10px;
+    border: 1px solid #bbf7d0;
+    border-radius: 999px;
+    background: #166534 !important;
+    box-shadow: 0 3px 8px rgba(21, 128, 61, 0.14);
+    font-size: 0.61rem;
+    letter-spacing: 0.025em;
+}
+
+.price-installments {
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 0.69rem;
+    line-height: 1.35;
+}
+
+.price-pix {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 13px;
+    padding: 10px 11px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #334155;
+    font-size: 0.72rem;
+    line-height: 1.4;
+}
+
+.price-pix::first-letter {
+    color: #15803d;
+}
+
+.price-pix strong {
+    color: #111827;
+    font-weight: 800;
+}
+
+.shipping-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 9px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.68rem;
+}
+
+.shipping-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #334155;
+    font-size: 0.65rem;
+}
+
+.shipping-text {
+    font-weight: 600;
+}
+
+.price-card::after {
+    top: 10px;
+    right: -30px;
+    padding: 4px 30px;
+    font-size: 0.5rem;
+    letter-spacing: 0.07em;
+}
+
+@media (max-width: 380px) {
+    .price-card {
+        padding: 16px 13px 13px;
+    }
+    .price-free-label {
+        font-size: 1.35rem;
+    }
+    .price-badge {
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 0.56rem;
+    }
+}
+
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
@@ -4906,15 +5066,6 @@ body {
                     <h1 class="product-title">Camisa Casual Corinthians Algodão Preta Licenciada</h1>
                     <p class="product-subtitle">Mostre seu orgulho pelo Timão com esta camiseta preta licenciada. Confortável e versátil, ela combina o escudo do Corinthians com um visual discreto para usar no estádio, na rua ou no dia a dia.</p>
 
-                    <div class="free-product-callout" role="note" aria-label="Informação sobre a oferta gratuita">
-                        <span class="free-product-icon"><i class="fa-solid fa-gift"></i></span>
-                        <span class="free-product-copy">
-                            <strong>SUA CAMISETA É GRÁTIS</strong>
-                            <span>Você não paga pelo produto. No checkout, são exibidos os custos de envio e logística da entrega.</span>
-                        </span>
-                        <i class="fa-solid fa-circle-check free-product-check"></i>
-                    </div>
-                    
                     <!-- Size Selection Box -->
                     <div class="size-selection-container">
                         <span class="size-title"><i class="fa-solid fa-shirt"></i> Selecione seu Tamanho:</span>
@@ -4931,9 +5082,7 @@ body {
                     <div class="price-card">
                         <div class="price-old">De R$ 79,90</div>
                         <div class="price-row">
-                            <span class="price-currency">R$</span>
-                            <span class="price-current">0</span>
-                            <span class="price-cents">,00</span>
+                            <span class="price-free-label">CAMISETA GRÁTIS</span>
                             <span class="price-badge">100% GRÁTIS</span>
                         </div>
                         <div class="price-installments">
