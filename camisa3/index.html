@@ -5811,7 +5811,7 @@ body {
                         <span class="rating-val">4.9</span>
                         <span class="rating-count">(3.420 avaliações)</span>
                     </div>
-                    <h1 class="product-title">Camisa Casual Corinthians grátis para torcedores</h1>
+                    <h1 class="product-title">Camisa Casual Corinthians <span class="title-free">grátis</span> para torcedores</h1>
                     <p class="product-subtitle">Produto por R$ 0,00. Para receber a camiseta física, escolha no checkout a contribuição de envio e logística; o total aparece antes da confirmação.</p>
 
                     <!-- Size Selection Box -->
@@ -7016,6 +7016,17 @@ body {
 }
 @media (max-width: 380px) {
     .carousel-thumbnail { flex-basis: 52px; width: 52px; height: 52px; }
+}
+
+
+/* Highlight restrained to the key benefit in the product title. */
+.title-free {
+    color: #19764a;
+    font-weight: 800;
+    white-space: nowrap;
+}
+@media (max-width: 380px) {
+    .title-free { color: #17633c; }
 }
 
 </style>
