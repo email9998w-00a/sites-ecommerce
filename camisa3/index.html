@@ -5696,7 +5696,10 @@ body {
     .product-subtitle { font-size: .76rem; }
 }
 
-    </style>
+    
+#view-checkout .checkout-content > .cart-product-summary { flex: 0 0 auto; }
+#view-checkout .checkout-content > .checkout-step { flex: 0 0 auto; }
+</style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
     <script>
@@ -6074,7 +6077,8 @@ body {
                 <div class="step-indicator" id="step-nav-3" role="tab" aria-selected="false">3. Revisão</div>
             </div>
 
-            <section class="cart-product-summary" aria-label="Produto no carrinho">
+            <div class="checkout-content">
+<section class="cart-product-summary" aria-label="Produto no carrinho">
                 <img class="cart-product-thumb" id="cart-product-image" alt="Camiseta Casual Corinthians">
                 <div class="cart-product-details">
                     <span class="cart-product-kicker">Seu pedido · 1 item</span>
@@ -6090,8 +6094,6 @@ body {
                     <small>produto · sem cobrança</small>
                 </div>
             </section>
-
-            <div class="checkout-content">
                 <!-- STEP 1: PERSONAL DETAILS -->
                 <div class="checkout-step active" id="step-form-1">
                     <h3 class="step-title">Seus dados</h3>
