@@ -7430,6 +7430,59 @@ body {
     .step-buttons-row { gap: 8px; }
     .back-step-btn { padding-left: 14px; padding-right: 14px; }
 }
+
+/* Correção final mobile: o nome do produto nunca é truncado pela cascata anterior. */
+#view-checkout .cart-product-summary {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 12px;
+    min-height: 86px;
+    height: auto;
+}
+#view-checkout .cart-product-details { min-width: 0; width: 100%; }
+#view-checkout .cart-product-name {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: none;
+    overflow: visible !important;
+    white-space: normal !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-height: 1.28;
+}
+#view-checkout .cart-product-meta { flex-wrap: wrap; line-height: 1.25; }
+#view-checkout .cart-product-price { min-width: 66px; max-width: 82px; }
+#view-checkout .cart-product-price small { white-space: normal; line-height: 1.2; }
+@media (max-width: 420px) {
+    #view-checkout .cart-product-summary {
+        grid-template-columns: 52px minmax(0, 1fr) auto;
+        gap: 10px;
+        padding: 12px;
+    }
+    #view-checkout .cart-product-thumb { width: 52px; height: 52px; }
+    #view-checkout .cart-product-name { font-size: .9rem; }
+    #view-checkout .cart-product-price { min-width: 60px; max-width: 68px; }
+}
+@media (max-width: 340px) {
+    #view-checkout .cart-product-summary {
+        grid-template-columns: 46px minmax(0, 1fr);
+        gap: 9px;
+    }
+    #view-checkout .cart-product-thumb { width: 46px; height: 46px; }
+    #view-checkout .cart-product-price {
+        grid-column: 2;
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+        max-width: none;
+        text-align: left;
+    }
+    #view-checkout .cart-product-price small { max-width: none; }
+}
 </style>
     
     <!-- Mercado Pago SDK -->
