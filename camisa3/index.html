@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Camisa Casual Corinthians | Campanha para Torcedores</title>
+    <title>Camisa Casual | Solicitação segura para torcedores</title>
     <meta name="description" content="Conheça a Camisa Casual Corinthians e participe da campanha. O produto é oferecido sem custo; no checkout, escolha a contribuição de envio e logística antes de confirmar.">
     
     <!-- Google Fonts: Outfit for a consistent e-commerce interface -->
@@ -6040,7 +6040,7 @@ body {
                 <footer class="landing-footer text-center" style="padding: 24px 16px; background-color: #fafafa; border-top: 1px solid var(--clr-border); font-family: 'Outfit', sans-serif;">
                     <p style="font-size: 13px; color: #666; margin-bottom: 12px; line-height: 1.5; font-family: 'Outfit', sans-serif;">
                         © 2026 Timão Store. Todos os direitos reservados.<br>
-                        Campanha especial do Corinthians para torcedores.
+                        Campanha para torcedores. Verifique a autenticidade e as condições antes de confirmar.
                     </p>
                     <div style="display: flex; justify-content: center; gap: 16px; font-size: 12px; font-family: 'Outfit', sans-serif;">
                         <a href="javascript:void(0)" onclick="app.openPolicy('privacy')" style="color: var(--clr-primary); text-decoration: none; font-weight: 500;">Política de Privacidade</a>
@@ -6060,7 +6060,7 @@ body {
                 <button class="back-btn" onclick="app.closeCheckout()" aria-label="Voltar">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                 </button>
-                <h2>Solicitar camiseta grátis</h2>
+                <h2>Finalizar solicitação</h2>
                 <div class="secure-ssl-badge">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     Seguro
@@ -6069,15 +6069,15 @@ body {
 
             <!-- Steps navigation bar -->
             <div class="checkout-steps-nav" role="tablist" aria-label="Etapas da solicitação">
-                <div class="step-indicator active" id="step-nav-1" role="tab" aria-selected="true" aria-current="step">1. Cadastro</div>
+                <div class="step-indicator active" id="step-nav-1" role="tab" aria-selected="true" aria-current="step">1. Seus dados</div>
                 <div class="step-indicator" id="step-nav-2" role="tab" aria-selected="false">2. Entrega</div>
-                <div class="step-indicator" id="step-nav-3" role="tab" aria-selected="false">3. Envio</div>
+                <div class="step-indicator" id="step-nav-3" role="tab" aria-selected="false">3. Revisão</div>
             </div>
 
             <section class="cart-product-summary" aria-label="Produto no carrinho">
                 <img class="cart-product-thumb" id="cart-product-image" alt="Camiseta Casual Corinthians">
                 <div class="cart-product-details">
-                    <span class="cart-product-kicker">Produto selecionado · 1 item</span>
+                    <span class="cart-product-kicker">Seu pedido · 1 item</span>
                     <strong class="cart-product-name">Camisa Casual Corinthians</strong>
                     <div class="cart-product-meta">
                         <span>Tamanho <strong id="cartDisplaySize">M</strong></span>
@@ -6085,16 +6085,17 @@ body {
                     </div>
                 </div>
                 <div class="cart-product-price">
-                    <strong>Grátis</strong>
-                    <small>envio na próxima etapa</small>
+                    <strong>R$ 0,00</strong>
+                    
+                    <small>produto · sem cobrança</small>
                 </div>
             </section>
 
             <div class="checkout-content">
                 <!-- STEP 1: PERSONAL DETAILS -->
                 <div class="checkout-step active" id="step-form-1">
-                    <h3 class="step-title">Dados do torcedor</h3>
-                    <p class="step-desc" id="step-desc-1">Seus dados pessoais estão protegidos por criptografia em ambiente seguro.</p>
+                    <h3 class="step-title">Seus dados</h3>
+                    <p class="step-desc" id="step-desc-1">Usaremos estes dados apenas para confirmar a solicitação e enviar o pedido.</p>
 
                     <form id="form-personal" onsubmit="app.nextStep(1, event)">
                         <div class="form-group">
@@ -6116,15 +6117,15 @@ body {
                         </div>
 
                         <button type="submit" class="submit-step-btn">
-                            Avançar para Entrega <i class="fa-solid fa-arrow-right"></i>
+                            Continuar para entrega <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </form>
                 </div>
 
                 <!-- STEP 2: SHIPPING ADDRESS & SHIPPING SELECTION -->
                 <div class="checkout-step" id="step-form-2">
-                    <h3 class="step-title">Endereço para envio da camiseta</h3>
-                    <p class="step-desc" id="step-desc-2">Digite seu CEP para preencher o endereço automaticamente.</p>
+                    <h3 class="step-title">Endereço de entrega</h3>
+                    <p class="step-desc" id="step-desc-2">Informe o CEP para preencher o endereço automaticamente. O endereço completo será mostrado antes da confirmação.</p>
 
                     <form id="form-shipping" onsubmit="app.nextStep(2, event)">
                         <div class="form-group zip-group">
@@ -6168,33 +6169,33 @@ body {
                             </div>
                         </div>
 
-                        <h4 class="checkout-subtitle"><i class="fa-solid fa-heart"></i> Escolha a contribuição para envio e logística <span style="font-size: 11px; color: var(--clr-success); margin-left: 8px;">(total exibido antes da confirmação)</span></h4>
+                        <h4 class="checkout-subtitle"><i class="fa-solid fa-truck"></i> Escolha o valor de envio e logística <span class="checkout-help">Você só paga uma vez · sem cobrança recorrente</span></h4>
                         <div class="shipping-options-grid" style="grid-template-columns: 1fr;">
                             <label class="shipping-option-card" id="label-shipping-devoto">
                                 <input type="radio" name="shipping-fee" value="10.00" onclick="app.updateShipping(10.00, 'devoto')">
                                 <div class="shipping-option-info">
-                                    <span class="option-name">Contribuição Essencial</span>
+                                    <span class="option-name">Envio essencial</span>
                                 </div>
                                 <span class="option-price">R$ 10,00</span>
                             </label>
                             <label class="shipping-option-card" id="label-shipping-protetor">
                                 <input type="radio" name="shipping-fee" value="15.00" onclick="app.updateShipping(15.00, 'protetor')">
                                 <div class="shipping-option-info">
-                                    <span class="option-name">Contribuição Apoio</span>
+                                    <span class="option-name">Envio apoio</span>
                                 </div>
                                 <span class="option-price">R$ 15,00</span>
                             </label>
                             <label class="shipping-option-card" id="label-shipping-padrinho">
                                 <input type="radio" name="shipping-fee" value="20.00" onclick="app.updateShipping(20.00, 'padrinho')">
                                 <div class="shipping-option-info">
-                                    <span class="option-name">Contribuição Completa</span>
+                                    <span class="option-name">Envio completo</span>
                                 </div>
                                 <span class="option-price">R$ 20,00</span>
                             </label>
-                            <label class="shipping-option-card active" id="label-shipping-benfeitor">
-                                <input type="radio" name="shipping-fee" value="50.00" checked onclick="app.updateShipping(50.00, 'benfeitor')">
+                            <label class="shipping-option-card" id="label-shipping-benfeitor">
+                                <input type="radio" name="shipping-fee" value="50.00" onclick="app.updateShipping(50.00, 'benfeitor')">
                                 <div class="shipping-option-info">
-                                    <span class="option-name">Contribuição Benfeitor</span>
+                                    <span class="option-name">Envio completo + apoio</span>
                                 </div>
                                 <span class="option-price">R$ 50,00</span>
                             </label>
@@ -6210,7 +6211,7 @@ body {
                 <!-- STEP 3: NATIVE PAYMENT (PIX / BOLETO) -->
                 <div class="checkout-step" id="step-form-3">
                     <h3 class="step-title">Revisar e confirmar solicitação</h3>
-                    <p class="step-desc" id="step-desc-3">Confira o tamanho, a contribuição e o total antes de gerar o PIX.</p>
+                    <p class="step-desc" id="step-desc-3">Confira o item, o endereço e o total. O produto custa R$ 0,00; você paga somente o envio escolhido.</p>
 
                     <div class="order-summary-box">
                         <div class="product-item-row">
@@ -6222,13 +6223,13 @@ body {
                         </div>
                         <div class="product-item-row">
                             <div class="product-info-col">
-                                <span class="shipping-title-bold" id="checkoutDisplayShippingType">Contribuição Essencial (total exibido antes da confirmação)</span>
+                                <span class="shipping-title-bold" id="checkoutDisplayShippingType">Envio essencial </span>
                             </div>
                             <span class="product-price-bold" id="checkoutDisplayShippingCost">R$ 10,00</span>
                         </div>
                         <div class="summary-divider"></div>
                         <div class="summary-line-row">
-                            <span>Total da contribuição:</span>
+                            <span>Total a pagar agora:</span>
                             <span class="total-price-large" id="checkoutDisplayTotal">R$ 10,00</span>
                         </div>
                     </div>
@@ -6236,20 +6237,20 @@ body {
                     <!-- Native PIX Checkout Box -->
                     <div class="pix-checkout-box" style="margin-top: 24px; padding: 24px; border-radius: 16px; background: rgba(212, 175, 55, 0.04); border: 1.5px dashed rgba(212, 175, 55, 0.4); text-align: center; font-family: 'Outfit', sans-serif;">
                         <div style="font-size: 32px; margin-bottom: 8px;">⚡</div>
-                        <h4 style="font-size: 18px; font-weight: 600; color: #252928; margin: 0 0 8px 0;">Pagamento Único por PIX</h4>
+                        <h4 style="font-size: 18px; font-weight: 600; color: #252928; margin: 0 0 8px 0;">Pagamento único via PIX</h4>
                         <p style="font-size: 13px; color: #707473; line-height: 1.5; margin: 0 0 20px 0;">
-                            O pagamento da contribuição será feito por um QR Code PIX gerado na próxima tela. O total é informado antes da confirmação.
+                            Você verá o valor final abaixo antes de gerar o QR Code. Não há assinatura nem cobrança automática.
                         </p>
 
 
 
                         <button type="button" id="btn-generate-pix" onclick="app.processPixPayment()" style="width: 100%; padding: 16px; border-radius: 10px; font-size: 16px; font-weight: 700; background: #b8860b; color: #fff; border: none; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 16px rgba(184, 134, 11, 0.45); letter-spacing: 0.3px;">
-                            🔑 Gerar QR Code PIX
+                            Gerar QR Code PIX — <span id="pixButtonAmount">R$ 10,00</span>
                         </button>
                     </div>
 
                     <p style="font-size: 11px; color: #888; text-align: center; margin-top: 16px; margin-bottom: 8px; font-family: 'Outfit', sans-serif; line-height: 1.4;">
-                        Ao gerar o pagamento você concorda com a nossa 
+                        Ao gerar o pagamento, você confirma o valor exibido e concorda com a nossa 
                         <a href="javascript:void(0)" onclick="app.openPolicy('privacy')" style="color: var(--clr-primary); text-decoration: underline; font-weight: 500;">Política de Privacidade</a>, 
                         <a href="javascript:void(0)" onclick="app.openPolicy('terms')" style="color: var(--clr-primary); text-decoration: underline; font-weight: 500;">Termos de Uso</a> e 
                         <a href="javascript:void(0)" onclick="app.openPolicy('shipping')" style="color: var(--clr-primary); text-decoration: underline; font-weight: 500;">Política de Envio</a>.
@@ -7387,16 +7388,16 @@ body {
    APP STATE
    ========================================================================== */
 const state = {
-    shippingType: 'benfeitor',
-    shippingCost: 50.00,
-    totalCost: 50.00,
+    shippingType: 'devoto',
+    shippingCost: 10.00,
+    totalCost: 10.00,
     paymentMethod: 'pix',
     donor: {
         name: '',
         email: '',
-        phone: '',
-        cpf: '24823194047', // Default mathematically valid CPF to bypass Mercado Pago requirements without asking client
-        cep: '',
+	    phone: '',
+	    cpf: '',
+	    cep: '',
         street: '',
         number: '',
         complement: '',
@@ -7942,7 +7943,7 @@ const app = {
                 phone: state.donor.phone,
                 identification: {
                     type: 'CPF',
-                    number: state.donor.cpf ? state.donor.cpf.replace(/\D/g, '') : '24823194047'
+                    number: state.donor.cpf ? state.donor.cpf.replace(/\D/g, '') : ''
                 }
             }
         };
@@ -8070,19 +8071,19 @@ const app = {
     },
 
     updateShippingDetailsBox() {
-        let typeText = 'Contribuição Essencial (total exibido antes da confirmação)';
+        let typeText = 'Envio essencial ';
         if (state.shippingType === 'protetor') {
-            typeText = 'Contribuição Apoio (total exibido antes da confirmação)';
+            typeText = 'Envio apoio ';
         } else if (state.shippingType === 'padrinho') {
-            typeText = 'Contribuição Completa (total exibido antes da confirmação)';
+            typeText = 'Envio completo ';
         } else if (state.shippingType === 'benfeitor') {
-            typeText = 'Contribuição Benfeitor (total exibido antes da confirmação)';
+            typeText = 'Envio completo + apoio ';
         }
         const costText = state.shippingCost.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
         document.getElementById('checkoutDisplayShippingType').textContent = typeText;
         document.getElementById('checkoutDisplayShippingCost').textContent = costText;
-        document.getElementById('checkoutDisplayTotal').textContent = costText;
+        document.getElementById('checkoutDisplayTotal').textContent = costText; const pixAmount = document.getElementById('pixButtonAmount'); if (pixAmount) pixAmount.textContent = costText;
     },
 
     /* ==========================================================================
@@ -8167,7 +8168,7 @@ const app = {
                 phone: state.donor.phone,
                 identification: {
                     type: 'CPF',
-                    number: state.donor.cpf ? state.donor.cpf.replace(/\D/g, '') : '24823194047'
+                    number: state.donor.cpf ? state.donor.cpf.replace(/\D/g, '') : ''
                 },
                 shirt_size: state.donor.size || 'M',
                 address: {
@@ -8213,13 +8214,13 @@ const app = {
             // Populate success details
             document.getElementById('successDonorName').textContent = state.donor.name;
             document.getElementById('successDisplaySize').textContent = state.donor.size;
-            let successShippingText = 'Contribuição Essencial (total exibido antes da confirmação)';
+            let successShippingText = 'Envio essencial ';
             if (state.shippingType === 'sedex') {
-                successShippingText = 'Contribuição Apoio (total exibido antes da confirmação)';
+                successShippingText = 'Envio apoio ';
             } else if (state.shippingType === 'test') {
-                successShippingText = 'Contribuição Completa (total exibido antes da confirmação)';
+                successShippingText = 'Envio completo ';
             } else if (state.shippingType === 'benfeitor') {
-                successShippingText = 'Contribuição Benfeitor (total exibido antes da confirmação)';
+                successShippingText = 'Envio completo + apoio ';
             }
             document.getElementById('successShippingType').textContent = successShippingText;
             document.getElementById('successTotalPaid').textContent = state.shippingCost.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -8432,13 +8433,13 @@ const app = {
                 // Populate success details
                 document.getElementById('successDonorName').textContent = state.donor.name;
                 document.getElementById('successDisplaySize').textContent = state.donor.size;
-                let successShippingText = 'Contribuição Essencial (total exibido antes da confirmação)';
+                let successShippingText = 'Envio essencial ';
                 if (state.shippingType === 'sedex') {
-                    successShippingText = 'Contribuição Apoio (total exibido antes da confirmação)';
+                    successShippingText = 'Envio apoio ';
                 } else if (state.shippingType === 'test') {
-                    successShippingText = 'Contribuição Completa (total exibido antes da confirmação)';
+                    successShippingText = 'Envio completo ';
                 } else if (state.shippingType === 'benfeitor') {
-                    successShippingText = 'Contribuição Benfeitor (total exibido antes da confirmação)';
+                    successShippingText = 'Envio completo + apoio ';
                 }
                 document.getElementById('successShippingType').textContent = successShippingText;
                 document.getElementById('successTotalPaid').textContent = state.shippingCost.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -8702,9 +8703,9 @@ const app = {
         document.getElementById('form-shipping').reset();
         
         // Clear state
-        state.shippingType = 'benfeitor';
-        state.shippingCost = 50.00;
-        state.totalCost = 50.00;
+        state.shippingType = 'devoto';
+        state.shippingCost = 10.00;
+        state.totalCost = 10.00;
         state.paymentMethod = 'pix';
         state.donor.size = 'M';
         
@@ -8716,7 +8717,7 @@ const app = {
         const checkoutSizeDisp = document.getElementById('checkoutDisplaySize');
         if (checkoutSizeDisp) checkoutSizeDisp.textContent = 'M';
         
-        this.updateShipping(50.00, 'benfeitor');
+        this.updateShipping(10.00, 'devoto');
         this.switchPaymentTab('pix');
         
         window.scrollTo({ top: 0 });
