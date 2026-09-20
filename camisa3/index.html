@@ -6128,7 +6128,8 @@ body {
                 <div class="step-indicator" id="step-nav-3" role="tab" aria-selected="false">3. Revisão</div>
             </div>
 
-<section class="cart-product-summary" aria-label="Produto no carrinho">
+            <div class="checkout-content">
+                <section class="cart-product-summary" aria-label="Produto no carrinho">
                 <img class="cart-product-thumb" id="cart-product-image" alt="Camiseta Casual Corinthians">
                 <div class="cart-product-details">
                     <span class="cart-product-kicker">Seu pedido · 1 item</span>
@@ -6144,8 +6145,6 @@ body {
                     <small>produto · sem cobrança</small>
                 </div>
             </section>
-
-            <div class="checkout-content">
 <!-- STEP 1: PERSONAL DETAILS -->
                 <div class="checkout-step active" id="step-form-1">
                     <h3 class="step-title">Seus dados</h3>
@@ -7565,6 +7564,21 @@ body {
     #view-checkout .checkout-steps-nav::before,
     #view-checkout .checkout-steps-nav::after { left: 20px; right: 20px; }
     #view-checkout .step-indicator { font-size: .64rem; padding-left: 2px; padding-right: 2px; }
+}
+
+/* O card do produto acompanha a rolagem do checkout. */
+#view-checkout .checkout-content > .cart-product-summary {
+    position: relative;
+    flex: 0 0 auto;
+    width: calc(100% - 32px);
+    margin: 12px 16px 16px;
+}
+@media (max-width: 600px) {
+    #view-checkout .checkout-content > .cart-product-summary {
+        width: calc(100% - 24px);
+        margin-left: 12px;
+        margin-right: 12px;
+    }
 }
 </style>
     
