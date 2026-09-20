@@ -6077,7 +6077,7 @@ body {
             <section class="cart-product-summary" aria-label="Produto no carrinho">
                 <img class="cart-product-thumb" id="cart-product-image" alt="Camiseta Casual Corinthians">
                 <div class="cart-product-details">
-                    <span class="cart-product-kicker">Seu carrinho · 1 item</span>
+                    <span class="cart-product-kicker">Produto selecionado · 1 item</span>
                     <strong class="cart-product-name">Camisa Casual Corinthians</strong>
                     <div class="cart-product-meta">
                         <span>Tamanho <strong id="cartDisplaySize">M</strong></span>
@@ -6085,8 +6085,8 @@ body {
                     </div>
                 </div>
                 <div class="cart-product-price">
-                    <strong>R$ 0,00</strong>
-                    <small>produto grátis</small>
+                    <strong>Grátis</strong>
+                    <small>envio na próxima etapa</small>
                 </div>
             </section>
 
@@ -6113,12 +6113,6 @@ body {
                             <label for="input-email">E-mail para Confirmação</label>
                             <input type="email" id="input-email" placeholder="Ex: seunome@email.com" required autocomplete="email">
                             <span class="error-msg" id="error-email">Insira um e-mail válido</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="input-phone">WhatsApp / Celular</label>
-                            <input type="tel" id="input-phone" placeholder="(11) 99999-9999" maxlength="15" inputmode="tel" oninput="app.onPhoneInput(this)" required autocomplete="tel">
-                            <span class="error-msg" id="error-phone">Insira um celular válido</span>
                         </div>
 
                         <button type="submit" class="submit-step-btn">
@@ -7272,21 +7266,23 @@ body {
     align-items: center;
     gap: 12px;
     flex: 0 0 auto;
-    width: 100%;
-    padding: 12px 16px;
-    background: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+    width: calc(100% - 32px);
+    margin: 12px 16px 10px;
+    padding: 11px 12px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #dbe5ee;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
 }
 .cart-product-thumb {
     display: block;
-    flex: 0 0 56px;
-    width: 56px;
-    height: 56px;
-    object-fit: cover;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    background: #f4f6f8;
+    flex: 0 0 58px;
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    border: 1px solid #e1e8ef;
+    border-radius: 9px;
+    background: #f1f4f7;
 }
 .cart-product-details {
     min-width: 0;
@@ -7294,18 +7290,18 @@ body {
 }
 .cart-product-kicker {
     display: block;
-    margin-bottom: 2px;
-    color: #64748b;
-    font-size: 0.63rem;
+    margin-bottom: 3px;
+    color: #829ab1;
+    font-size: 0.6rem;
     font-weight: 800;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.065em;
     text-transform: uppercase;
 }
 .cart-product-name {
     display: block;
     overflow: hidden;
     color: #102a43;
-    font-size: 0.84rem;
+    font-size: 0.86rem;
     font-weight: 800;
     line-height: 1.25;
     text-overflow: ellipsis;
@@ -7315,7 +7311,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-top: 5px;
+    margin-top: 6px;
     color: #627d98;
     font-size: 0.68rem;
 }
@@ -7331,20 +7327,23 @@ body {
 .cart-product-price strong {
     display: block;
     color: #19764a;
-    font-size: 0.9rem;
+    font-size: 0.86rem;
     font-weight: 900;
 }
 .cart-product-price small {
     display: block;
     margin-top: 3px;
     color: #829ab1;
-    font-size: 0.62rem;
+    font-size: 0.58rem;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 @media (max-width: 380px) {
-    .cart-product-summary { gap: 9px; padding-left: 12px; padding-right: 12px; }
+    .cart-product-summary { gap: 9px; margin-left: 12px; margin-right: 12px; width: calc(100% - 24px); padding-left: 10px; padding-right: 10px; }
     .cart-product-thumb { flex-basis: 50px; width: 50px; height: 50px; }
     .cart-product-name { font-size: 0.78rem; }
     .cart-product-meta { font-size: 0.63rem; }
+    .cart-product-price small { white-space: normal; max-width: 62px; }
 }
 </style>
     
@@ -7784,7 +7783,6 @@ const app = {
             // STEP 1 VALIDATION
             const nameInput = document.getElementById('input-name');
             const emailInput = document.getElementById('input-email');
-            const phoneInput = document.getElementById('input-phone');
             const cpfInput = document.getElementById('input-cpf');
 
             let isValid = true;
@@ -7816,20 +7814,10 @@ const app = {
                 this.setInputError(emailInput, 'error-email', false);
             }
 
-            // Phone validation
-            const phoneVal = phoneInput.value.replace(/\D/g, '');
-            if (phoneVal.length < 10) {
-                this.setInputError(phoneInput, 'error-phone', true);
-                isValid = false;
-            } else {
-                this.setInputError(phoneInput, 'error-phone', false);
-            }
-
             if (isValid) {
                 state.donor.name = nameVal;
                 state.donor.cpf = cpfVal;
                 state.donor.email = emailInput.value.trim();
-                state.donor.phone = phoneInput.value.trim();
                 
                 this.goToStep(2);
                 if (window.fbq) fbq('track', 'AddPaymentInfo');
@@ -7997,11 +7985,10 @@ const app = {
                     if (inp && inp.parentElement) inp.parentElement.classList.remove('has-error');
                 });
 
-                // Auto focus logical field
-                if (data.logradouro) {
-                    if (numberInput) numberInput.focus();
-                } else {
-                    if (streetInput) streetInput.focus();
+                // Close the virtual keyboard after the CEP resolves. The user
+                // can choose the next field manually without the layout shifting.
+                if (document.activeElement && typeof document.activeElement.blur === 'function') {
+                    document.activeElement.blur();
                 }
             }
         } catch (err) {
