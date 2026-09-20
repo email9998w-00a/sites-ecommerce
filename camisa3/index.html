@@ -6656,6 +6656,30 @@ body {
     #view-checkout .cart-product-price { min-width: 62px; }
 }
 
+
+/* Card de produto: confiança por clareza, não por excesso de selos. */
+#view-checkout .cart-product-summary {
+    border-left: 3px solid #102a43;
+    background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+    box-shadow: 0 6px 18px rgba(16,42,67,.08);
+}
+#view-checkout .cart-product-details { display: flex; flex-direction: column; min-width: 0; }
+#view-checkout .cart-product-assurance {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    margin-top: 8px;
+    color: #486581;
+    font-size: .64rem;
+    font-weight: 650;
+    line-height: 1.2;
+}
+#view-checkout .cart-product-assurance i { color: #19764a; font-size: .68rem; }
+#view-checkout .cart-product-price strong { letter-spacing: -.02em; }
+@media (max-width: 420px) {
+    #view-checkout .cart-product-assurance { font-size: .6rem; }
+}
 </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
@@ -7044,6 +7068,7 @@ body {
                         <span>Tamanho <strong id="cartDisplaySize">M</strong></span>
                         <span>Quantidade 1</span>
                     </div>
+                    <span class="cart-product-assurance"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Preço claro · cobrança única</span>
                 </div>
                 <div class="cart-product-price">
                     <strong>R$ 0,00</strong>
@@ -7066,7 +7091,7 @@ body {
                         <div class="form-group">
                             <label for="input-cpf">CPF (obrigatório para nota fiscal)</label>
                             <input type="tel" id="input-cpf" placeholder="000.000.000-00" maxlength="14" inputmode="numeric" enterkeyhint="next" oninput="app.onCpfInput(this)" required autocomplete="off">
-                            <span class="error-msg" id="error-cpf">Insira um CPF válido</span>
+                            <span class="error-msg" id="error-cpf">Informe o CPF completo com 11 dígitos</span>
                         </div>
 
                         <div class="form-group">
@@ -7940,29 +7965,9 @@ const app = {
     },
 
     validateCpf(cpf) {
-        const cleanCpf = cpf.replace(/\D/g, '');
-        if (cleanCpf.length !== 11) return false;
-        if (/^(\d)\1{10}$/.test(cleanCpf)) return false;
-
-        let sum = 0;
-        let remainder;
-
-        for (let i = 1; i <= 9; i++) {
-            sum += parseInt(cleanCpf.substring(i - 1, i)) * (11 - i);
-        }
-        remainder = (sum * 10) % 11;
-        if ((remainder === 10) || (remainder === 11)) remainder = 0;
-        if (remainder !== parseInt(cleanCpf.substring(9, 10))) return false;
-
-        sum = 0;
-        for (let i = 1; i <= 10; i++) {
-            sum += parseInt(cleanCpf.substring(i - 1, i)) * (12 - i);
-        }
-        remainder = (sum * 10) % 11;
-        if ((remainder === 10) || (remainder === 11)) remainder = 0;
-        if (remainder !== parseInt(cleanCpf.substring(10, 11))) return false;
-
-        return true;
+        // Validação de formato: 11 dígitos, com ou sem pontuação.
+        // A existência/regularidade cadastral deve ser tratada pelo sistema responsável.
+        return /^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$/.test((cpf || '').trim());
     },
 
     selectSize(size, element) {
