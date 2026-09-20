@@ -7483,6 +7483,89 @@ body {
     }
     #view-checkout .cart-product-price small { max-width: none; }
 }
+
+/* Progresso do checkout: rail contínuo, hierarquia clara e estados legíveis. */
+#view-checkout .checkout-steps-nav {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding: 12px 16px 14px;
+    background: #fff;
+    border-bottom: 1px solid #e8eef4;
+    --progress: 0%;
+}
+#view-checkout .checkout-steps-nav::before,
+#view-checkout .checkout-steps-nav::after {
+    content: '';
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    top: 25px;
+    height: 3px;
+    border-radius: 3px;
+    pointer-events: none;
+}
+#view-checkout .checkout-steps-nav::before { background: #e7edf3; }
+#view-checkout .checkout-steps-nav::after {
+    right: auto;
+    width: var(--progress);
+    background: #102a43;
+    transition: width .28s ease;
+}
+#view-checkout .step-indicator {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    padding: 7px 4px 6px;
+    color: #829ab1;
+    background: #fff;
+    border: 0;
+    border-radius: 8px;
+    font-size: .7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+#view-checkout .step-indicator::first-letter { font-weight: 900; }
+#view-checkout .step-indicator.active {
+    color: #102a43;
+    background: #f3f7fa;
+    box-shadow: 0 2px 8px rgba(16,42,67,.08);
+}
+#view-checkout .step-indicator.completed {
+    color: #19764a;
+    background: #f1f8f4;
+    box-shadow: none;
+}
+
+/* Teclado virtual: reduz a altura útil sem bloquear o scroll até os CTAs. */
+#view-checkout.active {
+    height: 100dvh;
+    max-height: 100dvh;
+}
+#view-checkout .checkout-content {
+    flex: 1 1 0;
+    min-height: 0;
+    height: auto;
+    max-height: none;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    scroll-padding-top: 18px;
+    scroll-padding-bottom: calc(112px + var(--keyboard-inset, 0px) + env(safe-area-inset-bottom));
+    padding-bottom: calc(112px + var(--keyboard-inset, 0px) + env(safe-area-inset-bottom)) !important;
+}
+#view-checkout .checkout-content:focus-within {
+    padding-bottom: calc(144px + var(--keyboard-inset, 0px) + env(safe-area-inset-bottom)) !important;
+}
+@media (max-width: 380px) {
+    #view-checkout .checkout-steps-nav { gap: 4px; padding-left: 10px; padding-right: 10px; }
+    #view-checkout .checkout-steps-nav::before,
+    #view-checkout .checkout-steps-nav::after { left: 20px; right: 20px; }
+    #view-checkout .step-indicator { font-size: .64rem; padding-left: 2px; padding-right: 2px; }
+}
 </style>
     
     <!-- Mercado Pago SDK -->
@@ -7904,6 +7987,8 @@ const app = {
     goToStep(step) {
         // Adjust step indicator header UI
         const indicators = document.querySelectorAll('.step-indicator');
+        const progressNav = document.querySelector('.checkout-steps-nav');
+        if (progressNav) progressNav.style.setProperty('--progress', `${Math.max(0, Math.min(100, ((step - 1) / 2) * 100))}%`);
         indicators.forEach((indicator, index) => {
             const isCurrent = index + 1 === step;
             if (index + 1 === step) {
