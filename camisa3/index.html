@@ -6074,6 +6074,22 @@ body {
                 <div class="step-indicator" id="step-nav-3">3. Envio</div>
             </div>
 
+            <section class="cart-product-summary" aria-label="Produto no carrinho">
+                <img class="cart-product-thumb" id="cart-product-image" alt="Camiseta Casual Corinthians">
+                <div class="cart-product-details">
+                    <span class="cart-product-kicker">Seu carrinho · 1 item</span>
+                    <strong class="cart-product-name">Camisa Casual Corinthians</strong>
+                    <div class="cart-product-meta">
+                        <span>Tamanho <strong id="cartDisplaySize">M</strong></span>
+                        <span>Quantidade 1</span>
+                    </div>
+                </div>
+                <div class="cart-product-price">
+                    <strong>R$ 0,00</strong>
+                    <small>produto grátis</small>
+                </div>
+            </section>
+
             <div class="checkout-content">
                 <!-- STEP 1: PERSONAL DETAILS -->
                 <div class="checkout-step active" id="step-form-1">
@@ -7249,6 +7265,87 @@ body {
         letter-spacing: 0;
     }
 }
+
+/* Cart product summary: compact, visible and consistent with the checkout hierarchy. */
+.cart-product-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 12px 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+.cart-product-thumb {
+    display: block;
+    flex: 0 0 56px;
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f4f6f8;
+}
+.cart-product-details {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+.cart-product-kicker {
+    display: block;
+    margin-bottom: 2px;
+    color: #64748b;
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+.cart-product-name {
+    display: block;
+    overflow: hidden;
+    color: #102a43;
+    font-size: 0.84rem;
+    font-weight: 800;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cart-product-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+    color: #627d98;
+    font-size: 0.68rem;
+}
+.cart-product-meta span + span::before {
+    content: '•';
+    margin-right: 8px;
+    color: #bcccdc;
+}
+.cart-product-price {
+    flex: 0 0 auto;
+    text-align: right;
+}
+.cart-product-price strong {
+    display: block;
+    color: #19764a;
+    font-size: 0.9rem;
+    font-weight: 900;
+}
+.cart-product-price small {
+    display: block;
+    margin-top: 3px;
+    color: #829ab1;
+    font-size: 0.62rem;
+}
+@media (max-width: 380px) {
+    .cart-product-summary { gap: 9px; padding-left: 12px; padding-right: 12px; }
+    .cart-product-thumb { flex-basis: 50px; width: 50px; height: 50px; }
+    .cart-product-name { font-size: 0.78rem; }
+    .cart-product-meta { font-size: 0.63rem; }
+}
 </style>
     
     <!-- Mercado Pago SDK -->
@@ -7562,6 +7659,9 @@ const app = {
         const checkoutSizeDisp = document.getElementById('checkoutDisplaySize');
         if (checkoutSizeDisp) checkoutSizeDisp.textContent = size;
 
+        const cartSizeDisp = document.getElementById('cartDisplaySize');
+        if (cartSizeDisp) cartSizeDisp.textContent = size;
+
         const successSizeDisp = document.getElementById('successDisplaySize');
         if (successSizeDisp) successSizeDisp.textContent = size;
     },
@@ -7607,8 +7707,21 @@ const app = {
        CHECKOUT VIEW NAVIGATION
        ========================================================================== */
     openCheckout() {
+        this.syncCartProductSummary();
         this.switchView('view-product', 'view-checkout');
         if (window.fbq) fbq('track', 'InitiateCheckout');
+    },
+
+    syncCartProductSummary() {
+        const thumb = document.getElementById('cart-product-image');
+        const sourceImage = document.querySelector('.carousel-slide img');
+        if (thumb && sourceImage) {
+            thumb.src = sourceImage.currentSrc || sourceImage.src;
+            thumb.alt = sourceImage.alt || 'Camiseta Casual Corinthians';
+        }
+
+        const size = document.getElementById('cartDisplaySize');
+        if (size) size.textContent = state.donor.size || 'M';
     },
 
     closeCheckout() {
