@@ -6680,6 +6680,139 @@ body {
 @media (max-width: 420px) {
     #view-checkout .cart-product-assurance { font-size: .6rem; }
 }
+
+/* Revisão geral do carrinho: resumo de pedido com hierarquia de e-commerce. */
+#view-checkout .cart-product-summary {
+    display: block;
+    width: calc(100% - 32px);
+    margin: 16px 16px 18px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #d7e1eb;
+    border-left: 1px solid #d7e1eb;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 7px 20px rgba(16,42,67,.07);
+}
+#view-checkout .cart-summary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid #edf2f6;
+    background: #fbfcfd;
+}
+#view-checkout .cart-summary-eyebrow {
+    display: block;
+    color: #829ab1;
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+#view-checkout .cart-summary-title {
+    display: block;
+    margin-top: 4px;
+    color: #102a43;
+    font-size: .84rem;
+    font-weight: 750;
+    line-height: 1.2;
+}
+#view-checkout .cart-summary-count {
+    flex: 0 0 auto;
+    padding: 5px 9px;
+    border: 1px solid #dbe5ee;
+    border-radius: 999px;
+    background: #fff;
+    color: #486581;
+    font-size: .64rem;
+    font-weight: 750;
+}
+#view-checkout .cart-product-line {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 13px;
+    padding: 16px;
+}
+#view-checkout .cart-product-media { position: relative; width: 60px; height: 60px; }
+#view-checkout .cart-product-thumb {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #dbe5ee;
+    border-radius: 11px;
+    background: #f5f8fa;
+    box-shadow: none;
+    object-fit: contain;
+}
+#view-checkout .cart-product-check {
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    display: grid;
+    width: 19px;
+    height: 19px;
+    place-items: center;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: #19764a;
+    color: #fff;
+    font-size: .5rem;
+}
+#view-checkout .cart-product-details { min-width: 0; }
+#view-checkout .cart-product-name {
+    display: block;
+    color: #102a43;
+    font-size: .94rem;
+    font-weight: 800;
+    line-height: 1.28;
+    overflow-wrap: anywhere;
+}
+#view-checkout .cart-product-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 12px;
+    margin-top: 8px;
+    color: #627d98;
+    font-size: .68rem;
+    line-height: 1.2;
+}
+#view-checkout .cart-product-meta span + span { padding-left: 12px; border-left: 1px solid #dbe5ee; }
+#view-checkout .cart-product-meta b { color: #243b53; font-weight: 750; }
+#view-checkout .cart-product-price { min-width: 70px; text-align: right; }
+#view-checkout .cart-price-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #829ab1;
+    font-size: .6rem;
+    font-weight: 700;
+}
+#view-checkout .cart-product-price strong { display: block; color: #19764a; font-size: .92rem; font-weight: 850; white-space: nowrap; }
+#view-checkout .cart-summary-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 16px;
+    border-top: 1px solid #edf2f6;
+    color: #829ab1;
+    font-size: .62rem;
+    line-height: 1.25;
+}
+#view-checkout .cart-summary-footer span:first-child { color: #486581; font-weight: 650; }
+#view-checkout .cart-summary-footer i { margin-right: 4px; color: #19764a; }
+@media (max-width: 420px) {
+    #view-checkout .cart-product-summary { width: calc(100% - 24px); margin: 12px 12px 16px; }
+    #view-checkout .cart-summary-header { padding: 13px 13px 11px; }
+    #view-checkout .cart-product-line { grid-template-columns: 52px minmax(0, 1fr) auto; gap: 10px; padding: 14px 13px; }
+    #view-checkout .cart-product-media, #view-checkout .cart-product-thumb { width: 52px; height: 52px; }
+    #view-checkout .cart-product-name { font-size: .88rem; }
+    #view-checkout .cart-product-price { min-width: 62px; }
+    #view-checkout .cart-summary-footer { align-items: flex-start; flex-direction: column; gap: 4px; padding: 9px 13px; }
+}
 </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-389926235"></script>
@@ -7059,23 +7192,36 @@ body {
             </div>
 
             <div class="checkout-content">
-                <section class="cart-product-summary" aria-label="Produto no carrinho">
-                <img class="cart-product-thumb" id="cart-product-image" alt="Camiseta Casual Corinthians">
-                <div class="cart-product-details">
-                    <span class="cart-product-kicker">Resumo do pedido <b>1 item</b></span>
-                    <strong class="cart-product-name">Camisa Casual Corinthians</strong>
-                    <div class="cart-product-meta">
-                        <span>Tamanho <strong id="cartDisplaySize">M</strong></span>
-                        <span>Quantidade 1</span>
+                <section class="cart-product-summary" aria-label="Resumo do pedido">
+                    <div class="cart-summary-header">
+                        <div>
+                            <span class="cart-summary-eyebrow">Resumo do pedido</span>
+                            <strong class="cart-summary-title">Seu item selecionado</strong>
+                        </div>
+                        <span class="cart-summary-count">1 item</span>
                     </div>
-                    <span class="cart-product-assurance"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Preço claro · cobrança única</span>
-                </div>
-                <div class="cart-product-price">
-                    <strong>R$ 0,00</strong>
-                    
-                    <small>produto · sem cobrança</small>
-                </div>
-            </section>
+                    <div class="cart-product-line">
+                        <div class="cart-product-media">
+                            <img class="cart-product-thumb" id="cart-product-image" alt="Camisa Casual Corinthians">
+                            <span class="cart-product-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                        </div>
+                        <div class="cart-product-details">
+                            <strong class="cart-product-name">Camisa Casual Corinthians</strong>
+                            <div class="cart-product-meta" aria-label="Detalhes do produto">
+                                <span>Tamanho <b id="cartDisplaySize">M</b></span>
+                                <span>Quantidade <b>1</b></span>
+                            </div>
+                        </div>
+                        <div class="cart-product-price">
+                            <span class="cart-price-label">Produto</span>
+                            <strong>R$ 0,00</strong>
+                        </div>
+                    </div>
+                    <div class="cart-summary-footer">
+                        <span><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Sem cobrança pelo produto</span>
+                        <span>Envio na próxima etapa</span>
+                    </div>
+                </section>
 <!-- STEP 1: PERSONAL DETAILS -->
                 <div class="checkout-step active" id="step-form-1">
                     <h3 class="step-title">Seus dados</h3>
