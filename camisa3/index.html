@@ -5829,13 +5829,13 @@ body {
                     <!-- Offer summary -->
                     <div class="price-card offer-card">
                         <div class="offer-card-heading">
-                            <span class="offer-card-kicker">Sua seleção</span>
+                            <span class="offer-card-kicker">Você recebe</span>
                             <span class="offer-card-check"><i class="fa-solid fa-check"></i></span>
                         </div>
                         <div class="offer-product-line">
                             <div>
                                 <strong class="offer-product-name">Camisa Casual Corinthians</strong>
-                                <span class="offer-product-detail">Produto sem custo</span>
+                                <span class="offer-product-detail"><i class="fa-solid fa-circle-check"></i> Produto sem custo</span>
                             </div>
                             <strong class="offer-product-price">R$ 0,00</strong>
                         </div>
@@ -7028,6 +7028,86 @@ body {
 @media (max-width: 380px) {
     .title-free { color: #17633c; }
 }
+
+
+/* Offer visibility refinement: stronger hierarchy with restrained color. */
+.offer-card {
+    position: relative;
+    overflow: hidden;
+    padding: 17px;
+    border-color: #b7e4c7;
+    border-top: 3px solid #19764a;
+    background: linear-gradient(180deg, #f4fbf6 0%, #ffffff 62%);
+    box-shadow: 0 8px 22px rgba(25,118,74,.10);
+}
+.offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 76px;
+    height: 76px;
+    border-radius: 0 0 0 76px;
+    background: rgba(183,228,199,.24);
+    pointer-events: none;
+}
+.offer-card-heading {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 12px;
+    border-bottom-color: #d9eee0;
+}
+.offer-card-kicker {
+    color: #17633c;
+    font-size: .76rem;
+    font-weight: 800;
+}
+.offer-card-check {
+    width: 25px;
+    height: 25px;
+    background: #19764a;
+    color: #fff;
+    font-size: .72rem;
+}
+.offer-product-line {
+    position: relative;
+    z-index: 1;
+    margin: 13px 0 12px;
+    padding: 13px 12px;
+    border: 1px solid #d9eee0;
+    border-radius: 10px;
+    background: rgba(255,255,255,.86);
+}
+.offer-product-name { font-size: .9rem; }
+.offer-product-detail {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #19764a;
+    font-weight: 600;
+}
+.offer-product-detail i { font-size: .62rem; }
+.offer-product-price {
+    color: #17633c;
+    font-size: 1.35rem;
+    letter-spacing: -.03em;
+}
+.offer-shipping-line {
+    position: relative;
+    z-index: 1;
+    padding-top: 12px;
+    border-top-color: #d9eee0;
+}
+.offer-shipping-line .shipping-icon {
+    background: #e8f5ed;
+    color: #19764a;
+}
+.buy-button-cta-inline {
+    min-height: 54px;
+    margin-top: 15px;
+    box-shadow: 0 8px 18px rgba(16,42,67,.22);
+}
+.cta-note { margin-top: 9px; }
 
 </style>
     
