@@ -1,93 +1,234 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Página de produto editável para sua loja de roupas.">
-<title>Minha Loja | Camiseta do São Paulo Dry Masculina</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Camiseta do São Paulo Dry Masculina com secagem rápida. Pague no Pix com desconto, troque grátis e receba em casa.">
+<title>Camiseta do São Paulo Dry Masculina | Minha Loja</title>
 <style>
-:root{--red:#c9202b;--red-dark:#a91822;--black:#18212b;--gray:#66717a;--line:#e4e7e9;--soft:#f5f7f8;--white:#fff;--green:#24764a;--blue-soft:#eef4f8}*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--black);font-family:Arial,Helvetica,sans-serif;font-size:14px;-webkit-font-smoothing:antialiased}button,input{font:inherit}.topbar{height:34px;background:linear-gradient(90deg,#151d25,#253847,#151d25);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.04em}.topbar strong{color:#ffb5b5;margin-left:4px}.header{height:82px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:28px;padding:0 max(22px,calc((100% - 1240px)/2));background:#fff}.logo{min-width:154px;display:flex;align-items:center;gap:8px;color:var(--black);font-size:19px;font-weight:900;line-height:.85;text-decoration:none;letter-spacing:-1.2px}.logo-mark{width:27px;height:27px;border-radius:50%;background:var(--red);display:inline-block;position:relative}.logo-mark:after{content:'';position:absolute;width:9px;height:9px;background:#fff;border-radius:50%;left:9px;top:9px}.search{height:42px;display:flex;flex:1;max-width:610px;border:1px solid #cacaca;border-radius:4px;overflow:hidden}.search input{flex:1;border:0;outline:0;padding:0 14px;font-size:13px}.search button{width:47px;background:var(--red);border:0;color:#fff;font-size:23px;cursor:pointer}.header-links{margin-left:auto;display:flex;gap:21px;align-items:center}.header-link{display:flex;align-items:center;gap:7px;border:0;background:none;color:var(--black);cursor:pointer;padding:0}.header-link .ico{font-size:23px}.header-link small{display:block;text-align:left;font-size:11px;line-height:1.35}.header-link b{font-size:12px}.bag{position:relative}.bag-count{position:absolute;top:-7px;left:17px;background:var(--red);border-radius:50%;height:16px;min-width:16px;color:#fff;font-size:9px;display:grid;place-items:center;font-weight:bold}.nav{height:48px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:44px;box-shadow:0 2px 5px #00000008}.nav a{text-decoration:none;color:var(--black);font-size:12px;font-weight:700;text-transform:uppercase}.nav a:last-child{color:var(--red)}.container{max-width:1240px;margin:0 auto;padding:0 22px}.breadcrumb{height:54px;display:flex;align-items:center;gap:9px;color:#777;font-size:11px}.breadcrumb a{color:#555;text-decoration:none}.breadcrumb strong{font-weight:400;color:#999}.product{display:grid;grid-template-columns:minmax(0,1fr) 438px;gap:72px;align-items:start}.gallery{display:grid;grid-template-columns:74px 1fr;gap:15px}.thumbs{display:flex;flex-direction:column;gap:12px}.thumb{width:74px;height:83px;border:1px solid var(--line);background:#f3f3f3;cursor:pointer;display:grid;place-items:center;color:#777;font-size:10px;position:relative}.thumb.active{border:2px solid var(--red)}.thumb img{width:100%;height:100%;object-fit:cover}.main-photo{height:640px;background:linear-gradient(145deg,#f7f8f8,#edf0f2);border:1px solid #e7eaec;border-radius:6px;position:relative;display:grid;place-items:center;overflow:hidden}.main-photo img{width:100%;height:100%;object-fit:cover}.main-photo .empty{display:flex;flex-direction:column;align-items:center;color:#777;text-align:center}.main-photo .empty b{font-size:17px;color:#555;margin-bottom:8px}.main-photo .empty small{font-size:11px}.favorite{position:absolute;top:16px;right:16px;width:38px;height:38px;background:#fff;border:1px solid #ddd;border-radius:50%;font-size:22px;cursor:pointer;color:#555}.gallery-note{margin-top:12px;color:#777;font-size:11px;text-align:center}.details{padding:28px 30px 30px;background:#fff;border:1px solid #e2e5e7;border-radius:8px;box-shadow:0 8px 28px #18212b0d;position:sticky;top:18px}.brand-line{font-size:11px;color:#777;text-transform:uppercase;margin-bottom:13px}.details h1{font-size:29px;font-weight:700;line-height:1.15;margin:0 0 13px;color:#222}.code{font-size:11px;color:#888;margin-bottom:18px}.reviews{border-bottom:1px solid var(--line);padding-bottom:18px;display:flex;gap:9px;align-items:center;font-size:12px}.stars{color:#f4a51c;letter-spacing:2px}.reviews a{color:#555}.confidence{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:16px 0 2px;padding:11px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:#56616a;font-size:10px}.confidence span{display:flex;align-items:center;gap:5px;line-height:1.25}.confidence b{color:var(--green);font-size:13px}.share{border:0;background:none;margin-left:auto;text-decoration:underline;color:#555;cursor:pointer;font-size:11px}.prices{padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.from{display:block;color:#777;font-size:13px;text-decoration:line-through;margin-bottom:4px}.price{font-size:34px;color:#222;font-weight:700}.pix{color:var(--green);font-size:12px;font-weight:bold;margin-left:5px}.installments{margin:6px 0 0;color:#666;font-size:12px}.choice{padding:18px 0 0}.choice-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:13px}.choice-head span{color:#666;text-transform:uppercase;font-size:11px}.choice-head a{color:#333;text-decoration:underline;font-size:11px}.color{display:flex;gap:8px;align-items:center;font-size:12px}.color-dot{width:20px;height:20px;border-radius:50%;background:#bf2933;border:3px solid #fff;outline:1px solid #444}.sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.sizes button{height:42px;background:#fff;border:1px solid #bbb;color:#333;font-weight:bold;cursor:pointer;border-radius:2px}.sizes button:hover,.sizes button.selected{border:2px solid var(--red);color:var(--red);background:#fff7f7}.buy-line{display:flex;gap:9px;margin-top:23px}.qty{height:48px;border:1px solid #bbb;display:flex;align-items:center}.qty button,.qty output{width:32px;height:100%;display:grid;place-items:center;background:#fff;border:0;font-size:16px}.qty button{cursor:pointer}.qty output{font-size:12px}.buy{flex:1;height:52px;border:0;border-radius:2px;background:var(--red);color:#fff;font-size:14px;font-weight:bold;cursor:pointer}.buy:hover{background:var(--red-dark)}.now{width:100%;height:47px;background:#fff;border:1px solid var(--red);color:var(--red);font-weight:bold;margin-top:9px;cursor:pointer;border-radius:2px}.shipping{border:1px solid #d9e2e7;background:var(--blue-soft);margin-top:24px;padding:17px;border-radius:5px}.shipping-title{font-weight:bold;font-size:13px;margin-bottom:4px}.shipping-sub{color:#777;font-size:11px;margin-bottom:12px}.shipping-form{display:flex}.shipping-form input{height:36px;border:1px solid #bbb;padding:0 10px;flex:1;outline:0}.shipping-form button{height:36px;border:0;background:#333;color:#fff;width:47px;font-weight:bold;cursor:pointer}.shipping-result{color:var(--green);font-size:11px;margin:7px 0 0}.assurances{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;color:#555;font-size:11px}.assurances div{display:flex;gap:8px;align-items:center}.assurances b{color:var(--green);font-size:16px}.product-info{border-top:1px solid var(--line);margin-top:78px;padding:29px 0 70px}.tabs{display:flex;border-bottom:1px solid #ccc;gap:30px;margin-bottom:29px}.tab{border:0;background:none;padding:0 0 14px;font-size:14px;font-weight:bold;cursor:pointer}.tab.active{color:var(--red);border-bottom:2px solid var(--red)}.info-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:90px}.info-grid h2{font-size:23px;font-weight:600;margin:0 0 14px}.info-grid p{line-height:1.65;color:#555;max-width:650px}.characteristics{border-top:1px solid var(--line)}.characteristic{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:12px}.characteristic span{color:#777}.newsletter{background:linear-gradient(115deg,#17212b,#263846);border-top:4px solid var(--red);color:#fff;padding:42px max(22px,calc((100% - 1196px)/2));display:flex;align-items:center;justify-content:space-between;gap:40px}.newsletter h2{margin:0 0 8px;font-size:25px}.newsletter p{margin:0;color:#cfcfcf;font-size:12px}.newsletter-form{display:flex;width:min(420px,100%);height:40px}.newsletter-form input{flex:1;border:0;padding:0 12px;outline:0}.newsletter-form button{border:0;background:var(--red);color:#fff;font-weight:bold;padding:0 17px;cursor:pointer}.newsletter-result{font-size:10px;color:#aaa;margin-top:7px}.footer{padding:25px max(22px,calc((100% - 1196px)/2));display:flex;justify-content:space-between;color:#777;font-size:10px;border-top:1px solid #333;background:#111}.footer a{color:#ccc;text-decoration:none;margin-left:20px}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #f2a4a8;outline-offset:2px}.toast{position:fixed;right:18px;bottom:18px;background:#222;color:#fff;padding:13px 17px;border-radius:3px;font-size:12px;opacity:0;transform:translateY(20px);transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:850px){.header{height:auto;flex-wrap:wrap;padding:17px 20px;gap:16px}.logo{min-width:auto}.header-links{gap:13px}.header-link small{display:none}.search{order:3;flex-basis:100%;max-width:none}.nav{justify-content:flex-start;gap:24px;overflow:auto;padding:0 20px}.nav a{white-space:nowrap;font-size:10px}.container{padding:0 16px}.breadcrumb{overflow:auto;white-space:nowrap}.product{grid-template-columns:1fr;gap:35px}.gallery{grid-template-columns:58px 1fr;gap:9px}.thumb{width:58px;height:68px}.main-photo{height:min(640px,100vw)}.details{position:static;padding:22px}.details h1{font-size:26px}.info-grid{grid-template-columns:1fr;gap:30px}.product-info{margin-top:55px}.newsletter{display:block;padding:32px 22px}.newsletter-form{margin-top:25px;width:100%}.footer{display:block;line-height:1.8}.footer div{margin-top:8px}.footer a{margin-left:0;margin-right:17px}}
-
-/* Direção visual premium — substitui os estilos anteriores */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
-:root{--red:#c9343f;--red-dark:#a9232e;--black:#18212b;--gray:#66717c;--line:#e6e9eb;--soft:#f5f7f8;--white:#fff;--green:#28764c;--blue-soft:#f1f6f8}
-*{box-sizing:border-box}body{background:#f8fafb;color:var(--black);font-family:'DM Sans',Arial,sans-serif;font-size:14px;letter-spacing:-.01em}.topbar{height:32px;background:#18212b;color:#dce3e8;font-size:10px;letter-spacing:.09em}.topbar strong{color:#ffb5ba}.header{height:82px;max-width:1320px;margin:auto;padding:0 38px;border-bottom:0;gap:42px}.logo{font-family:Manrope,Arial,sans-serif;letter-spacing:-1.8px;font-size:17px}.logo-mark{width:25px;height:25px;background:var(--red);box-shadow:0 0 0 5px #c9343f18}.logo-mark:after{width:7px;height:7px;left:9px;top:9px}.search{max-width:550px;height:44px;border:1px solid #d9dfe2;border-radius:8px;background:#f9fafb}.search:focus-within{border-color:#8c9ba5;box-shadow:0 0 0 3px #18212b0d}.search input{font-size:13px;background:transparent}.search button{width:45px;border-radius:0 7px 7px 0;background:var(--black);font-size:20px}.header-links{gap:27px}.header-link{color:#41505a}.header-link .ico{font-size:21px}.header-link small{font-size:10px;color:#68747d}.header-link b{color:var(--black);font-weight:600}.nav{background:#fff;box-shadow:none;height:48px;gap:39px}.nav a{font-size:11px;color:#45515b;letter-spacing:.02em}.nav a:first-child{color:var(--black)}.nav a:last-child{color:var(--red)}.container{max-width:1320px;padding:0 38px}.breadcrumb{height:58px;font-size:11px;color:#8b959d}.breadcrumb a{color:#65727c}.product{grid-template-columns:minmax(0,1fr) 430px;gap:76px}.gallery{grid-template-columns:72px 1fr;gap:16px}.main-photo{height:650px;border:0;border-radius:12px;background:linear-gradient(140deg,#f2f5f6,#e9eef0);box-shadow:inset 0 0 0 1px #e0e5e7}.main-photo .empty{position:relative;z-index:1}.main-photo .empty:before{content:'';display:block;width:205px;height:265px;margin:0 auto 26px;background:linear-gradient(145deg,#cdd5d9,#b9c5cb);clip-path:polygon(28% 0,43% 8%,57% 8%,72% 0,100% 22%,82% 42%,75% 31%,75% 100%,25% 100%,25% 31%,18% 42%,0 22%);filter:drop-shadow(12px 15px 12px #18212b20)}.main-photo .empty b{font-size:11px;letter-spacing:.12em;color:#71808a;font-weight:700}.main-photo .empty small{font-size:10px;color:#9aa5aa;margin-top:6px}.thumbs{gap:10px}.thumb{width:72px;height:78px;border:1px solid #e0e5e7;border-radius:8px;background:#f0f3f4;color:#81909a;transition:.18s}.thumb:hover{border-color:#9ba9b0;transform:translateY(-1px)}.thumb.active{border:2px solid var(--red);box-shadow:0 0 0 3px #c9343f15}.gallery-note{font-size:10px;color:#9aa3a8}.details{padding:31px 32px 30px;background:#fff;border:1px solid #e2e7e9;border-radius:13px;box-shadow:0 12px 36px #18212b0b;top:22px}.brand-line{color:var(--red);font-size:10px;font-weight:700;letter-spacing:.12em}.details h1{font-family:Manrope,Arial,sans-serif;color:#1c2730;font-size:30px;line-height:1.12;letter-spacing:-.045em;margin-bottom:12px}.code{font-size:10px;color:#9aa3a8}.reviews{padding-bottom:17px;border-bottom:0}.stars{font-size:12px;letter-spacing:1px}.reviews a{font-size:11px;color:#7b868d}.share{font-size:11px;color:#6a767e}.confidence{background:#f6f8f8;border:1px solid #e9edef;border-radius:7px;padding:12px 11px;margin:2px 0 18px;gap:7px}.confidence span{font-size:9px;color:#59666f}.confidence b{font-size:12px}.prices{padding:21px 0 19px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.from{font-size:12px;color:#919ba1}.price{font-family:Manrope,Arial,sans-serif;color:#1d2931;font-size:34px;letter-spacing:-.05em}.pix{font-size:11px}.installments{font-size:11px;color:#78848b}.choice{padding-top:20px}.choice-head{font-size:12px;margin-bottom:11px}.choice-head span{font-size:10px;color:#707c84}.choice-head a{font-size:10px;color:#65717a}.color-dot{width:18px;height:18px}.sizes{gap:7px}.sizes button{height:43px;border-radius:6px;background:#fff;color:#394650;border-color:#d6dde0;font-size:12px;transition:.18s}.sizes button:hover,.sizes button.selected{border:1.5px solid var(--red);background:#fff8f8;color:var(--red);box-shadow:0 2px 7px #c9343f12}.buy-line{margin-top:25px;gap:8px}.qty{height:52px;border-radius:6px;border-color:#d6dde0}.qty button,.qty output{width:31px;color:#47545c}.buy{height:52px;border-radius:6px;background:var(--red);font-family:Manrope,Arial,sans-serif;font-size:12px;letter-spacing:.01em;box-shadow:0 5px 13px #c9343f26;transition:.18s}.buy:hover{background:var(--red-dark);transform:translateY(-1px)}.now{height:46px;border-radius:6px;font-size:12px;margin-top:9px}.shipping{margin-top:23px;padding:16px;border-radius:8px;background:#f4f8fa;border-color:#dfe8ec}.shipping-title{font-size:12px;color:#263640}.shipping-sub{font-size:10px}.shipping-form input{border-radius:5px 0 0 5px;border-color:#d3dce0;background:#fff;font-size:11px}.shipping-form button{border-radius:0 5px 5px 0;background:var(--black)}.assurances{gap:10px;margin-top:20px;color:#6b777e;font-size:10px}.assurances b{font-size:14px}.product-info{margin-top:84px;padding:32px 0 78px;border-top:1px solid #e0e5e7}.tabs{gap:28px;margin-bottom:30px;border-bottom:1px solid #dde3e5}.tab{font-size:12px;color:#7a858c;padding-bottom:13px}.tab.active{color:var(--black);border-color:var(--red)}.info-grid{gap:100px}.info-grid h2{font-family:Manrope,Arial,sans-serif;font-size:25px;color:#1c2730}.info-grid p{font-size:13px;color:#65727a;line-height:1.75}.characteristic{font-size:11px;padding:15px 0}.characteristic b{font-weight:600;color:#37454e}.newsletter{background:#18212b;border-top:0;padding:46px max(38px,calc((100% - 1244px)/2));margin-top:0}.newsletter h2{font-family:Manrope,Arial,sans-serif;font-size:24px}.newsletter-form{height:43px}.newsletter-form input{border-radius:6px 0 0 6px}.newsletter-form button{border-radius:0 6px 6px 0;background:var(--red)}.footer{background:#111820;border-top:1px solid #2a3740;padding:25px max(38px,calc((100% - 1244px)/2));color:#9ca8af}.footer a{color:#c8d0d4}
-@media(max-width:850px){.header{padding:17px 20px;height:auto;gap:17px}.container{padding:0 18px}.product{gap:30px}.details{padding:24px 20px;box-shadow:none}.main-photo{height:min(610px,100vw)}.main-photo .empty:before{width:170px;height:220px}.confidence{grid-template-columns:repeat(3,1fr)}.newsletter{padding:34px 20px}.footer{padding:22px 20px}}
-
-/* Ajustes mobile finais */
-@media(max-width:600px){
-  body{overflow-x:hidden;font-size:13px}
-  .topbar{height:auto;min-height:32px;padding:8px 18px;text-align:center;line-height:1.35;font-size:8px;letter-spacing:.07em}
-  .header{padding:15px 16px 17px;gap:15px}
-  .logo{font-size:15px;line-height:.86}.logo-mark{width:23px;height:23px}.logo-mark:after{width:6px;height:6px;left:8px;top:8px}
-  .header-links{gap:13px}.header-link{min-width:24px}.header-link .ico{font-size:20px}.header-link small{display:none}.header-link b{font-size:0}
-  .search{order:3;flex-basis:100%;height:42px}.search input{font-size:12px}.search button{width:43px}
-  .nav{height:42px;justify-content:flex-start;gap:24px;padding:0 16px;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav a{font-size:9px;white-space:nowrap}
-  .container{padding:0 14px}.breadcrumb{height:47px;gap:8px;font-size:10px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}.breadcrumb::-webkit-scrollbar{display:none}
-  .product{display:block}.gallery{grid-template-columns:54px minmax(0,1fr);gap:9px}.thumbs{gap:8px}.thumb{width:54px;height:61px;border-radius:6px;font-size:8px}.main-photo{height:calc(100vw - 82px);min-height:286px;max-height:420px;border-radius:9px}.main-photo .empty:before{width:135px;height:175px;margin-bottom:17px}.main-photo .empty b{font-size:8px}.main-photo .empty small{font-size:8px;padding:0 10px}.favorite{width:34px;height:34px;top:10px;right:10px;font-size:19px}.gallery-note{display:none}
-  .details{margin-top:23px;padding:21px 16px 20px;border-radius:10px;position:static}.brand-line{font-size:9px;margin-bottom:10px}.details h1{font-size:24px;line-height:1.16;margin-bottom:10px}.code{font-size:9px;margin-bottom:12px}.reviews{flex-wrap:wrap;gap:7px;padding-bottom:11px}.reviews a{font-size:10px}.share{margin-left:auto;font-size:10px;padding:0}.confidence{grid-template-columns:1fr 1fr;gap:8px;padding:10px;margin:0 0 15px}.confidence span{font-size:9px}.confidence span:last-child{grid-column:1/-1}.prices{padding:17px 0 16px}.from{font-size:11px}.price{font-size:31px}.pix{font-size:10px}.installments{font-size:10px}.choice{padding-top:17px}.choice-head{font-size:11px}.choice-head span,.choice-head a{font-size:9px}.color{font-size:11px}.sizes{gap:6px}.sizes button{height:42px;font-size:11px}.buy-line{margin-top:21px;gap:7px}.qty{height:50px;flex:0 0 92px}.qty button,.qty output{width:30px}.buy{height:50px;font-size:11px;padding:0 8px}.now{height:44px;font-size:11px}.shipping{margin-top:19px;padding:14px}.shipping-title{font-size:11px}.shipping-sub{font-size:9px;line-height:1.4}.assurances{grid-template-columns:1fr 1fr;gap:10px;margin-top:17px;font-size:9px}
-  .product-info{margin-top:53px;padding:25px 0 53px}.tabs{gap:22px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;margin-bottom:24px}.tabs::-webkit-scrollbar{display:none}.tab{font-size:11px;flex:0 0 auto}.info-grid{display:block}.info-grid h2{font-size:22px}.info-grid p{font-size:12px;line-height:1.65}.characteristics{margin-top:28px}.characteristic{font-size:10px;padding:13px 0}.newsletter{padding:31px 16px;display:block}.newsletter h2{font-size:22px}.newsletter p{font-size:11px;line-height:1.4}.newsletter-form{width:100%;height:42px;margin-top:20px}.newsletter-form input{min-width:0;font-size:11px}.newsletter-form button{font-size:11px;padding:0 13px}.footer{padding:20px 16px;font-size:9px;line-height:1.7}.footer div{margin-top:8px}.footer a{margin-right:14px;margin-left:0}
-}
-@media(max-width:365px){.header{padding-left:12px;padding-right:12px}.container{padding:0 11px}.details{padding-left:13px;padding-right:13px}.details h1{font-size:22px}.share{font-size:9px}.confidence span{font-size:8px}.buy{font-size:10px}.qty{flex-basis:86px}}
+:root{--brand:#1557a6;--brand-d:#0f437f;--ink:#1c1f24;--mut:#5f6673;--line:#e4e7ec;--soft:#f5f6f8;--ok:#157347;--sale:#c8102e;--r:8px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+button,input{font:inherit;color:inherit}button{cursor:pointer}a{color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}
+.w{max-width:1240px;margin:auto;padding:0 20px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+:focus-visible{outline:3px solid #8db8ee;outline-offset:2px}
+.top{background:#0d2238;color:#fff;font-size:13px;text-align:center;padding:9px 12px}
+.hd{display:flex;align-items:center;gap:24px;height:74px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:20px;letter-spacing:-.4px;text-decoration:none}
+.logo i{width:26px;height:26px;border-radius:50%;background:var(--brand);position:relative}.logo i:after{content:"";position:absolute;inset:8px;background:#fff;border-radius:50%}
+.search{flex:1;max-width:560px;display:flex;border:1px solid #c5cad3;border-radius:var(--r);overflow:hidden}
+.search input{flex:1;min-width:0;border:0;outline:0;padding:0 14px;height:44px}.search button{border:0;background:var(--brand);color:#fff;width:50px;display:grid;place-items:center}
+svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.act{margin-left:auto;display:flex;gap:4px}.act button{position:relative;background:none;border:0;padding:6px 12px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px}
+.act em{position:absolute;top:0;right:6px;background:var(--brand);color:#fff;font:700 10px/16px sans-serif;min-width:16px;height:16px;border-radius:8px;text-align:center}
+.nav{border-block:1px solid var(--line)}.nav .w{display:flex;gap:30px;height:46px;align-items:center;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.nav a{font-size:14px;font-weight:600;text-decoration:none}.nav a:hover{color:var(--brand)}.nav a:last-child{color:var(--sale)}
+.bc{display:flex;gap:8px;padding:16px 0;font-size:13px;color:var(--mut);overflow-x:auto;white-space:nowrap}.bc a{text-decoration:none}.bc a:hover{text-decoration:underline}.bc span:last-child{color:var(--ink)}
+.pd{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(340px,.9fr);gap:56px;align-items:start}
+.gal{display:grid;grid-template-columns:78px 1fr;gap:12px;position:sticky;top:16px}
+.th{display:flex;flex-direction:column;gap:8px}.th button{aspect-ratio:3/4;border:1px solid var(--line);background:var(--soft);border-radius:6px;padding:0;overflow:hidden;font-size:11px;color:var(--mut)}
+.th button[aria-current=true]{border:2px solid var(--brand)}
+.mn{aspect-ratio:4/5;background:var(--soft);border-radius:var(--r);display:grid;place-items:center;position:relative;overflow:hidden;color:var(--mut);text-align:center;font-size:14px}
+.badge{position:absolute;left:12px;top:12px;z-index:1;background:var(--sale);color:#fff;font-weight:700;font-size:13px;padding:4px 10px;border-radius:4px}
+.brand{font-size:14px;color:var(--mut)}.inf h1{font-size:28px;line-height:1.2;font-weight:700;margin:4px 0 10px}
+.rt{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--mut)}.rt a{color:var(--brand)}.stars{color:#e69500;letter-spacing:1px;font-size:15px}
+.pr{margin:20px 0 4px;padding:18px 0 0;border-top:1px solid var(--line)}.de{color:var(--mut);text-decoration:line-through;font-size:14px}
+.big{font-size:36px;font-weight:800;line-height:1.1;letter-spacing:-.5px}.pix{font-size:14px;color:var(--ok);font-weight:700;margin-left:6px}
+.inst{font-size:14px;color:var(--mut);margin:6px 0 0}
+.opt{margin-top:22px}.oh{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:14px}.oh a,.oh button{background:none;border:0;padding:0;color:var(--brand);text-decoration:underline;font-size:13px}
+.sw{display:flex;gap:10px}.sw button{width:38px;height:38px;border-radius:50%;border:2px solid #fff;outline:2px solid var(--brand);background:#c52d37;padding:0}
+.sz{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sz button{height:48px;border:1px solid #c5cad3;background:#fff;border-radius:6px;font-weight:700}.sz button:hover{border-color:var(--brand)}
+.sz button[aria-pressed=true]{border:2px solid var(--brand);background:#eef4fc;color:var(--brand)}
+.sz button:disabled{color:#9aa0aa;background:repeating-linear-gradient(135deg,#fff 0 6px,#eee 6px 7px);text-decoration:line-through;cursor:not-allowed}
+.sz.bad button{border-color:var(--sale)}
+.msg{min-height:20px;margin:8px 0 0;font-size:13px;color:var(--mut)}.msg.err{color:var(--sale);font-weight:600}
+.buy{display:flex;gap:10px;margin-top:14px}.qty{display:flex;border:1px solid #c5cad3;border-radius:var(--r);flex:0 0 112px;height:56px}
+.qty button{width:36px;border:0;background:none;font-size:20px}.qty output{flex:1;display:grid;place-items:center;font-weight:600}
+.cta{flex:1;height:56px;border:0;border-radius:var(--r);background:var(--brand);color:#fff;font-weight:700;font-size:16px}.cta:hover{background:var(--brand-d)}
+.cta2{width:100%;height:50px;margin-top:10px;background:#fff;border:1.5px solid var(--brand);color:var(--brand);border-radius:var(--r);font-weight:700}.cta2:hover{background:#eef4fc}
+.tr{list-style:none;margin:22px 0;padding:18px 0;border-block:1px solid var(--line);display:grid;gap:12px;font-size:14px}.tr li{display:flex;gap:12px;align-items:flex-start}.tr svg{color:var(--ok);flex:none;margin-top:1px}.tr small{display:block;color:var(--mut);font-size:13px}
+.ship h2{font-size:16px;margin:0 0 4px}.ship p{margin:0 0 10px;font-size:13px;color:var(--mut)}
+.zip{display:flex}.zip input{flex:1;min-width:0;height:44px;border:1px solid #c5cad3;border-radius:var(--r) 0 0 var(--r);padding:0 12px}.zip button{width:96px;border:0;background:#2b333f;color:#fff;border-radius:0 var(--r) var(--r) 0;font-weight:600}
+.ship .msg{color:var(--ok)}
+details{border-top:1px solid var(--line)}details:last-of-type{border-bottom:1px solid var(--line)}
+summary{display:flex;justify-content:space-between;padding:16px 0;font-weight:600;cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:20px;line-height:1}details[open] summary:after{content:"\2212"}details p{margin:0 0 16px;color:var(--mut)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:56px 0 0;padding:22px;background:var(--soft);border-radius:var(--r);font-size:14px}.strip div{display:flex;gap:12px;align-items:center}.strip svg{color:var(--brand);flex:none}.strip small{display:block;color:var(--mut)}
+section.sec{padding:56px 0 0}.sec h2{font-size:22px;margin:0 0 20px}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:64px}.two p{max-width:62ch;color:#3d444f}
+.spec div{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}.spec span{color:var(--mut)}
+.rv{display:flex;gap:28px;align-items:center;padding:22px;border:1px solid var(--line);border-radius:var(--r);flex-wrap:wrap}.rv strong{font-size:40px;line-height:1}
+.rv button{margin-left:auto;height:44px;padding:0 20px;border:1.5px solid var(--brand);background:#fff;color:var(--brand);border-radius:var(--r);font-weight:700}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{text-decoration:none}.card .mn{aspect-ratio:3/4;font-size:12px}.card b{display:block;margin-top:10px;font-weight:600;font-size:14px}.card span{font-weight:800}
+.news{background:#0d2238;color:#fff;margin-top:64px;padding:40px 0}.news .w{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.news h2{margin:0 0 4px;font-size:22px}.news p{margin:0;color:#c3ccd6;font-size:14px}.news form{display:flex;width:min(100%,440px);height:46px}
+.news input{flex:1;min-width:0;border:0;border-radius:var(--r) 0 0 var(--r);padding:0 14px;color:var(--ink)}.news button{border:0;background:var(--brand);color:#fff;font-weight:700;padding:0 18px;border-radius:0 var(--r) var(--r) 0}
+footer{background:#08182a;color:#b4bfcb;font-size:13px;padding:36px 0 28px}.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}footer h3{color:#fff;font-size:14px;margin:0 0 10px}footer a{display:block;text-decoration:none;padding:3px 0}footer a:hover{color:#fff}
+.pay{display:flex;gap:8px;flex-wrap:wrap}.pay span{border:1px solid #33465c;border-radius:4px;padding:3px 9px;font-size:12px}.legal{margin-top:26px;padding-top:18px;border-top:1px solid #1d3047;font-size:12px}
+.sb{position:fixed;inset:auto 0 0;z-index:30;display:none;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 14px #0000001a;transform:translateY(110%);transition:transform .2s}
+.sb.on{transform:none}.sb div{flex:1;line-height:1.25;font-size:12px;color:var(--mut)}.sb b{display:block;font-size:19px;color:var(--ink)}.sb .cta{flex:0 0 55%;height:50px;font-size:15px}
+dialog{border:0;border-radius:12px;padding:24px;width:min(92vw,460px)}dialog::backdrop{background:#0008}dialog h2{margin:0 0 14px;font-size:18px}dialog table{width:100%;border-collapse:collapse;font-size:14px}dialog th,dialog td{padding:10px;border-bottom:1px solid var(--line);text-align:center}dialog form{margin-top:16px;text-align:right}dialog button{height:40px;padding:0 18px;border:0;background:var(--brand);color:#fff;border-radius:var(--r);font-weight:600}
+.toast{position:fixed;left:50%;bottom:24px;translate:-50% 20px;background:#1c1f24;color:#fff;padding:12px 18px;border-radius:var(--r);font-size:14px;opacity:0;pointer-events:none;transition:.2s;z-index:40}.toast.on{opacity:1;translate:-50% 0}
+@media(max-width:900px){.hd{flex-wrap:wrap;height:auto;padding:12px 20px;gap:12px}.search{order:3;flex-basis:100%;max-width:none}.act button span{display:none}
+.pd{grid-template-columns:1fr;gap:26px}.gal{grid-template-columns:1fr;position:static}.th{flex-direction:row;order:2}.th button{width:64px;aspect-ratio:3/4}
+.strip{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr;gap:36px}.grid4{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr 1fr}.sb{display:flex}body{padding-bottom:76px}.toast{bottom:92px}}
+@media(max-width:520px){.w{padding:0 16px}.inf h1{font-size:23px}.big{font-size:32px}.strip{grid-template-columns:1fr}.rv button{margin-left:0;width:100%}.mn{aspect-ratio:1/1}}
+[hidden]{display:none!important}
+.pix{background:#e8f5ee;padding:3px 9px;border-radius:999px;margin-left:8px}.save{margin:6px 0 0;font-size:14px;color:var(--ok);font-weight:600}
+.ar{position:absolute;top:50%;translate:0 -50%;width:40px;height:40px;border-radius:50%;border:0;background:#fffffff0;box-shadow:0 1px 6px #0003;font-size:26px;line-height:1;padding:0 0 3px;display:grid;place-items:center;z-index:1}.ar.l{left:10px}.ar.r{right:10px}
+.ct{position:absolute;right:12px;bottom:12px;background:#000a;color:#fff;font-size:12px;padding:2px 10px;border-radius:999px}.mn:has(img){cursor:zoom-in}
+.lock{display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0 0;font-size:13px;color:var(--mut)}.lock svg{width:16px;height:16px}
+.bars{flex:1;min-width:220px;display:grid;gap:6px;font-size:13px;color:var(--mut)}.bars div{display:grid;grid-template-columns:28px 1fr 28px;gap:10px;align-items:center}
+.bars i,.fp i{display:block;height:8px;background:var(--line);border-radius:4px;overflow:hidden}.bars u,.fp u{display:block;height:100%;background:#e69500}.fp u{background:var(--ok)}
+.ln{display:flex;gap:14px;align-items:center}.th1{width:64px;aspect-ratio:3/4;background:var(--soft);border-radius:6px;overflow:hidden;flex:none}
+.sub{display:flex;justify-content:space-between;margin:16px 0 8px}.fp small{display:block;margin-top:6px;color:var(--ok);font-weight:600}
+.ac{display:grid;gap:8px;margin-top:16px;text-align:center}.ac .cta,.ac .cta2{width:100%;margin:0;height:50px}
+.lb{width:min(94vw,720px);padding:0;background:#000}.lb img{height:auto;max-height:90vh;object-fit:contain}.lb form{position:absolute;top:8px;right:8px;margin:0}.lb button{width:40px;height:40px;padding:0;border-radius:50%;background:#fff;color:var(--ink);font-size:24px}
+.wa{position:fixed;right:18px;bottom:22px;z-index:25;background:#1fa855;color:#fff;font-weight:600;padding:12px 18px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px #0003;font-size:14px}
+@media(max-width:900px){.wa{bottom:88px;right:12px;padding:10px 14px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<div class="topbar">CONDIÇÃO ESPECIAL PARA NOVOS CLIENTES: USE O CUPOM <strong>________</strong></div>
-<header class="header">
-  <a class="logo" href="#"><i class="logo-mark"></i><span>MINHA<br>LOJA</span></a>
-  <form class="search" id="search-form"><input type="search" placeholder="O que você está procurando?" aria-label="Buscar produtos"><button type="submit" aria-label="Buscar">⌕</button></form>
-  <div class="header-links">
-    <button class="header-link" type="button"><span class="ico">♙</span><small>Olá!<br><b>Entre ou cadastre-se</b></small></button>
-    <button class="header-link bag" type="button"><span class="ico">▢</span><i class="bag-count" id="cart-count">0</i><small>Minha<br><b>sacola</b></small></button>
+<div class="top" id="tp"></div>
+<header class="w hd">
+  <a class="logo" href="#"><i></i>Minha Loja</a>
+  <form class="search" id="sf"><label class="sr" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Busque por produto, time ou marca"><button aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button></form>
+  <div class="act">
+    <button type="button"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span>Entrar</span></button>
+    <button type="button" aria-label="Sacola"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><em id="cc">0</em><span>Sacola</span></button>
   </div>
 </header>
-<nav class="nav"><a href="#">Todas as categorias</a><a href="#">Masculino</a><a href="#">Feminino</a><a href="#">Times</a><a href="#">Esportes</a><a href="#">Ofertas</a></nav>
-<main class="container">
-  <nav class="breadcrumb"><a href="#">Início</a><strong>›</strong><a href="#">Vestuário</a><strong>›</strong><a href="#">Camisa de time</a><strong>›</strong><span>Camiseta do São Paulo</span></nav>
-  <section class="product">
-    <div>
-      <div class="gallery">
-        <div class="thumbs" id="thumbs"></div>
-        <div>
-          <div class="main-photo"><div class="empty" id="empty"><b>INSIRA A FOTO DO PRODUTO</b><small>Edite as URLs no início do JavaScript</small></div><img id="main-image" hidden alt="Camiseta do São Paulo Dry Masculina"><button class="favorite" id="favorite" type="button" aria-label="Favoritar">♡</button></div>
-          <div class="gallery-note">Arraste ou selecione as miniaturas para ver outras imagens</div>
-        </div>
-      </div>
+<nav class="nav" aria-label="Categorias"><div class="w"><a href="#">Camisas de time</a><a href="#">Masculino</a><a href="#">Feminino</a><a href="#">Infantil</a><a href="#">Calçados</a><a href="#">Acessórios</a><a href="#">Lançamentos</a><a href="#">Ofertas</a></div></nav>
+
+<main class="w">
+<nav class="bc" aria-label="Você está em"><a href="#">Início</a><span>/</span><a href="#">Camisas de time</a><span>/</span><span>Camiseta do São Paulo Dry Masculina</span></nav>
+
+<section class="pd">
+  <div class="gal">
+    <div class="th" id="th"></div>
+    <div class="mn" id="mn"></div>
+  </div>
+
+  <div class="inf">
+    <div class="brand" id="br"></div>
+    <h1>Camiseta do São Paulo Dry Masculina</h1>
+    <div class="rt"><span class="stars" id="rs" aria-hidden="true"></span><a href="#avaliacoes" id="rl"></a><span id="rf"></span></div>
+
+    <div class="pr">
+      <span class="de" id="de"></span>
+      <div><span class="big" id="pix"></span><span class="pix">no Pix</span></div>
+      <p class="inst" id="inst"></p>
     </div>
-    <aside class="details">
-      <div class="brand-line">Camisa de time · masculino</div>
-      <h1>Camiseta do São Paulo Dry Masculina</h1>
-      <div class="code">REF.: ________</div>
-      <div class="reviews"><span class="stars">★★★★★</span><a href="#reviews">(____ avaliações)</a><button class="share" id="share" type="button">Compartilhar</button></div><div class="confidence"><span><b>✓</b> Produto original</span><span><b>✓</b> Compra protegida</span><span><b>✓</b> Envio rastreado</span></div>
-      <div class="prices"><span class="from">De: R$ 119,99</span><span class="price">R$ <span id="pix-price">71,05</span></span><span class="pix">no Pix</span><p class="installments">R$ <span id="card-price">78,94</span> em até 1x de R$ 78,94 sem juros</p></div>
-      <div class="choice"><div class="choice-head"><b>Cor:</b><span>Vermelho</span></div><div class="color"><i class="color-dot"></i> Vermelho</div></div>
-      <div class="choice"><div class="choice-head"><b>Tamanho:</b><a href="#size-guide">Guia de medidas</a></div><div class="sizes" id="sizes"><button type="button">P</button><button type="button">M</button><button type="button">G</button><button type="button">GG</button></div></div>
-      <div class="buy-line"><div class="qty"><button id="minus" type="button">−</button><output id="quantity">1</output><button id="plus" type="button">+</button></div><button class="buy" id="add" type="button">Adicionar à sacola</button></div>
-      <button class="now" id="now" type="button">Comprar agora</button>
-      <div class="shipping"><div class="shipping-title">Calcule o frete e o prazo de entrega</div><div class="shipping-sub">Digite seu CEP para consultar as opções disponíveis.</div><form class="shipping-form" id="shipping-form"><input id="cep" inputmode="numeric" maxlength="9" placeholder="00000-000" aria-label="CEP"><button type="submit">OK</button></form><p class="shipping-result" id="shipping-result"></p></div>
-      <div class="assurances"><div><b>✓</b> Compra segura</div><div><b>↺</b> Troca fácil</div><div><b>▱</b> Parcele em até ___x</div><div><b>⌁</b> Envio para todo o país</div></div>
-    </aside>
-  </section>
-  <section class="product-info" id="reviews"><div class="tabs"><button class="tab active" type="button">Informações do produto</button><button class="tab" type="button">Avaliações (____)</button><button class="tab" type="button">Dúvidas</button></div><div class="info-grid"><div><h2>Descrição do produto</h2><p>Para quem vive a paixão pelo Tricolor, a Camiseta do São Paulo une praticidade e identidade.</p><p>Feita com tecido leve e de secagem rápida, ela oferece conforto térmico e liberdade de movimento no dia a dia ou nos momentos de torcida.</p><p>Mostre sua torcida com uma peça funcional e cheia de atitude!</p></div><div class="characteristics"><div class="characteristic"><span>Marca</span><b>________________</b></div><div class="characteristic"><span>Material</span><b>________________</b></div><div class="characteristic"><span>Modelagem</span><b>Masculina</b></div><div class="characteristic"><span>Garantia</span><b>________________</b></div></div></div></section>
+
+    <div class="opt"><div class="oh"><b>Cor: <span style="font-weight:400">Vermelho</span></b></div><div class="sw"><button type="button" aria-label="Vermelho" aria-pressed="true"></button></div></div>
+    <div class="opt"><div class="oh"><b>Tamanho</b><button type="button" id="gb">Guia de medidas</button></div><div class="sz" id="sz" role="group" aria-label="Tamanho"></div><p class="msg" id="sm" role="alert"></p></div>
+
+    <div class="buy" id="buy"><div class="qty"><button type="button" id="mi" aria-label="Diminuir">&minus;</button><output id="qt">1</output><button type="button" id="pl" aria-label="Aumentar">+</button></div><button class="cta" id="add" type="button">Adicionar à sacola</button></div>
+    <button class="cta2" id="now" type="button">Comprar agora</button><p class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Pagamento seguro com Pix e cartão</p>
+
+    <ul class="tr">
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><div><b>Compra 100% segura</b><small>Seus dados protegidos em todas as etapas.</small></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><div><b>Troca grátis</b><small>Confira as regras de troca deste produto.</small></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><div><b>Produto original</b><small id="vd">Entrega para todo o Brasil.</small></div></li>
+    </ul>
+
+    <div class="ship"><h2>Calcule o frete e o prazo</h2><p>Digite seu CEP para ver as opções de entrega e retirada.</p>
+      <form class="zip" id="zf"><input id="zp" inputmode="numeric" maxlength="9" placeholder="00000-000" aria-label="CEP" autocomplete="postal-code"><button>Calcular</button></form>
+      <p class="msg" id="zm" role="status"></p></div>
+
+    <div style="margin-top:18px">
+      <details open><summary>Sobre o produto</summary><p>Tecido leve e de secagem rápida, com conforto térmico e liberdade de movimento para o dia a dia e para a torcida.</p></details>
+      <details><summary>Cuidados com a peça</summary><p>Lavar à mão ou na máquina em ciclo delicado, com água fria. Não usar alvejante.</p></details>
+      <details><summary>Entrega e trocas</summary><p>Prazo e valor calculados pelo CEP. Troca grátis conforme a política da loja.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/></svg><span id="frx"></span></div>
+  <div><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5M18 3v4h-4M6 21v-4h4"/></svg><span><b>Troca grátis</b><small>Na loja ou pelo site</small></span></div>
+  <div><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg><span id="pcx"></span></div>
+  <div><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><span><b>Site seguro</b><small>Dados criptografados</small></span></div>
+</div>
+
+<section class="sec"><div class="two">
+  <div><h2>Informações do produto</h2><p>Para quem vive a paixão pelo Tricolor, a Camiseta do São Paulo une praticidade e identidade.</p><p>Feita com tecido leve e de secagem rápida, oferece conforto térmico e liberdade de movimento no dia a dia ou nos dias de jogo.</p></div>
+  <div><h2>Características</h2><div class="spec"><div data-s="marca"><span>Marca</span><b></b></div><div data-s="material"><span>Material</span><b></b></div><div><span>Modelagem</span><b>Masculina</b></div><div data-s="garantia"><span>Garantia</span><b></b></div></div></div>
+</div></section>
+
+<section class="sec" id="avaliacoes"><h2>Avaliações de clientes</h2>
+  <div class="rv" id="rv"></div></section>
+
+<section class="sec" id="rls"><h2>Quem viu também comprou</h2><div class="grid4" id="rel"></div></section>
 </main>
-<section class="newsletter"><div><h2>Receba ofertas e novidades</h2><p>Cadastre-se para receber condições especiais da sua loja.</p></div><form class="newsletter-form" id="newsletter"><input type="email" required placeholder="Seu melhor e-mail" aria-label="E-mail"><button type="submit">Cadastrar</button></form></section>
-<footer class="footer"><span>© 2026 MINHA LOJA · PREENCHA COM OS DADOS DA SUA MARCA</span><div><a href="#">Política de privacidade</a><a href="#">Atendimento</a></div></footer>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<section class="news"><div class="w"><div><h2>Receba ofertas e novidades</h2><p>Cadastre seu e-mail e fique por dentro dos lançamentos. Você pode sair quando quiser.</p></div>
+<form id="nf"><label class="sr" for="em">E-mail</label><input id="em" type="email" required placeholder="Seu melhor e-mail"><button>Cadastrar</button></form></div></section>
+
+<footer><div class="w"><div class="fg">
+<div><h3>Atendimento</h3><a href="#">Central de ajuda</a><a href="#">Trocas e devoluções</a><a href="#">Acompanhar pedido</a><a href="#" id="wa" target="_blank" rel="noopener" hidden>Fale pelo WhatsApp</a></div>
+<div><h3>Institucional</h3><a href="#">Sobre a loja</a><a href="#">Política de privacidade</a><a href="#">Termos de uso</a></div>
+<div><h3>Formas de pagamento</h3><div class="pay"><span>Pix</span><span>Visa</span><span>Mastercard</span><span>Elo</span><span>Boleto</span></div></div>
+<div><h3>Segurança</h3><div class="pay"><span>Site seguro (HTTPS)</span></div></div>
+</div><div class="legal" id="lg"></div></div></footer>
+
+<div class="sb" id="sb"><div>No Pix<b id="sp"></b></div><button class="cta" id="sadd" type="button">Adicionar à sacola</button></div>
+<dialog id="dg"><h2>Guia de medidas</h2><table id="mt"></table><form method="dialog"><button>Fechar</button></form></dialog>
+<dialog id="lb" class="lb" aria-label="Foto ampliada"></dialog><dialog id="mc" aria-label="Sacola"></dialog><a class="wa" id="wf" target="_blank" rel="noopener" hidden>Fale conosco no WhatsApp</a>
+<div class="toast" id="ts" role="status" aria-live="polite"></div>
+
 <script>
-/* EDITE AQUI: coloque as URLs das fotos reais do produto. */
-const productImages=['','','',''];
-let selectedSize='',amount=1,toastTimer;
-const $=s=>document.querySelector(s),toast=$('#toast');
-function notify(text){toast.textContent=text;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3000)}
-function renderThumbs(){const box=$('#thumbs');productImages.forEach((src,i)=>{const b=document.createElement('button');b.type='button';b.className='thumb'+(i===0?' active':'');b.setAttribute('aria-label','Ver foto '+(i+1));if(src){const im=document.createElement('img');im.src=src;im.alt='Foto '+(i+1);b.appendChild(im)}else b.textContent='Foto '+(i+1);b.onclick=()=>{document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));b.classList.add('active');const im=$('#main-image');if(src){im.src=src;im.hidden=false;$('#empty').hidden=true}else{im.hidden=true;$('#empty').hidden=false;$('#empty').querySelector('b').textContent='ESPAÇO PARA A FOTO '+(i+1)}};box.appendChild(b)})}
-$('#plus').onclick=()=>{$('#quantity').textContent=++amount};$('#minus').onclick=()=>{$('#quantity').textContent=amount=Math.max(1,amount-1)};
-document.querySelectorAll('#sizes button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#sizes button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');selectedSize=b.textContent});
-function add(){if(!selectedSize)return notify('Escolha um tamanho antes de continuar.');$('#cart-count').textContent=Number($('#cart-count').textContent)+amount;notify(amount+' item(ns) tamanho '+selectedSize+' adicionado(s) à sacola.')}
-$('#add').onclick=add;$('#now').onclick=()=>selectedSize?notify('Checkout demonstrativo: conecte aqui seu pagamento.'):notify('Escolha um tamanho antes de continuar.');
-$('#favorite').onclick=e=>{e.currentTarget.textContent=e.currentTarget.textContent==='♡'?'♥':'♡';notify(e.currentTarget.textContent==='♥'?'Produto salvo nos favoritos.':'Produto removido dos favoritos.')};
-$('#share').onclick=async()=>{try{if(navigator.share)await navigator.share({title:'Camiseta do São Paulo Dry Masculina',url:location.href});else await navigator.clipboard.writeText(location.href);notify('Link do produto copiado.')}catch(e){if(e.name!=='AbortError')notify('Não foi possível compartilhar agora.')}};
-$('#shipping-form').onsubmit=e=>{e.preventDefault();const cep=$('#cep').value.replace(/\D/g,'');$('#shipping-result').textContent=cep.length===8?'Entrega estimada: 3 a 7 dias úteis · Valor: R$ __,__':'Digite um CEP válido com 8 números.'};$('#cep').oninput=e=>{let v=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=v.length>5?v.slice(0,5)+'-'+v.slice(5):v};
-$('#newsletter').onsubmit=e=>{e.preventDefault();e.target.reset();notify('Cadastro demonstrativo realizado.')};$('#search-form').onsubmit=e=>{e.preventDefault();notify('Busca demonstrativa: conecte aqui seu catálogo.')};renderThumbs();
+/* EDITE AQUI: dados do produto. Estoque 0 = esgotado; 1 a 3 mostra aviso de poucas unidades. */
+const CFG={nome:'Camiseta do São Paulo Dry Masculina',de:119.99,preco:78.94,pixOff:10,parcelas:1,
+imagens:['','','',''],estoque:{P:10,M:10,G:10,GG:10},
+marca:'',ref:'',vendedor:'',material:'',garantia:'',freteGratis:0,whatsapp:'',empresa:'',cnpj:'',endereco:'',
+medidas:{},/* ex.: {P:[52,70],M:[55,72]} = peito, comprimento em cm */
+avaliacoes:{media:0,total:0,dist:[0,0,0,0,0]},/* dist = nº de avaliações com 1 a 5 estrelas */
+relacionados:[]};/* ex.: {nome:'',preco:0,img:'',url:''} */
+const N=CFG.imagens.length;
+const $=s=>document.querySelector(s),brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const pix=+(CFG.preco*(1-CFG.pixOff/100)).toFixed(2);let size='',qty=1,cur=0,tm;
+function toast(t){const e=$('#ts');e.textContent=t;e.classList.add('on');clearTimeout(tm);tm=setTimeout(()=>e.classList.remove('on'),2600)}
+$('#de').textContent='De '+brl(CFG.de);$('#pix').textContent=brl(pix);$('#sp').textContent=brl(pix);
+$('#inst').innerHTML='ou '+brl(CFG.preco)+' em até <b>'+CFG.parcelas+'x de '+brl(CFG.preco/CFG.parcelas)+'</b> sem juros';
+const off=Math.round((1-pix/CFG.de)*100);
+function show(i){cur=(i+N)%N;const u=CFG.imagens[cur],m=$('#mn');m.innerHTML=(off>0?'<span class="badge">'+off+'% OFF</span>':'')+(u?'<img src="'+u+'" alt="'+CFG.nome+' - foto '+(cur+1)+'">':'<span>Foto '+(cur+1)+'<br>Adicione a URL em CFG.imagens</span>')+(N>1?'<button class="ar l" data-d="-1" aria-label="Foto anterior">&lsaquo;</button><button class="ar r" data-d="1" aria-label="Próxima foto">&rsaquo;</button><span class="ct">'+(cur+1)+'/'+N+'</span>':'');
+document.querySelectorAll('#th button').forEach((b,j)=>b.setAttribute('aria-current',j===cur))}
+CFG.imagens.forEach((u,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver foto '+(i+1));b.innerHTML=u?'<img src="'+u+'" alt="">':i+1;b.onclick=()=>show(i);$('#th').appendChild(b)});show(0);
+Object.entries(CFG.estoque).forEach(([t,n])=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.disabled=n<1;b.setAttribute('aria-pressed','false');if(n<1)b.title='Esgotado';
+b.onclick=()=>{size=t;document.querySelectorAll('#sz button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#sz').classList.remove('bad');const m=$('#sm');m.className='msg';m.textContent=n<=3?'Restam apenas '+n+' unidades no tamanho '+t+'.':''};$('#sz').appendChild(b)});
+$('#mn').onclick=e=>{const d=e.target.closest('[data-d]');if(d)return show(cur+ +d.dataset.d);const u=CFG.imagens[cur];if(!u)return;const l=$('#lb');l.innerHTML='<img src="'+u+'" alt="'+CFG.nome+'"><form method="dialog"><button aria-label="Fechar">&times;</button></form>';l.showModal()};
+let sx=0;$('#mn').ontouchstart=e=>sx=e.touches[0].clientX;$('#mn').ontouchend=e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)show(cur+(d<0?1:-1))};
+$('#lb').onclick=e=>{if(e.target===e.currentTarget)e.currentTarget.close()};
+$('#pl').onclick=()=>$('#qt').textContent=++qty;$('#mi').onclick=()=>$('#qt').textContent=qty=Math.max(1,qty-1);
+function need(){if(size)return false;$('#sz').classList.add('bad');const m=$('#sm');m.className='msg err';m.textContent='Escolha um tamanho para continuar.';$('#sz').scrollIntoView({block:'center',behavior:'smooth'});return true}
+let cq=0;
+function add(){if(need())return;cq+=qty;$('#cc').textContent=cq;const sub=cq*pix,g=CFG.freteGratis,p=g?Math.min(100,sub/g*100):0;
+$('#mc').innerHTML='<h2>Adicionado à sacola</h2><div class="ln"><div class="th1">'+(CFG.imagens[0]?'<img src="'+CFG.imagens[0]+'" alt="">':'')+'</div><div><b>'+CFG.nome+'</b><br><small>Tamanho '+size+', Vermelho</small><br><small>Quantidade: '+qty+'</small></div></div><p class="sub">Subtotal no Pix <b>'+brl(sub)+'</b></p>'+(g?'<div class="fp"><i><u style="width:'+p+'%"></u></i><small>'+(sub>=g?'Você ganhou frete grátis!':'Faltam '+brl(g-sub)+' para o frete grátis')+'</small></div>':'')+'<form method="dialog" class="ac"><button class="cta" value="go">Finalizar compra</button><button class="cta2" value="back">Continuar comprando</button></form>';$('#mc').showModal()}
+$('#mc').onclose=()=>{if($('#mc').returnValue==='go')toast('Demonstração: conecte aqui o seu checkout.')};
+$('#add').onclick=add;$('#sadd').onclick=add;$('#now').onclick=()=>{if(!need())toast('Demonstração: conecte aqui o seu checkout.')};
+$('#gb').onclick=()=>$('#dg').showModal();
+$('#zp').oninput=e=>{const v=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=v.length>5?v.slice(0,5)+'-'+v.slice(5):v};
+$('#zf').onsubmit=e=>{e.preventDefault();const m=$('#zm');const ok=$('#zp').value.replace(/\D/g,'').length===8;m.style.color=ok?'':'var(--sale)';m.textContent=ok?'Entrega em 3 a 7 dias úteis. O valor exato aparece no fechamento do pedido.':'Digite um CEP com 8 números.'};
+$('#nf').onsubmit=e=>{e.preventDefault();e.target.reset();toast('Cadastro realizado. Obrigado!')};
+$('#sf').onsubmit=e=>{e.preventDefault();toast('Demonstração: conecte aqui o seu catálogo.')};
+const A=CFG.avaliacoes,t=[],st=n=>'★'.repeat(Math.round(n))+'☆'.repeat(5-Math.round(n));
+if(CFG.freteGratis)t.push('Frete grátis acima de '+brl(CFG.freteGratis));if(CFG.pixOff)t.push(CFG.pixOff+'% de desconto no Pix');$('#tp').textContent=t.join(' e ');$('#tp').hidden=!t.length;
+if(CFG.pixOff)$('#inst').insertAdjacentHTML('afterend','<p class="save">Você economiza '+brl(CFG.preco-pix)+' pagando no Pix</p>');
+$('#br').innerHTML=CFG.marca?'Marca: <a href="#">'+CFG.marca+'</a>':'';$('#rf').textContent=CFG.ref?'Cód. '+CFG.ref:'';if(CFG.vendedor)$('#vd').textContent='Vendido e entregue por '+CFG.vendedor+'.';
+$('#rs').textContent=A.total?st(A.media):'';$('#rl').textContent=A.total?'('+A.total+' avaliações)':'Seja o primeiro a avaliar';
+$('#rv').innerHTML=(A.total?'<div><strong>'+A.media.toFixed(1).replace('.',',')+'</strong><div class="stars">'+st(A.media)+'</div><small>'+A.total+' avaliações</small></div><div class="bars">'+[5,4,3,2,1].map(n=>'<div><span>'+n+'★</span><i><u style="width:'+Math.round(A.dist[n-1]/A.total*100)+'%"></u></i><span>'+A.dist[n-1]+'</span></div>').join('')+'</div>':'<div><b>Este produto ainda não tem avaliações.</b><div style="color:var(--mut);font-size:14px">Comprou? Conte como foi para ajudar outros clientes.</div></div>')+'<button type="button">Avaliar o produto</button>';
+document.querySelectorAll('[data-s]').forEach(e=>{const v=CFG[e.dataset.s];if(v)e.querySelector('b').textContent=v;else e.hidden=true});
+$('#frx').innerHTML=CFG.freteGratis?'<b>Frete grátis</b><small>Acima de '+brl(CFG.freteGratis)+'</small>':'<b>Entrega rastreada</b><small>Acompanhe seu pedido</small>';
+$('#pcx').innerHTML=CFG.parcelas>1?'<b>Parcele sem juros</b><small>Em até '+CFG.parcelas+'x no cartão</small>':'<b>Desconto no Pix</b><small>'+CFG.pixOff+'% pagando no Pix</small>';
+const M=Object.entries(CFG.medidas);if(M.length)$('#mt').innerHTML='<tr><th>Tamanho</th><th>Peito (cm)</th><th>Comprimento (cm)</th></tr>'+M.map(([k,v])=>'<tr><td>'+k+'</td><td>'+v[0]+'</td><td>'+v[1]+'</td></tr>').join('');else $('#gb').hidden=true;
+if(CFG.whatsapp){const w='https://wa.me/'+CFG.whatsapp.replace(/\D/g,'');['#wa','#wf'].forEach(x=>{$(x).hidden=false;$(x).href=w})}
+$('#lg').textContent=['© 2026 '+(CFG.empresa||'Minha Loja'),CFG.cnpj&&'CNPJ '+CFG.cnpj,CFG.endereco].filter(Boolean).join(' - ');
+if(CFG.relacionados.length)$('#rel').innerHTML=CFG.relacionados.map(q=>'<a class="card" href="'+(q.url||'#')+'"><div class="mn">'+(q.img?'<img src="'+q.img+'" alt="">':'')+'</div><b>'+q.nome+'</b><span>'+brl(q.preco)+'</span></a>').join('');else $('#rls').hidden=true;
+if('IntersectionObserver'in window)new IntersectionObserver(([x])=>$('#sb').classList.toggle('on',!x.isIntersecting&&x.boundingClientRect.top<0)).observe($('#buy'));
+const ld=document.createElement('script');ld.type='application/ld+json';
+ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'Product',name:CFG.nome,image:CFG.imagens.filter(Boolean),offers:{'@type':'Offer',priceCurrency:'BRL',price:CFG.preco.toFixed(2),availability:'https://schema.org/InStock'}});document.head.appendChild(ld);
 </script>
 </body>
 </html>
