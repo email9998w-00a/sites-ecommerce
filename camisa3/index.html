@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Camiseta do São Paulo Dry Masculina com secagem rápida. Pague no Pix com desconto, troque grátis e receba em casa.">
 <title>Camiseta do São Paulo Dry Masculina | Minha Loja</title>
 <style>
@@ -86,6 +86,17 @@ dialog{border:0;border-radius:12px;padding:24px;width:min(92vw,460px)}dialog::ba
 .lb{width:min(94vw,720px);padding:0;background:#000}.lb img{height:auto;max-height:90vh;object-fit:contain}.lb form{position:absolute;top:8px;right:8px;margin:0}.lb button{width:40px;height:40px;padding:0;border-radius:50%;background:#fff;color:var(--ink);font-size:24px}
 .wa{position:fixed;right:18px;bottom:22px;z-index:25;background:#1fa855;color:#fff;font-weight:600;padding:12px 18px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px #0003;font-size:14px}
 @media(max-width:900px){.wa{bottom:88px;right:12px;padding:10px 14px}}
+button,a,input{touch-action:manipulation;-webkit-tap-highlight-color:transparent}.mn{touch-action:pan-y}
+.dots{display:none;position:absolute;left:0;right:0;bottom:14px;justify-content:center;gap:6px}.dots i{width:7px;height:7px;border-radius:50%;background:#fffa;box-shadow:0 0 3px #0006;transition:.2s}.dots i.on{background:#fff;width:20px;border-radius:4px}
+.lb[open]{display:grid;place-items:center}
+@media(max-width:900px){html{overflow-x:clip}header.hd{padding:10px 16px 12px;gap:10px}.act button{min-width:44px;min-height:44px;padding:8px}.nav a{padding:13px 0}input{font-size:16px}
+.gal{margin:0 -20px}.gal .mn{border-radius:0;aspect-ratio:4/5}.dots{display:flex}.ct{top:12px;bottom:auto}.sz button{height:52px}
+.grid4{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -20px;padding:0 20px 8px;scrollbar-width:none}.card{flex:0 0 46%;scroll-snap-align:start}}
+@media(max-width:900px) and (hover:none){.th{display:none}.ar{display:none}}
+@media(max-width:520px){.top{font-size:12px;padding:8px 14px}.bc{padding:12px 0;font-size:12px}.gal{margin:0 -16px}.grid4{margin:0 -16px;padding:0 16px 8px}.card{flex-basis:62%}
+.strip{grid-template-columns:1fr 1fr;padding:18px 14px;gap:18px 10px;font-size:13px}.strip div{flex-direction:column;text-align:center;gap:6px}.fg{grid-template-columns:1fr}section.sec{padding-top:40px}
+dialog:not(.lb){margin:auto 0 0;width:100%;max-width:none;border-radius:16px 16px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom))}
+.lb{width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;border-radius:0}.news{padding:32px 0}.news form{width:100%}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -173,7 +184,7 @@ dialog{border:0;border-radius:12px;padding:24px;width:min(92vw,460px)}dialog::ba
 <div><h3>Segurança</h3><div class="pay"><span>Site seguro (HTTPS)</span></div></div>
 </div><div class="legal" id="lg"></div></div></footer>
 
-<div class="sb" id="sb"><div>No Pix<b id="sp"></b></div><button class="cta" id="sadd" type="button">Adicionar à sacola</button></div>
+<div class="sb" id="sb"><div><span id="ss">No Pix</span><b id="sp"></b></div><button class="cta" id="sadd" type="button">Adicionar à sacola</button></div>
 <dialog id="dg"><h2>Guia de medidas</h2><table id="mt"></table><form method="dialog"><button>Fechar</button></form></dialog>
 <dialog id="lb" class="lb" aria-label="Foto ampliada"></dialog><dialog id="mc" aria-label="Sacola"></dialog><a class="wa" id="wf" target="_blank" rel="noopener" hidden>Fale conosco no WhatsApp</a>
 <div class="toast" id="ts" role="status" aria-live="polite"></div>
@@ -193,11 +204,11 @@ function toast(t){const e=$('#ts');e.textContent=t;e.classList.add('on');clearTi
 $('#de').textContent='De '+brl(CFG.de);$('#pix').textContent=brl(pix);$('#sp').textContent=brl(pix);
 $('#inst').innerHTML='ou '+brl(CFG.preco)+' em até <b>'+CFG.parcelas+'x de '+brl(CFG.preco/CFG.parcelas)+'</b> sem juros';
 const off=Math.round((1-pix/CFG.de)*100);
-function show(i){cur=(i+N)%N;const u=CFG.imagens[cur],m=$('#mn');m.innerHTML=(off>0?'<span class="badge">'+off+'% OFF</span>':'')+(u?'<img src="'+u+'" alt="'+CFG.nome+' - foto '+(cur+1)+'">':'<span>Foto '+(cur+1)+'<br>Adicione a URL em CFG.imagens</span>')+(N>1?'<button class="ar l" data-d="-1" aria-label="Foto anterior">&lsaquo;</button><button class="ar r" data-d="1" aria-label="Próxima foto">&rsaquo;</button><span class="ct">'+(cur+1)+'/'+N+'</span>':'');
+function show(i){cur=(i+N)%N;const u=CFG.imagens[cur],m=$('#mn');m.innerHTML=(off>0?'<span class="badge">'+off+'% OFF</span>':'')+(u?'<img src="'+u+'" alt="'+CFG.nome+' - foto '+(cur+1)+'">':'<span>Foto '+(cur+1)+'<br>Adicione a URL em CFG.imagens</span>')+(N>1?'<button class="ar l" data-d="-1" aria-label="Foto anterior">&lsaquo;</button><button class="ar r" data-d="1" aria-label="Próxima foto">&rsaquo;</button><span class="ct">'+(cur+1)+'/'+N+'</span><span class="dots">'+CFG.imagens.map((_,j)=>'<i'+(j===cur?' class="on"':'')+'></i>').join('')+'</span>':'');
 document.querySelectorAll('#th button').forEach((b,j)=>b.setAttribute('aria-current',j===cur))}
 CFG.imagens.forEach((u,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver foto '+(i+1));b.innerHTML=u?'<img src="'+u+'" alt="">':i+1;b.onclick=()=>show(i);$('#th').appendChild(b)});show(0);
 Object.entries(CFG.estoque).forEach(([t,n])=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.disabled=n<1;b.setAttribute('aria-pressed','false');if(n<1)b.title='Esgotado';
-b.onclick=()=>{size=t;document.querySelectorAll('#sz button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#sz').classList.remove('bad');const m=$('#sm');m.className='msg';m.textContent=n<=3?'Restam apenas '+n+' unidades no tamanho '+t+'.':''};$('#sz').appendChild(b)});
+b.onclick=()=>{size=t;$('#ss').textContent='Tamanho '+t+', no Pix';document.querySelectorAll('#sz button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#sz').classList.remove('bad');const m=$('#sm');m.className='msg';m.textContent=n<=3?'Restam apenas '+n+' unidades no tamanho '+t+'.':''};$('#sz').appendChild(b)});
 $('#mn').onclick=e=>{const d=e.target.closest('[data-d]');if(d)return show(cur+ +d.dataset.d);const u=CFG.imagens[cur];if(!u)return;const l=$('#lb');l.innerHTML='<img src="'+u+'" alt="'+CFG.nome+'"><form method="dialog"><button aria-label="Fechar">&times;</button></form>';l.showModal()};
 let sx=0;$('#mn').ontouchstart=e=>sx=e.touches[0].clientX;$('#mn').ontouchend=e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)show(cur+(d<0?1:-1))};
 $('#lb').onclick=e=>{if(e.target===e.currentTarget)e.currentTarget.close()};
@@ -226,7 +237,7 @@ const M=Object.entries(CFG.medidas);if(M.length)$('#mt').innerHTML='<tr><th>Tama
 if(CFG.whatsapp){const w='https://wa.me/'+CFG.whatsapp.replace(/\D/g,'');['#wa','#wf'].forEach(x=>{$(x).hidden=false;$(x).href=w})}
 $('#lg').textContent=['© 2026 '+(CFG.empresa||'Minha Loja'),CFG.cnpj&&'CNPJ '+CFG.cnpj,CFG.endereco].filter(Boolean).join(' - ');
 if(CFG.relacionados.length)$('#rel').innerHTML=CFG.relacionados.map(q=>'<a class="card" href="'+(q.url||'#')+'"><div class="mn">'+(q.img?'<img src="'+q.img+'" alt="">':'')+'</div><b>'+q.nome+'</b><span>'+brl(q.preco)+'</span></a>').join('');else $('#rls').hidden=true;
-if('IntersectionObserver'in window)new IntersectionObserver(([x])=>$('#sb').classList.toggle('on',!x.isIntersecting&&x.boundingClientRect.top<0)).observe($('#buy'));
+if('IntersectionObserver'in window){let a=0,b=0;const up=()=>$('#sb').classList.toggle('on',!a&&!b);new IntersectionObserver(([x])=>{a=x.isIntersecting;up()}).observe($('#buy'));new IntersectionObserver(([x])=>{b=x.isIntersecting;up()}).observe($('.news'))}
 const ld=document.createElement('script');ld.type='application/ld+json';
 ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'Product',name:CFG.nome,image:CFG.imagens.filter(Boolean),offers:{'@type':'Offer',priceCurrency:'BRL',price:CFG.preco.toFixed(2),availability:'https://schema.org/InStock'}});document.head.appendChild(ld);
 </script>
