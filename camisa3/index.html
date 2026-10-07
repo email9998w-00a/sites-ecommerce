@@ -110,6 +110,11 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
 .cta{box-shadow:0 4px 12px #1557a640}.cta:disabled{box-shadow:none}
 @media(max-width:900px){.faq{columns:1}}
 @media(max-width:520px){.gal .mn{aspect-ratio:1/1.1}section.sec{margin-top:36px;padding-top:32px}}
+.msg:empty{display:none}.act .st{display:none}
+@media(max-width:900px){.act .st{display:flex}.search{display:none}.search.open{display:flex}.ct{display:none}.nav{position:relative}.nav:after{content:"";position:absolute;right:0;top:0;bottom:0;width:36px;background:linear-gradient(90deg,#fff0,#fff);pointer-events:none}.opt{margin-top:18px}.buy{margin-top:16px}}
+@media(max-width:520px){.bc>*{display:none}.bc a:nth-child(3){display:block;font-size:13px}.bc a:nth-child(3):before{content:"\2039  "}.bc{padding:10px 0}
+.tr{grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}.tr li{flex-direction:column;align-items:center;gap:6px}.tr small{display:none}.tr b{font-size:12px;line-height:1.3}
+.fg{grid-template-columns:1fr 1fr;gap:24px 16px}.fg>div:nth-child(n+3){grid-column:1/-1}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -118,7 +123,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
 <header class="w hd">
   <a class="logo" href="#"><i></i>Minha Loja</a>
   <form class="search" id="sf"><label class="sr" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Busque por produto, time ou marca"><button aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button></form>
-  <div class="act">
+  <div class="act"><button type="button" class="st" id="st" aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span>Buscar</span></button>
     <button type="button"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span>Entrar</span></button>
     <button type="button" id="bg" aria-label="Sacola"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><em id="cc">0</em><span>Sacola</span></button>
   </div>
@@ -162,7 +167,6 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
       <p class="msg" id="zm" role="status"></p></div>
 
     <div style="margin-top:18px">
-      <details open><summary>Sobre o produto</summary><p>Tecido leve e de secagem rápida, com conforto térmico e liberdade de movimento para o dia a dia e para a torcida.</p></details>
       <details><summary>Cuidados com a peça</summary><p>Lavar à mão ou na máquina em ciclo delicado, com água fria. Não usar alvejante.</p></details>
       <details><summary>Formas de pagamento</summary><p id="fpg"></p></details>
       <details><summary>Entrega e trocas</summary><p>Prazo e valor calculados pelo CEP. Troca grátis conforme a política da loja.</p></details>
@@ -246,13 +250,14 @@ $('#rv').innerHTML=(A.total?'<div><strong>'+A.media.toFixed(1).replace('.',',')+
 if(A.lista.length)$('#rv').insertAdjacentHTML('afterend','<div class="rl">'+A.lista.map(v=>'<article><span class="stars">'+st(v.nota)+'</span> <b>'+v.nome+'</b> <small>'+(v.data||'')+'</small><p>'+v.texto+'</p></article>').join('')+'</div>');
 $('#fpg').innerHTML='Pix: <b>'+brl(pix)+'</b>'+(CFG.pixOff?' ('+CFG.pixOff+'% de desconto)':'')+'. Cartão de crédito: '+brl(CFG.preco)+(CFG.parcelas>1?' em até '+CFG.parcelas+'x sem juros':' à vista')+'.';
 $('#shr').onclick=async()=>{try{if(navigator.share)await navigator.share({title:CFG.nome,url:location.href});else{await navigator.clipboard.writeText(location.href);toast('Link copiado.')}}catch(e){}};
+$('#st').onclick=()=>{const f=$('#sf');f.classList.toggle('open');if(f.classList.contains('open'))$('#q').focus()};
 $('#bg').onclick=()=>cq?$('#mc').showModal():toast('Sua sacola está vazia.');
 document.querySelectorAll('[data-s]').forEach(e=>{const v=CFG[e.dataset.s];if(v)e.querySelector('b').textContent=v;else e.hidden=true});
 const M=Object.entries(CFG.medidas);if(M.length)$('#mt').innerHTML='<tr><th>Tamanho</th><th>Peito (cm)</th><th>Comprimento (cm)</th></tr>'+M.map(([k,v])=>'<tr><td>'+k+'</td><td>'+v[0]+'</td><td>'+v[1]+'</td></tr>').join('');else $('#gb').hidden=true;
 if(CFG.whatsapp){const w='https://wa.me/'+CFG.whatsapp.replace(/\D/g,'');['#wa','#wf'].forEach(x=>{$(x).hidden=false;$(x).href=w})}
 $('#lg').textContent=['© 2026 '+(CFG.empresa||'Minha Loja'),CFG.cnpj&&'CNPJ '+CFG.cnpj,CFG.endereco].filter(Boolean).join(' - ');
 if(CFG.relacionados.length)$('#rel').innerHTML=CFG.relacionados.map(q=>'<a class="card" href="'+(q.url||'#')+'"><div class="mn">'+(q.img?'<img src="'+q.img+'" alt="">':'')+'</div><b>'+q.nome+'</b><span>'+brl(q.preco)+'</span></a>').join('');else $('#rls').hidden=true;
-if('IntersectionObserver'in window){let a=0,b=0;const up=()=>$('#sb').classList.toggle('on',!a&&!b);new IntersectionObserver(([x])=>{a=x.isIntersecting;up()}).observe($('#buy'));new IntersectionObserver(([x])=>{b=x.isIntersecting;up()}).observe($('.news'))}
+if('IntersectionObserver'in window){let a=0,b=0;const up=()=>$('#sb').classList.toggle('on',!a&&!b&&scrollY>240);addEventListener('scroll',up,{passive:true});new IntersectionObserver(([x])=>{a=x.isIntersecting;up()}).observe($('#buy'));new IntersectionObserver(([x])=>{b=x.isIntersecting;up()}).observe($('.news'))}
 const ld=document.createElement('script');ld.type='application/ld+json';
 const ok=Object.values(CFG.estoque).some(n=>n>0),o={'@context':'https://schema.org','@type':'Product',name:CFG.nome,image:CFG.imagens.filter(Boolean),offers:{'@type':'Offer',priceCurrency:'BRL',price:CFG.preco.toFixed(2),availability:'https://schema.org/'+(ok?'InStock':'OutOfStock')}};
 if(CFG.marca)o.brand={'@type':'Brand',name:CFG.marca};if(CFG.ref)o.sku=CFG.ref;if(A.total)o.aggregateRating={'@type':'AggregateRating',ratingValue:A.media,reviewCount:A.total};
