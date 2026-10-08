@@ -196,6 +196,7 @@
     :focus-visible{outline-color:var(--red)}
     .product-kicker{display:inline-flex;align-items:center;margin:0 0 10px;padding:6px 11px;border-radius:999px;background:#1d1a1d;color:#fff;font-size:10px;font-weight:800;letter-spacing:.075em;line-height:1.15;text-transform:uppercase}
     .product-summary{max-width:54ch;margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+    .product-summary strong{color:var(--red-dark);font-weight:850}
     .promo{background:linear-gradient(100deg,#820a3d,#a10e4e)}
     .nav a{color:#252a30}
     .nav a:hover{color:var(--red-dark)}
@@ -250,6 +251,8 @@
     .countdown-caption{color:var(--muted);font-size:8px;font-weight:800;letter-spacing:.08em;line-height:1.2}
     .today-timer{color:var(--red);font-size:18px;font-weight:850;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
     .today-scarcity:not([hidden])+.add{margin-top:16px}
+    .primary{text-transform:uppercase;letter-spacing:.02em}
+    .mobile-shipping-note{display:block;margin-top:1px;color:var(--muted);font-size:9px;line-height:1.1}
     @media(max-width:560px){
       .today-scarcity{grid-template-columns:minmax(0,1fr) 102px;gap:8px;margin-top:16px;margin-bottom:0;padding:11px 10px}
       .today-scarcity-title{font-size:12px}
@@ -265,6 +268,19 @@
       .today-scarcity-deadline{font-size:9px}
       .today-countdown{padding:7px 3px}
       .today-timer{font-size:13px}
+    }
+    .offer{margin-top:17px;padding:17px 18px 15px;border:0;border-radius:14px;background:linear-gradient(125deg,#760a39 0%,#970d49 58%,#ad1458 100%);box-shadow:0 10px 23px #760a3928;color:#fff}
+    .offer-label{display:inline-flex;align-items:center;margin:0 0 7px;padding:4px 8px;border-radius:999px;background:#fff;color:#760a39;font-size:9px;font-weight:900;letter-spacing:.09em}
+    .offer-main{color:#fff;font-size:23px;font-weight:900;letter-spacing:-.02em}
+    .offer-price{margin-top:4px;color:#fff;font-size:42px;font-weight:900;letter-spacing:-.045em}
+    .offer-note{position:relative;margin-top:10px;padding-top:9px;border-top:1px solid #ffffff55;color:#fff2f7;font-size:11px;line-height:1.4}
+    .offer-note strong{color:#fff}
+    @media(max-width:560px){
+      .offer{margin-top:15px;padding:14px 14px 13px;border-radius:13px;box-shadow:0 7px 17px #760a3924}
+      .offer-label{margin-bottom:6px;font-size:8px}
+      .offer-main{font-size:21px}
+      .offer-price{font-size:37px}
+      .offer-note{margin-top:8px;padding-top:7px;font-size:10px}
     }
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
@@ -294,7 +310,7 @@
         <p class="seller" id="sellerName" hidden></p>
         <p class="product-kicker">Corinthians <span aria-hidden="true">&nbsp;•&nbsp;</span> Camiseta casual</p>
         <h1 id="productTitle">Camiseta Casual Corinthians</h1>
-        <p class="product-summary">Camiseta casual preta com o escudo do Corinthians. Selecione o tamanho antes de adicionar à sacola.</p>
+        <p class="product-summary"><strong>A camiseta sai por R$ 0,00.</strong> O frete é cobrado à parte.</p>
 
         <div class="offer" id="oferta" aria-label="Oferta da camiseta grátis">
           <p class="offer-label" id="offerLabel">Oferta promocional</p>
@@ -302,7 +318,7 @@
           <div class="offer-price" id="price">R$ 0,00</div>
           <div class="scarcity-signals" id="scarcitySignals" hidden><span class="scarcity-chip scarcity-stock" id="stockSignal" hidden></span></div>
           <span class="sr-only" id="scarcityStatus" role="status" aria-live="polite"></span>
-        <p class="offer-note" id="offerNote"><strong>Camiseta por R$ 0,00.</strong> Frete à parte; o cálculo ainda não está disponível nesta prévia.</p>
+        <p class="offer-note" id="offerNote">Frete cobrado à parte. A cotação por CEP não está ativa nesta prévia.</p>
         </div>
 
         <div class="option">
@@ -318,7 +334,7 @@
           </div>
           <div class="today-countdown"><span class="countdown-caption">TEMPO RESTANTE</span><span class="today-timer" id="timerSignal" role="timer" aria-live="off">00:00:00</span></div>
         </div>
-        <button class="primary add" id="addButton" type="button">Adicionar à sacola</button>
+        <button class="primary add" id="addButton" type="button">Quero minha camiseta grátis</button>
         <p class="payment-note">Prévia demonstrativa: pedidos e pagamentos não são processados.</p>
 
         <div class="shipping" id="shipping">
@@ -356,7 +372,7 @@
     <div><h2>Sobre esta página</h2><p class="footer-note">Prévia visual sem processamento de pedidos. Antes de vender, cadastre identificação e atendimento do lojista, políticas e dados do produto; conecte estoque, frete e checkout.</p></div>
   </div><div class="legal">© <span id="year"></span> Minha Loja · Prévia demonstrativa, sem processamento de pedidos ou pagamentos.</div></div></footer>
 
-  <div class="mobile-buy" id="mobileBuy" aria-label="Ação de compra"><div class="mobile-buy-copy"><span id="mobileDealLabel">CAMISETA GRÁTIS</span><strong id="mobileDealPrice">R$ 0,00</strong></div><button class="primary" id="mobileAdd" type="button">Adicionar à sacola</button></div>
+  <div class="mobile-buy" id="mobileBuy" aria-label="Ação de compra"><div class="mobile-buy-copy"><span id="mobileDealLabel">CAMISETA GRÁTIS</span><strong id="mobileDealPrice">R$ 0,00</strong><small class="mobile-shipping-note">Frete à parte</small></div><button class="primary" id="mobileAdd" type="button">Quero a camiseta grátis</button></div>
   <dialog id="sizeDialog"><h2>Tabela de medidas</h2><p>As medidas deste modelo ainda não foram informadas. Compare com uma camiseta que você já usa e confirme a tabela com o lojista antes de escolher.</p><div class="dialog-actions"><button class="secondary" type="button" data-close="sizeDialog">Fechar</button></div></dialog>
   <dialog id="bagDialog"><h2>Sacola (prévia)</h2><div id="bagContent"></div><div class="dialog-actions"><button class="secondary" type="button" data-close="bagDialog">Continuar comprando</button><button type="button" id="checkoutButton" disabled>Checkout indisponível</button></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
