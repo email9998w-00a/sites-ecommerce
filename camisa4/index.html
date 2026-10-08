@@ -574,6 +574,17 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .offer-timer{margin:-4px 0 10px 12px;padding:5px 8px;font-size:10px}
   .offer-timer time{font-size:15px}
 }
+
+/* Oferta mais agressiva: valor percebido forte, mas em um único bloco */
+.offer-lead{padding:10px 12px 11px;border-left:3px solid #16734a;border-radius:0 9px 9px 0;background:linear-gradient(90deg,#f2faf5 0%,#fbfefc 72%,transparent 100%)}
+.offer-lead .free-offer{font-size:26px;letter-spacing:-.025em}
+.save-note{margin:6px 0 0;color:#16734a;font-size:12px;font-weight:800;line-height:1.3}
+.save-note:before{content:'✓';display:inline-grid;place-items:center;width:15px;height:15px;margin-right:5px;border-radius:50%;background:#e5f4ea;font-size:10px}
+@media(max-width:520px){
+  .offer-lead{padding:8px 10px 9px}
+  .offer-lead .free-offer{font-size:22px}
+  .save-note{margin-top:5px;font-size:10.5px}
+}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
@@ -605,7 +616,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
     <div class="pr">
       <span class="de" id="de"></span>
       <div><span class="big" id="pix"></span><span class="pix">camiseta grátis</span></div>
-      <p class="inst" id="inst"></p>
+      <p class="inst" id="inst"></p><p class="save-note" id="saveNote"></p>
     </div>
     <div class="rt"><span class="stars" id="rs" aria-hidden="true"></span><a href="#avaliacoes" id="rl"></a><span id="rf"></span><button type="button" id="shr" class="shr">Compartilhar</button></div>
 
@@ -679,7 +690,7 @@ const pix=+(CFG.preco*(1-CFG.pixOff/100)).toFixed(2);let size='',qty=1,cur=0,tm;
 const timerEl=$('#offerTimer');let offerEnd=0;try{offerEnd=+(sessionStorage.getItem('offerEndAt')||0);if(!offerEnd||offerEnd<Date.now()){offerEnd=Date.now()+27*60*1000;sessionStorage.setItem('offerEndAt',offerEnd)}}catch(e){offerEnd=Date.now()+27*60*1000}function updateOfferTimer(){const left=Math.max(0,offerEnd-Date.now()),mins=Math.floor(left/60000),secs=Math.floor(left/1000)%60;if(timerEl){timerEl.textContent=String(mins).padStart(2,'0')+':'+String(secs).padStart(2,'0');timerEl.setAttribute('aria-label',mins+' minutos e '+secs+' segundos restantes');if(!left){timerEl.textContent='00:00';timerEl.parentElement.classList.add('expired');timerEl.previousElementSibling.textContent='Oferta encerrada'}}}updateOfferTimer();setInterval(updateOfferTimer,1000);
 function toast(t){const e=$('#ts');e.textContent=t;e.classList.add('on');clearTimeout(tm);tm=setTimeout(()=>e.classList.remove('on'),2600)}
 $('#de').textContent='De '+brl(CFG.de);$('#pix').textContent='R$ 0,00';$('#sp').textContent='Total R$ 50,00';
-$('#inst').innerHTML='Envio e logística: <b>R$ 50,00</b>';
+$('#inst').innerHTML='Envio e logística: <b>R$ 50,00</b>';$('#saveNote').textContent='Economia no produto: '+brl(CFG.de-CFG.preco);
 const off=0;
 function show(i){cur=(i+N)%N;const u=CFG.imagens[cur],m=$('#mn');m.innerHTML='<span class="photo-offer">GRÁTIS</span>'+(off>0?'<span class="badge">'+off+'% OFF</span>':'')+(u?'<img src="'+u+'" alt="'+CFG.nome+' - foto '+(cur+1)+'">':'<span>Foto '+(cur+1)+'<br>Adicione a URL em CFG.imagens</span>')+(N>1?'<button class="ar l" data-d="-1" aria-label="Foto anterior">&lsaquo;</button><button class="ar r" data-d="1" aria-label="Próxima foto">&rsaquo;</button><span class="ct">'+(cur+1)+'/'+N+'</span><span class="dots">'+CFG.imagens.map((_,j)=>'<i'+(j===cur?' class="on"':'')+'></i>').join('')+'</span>':'');
 document.querySelectorAll('#th button').forEach((b,j)=>b.setAttribute('aria-current',j===cur))}
