@@ -163,7 +163,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .gal .mn img{object-fit:contain;padding:8px}
   .th{padding:8px 14px;background:#fff;gap:6px}.th button{width:52px}
   .inf{padding-top:2px}
-  .pr{background:#fbfcfe;border:1px solid #e1e8f2;border-radius:10px;padding:12px 13px;margin-top:12px}
+  .pr{background:#f8fbf9;border:1px solid #dcebe2;border-radius:10px;padding:12px 13px;margin-top:12px}
   .pr .de{text-decoration:none;color:var(--mut);display:block;margin-bottom:2px}
   .big{color:var(--brand);font-size:28px}.pix{background:#e8f5ee}
   .inst{color:#3d444f}.inst b{color:var(--ink)}
@@ -190,7 +190,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
 :root{--brand:#171717;--brand-d:#000;--sale:#b4232c;--ok:#16734a}
 .top{background:#171717;font-weight:600;letter-spacing:.05px}
 .logo i{background:#171717}.search button,.cta{background:#171717}.search button:hover,.cta:hover{background:#000}
-.nav a:last-child{color:var(--sale)}.cta{box-shadow:0 5px 14px #00000022}.cta2{border-color:#171717;color:#171717}
+.nav a:last-child{color:var(--sale)}.cta{box-shadow:0 5px 14px #00000022;letter-spacing:-.1px}.cta2{border-color:#cfd4da;color:#3d444f;background:#fff;font-weight:600}
 .pix{color:var(--ok)}.sz button[aria-pressed=true]{border-color:#171717;color:#171717;background:#f1f1f1}
 .buy{position:relative}.buy:after{content:'Sem cobrança recorrente';position:absolute;left:0;bottom:-18px;color:var(--mut);font-size:11px}
 .tr{border-radius:10px}.ship{border:1px solid #e1e5ea}
@@ -201,7 +201,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .gal .mn{border-radius:12px}.pd{gap:42px}
 }
 @media(max-width:520px){
-  .top{font-size:10.5px}.inf{padding-top:4px}.inf h1{font-weight:800;letter-spacing:-.3px}
+  .top{font-size:11px;font-weight:700}.inf{padding-top:4px}.inf h1{font-weight:800;letter-spacing:-.3px}
   .pr{box-shadow:0 3px 10px #18212b0a}.pr .big{font-weight:800}
   .buy:after{bottom:-16px;font-size:10px}.tr{margin-top:22px}
   .ship h2{font-weight:700}.sb{box-shadow:0 -3px 14px #00000012}.sb .cta{background:#171717}
@@ -239,12 +239,13 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
 .cta,.cta2{border-radius:9px;letter-spacing:-.1px;transition:background .18s,border-color .18s,box-shadow .18s,transform .18s}
 .cta:hover,.cta2:hover{transform:translateY(-1px)}.cta:active,.cta2:active{transform:translateY(0);box-shadow:none}
 .cta:focus-visible,.cta2:focus-visible,.sz button:focus-visible,.qty button:focus-visible{outline:3px solid #777;outline-offset:2px}
-.buy:after{display:none}
-.offer-kicker{display:inline-flex;align-items:center;gap:6px;margin-bottom:6px;color:#16734a;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+.buy:after{content:"Sem cobrança recorrente";display:block;position:absolute;left:0;bottom:-18px;color:var(--mut);font-size:11px}
+.offer-kicker{display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;color:#16734a;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.offer-kicker:after{content:"ESTOQUE LIMITADO";color:#b4232c;font-size:10px;letter-spacing:.06em;margin-left:4px}
 .offer-kicker:before{content:'✓';display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:#e7f5ed;font-size:11px}
-.offer-lead{margin:0 0 8px;color:#3d444f;font-size:14px;line-height:1.4}.offer-lead strong{color:#171717}
+.offer-lead{margin:0 0 10px;color:#3d444f;font-size:14px;line-height:1.45}.offer-lead strong{color:#171717}.offer-lead b{font-weight:700;color:#16734a}
 .pr .de{text-decoration:none;color:#3d444f;font-weight:600}.pr .big{color:#16734a}.pr .pix{background:#e7f5ed;color:#16734a}
 @media(max-width:520px){
+  .buy:after{bottom:-16px;font-size:10px}
   .sz{gap:6px}.sz button{height:42px;border-radius:8px;font-size:13px}
   .sz button[aria-pressed=true]{box-shadow:0 2px 6px #0002}
   .buy{display:grid;grid-template-columns:84px minmax(0,1fr);gap:7px;margin-bottom:0}.qty{width:100%;height:46px}.cta{min-width:0;padding-inline:8px;font-size:13px;line-height:1.15}
@@ -254,7 +255,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
-<div class="top" id="tp">Cortesia promocional • contribuição única de envio: R$ 50,00 • enquanto durar o estoque</div>
+<div class="top" id="tp">OFERTA ESPECIAL • camiseta por R$ 0,00 • contribuição única de R$ 50,00 para envio e logística</div>
 <header class="w hd">
   <a class="logo" href="#"><i></i>Minha Loja</a>
   <form class="search" id="sf"><label class="sr" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Busque por produto, time ou marca"><button aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button></form>
@@ -275,33 +276,33 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   </div>
 
   <div class="inf">
-    <div class="offer-kicker">Oferta especial: camiseta grátis</div>
+    <div class="offer-kicker">Oferta especial por tempo limitado</div>
     <div class="brand" id="br"></div>
     <h1>Camiseta Casual Corinthians</h1>
-    <p class="offer-lead"><strong>Você recebe a camiseta por R$ 0,00.</strong> Há apenas uma contribuição única de R$ 50,00 para envio e logística.</p>
+    <p class="offer-lead"><strong>Receba sua camiseta por R$ 0,00.</strong> Você paga apenas a contribuição única de R$ 50,00 para envio e logística — <b>sem cobrança recorrente.</b></p>
     <div class="rt"><span class="stars" id="rs" aria-hidden="true"></span><a href="#avaliacoes" id="rl"></a><span id="rf"></span><button type="button" id="shr" class="shr">Compartilhar</button></div>
 
     <div class="pr">
       <span class="de" id="de"></span>
-      <div><span class="big" id="pix"></span><span class="pix">camiseta grátis</span></div>
+      <div><span class="big" id="pix"></span><span class="pix">R$ 0,00 na camiseta</span></div>
       <p class="inst" id="inst"></p>
     </div>
 
     <div class="opt"><div class="oh"><b>Cor: <span style="font-weight:400">Preta</span></b></div><div class="sw"><button type="button" aria-label="Preta" aria-pressed="true" style="background:#111"></button></div></div>
     <div class="opt"><div class="oh"><b>Tamanho</b><button type="button" id="gb">Guia de medidas</button></div><div class="sz" id="sz" role="group" aria-label="Tamanho"></div><p class="msg" id="sm" role="alert"></p></div>
 
-    <div class="buy" id="buy"><div class="qty"><button type="button" id="mi" aria-label="Diminuir">&minus;</button><output id="qt">1</output><button type="button" id="pl" aria-label="Aumentar">+</button></div><button class="cta" id="add" type="button">Quero minha camiseta grátis</button></div>
-    <button class="cta2" id="now" type="button">Continuar para os dados de envio</button><p class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Modo demonstrativo — nenhum pagamento é processado</p>
+    <div class="buy" id="buy"><div class="qty"><button type="button" id="mi" aria-label="Diminuir">&minus;</button><output id="qt">1</output><button type="button" id="pl" aria-label="Aumentar">+</button></div><button class="cta" id="add" type="button">Quero receber minha camiseta</button></div>
+    <button class="cta2" id="now" type="button">Ir para os dados de envio</button><p class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Modo demonstrativo — nenhum pagamento é processado</p>
 
     <ul class="tr">
       <li><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><div><b>Compra segura</b><small>Seus dados protegidos em todas as etapas.</small></div></li>
-      <li><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5M18 3v4h-4M6 21v-4h4"/></svg><div><b>Troca grátis</b><small>Confira as regras de troca deste produto.</small></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5M18 3v4h-4M6 21v-4h4"/></svg><div><b>Troca facilitada</b><small>Consulte as regras de troca antes de confirmar.</small></div></li>
       <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><div><b>Produto original</b><small id="vd">Entrega para todo o Brasil.</small></div></li>
     </ul>
 
     <div class="ship"><h2>Calcule o frete e o prazo</h2><p>Digite seu CEP para ver as opções de entrega e retirada.</p>
       <form class="zip" id="zf"><input id="zp" inputmode="numeric" maxlength="9" placeholder="00000-000" aria-label="CEP" autocomplete="postal-code"><button>Calcular</button></form>
-      <p class="msg" id="zm" role="status"></p><p style="margin:10px 0 0;font-size:13px;color:var(--ink)"><strong>Condição da oferta:</strong> camiseta como cortesia promocional; contribuição única de <strong>R$ 50,00</strong> para envio e logística. Confira o vendedor e as políticas antes de pagar.</p></div>
+      <p class="msg" id="zm" role="status"></p><p style="margin:10px 0 0;font-size:13px;color:var(--ink)"><strong>Transparência da oferta:</strong> camiseta como cortesia promocional. Total desta etapa: <strong>R$ 50,00</strong> para envio e logística, sem cobrança recorrente. Confira o vendedor e as políticas antes de pagar.</p></div>
 
     <div style="margin-top:18px">
       <details><summary>Cuidados com a peça</summary><p>Lavar à mão ou na máquina em ciclo delicado, com água fria. Não usar alvejante.</p></details>
@@ -338,7 +339,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
 <div><h3>Segurança</h3><div class="pay"><span>Site seguro (HTTPS)</span></div></div>
 </div><div class="legal" id="lg"></div></div></footer>
 
-  <div class="sb" id="sb"><div><span id="ss">Camiseta grátis</span><b id="sp"></b></div><button class="cta" id="sadd" type="button">Quero a minha</button></div>
+  <div class="sb" id="sb"><div><span id="ss">Camiseta por R$ 0,00</span><b id="sp"></b></div><button class="cta" id="sadd" type="button">Receber oferta</button></div>
 <dialog id="dg"><h2>Guia de medidas</h2><table id="mt"></table><form method="dialog"><button>Fechar</button></form></dialog>
 <dialog id="lb" class="lb" aria-label="Foto ampliada"></dialog><dialog id="mc" aria-label="Sacola"></dialog><a class="wa" id="wf" aria-label="Fale conosco no WhatsApp" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z"/><path d="M9.5 8.5c0 3 3 6 6 6l1-1.500-2-1-1 .8c-.9-.4-1.800-1.300-2.200-2.200l.8-1z"/></svg><span>Fale conosco</span></a>
 <div class="toast" id="ts" role="status" aria-live="polite"></div>
