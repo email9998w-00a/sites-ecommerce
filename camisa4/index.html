@@ -239,11 +239,38 @@
       .add{margin-top:18px}
     }
     @media(max-width:370px){.nav-inner{gap:12px}.nav-more{margin-left:auto}}
+    .today-scarcity{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;margin:14px 0 0;padding:12px 14px;border:1px solid #e2b4c4;border-left:4px solid var(--red);border-radius:11px;background:linear-gradient(110deg,#fff0f5,#fff8fb);box-shadow:0 5px 15px #790b3b12;color:var(--red-dark)}
+    .today-scarcity[hidden]{display:none}
+    .today-scarcity-copy{display:grid;align-content:center;gap:3px;min-width:0}
+    .today-scarcity-title{display:block;color:var(--ink);font-size:14px;font-weight:800;line-height:1.2;letter-spacing:-.01em}
+    .today-scarcity-title::before{content:none}
+    .today-scarcity-title time{color:var(--red);font-weight:900;white-space:nowrap}
+    .today-scarcity-deadline{color:var(--muted);font-size:11px;line-height:1.3}
+    .today-countdown{display:grid;justify-items:center;gap:4px;min-width:106px;padding:8px 10px;border:1px solid #e0bfca;border-radius:9px;background:#fff}
+    .countdown-caption{color:var(--muted);font-size:8px;font-weight:800;letter-spacing:.08em;line-height:1.2}
+    .today-timer{color:var(--red);font-size:18px;font-weight:850;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .today-scarcity:not([hidden])+.add{margin-top:16px}
+    @media(max-width:560px){
+      .today-scarcity{grid-template-columns:minmax(0,1fr) 102px;gap:8px;margin-top:16px;margin-bottom:0;padding:11px 10px}
+      .today-scarcity-title{font-size:12px}
+      .today-scarcity-deadline{font-size:10px}
+      .today-countdown{min-width:0;padding:7px 5px}
+      .countdown-caption{font-size:7px}
+      .today-timer{font-size:15px}
+      .today-scarcity:not([hidden])+.add{margin-top:16px}
+    }
+    @media(max-width:370px){
+      .today-scarcity{grid-template-columns:minmax(0,1fr) 88px;gap:6px;padding:10px 8px}
+      .today-scarcity-title{font-size:11px}
+      .today-scarcity-deadline{font-size:9px}
+      .today-countdown{padding:7px 3px}
+      .today-timer{font-size:13px}
+    }
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <div class="promo"><div class="wrap promo-inner"><span class="promo-free" id="promoFree">CAMISETA GRÁTIS</span><span class="promo-price" id="promoPrice">R$ 0,00</span><span class="promo-sep" id="promoSeparator" aria-hidden="true"></span><span class="promo-note" id="promoNote">Frete à parte • valor antes de pagar</span></div></div>
+  <div class="promo"><div class="wrap promo-inner"><span class="promo-free" id="promoFree">CAMISETA GRÁTIS</span><span class="promo-price" id="promoPrice">R$ 0,00</span><span class="promo-sep" id="promoSeparator" aria-hidden="true"></span><span class="promo-note" id="promoNote">Frete à parte</span></div></div>
   <header class="wrap header">
     <a class="logo" href="#topo" aria-label="Minha Loja — início"><span class="logo-mark" aria-hidden="true"></span>Minha Loja</a>
     <div class="header-actions"><a class="help-link" href="#duvidas" aria-label="Ir para dúvidas frequentes"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.7c-1.1 1-1.9 1.4-1.9 3"/><path d="M12 17.5h.01"/></svg><span>Ajuda</span></a><button type="button" id="bagBtn" aria-label="Sacola"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>Sacola (<b id="bagCount">0</b>)</span></button></div>
@@ -275,7 +302,7 @@
           <div class="offer-price" id="price">R$ 0,00</div>
           <div class="scarcity-signals" id="scarcitySignals" hidden><span class="scarcity-chip scarcity-stock" id="stockSignal" hidden></span></div>
           <span class="sr-only" id="scarcityStatus" role="status" aria-live="polite"></span>
-        <p class="offer-note" id="offerNote"><strong>A camiseta custa R$ 0,00.</strong> Frete à parte; confira o valor total antes de pagar.</p>
+        <p class="offer-note" id="offerNote"><strong>Camiseta por R$ 0,00.</strong> Frete à parte; o cálculo ainda não está disponível nesta prévia.</p>
         </div>
 
         <div class="option">
@@ -284,8 +311,14 @@
           <p class="size-message" id="sizeMessage" role="status" aria-live="polite"></p>
         </div>
 
-        <div class="today-scarcity" id="todayScarcity" hidden><span class="today-scarcity-title">Oferta grátis termina hoje</span><span class="today-timer" id="timerSignal" role="timer" aria-live="off"></span></div>
-        <button class="primary add" id="addButton" type="button">Adicionar camiseta grátis à sacola</button>
+        <div class="today-scarcity" id="todayScarcity" hidden aria-label="Prazo da oferta da camiseta grátis">
+          <div class="today-scarcity-copy">
+            <strong class="today-scarcity-title">A oferta termina hoje às <time id="offerDeadlineTime">23:59</time></strong>
+            <span class="today-scarcity-deadline">Horário de Brasília</span>
+          </div>
+          <div class="today-countdown"><span class="countdown-caption">TEMPO RESTANTE</span><span class="today-timer" id="timerSignal" role="timer" aria-live="off">00:00:00</span></div>
+        </div>
+        <button class="primary add" id="addButton" type="button">Adicionar à sacola</button>
         <p class="payment-note">Prévia demonstrativa: pedidos e pagamentos não são processados.</p>
 
         <div class="shipping" id="shipping">
@@ -323,7 +356,7 @@
     <div><h2>Sobre esta página</h2><p class="footer-note">Prévia visual sem processamento de pedidos. Antes de vender, cadastre identificação e atendimento do lojista, políticas e dados do produto; conecte estoque, frete e checkout.</p></div>
   </div><div class="legal">© <span id="year"></span> Minha Loja · Prévia demonstrativa, sem processamento de pedidos ou pagamentos.</div></div></footer>
 
-  <div class="mobile-buy" id="mobileBuy" aria-label="Ação de compra"><div class="mobile-buy-copy"><span id="mobileDealLabel">CAMISETA GRÁTIS</span><strong id="mobileDealPrice">R$ 0,00</strong></div><button class="primary" id="mobileAdd" type="button">Adicionar grátis</button></div>
+  <div class="mobile-buy" id="mobileBuy" aria-label="Ação de compra"><div class="mobile-buy-copy"><span id="mobileDealLabel">CAMISETA GRÁTIS</span><strong id="mobileDealPrice">R$ 0,00</strong></div><button class="primary" id="mobileAdd" type="button">Adicionar à sacola</button></div>
   <dialog id="sizeDialog"><h2>Tabela de medidas</h2><p>As medidas deste modelo ainda não foram informadas. Compare com uma camiseta que você já usa e confirme a tabela com o lojista antes de escolher.</p><div class="dialog-actions"><button class="secondary" type="button" data-close="sizeDialog">Fechar</button></div></dialog>
   <dialog id="bagDialog"><h2>Sacola (prévia)</h2><div id="bagContent"></div><div class="dialog-actions"><button class="secondary" type="button" data-close="bagDialog">Continuar comprando</button><button type="button" id="checkoutButton" disabled>Checkout indisponível</button></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -413,9 +446,11 @@
           if(remaining<=0){closeOffer();return;}
           const expiresToday=brazilDate.format(new Date(endsAt))===brazilDate.format(new Date());
           if(!expiresToday){todayScarcity.hidden=true;timerSignal.hidden=true;return;}
-          timerSignal.textContent=`Até ${brazilTime.format(new Date(endsAt))} · ${formatRemaining(remaining)}`;
+          const deadlineTime=brazilTime.format(new Date(endsAt));
+          $('#offerDeadlineTime').textContent=deadlineTime;
+          timerSignal.textContent=formatRemaining(remaining);
           timerSignal.title=`Fim da oferta: ${deadline} (horário de Brasília)`;
-          timerSignal.setAttribute('aria-label',`Oferta grátis termina hoje, até ${deadline}, horário de Brasília; restam ${formatRemaining(remaining)}`);
+          timerSignal.setAttribute('aria-label',`Restam ${formatRemaining(remaining)} para a oferta grátis terminar hoje às ${deadline}, horário de Brasília`);
           timerSignal.hidden=false;todayScarcity.hidden=false;
         };
         drawTimer();scarcityInterval=setInterval(drawTimer,1000);
