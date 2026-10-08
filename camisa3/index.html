@@ -180,6 +180,9 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .toast{max-width:calc(100vw - 28px);text-align:center}
   dialog:not(.lb){box-shadow:0 -8px 28px #0002}
   dialog:not(.lb) .sub{margin:10px 0 6px;font-size:13px}
+  /* A imagem deve definir a altura da galeria; não deve ser recortada. */
+  .gal .mn{aspect-ratio:auto;min-height:280px;height:auto}
+  .gal .mn img{width:100%;height:auto;max-height:none;object-fit:contain;padding:10px}
 }
 </style>
 </head>
