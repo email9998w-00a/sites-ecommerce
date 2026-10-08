@@ -585,6 +585,18 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .offer-lead .free-offer{font-size:22px}
   .save-note{margin-top:5px;font-size:10.5px}
 }
+
+/* Redução de ruído: uma mensagem, três sinais e nenhum destaque concorrente */
+.offer-lead{padding:5px 0 8px;background:transparent;border-radius:0}
+.offer-lead .free-offer{font-size:24px}
+.offer-lead .offer-tag{animation:none;box-shadow:none;background:#eaf7ef}
+.offer-lead .offer-tag:after{display:none}
+.offer-timer{margin:-2px 0 10px 12px;padding:5px 8px;background:#fffafa;box-shadow:none}
+@media(max-width:520px){
+  .offer-lead{padding:4px 0 7px}
+  .offer-lead .free-offer{font-size:21px}
+  .offer-timer{margin:-1px 0 9px 10px}
+}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
@@ -616,7 +628,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
     <div class="pr">
       <span class="de" id="de"></span>
       <div><span class="big" id="pix"></span><span class="pix">camiseta grátis</span></div>
-      <p class="inst" id="inst"></p><p class="save-note" id="saveNote"></p>
+      <p class="inst" id="inst"></p>
     </div>
     <div class="rt"><span class="stars" id="rs" aria-hidden="true"></span><a href="#avaliacoes" id="rl"></a><span id="rf"></span><button type="button" id="shr" class="shr">Compartilhar</button></div>
 
@@ -690,9 +702,9 @@ const pix=+(CFG.preco*(1-CFG.pixOff/100)).toFixed(2);let size='',qty=1,cur=0,tm;
 const timerEl=$('#offerTimer');let offerEnd=0;try{offerEnd=+(sessionStorage.getItem('offerEndAt')||0);if(!offerEnd||offerEnd<Date.now()){offerEnd=Date.now()+27*60*1000;sessionStorage.setItem('offerEndAt',offerEnd)}}catch(e){offerEnd=Date.now()+27*60*1000}function updateOfferTimer(){const left=Math.max(0,offerEnd-Date.now()),mins=Math.floor(left/60000),secs=Math.floor(left/1000)%60;if(timerEl){timerEl.textContent=String(mins).padStart(2,'0')+':'+String(secs).padStart(2,'0');timerEl.setAttribute('aria-label',mins+' minutos e '+secs+' segundos restantes');if(!left){timerEl.textContent='00:00';timerEl.parentElement.classList.add('expired');timerEl.previousElementSibling.textContent='Oferta encerrada'}}}updateOfferTimer();setInterval(updateOfferTimer,1000);
 function toast(t){const e=$('#ts');e.textContent=t;e.classList.add('on');clearTimeout(tm);tm=setTimeout(()=>e.classList.remove('on'),2600)}
 $('#de').textContent='De '+brl(CFG.de);$('#pix').textContent='R$ 0,00';$('#sp').textContent='Total R$ 50,00';
-$('#inst').innerHTML='Envio e logística: <b>R$ 50,00</b>';$('#saveNote').textContent='Economia no produto: '+brl(CFG.de-CFG.preco);
+$('#inst').innerHTML='Envio e logística: <b>R$ 50,00</b>';
 const off=0;
-function show(i){cur=(i+N)%N;const u=CFG.imagens[cur],m=$('#mn');m.innerHTML='<span class="photo-offer">GRÁTIS</span>'+(off>0?'<span class="badge">'+off+'% OFF</span>':'')+(u?'<img src="'+u+'" alt="'+CFG.nome+' - foto '+(cur+1)+'">':'<span>Foto '+(cur+1)+'<br>Adicione a URL em CFG.imagens</span>')+(N>1?'<button class="ar l" data-d="-1" aria-label="Foto anterior">&lsaquo;</button><button class="ar r" data-d="1" aria-label="Próxima foto">&rsaquo;</button><span class="ct">'+(cur+1)+'/'+N+'</span><span class="dots">'+CFG.imagens.map((_,j)=>'<i'+(j===cur?' class="on"':'')+'></i>').join('')+'</span>':'');
+function show(i){cur=(i+N)%N;const u=CFG.imagens[cur],m=$('#mn');m.innerHTML=(off>0?'<span class="badge">'+off+'% OFF</span>':'')+(u?'<img src="'+u+'" alt="'+CFG.nome+' - foto '+(cur+1)+'">':'<span>Foto '+(cur+1)+'<br>Adicione a URL em CFG.imagens</span>')+(N>1?'<button class="ar l" data-d="-1" aria-label="Foto anterior">&lsaquo;</button><button class="ar r" data-d="1" aria-label="Próxima foto">&rsaquo;</button><span class="ct">'+(cur+1)+'/'+N+'</span><span class="dots">'+CFG.imagens.map((_,j)=>'<i'+(j===cur?' class="on"':'')+'></i>').join('')+'</span>':'');
 document.querySelectorAll('#th button').forEach((b,j)=>b.setAttribute('aria-current',j===cur))}
 CFG.imagens.forEach((u,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver foto '+(i+1));b.innerHTML=u?'<img src="'+u+'" alt="">':i+1;b.onclick=()=>show(i);$('#th').appendChild(b)});show(0);
 const available=Object.values(CFG.estoque).filter(n=>n>0);const remaining=available.length?Math.min(...available):0;if(remaining>0&&remaining<=3){const sn=$('#stockNote');sn.hidden=false;sn.innerHTML='<span aria-hidden="true">●</span> <b>Últimas '+remaining+' unidades</b> disponíveis.';}
