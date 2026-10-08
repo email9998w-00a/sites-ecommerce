@@ -369,6 +369,28 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .offer-lead small{font-size:11px;line-height:1.35}
   .cta{font-size:12px}
 }
+
+/* Correção de ritmo visual após renderização real */
+.rt{margin-top:9px}
+@media(max-width:520px){
+  .gal .mn{aspect-ratio:1/1}
+  .rt{margin-top:9px}
+}
+
+/* Bloco de oferta refinado */
+.offer-lead{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin:0 0 14px;padding:13px 15px;background:linear-gradient(135deg,#f5fbf7 0%,#ffffff 100%);border:1px solid #d5e7da;border-left:1px solid #d5e7da;border-radius:10px;box-shadow:0 2px 8px #18212b0a;color:#3d444f}
+.offer-lead .offer-tag{display:inline-flex;align-items:center;min-height:20px;padding:3px 8px;border-radius:999px;background:#e3f2e8;color:#16734a;font-size:10px;font-weight:800;letter-spacing:.08em;line-height:1}
+.offer-lead .free-offer{display:block;margin-top:2px;color:#171717;font-size:25px;line-height:1.05;font-weight:800;letter-spacing:-.02em}
+.offer-lead .offer-detail{font-size:13px;line-height:1.35;color:#3d444f}
+.offer-lead .offer-detail b{color:#171717;font-weight:800}
+.offer-lead small{margin-top:1px;font-size:11px;line-height:1.3;color:#68717c}
+@media(max-width:520px){
+  .offer-lead{gap:3px;margin-bottom:11px;padding:11px 12px}
+  .offer-lead .offer-tag{font-size:9px}
+  .offer-lead .free-offer{font-size:22px}
+  .offer-lead .offer-detail{font-size:12px}
+  .offer-lead small{font-size:10.5px}
+}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
@@ -396,14 +418,14 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
     <div class="offer-kicker">Cortesia promocional</div>
     <div class="brand" id="br"></div>
     <h1>Camiseta Casual Corinthians</h1>
-    <p class="offer-lead"><strong class="free-offer">CAMISETA GRÁTIS</strong><span>Você paga apenas a contribuição única de <b>R$ 50,00</b> para envio e logística.</span><small>Sem cobrança recorrente. Escolha o tamanho para receber a sua.</small></p>
-    <div class="rt"><span class="stars" id="rs" aria-hidden="true"></span><a href="#avaliacoes" id="rl"></a><span id="rf"></span><button type="button" id="shr" class="shr">Compartilhar</button></div>
+    <p class="offer-lead"><span class="offer-tag">OFERTA ESPECIAL</span><strong class="free-offer">Camiseta grátis</strong><span class="offer-detail">Você paga somente <b>R$ 50,00</b> de envio e logística.</span><small>Sem cobrança recorrente. Escolha o tamanho para receber a sua.</small></p>
 
     <div class="pr">
       <span class="de" id="de"></span>
       <div><span class="big" id="pix"></span><span class="pix">R$ 0,00 na camiseta</span></div>
       <p class="inst" id="inst"></p>
     </div>
+    <div class="rt"><span class="stars" id="rs" aria-hidden="true"></span><a href="#avaliacoes" id="rl"></a><span id="rf"></span><button type="button" id="shr" class="shr">Compartilhar</button></div>
 
     <div class="opt"><div class="oh"><b>Cor: <span style="font-weight:400">Preta</span></b></div><div class="sw"><button type="button" aria-label="Preta" aria-pressed="true" style="background:#111"></button></div></div>
     <div class="opt"><div class="oh"><b>Tamanho</b><button type="button" id="gb">Guia de medidas</button></div><div class="sz" id="sz" role="group" aria-label="Tamanho"></div><p class="msg" id="sm" role="alert"></p></div>
@@ -497,7 +519,7 @@ $('#zf').onsubmit=e=>{e.preventDefault();const m=$('#zm');const ok=$('#zp').valu
 $('#nf').onsubmit=e=>{e.preventDefault();e.target.reset();toast('Cadastro realizado. Obrigado!')};
 $('#sf').onsubmit=e=>{e.preventDefault();toast('Demonstração: conecte aqui o seu catálogo.')};
 const A=CFG.avaliacoes,t=[],st=n=>'★'.repeat(Math.round(n))+'☆'.repeat(5-Math.round(n));
-$('#tp').textContent='Cortesia promocional • contribuição única de envio: R$ 50,00 • enquanto durar o estoque';$('#tp').hidden=false;
+$('#tp').textContent='Cortesia promocional • R$ 50,00 para envio e logística';$('#tp').hidden=false;
 if(CFG.pixOff)$('#inst').insertAdjacentHTML('afterend','<p class="save">Você economiza '+brl(CFG.preco-pix)+' pagando no Pix</p>');
 $('#br').innerHTML=CFG.marca?'Marca: <a href="#">'+CFG.marca+'</a>':'';$('#rf').textContent=CFG.ref?'Cód. '+CFG.ref:'';if(CFG.vendedor)$('#vd').textContent='Vendido e entregue por '+CFG.vendedor+'.';
 $('#rs').textContent=A.total?st(A.media):'';$('#rl').textContent=A.total?'('+A.total+' avaliações)':'Seja o primeiro a avaliar';
