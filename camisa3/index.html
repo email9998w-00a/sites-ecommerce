@@ -540,6 +540,28 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .sb div{min-width:0}
   .sb .cta{flex-basis:56%;font-weight:800}
 }
+
+/* Selo de oferta ativa: vivo, porém integrado à hierarquia do painel */
+.offer-lead .offer-tag{display:inline-flex;align-items:center;gap:6px;width:max-content;min-height:0;padding:4px 8px;border:1px solid #c8e8d3;border-radius:999px;background:#eaf7ef;color:#12633f;font-size:10px;font-weight:800;letter-spacing:.09em;line-height:1;text-transform:uppercase}
+.offer-lead .offer-tag:before{content:"";width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#1b9b5b;box-shadow:0 0 0 0 #1b9b5b66;animation:offerPulse 2s ease-out infinite}
+@keyframes offerPulse{0%{box-shadow:0 0 0 0 #1b9b5b66}70%{box-shadow:0 0 0 5px #1b9b5b00}100%{box-shadow:0 0 0 0 #1b9b5b00}}
+@media(prefers-reduced-motion:reduce){.offer-lead .offer-tag:before{animation:none}}
+@media(max-width:520px){
+  .offer-lead .offer-tag{padding:3px 7px;font-size:9px}
+  .offer-lead .offer-tag:before{width:6px;height:6px;flex-basis:6px}
+}
+
+/* Feedback visual refinado do selo: atividade perceptível sem ruído */
+.offer-lead .offer-tag{position:relative;overflow:hidden;background:linear-gradient(105deg,#eaf7ef 0%,#d8f2e2 48%,#eaf7ef 100%);background-size:180% 100%;box-shadow:inset 0 1px 0 #fff9,0 2px 7px #1b9b5b1c;animation:offerGlow 4s ease-in-out infinite}
+.offer-lead .offer-tag:after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 28%,#fff9 50%,transparent 72%);transform:translateX(-120%);pointer-events:none;animation:offerSweep 4.8s ease-in-out infinite}
+@keyframes offerGlow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes offerSweep{0%,55%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
+@media(prefers-reduced-motion:reduce){.offer-lead .offer-tag{animation:none}.offer-lead .offer-tag:after{animation:none}}
+
+/* Orientação contextual da escolha, sem transformar em bloqueio */
+.sz-hint{font-size:11px;font-weight:500;color:#68717c;letter-spacing:0}
+.sz-hint.is-error{color:#b4232c;font-weight:700}
+@media(max-width:520px){.sz-hint{font-size:10px}}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
@@ -566,7 +588,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   <div class="inf">
     <div class="brand" id="br"></div>
     <h1>Camiseta Casual Corinthians</h1>
-    <p class="offer-lead"><span class="offer-tag">Oferta especial</span><strong class="free-offer">CAMISETA GRÁTIS</strong><span class="offer-detail">Contribuição única de <b>R$ 50,00</b> para envio e logística.</span></p>
+    <p class="offer-lead"><span class="offer-tag" aria-label="Oferta especial ativa">Oferta especial</span><strong class="free-offer">CAMISETA GRÁTIS</strong><span class="offer-detail">Contribuição única de <b>R$ 50,00</b> para envio e logística.</span></p>
 
     <div class="pr">
       <span class="de" id="de"></span>
@@ -576,10 +598,10 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
     <div class="rt"><span class="stars" id="rs" aria-hidden="true"></span><a href="#avaliacoes" id="rl"></a><span id="rf"></span><button type="button" id="shr" class="shr">Compartilhar</button></div>
 
     <div class="opt"><div class="oh"><b>Cor: <span style="font-weight:400">Preta</span></b></div><div class="sw"><button type="button" aria-label="Preta" aria-pressed="true" style="background:#111"></button></div></div>
-    <div class="opt"><div class="oh"><b>Tamanho</b><button type="button" id="gb">Guia de medidas</button></div><div class="sz" id="sz" role="group" aria-label="Tamanho"></div><p class="msg" id="sm" role="alert"></p><p class="stock-note" id="stockNote" aria-live="polite" hidden></p></div>
+    <div class="opt"><div class="oh"><b>Tamanho <span class="sz-hint" id="szHint">• selecione uma opção</span></b><button type="button" id="gb">Guia de medidas</button></div><div class="sz" id="sz" role="group" aria-label="Tamanho"></div><p class="msg" id="sm" role="alert"></p><p class="stock-note" id="stockNote" aria-live="polite" hidden></p></div>
 
     <div class="buy" id="buy"><div class="qty"><button type="button" id="mi" aria-label="Diminuir">&minus;</button><output id="qt">1</output><button type="button" id="pl" aria-label="Aumentar">+</button></div><button class="cta" id="add" type="button">Receber camiseta grátis</button></div>
-    <button class="cta2" id="now" type="button">Continuar para os dados de envio</button><p class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Sem cobrança recorrente • nenhum pagamento é processado nesta demonstração</p>
+    <button class="cta2" id="now" type="button" aria-controls="ship">Calcular frete e prazo</button><p class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Sem cobrança recorrente • nenhum pagamento é processado nesta demonstração</p>
 
     <ul class="tr">
       <li><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><div><b>Compra segura</b><small>Seus dados protegidos em todas as etapas.</small></div></li>
@@ -587,7 +609,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
       <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><div><b>Produto original</b><small id="vd">Entrega para todo o Brasil.</small></div></li>
     </ul>
 
-    <div class="ship"><h2>Calcule o frete e o prazo</h2><p>Digite seu CEP para ver as opções de entrega e retirada.</p>
+    <div class="ship" id="ship"><h2>Calcule o frete e o prazo</h2><p>Digite seu CEP para ver as opções de entrega e retirada.</p>
       <form class="zip" id="zf"><input id="zp" inputmode="numeric" maxlength="9" placeholder="00000-000" aria-label="CEP" autocomplete="postal-code"><button>Calcular</button></form>
       <p class="msg" id="zm" role="status"></p><p style="margin:10px 0 0;font-size:13px;color:var(--ink)"><strong>Transparência da oferta:</strong> camiseta como cortesia promocional. Total desta etapa: <strong>R$ 50,00</strong> para envio e logística, sem cobrança recorrente. Confira o vendedor e as políticas antes de pagar.</p></div>
 
@@ -651,17 +673,17 @@ document.querySelectorAll('#th button').forEach((b,j)=>b.setAttribute('aria-curr
 CFG.imagens.forEach((u,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver foto '+(i+1));b.innerHTML=u?'<img src="'+u+'" alt="">':i+1;b.onclick=()=>show(i);$('#th').appendChild(b)});show(0);
 const available=Object.values(CFG.estoque).filter(n=>n>0);const remaining=available.length?Math.min(...available):0;if(remaining>0&&remaining<=3){const sn=$('#stockNote');sn.hidden=false;sn.innerHTML='<span aria-hidden="true">●</span> <b>Últimas '+remaining+' unidades</b> disponíveis.';}
 Object.entries(CFG.estoque).forEach(([t,n])=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.disabled=n<1;b.setAttribute('aria-pressed','false');if(n<1)b.title='Esgotado';
-b.onclick=()=>{size=t;$('#ss').textContent='Tamanho '+t+', no Pix';document.querySelectorAll('#sz button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#sz').classList.remove('bad');const m=$('#sm');m.className='msg';m.textContent=n<=3?'Restam apenas '+n+' unidades no tamanho '+t+'.':''};$('#sz').appendChild(b)});
+b.onclick=()=>{size=t;$('#ss').textContent='Tamanho '+t+', no Pix';document.querySelectorAll('#sz button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#sz').classList.remove('bad');$('#szHint').hidden=true;$('#szHint').classList.remove('is-error');const m=$('#sm');m.className='msg';m.textContent=n<=3?'Restam apenas '+n+' unidades no tamanho '+t+'.':''};$('#sz').appendChild(b)});
 $('#mn').onclick=e=>{const d=e.target.closest('[data-d]');if(d)return show(cur+ +d.dataset.d);const u=CFG.imagens[cur];if(!u)return;const l=$('#lb');l.innerHTML='<img src="'+u+'" alt="'+CFG.nome+'"><form method="dialog"><button aria-label="Fechar">&times;</button></form>';l.showModal()};
 let sx=0;$('#mn').ontouchstart=e=>sx=e.touches[0].clientX;$('#mn').ontouchend=e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)show(cur+(d<0?1:-1))};
 $('#lb').onclick=e=>{if(e.target===e.currentTarget)e.currentTarget.close()};
 $('#pl').onclick=()=>$('#qt').textContent=++qty;$('#mi').onclick=()=>$('#qt').textContent=qty=Math.max(1,qty-1);
-function need(){if(size)return false;$('#sz').classList.add('bad');const m=$('#sm');m.className='msg err';m.textContent='Escolha um tamanho para continuar.';$('#sz').scrollIntoView({block:'center',behavior:'smooth'});return true}
+function need(){if(size)return false;$('#sz').classList.add('bad');const m=$('#sm');m.className='msg err';m.textContent='Escolha um tamanho para continuar.';$('#szHint').textContent='• escolha um tamanho';$('#szHint').classList.add('is-error');$('#sz').scrollIntoView({block:'center',behavior:'smooth'});return true}
 let cq=0;
 function add(){if(need())return;cq+=qty;$('#cc').textContent=cq;const contribution=50*qty;
 $('#mc').innerHTML='<h2>Resumo da oferta</h2><div class="ln"><div class="th1">'+(CFG.imagens[0]?'<img src="'+CFG.imagens[0]+'" alt="">':'')+'</div><div><b>'+CFG.nome+'</b><br><small>Tamanho '+size+', Preto</small><br><small>Quantidade: '+qty+'</small></div></div><div class="sub"><span>Camiseta (cortesia)</span><b>R$ 0,00</b></div><div class="sub"><span>Contribuição de envio e logística</span><b>'+brl(contribution)+'</b></div><div class="sub" style="font-size:16px"><strong>Total</strong><strong>'+brl(contribution)+'</strong></div><p style="font-size:13px;color:var(--mut);margin:8px 0">A camiseta é gratuita. O único valor desta oferta é a contribuição de envio e logística, exibida acima.</p><form method="dialog" class="ac"><button class="cta" value="go">Continuar para os dados de envio</button><button class="cta2" value="back">Continuar comprando</button></form>';$('#mc').returnValue='';$('#mc').showModal()}
 $('#mc').onclose=()=>{if($('#mc').returnValue==='go')toast('Demonstração: conecte aqui o seu checkout.')};
-$('#add').onclick=add;$('#sadd').onclick=add;$('#now').onclick=()=>{if(!need())toast('Demonstração: conecte aqui o seu checkout.')};
+$('#add').onclick=add;$('#sadd').onclick=add;$('#now').onclick=()=>$('#ship').scrollIntoView({behavior:'smooth',block:'center'});
 $('#gb').onclick=()=>$('#dg').showModal();
 $('#zp').oninput=e=>{const v=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=v.length>5?v.slice(0,5)+'-'+v.slice(5):v};
 $('#zf').onsubmit=e=>{e.preventDefault();const m=$('#zm');const ok=$('#zp').value.replace(/\D/g,'').length===8;m.style.color=ok?'':'var(--sale)';m.textContent=ok?'Entrega em 3 a 7 dias úteis. O valor exato aparece no fechamento do pedido.':'Digite um CEP com 8 números.'};
