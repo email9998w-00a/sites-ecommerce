@@ -15,9 +15,9 @@
   <style>
     :root{
       color-scheme:light;
-      --ink:#191b1f;--muted:#68717c;--line:#e5e7eb;--surface:#fff;--canvas:#f7f8fa;
-      --brand:#171717;--brand-hover:#343434;--green:#187548;--green-soft:#eef7f1;
-      --red:#bd102a;--red-dark:#940d21;--red-soft:#fff4f5;--radius:12px;--shadow:0 8px 28px #1018280c;--max:1200px
+      --ink:#17191d;--muted:#514b55;--line:#e3d4dc;--surface:#fff;--canvas:#fff6f9;
+      --brand:#17191d;--brand-hover:#30343a;--green:#187548;--green-soft:#eef7f1;
+      --red:#a10e4e;--red-dark:#790b3b;--red-soft:#fff0f5;--radius:12px;--shadow:0 8px 28px #10182812;--max:1200px
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:20px}
@@ -184,15 +184,41 @@
       .logo-mark{font-size:12px}
     }
     @media(max-width:370px){.nav-inner{gap:12px}.nav-more{margin-left:auto}}
-    body{background:#f4f5f7}
+    body{background:#fff6f9}
     .header{position:relative;isolation:isolate;grid-template-columns:auto 1fr auto;gap:24px;min-height:78px}
     .header::before{content:"";position:absolute;inset-block:0;left:50%;width:100vw;transform:translateX(-50%);z-index:-1;background:#fff;border-bottom:1px solid var(--line)}
     .nav{background:#fff;border-top:0}
     .nav-inner{min-height:46px;gap:28px}
     .nav a{padding:13px 0}
-    .product{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:38px;padding:24px;background:#fff;border:1px solid #e7e9ed;border-radius:16px;box-shadow:0 8px 24px #1118270a}
-    .content-section{margin-top:20px;padding:26px;background:#fff;border:1px solid #e7e9ed;border-radius:14px;box-shadow:0 6px 18px #11182708}
-    .reviews-empty{background:#f8f9fa}
+    .product{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:38px;padding:24px;background:linear-gradient(115deg,#fde8f0 0%,#fff5f8 57%,#fff 100%);border:1px solid #efd2dd;border-radius:18px;box-shadow:0 10px 28px #5b10250f}
+    .content-section{margin-top:20px;padding:26px;background:#fff;border:1px solid #d6dbe2;border-radius:14px;box-shadow:0 6px 18px #1118270c}
+    .reviews-empty{background:#fff9fb}
+    :focus-visible{outline-color:var(--red)}
+    .product-kicker{display:inline-flex;align-items:center;margin:0 0 10px;padding:6px 11px;border-radius:999px;background:#1d1a1d;color:#fff;font-size:10px;font-weight:800;letter-spacing:.075em;line-height:1.15;text-transform:uppercase}
+    .product-summary{max-width:54ch;margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+    .promo{background:linear-gradient(100deg,#820a3d,#a10e4e)}
+    .nav a{color:#252a30}
+    .nav a:hover{color:var(--red-dark)}
+    .hero{border-color:#ebcbd8;background:#f8e9f0;border-radius:14px}
+    .thumb{border-color:#ddc4cf;background:#fff}
+    .thumb[aria-current="true"]{border:2px solid var(--red)}
+    .arrow{border-color:#bfc8d2;background:#fff;color:#17191d;box-shadow:0 2px 8px #10182818}
+    .offer{border-color:#e7cbd6;border-left-color:var(--red);background:#fff;box-shadow:0 6px 20px #58102b12}
+    .today-scarcity{border-color:#e2b4c4;background:#fff0f5}
+    .sizes button{border-color:#b5bec8}
+    .sizes button:hover{border-color:var(--red);background:#fff8f9}
+    .sizes button[aria-pressed="true"]{border:2px solid var(--red);background:var(--red);color:#fff}
+    .sizes button:disabled{color:#66707c}
+    .primary:disabled{background:#626b76}
+    .shipping{border-color:#e4d5dc;background:#fff}
+    .cep-form input{border-color:#aeb8c3}
+    .cep-form button{background:#242a31}
+    .dialog-actions button:disabled{background:#626b76;color:#fff}
+    .primary{border-radius:999px;background:linear-gradient(100deg,#8e0b43,#a91152);box-shadow:0 8px 20px #a10e4e30}
+    .primary:hover{background:linear-gradient(100deg,#790b3b,#950d48)}
+    .section-title{text-align:center}
+    details{border-color:#d6dbe2}
+    .specs li{border-color:#d6dbe2}
     @media(max-width:900px){
       .header{grid-template-columns:auto 1fr auto;gap:12px;min-height:66px}
       .product{grid-template-columns:minmax(0,1fr);gap:18px;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
@@ -204,6 +230,8 @@
       .nav-more-menu{min-width:170px}
       .content-section{padding:16px}
       .offer{box-shadow:none}
+      .product-kicker{margin-bottom:8px;padding:5px 9px;font-size:9px}
+      .product-summary{margin-top:8px;font-size:12px}
     }
     @media(max-width:370px){.nav-inner{gap:12px}.nav-more{margin-left:auto}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
@@ -232,7 +260,9 @@
 
       <div class="info">
         <p class="seller" id="sellerName" hidden></p>
+        <p class="product-kicker">Corinthians <span aria-hidden="true">&nbsp;•&nbsp;</span> Camiseta casual</p>
         <h1 id="productTitle">Camiseta Casual Corinthians</h1>
+        <p class="product-summary">Camiseta casual preta com o escudo do Corinthians. Selecione o tamanho antes de adicionar à sacola.</p>
 
         <div class="offer" id="oferta" aria-label="Oferta da camiseta grátis">
           <p class="offer-label" id="offerLabel">Oferta promocional</p>
@@ -269,7 +299,7 @@
 
     <section class="content-section" id="detalhes" aria-labelledby="descriptionTitle">
       <div class="details-grid">
-        <div><h2 class="section-title" id="descriptionTitle">Sobre o produto</h2><p>Camiseta casual na cor preta. Confira a etiqueta e as medidas cadastradas para confirmar composição e caimento antes da compra.</p></div>
+        <div><h2 class="section-title" id="descriptionTitle">Sobre o produto</h2><p>Camiseta casual preta com escudo do Corinthians. Composição e medidas ainda não foram cadastradas nesta prévia; confirme esses dados com o lojista antes da compra.</p></div>
         <div><h2 class="section-title">Características</h2><ul class="specs"><li><span>Cor</span><strong>Preta</strong></li><li><span>Composição</span><strong>Não informada</strong></li><li><span>Guia de medidas</span><strong>Não cadastrado</strong></li></ul></div>
       </div>
     </section>
