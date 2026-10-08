@@ -166,6 +166,9 @@
       .content-section{margin-top:30px;padding-top:21px}.section-title{font-size:18px;margin-bottom:13px}.details-grid{gap:20px}.details-grid p{font-size:13px}.specs li{font-size:12px;padding:10px 0}.footer-grid{grid-template-columns:1fr 1fr;gap:22px 16px}footer{padding:25px 0 20px}.legal{font-size:10px}.mobile-buy{padding-inline:12px;gap:8px}.mobile-buy .primary{min-width:54%;font-size:11px}.mobile-buy-copy{font-size:10px}.mobile-buy-copy strong{font-size:14px}.prototype-note{margin-top:16px;font-size:10px}
     }
     .size-message:empty{min-height:0;margin-top:0}
+    .logo-mark{border:0;border-radius:8px;background:var(--red);color:#fff;font-size:14px;font-weight:800;letter-spacing:-.06em}
+    .logo-mark::after{content:"M"}
+    .nav-inner>a:first-child{color:var(--red)}
     @media(max-width:560px){
       .hero{aspect-ratio:1.2/1}
       .hero-label{display:none}
@@ -178,8 +181,31 @@
       .today-scarcity:not([hidden])+.add{margin-top:7px}
       .reviews-empty{padding:14px}
       .footer-grid>div:last-child{grid-column:1/-1}
+      .logo-mark{font-size:12px}
     }
-    @media(max-width:370px){.nav-inner{gap:12px}.nav-inner>a:nth-of-type(4){display:none}.nav-more{margin-left:auto}}
+    @media(max-width:370px){.nav-inner{gap:12px}.nav-more{margin-left:auto}}
+    body{background:#f4f5f7}
+    .header{position:relative;isolation:isolate;grid-template-columns:auto 1fr auto;gap:24px;min-height:78px}
+    .header::before{content:"";position:absolute;inset-block:0;left:50%;width:100vw;transform:translateX(-50%);z-index:-1;background:#fff;border-bottom:1px solid var(--line)}
+    .nav{background:#fff;border-top:0}
+    .nav-inner{min-height:46px;gap:28px}
+    .nav a{padding:13px 0}
+    .product{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:38px;padding:24px;background:#fff;border:1px solid #e7e9ed;border-radius:16px;box-shadow:0 8px 24px #1118270a}
+    .content-section{margin-top:20px;padding:26px;background:#fff;border:1px solid #e7e9ed;border-radius:14px;box-shadow:0 6px 18px #11182708}
+    .reviews-empty{background:#f8f9fa}
+    @media(max-width:900px){
+      .header{grid-template-columns:auto 1fr auto;gap:12px;min-height:66px}
+      .product{grid-template-columns:minmax(0,1fr);gap:18px;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
+      .content-section{margin-top:20px;padding:18px}
+      .nav-inner{gap:22px;min-height:44px}
+    }
+    @media(max-width:560px){
+      .nav-inner>a:nth-of-type(n+4){display:none}
+      .nav-more-menu{min-width:170px}
+      .content-section{padding:16px}
+      .offer{box-shadow:none}
+    }
+    @media(max-width:370px){.nav-inner{gap:12px}.nav-more{margin-left:auto}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
@@ -187,10 +213,9 @@
   <div class="promo"><div class="wrap promo-inner"><span class="promo-free" id="promoFree">CAMISETA GRÁTIS</span><span class="promo-price" id="promoPrice">R$ 0,00</span><span class="promo-sep" id="promoSeparator" aria-hidden="true"></span><span class="promo-note" id="promoNote">Frete à parte • valor antes de pagar</span></div></div>
   <header class="wrap header">
     <a class="logo" href="#topo" aria-label="Minha Loja — início"><span class="logo-mark" aria-hidden="true"></span>Minha Loja</a>
-    <form class="search" id="searchForm" role="search"><label class="sr-only" for="searchInput">Buscar produtos</label><input id="searchInput" type="search" placeholder="Buscar produtos, times ou marcas"><button aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button></form>
     <div class="header-actions"><a class="help-link" href="#duvidas" aria-label="Ir para dúvidas frequentes"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.7c-1.1 1-1.9 1.4-1.9 3"/><path d="M12 17.5h.01"/></svg><span>Ajuda</span></a><button type="button" id="bagBtn" aria-label="Sacola"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>Sacola (<b id="bagCount">0</b>)</span></button></div>
   </header>
-  <nav class="nav" aria-label="Categorias"><div class="wrap nav-inner"><a href="#produto">Camisas de time</a><a href="#produto">Masculino</a><a href="#produto">Feminino</a><a href="#produto">Infantil</a><a href="#produto">Calçados</a><a href="#produto">Acessórios</a><a href="#produto">Lançamentos</a><a href="#produto">Ofertas</a><details class="nav-more"><summary>Mais</summary><div class="nav-more-menu"><a href="#produto">Infantil</a><a href="#produto">Calçados</a><a href="#produto">Acessórios</a><a href="#produto">Lançamentos</a><a href="#produto">Ofertas</a></div></details></div></nav>
+  <nav class="nav" aria-label="Navegação da página"><div class="wrap nav-inner"><a href="#oferta">Oferta</a><a href="#detalhes">Produto</a><a href="#shipping">Frete e prazo</a><a href="#avaliacoes">Avaliações</a><a href="#duvidas">Dúvidas</a><details class="nav-more"><summary>Mais</summary><div class="nav-more-menu"><a href="#avaliacoes">Avaliações</a><a href="#duvidas">Dúvidas</a></div></details></div></nav>
 
   <main class="wrap" id="topo">
     <nav class="crumbs" aria-label="Você está em"><a href="#topo">Início</a><span>/</span><a href="#produto">Camisas de time</a><span>/</span><span>Camiseta Casual Corinthians</span></nav>
@@ -209,13 +234,13 @@
         <p class="seller" id="sellerName" hidden></p>
         <h1 id="productTitle">Camiseta Casual Corinthians</h1>
 
-        <div class="offer" aria-label="Oferta da camiseta grátis">
+        <div class="offer" id="oferta" aria-label="Oferta da camiseta grátis">
           <p class="offer-label" id="offerLabel">Oferta promocional</p>
           <p class="offer-main" id="offerTitle">CAMISETA GRÁTIS</p>
           <div class="offer-price" id="price">R$ 0,00</div>
           <div class="scarcity-signals" id="scarcitySignals" hidden><span class="scarcity-chip scarcity-stock" id="stockSignal" hidden></span></div>
           <span class="sr-only" id="scarcityStatus" role="status" aria-live="polite"></span>
-          <p class="offer-note" id="offerNote"><strong>A camiseta custa R$ 0,00.</strong> Frete e logística são à parte: consulte valor e prazo pelo CEP antes de pagar.</p>
+        <p class="offer-note" id="offerNote"><strong>A camiseta custa R$ 0,00.</strong> Frete à parte; confira o valor total antes de pagar.</p>
         </div>
 
         <div class="option">
@@ -229,11 +254,10 @@
         <p class="payment-note">Prévia demonstrativa: pedidos e pagamentos não são processados.</p>
 
         <div class="shipping" id="shipping">
-          <h2>Consulte frete e prazo</h2>
-          <p>Informe o CEP para consultar as modalidades e o valor total antes do pagamento.</p>
+          <h2>Frete e prazo</h2>
+          <p>O valor depende do CEP e precisa ser informado antes do pagamento. A cotação automática ainda não está ativa nesta prévia.</p>
           <form class="cep-form" id="cepForm"><label class="sr-only" for="cep">CEP</label><input id="cep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000"><button type="submit">Consultar</button></form>
           <p class="shipping-result" id="shippingResult" role="status" aria-live="polite"></p>
-          <p class="shipping-policy">Consulta indisponível nesta demonstração: nenhum valor ou prazo de frete foi consultado.</p>
         </div>
 
         <div class="accordions">
@@ -243,7 +267,7 @@
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="descriptionTitle">
+    <section class="content-section" id="detalhes" aria-labelledby="descriptionTitle">
       <div class="details-grid">
         <div><h2 class="section-title" id="descriptionTitle">Sobre o produto</h2><p>Camiseta casual na cor preta. Confira a etiqueta e as medidas cadastradas para confirmar composição e caimento antes da compra.</p></div>
         <div><h2 class="section-title">Características</h2><ul class="specs"><li><span>Cor</span><strong>Preta</strong></li><li><span>Composição</span><strong>Não informada</strong></li><li><span>Guia de medidas</span><strong>Não cadastrado</strong></li></ul></div>
@@ -381,7 +405,6 @@
     $('#addButton').addEventListener('click',addToBag);$('#mobileAdd').addEventListener('click',addToBag);$('#bagBtn').addEventListener('click',()=>{renderBag();$('#bagDialog').showModal()});
     $('#cep').addEventListener('input',e=>{const d=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=d.length>5?`${d.slice(0,5)}-${d.slice(5)}`:d});
     $('#cepForm').addEventListener('submit',e=>{e.preventDefault();const result=$('#shippingResult');const digits=$('#cep').value.replace(/\D/g,'');result.className='shipping-result';if(digits.length!==8){result.textContent='Digite um CEP válido com 8 números.';result.classList.add('error');return}result.textContent='A cotação real não está disponível nesta demonstração. Nenhuma transportadora foi consultada e nenhum valor foi estimado.';result.classList.add('notice')});
-    $('#searchForm').addEventListener('submit',e=>{e.preventDefault();const query=$('#searchInput').value.trim().toLocaleLowerCase('pt-BR');if(!query){toast('Digite o nome do produto que procura.');return}const catalogText=`${PRODUCT.name} camiseta preta camisa time`.toLocaleLowerCase('pt-BR');if(catalogText.includes(query)){document.querySelector('#produto').scrollIntoView({behavior:'smooth',block:'start'});toast('Produto encontrado nesta prévia.')}else toast('Nenhum produto correspondente nesta prévia.')});
     const mobileBuy=$('#mobileBuy'),buyButton=$('#addButton');
     if('IntersectionObserver'in window){let buyVisible=true;const syncBar=()=>{const visible=!buyVisible&&window.scrollY>260;mobileBuy.classList.toggle('visible',visible);document.body.classList.toggle('mobile-buy-active',visible)};const io=new IntersectionObserver(([entry])=>{buyVisible=entry.isIntersecting;syncBar()},{threshold:.05});io.observe(buyButton);addEventListener('scroll',syncBar,{passive:true})}
   </script>
