@@ -186,10 +186,52 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .gal .th button{background:#f4f5f7}.gal .th button img{object-fit:contain;padding:2px;background:#f4f5f7}
   .gal .mn .ar{background:#fffffff2}.gal .mn .ct{background:#0d2238cc}
 }
+/* Camada visual de e-commerce: contraste, hierarquia e ações mais claras */
+:root{--brand:#171717;--brand-d:#000;--sale:#b4232c;--ok:#16734a}
+.top{background:#171717;font-weight:600;letter-spacing:.05px}
+.logo i{background:#171717}.search button,.cta{background:#171717}.search button:hover,.cta:hover{background:#000}
+.nav a:last-child{color:var(--sale)}.cta{box-shadow:0 5px 14px #00000022}.cta2{border-color:#171717;color:#171717}
+.pix{color:var(--ok)}.sz button[aria-pressed=true]{border-color:#171717;color:#171717;background:#f1f1f1}
+.buy{position:relative}.buy:after{content:'Sem cobrança recorrente';position:absolute;left:0;bottom:-18px;color:var(--mut);font-size:11px}
+.tr{border-radius:10px}.ship{border:1px solid #e1e5ea}
+.ship h2:before{content:'✓';display:inline-grid;place-items:center;width:20px;height:20px;margin-right:7px;border-radius:50%;background:#e7f5ed;color:var(--ok);font-size:12px}
+.sub b,.sub strong{color:#171717}
+@media(min-width:901px){
+  .inf{padding:20px 24px 24px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:0 8px 24px #18212b0d}
+  .gal .mn{border-radius:12px}.pd{gap:42px}
+}
+@media(max-width:520px){
+  .top{font-size:10.5px}.inf{padding-top:4px}.inf h1{font-weight:800;letter-spacing:-.3px}
+  .pr{box-shadow:0 3px 10px #18212b0a}.pr .big{font-weight:800}
+  .buy:after{bottom:-16px;font-size:10px}.tr{margin-top:22px}
+  .ship h2{font-weight:700}.sb{box-shadow:0 -3px 14px #00000012}.sb .cta{background:#171717}
+}
+@media(max-width:520px){
+  .top{padding:6px 12px;min-height:30px;display:grid;place-items:center}
+  header.hd{min-height:58px}.logo{letter-spacing:-.5px}.act button svg{width:19px;height:19px}
+  .nav .w{padding-inline:14px}.bc{margin:0;padding-inline:14px}
+  .pd{gap:14px}.gal{margin-inline:-14px}.gal .mn{aspect-ratio:4/4.6}
+  .gal .mn img{padding:12px}.th{padding:7px 14px}.th button{width:48px}
+  .inf{padding-inline:0}.brand{font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+  .inf h1{font-size:20px;margin-top:3px}.rt{margin-top:4px}
+  .pr{margin-top:11px;padding:11px 12px;border-radius:9px}.pr .de{font-size:11px}.big{font-size:27px}.inst{font-size:11.5px}
+  .opt{margin-top:13px}.oh{font-size:12.5px}.sz button{height:40px}
+  .buy{margin-top:9px}.qty{flex-basis:86px;height:46px}.qty button{width:26px}.cta{height:46px;font-size:13px}
+  .cta2{height:40px;font-size:12px}.lock{font-size:10.5px}
+  .tr{margin:21px 0 13px;padding:10px 5px}.tr svg{width:17px;height:17px}.tr b{font-size:10.5px}
+  .ship{padding:11px;border-radius:9px}.ship h2{font-size:13.5px}.ship p{font-size:11.5px}
+  .zip input,.zip button{height:38px}.ship>p:last-child{font-size:10.5px}
+  details summary{padding:11px 0;font-size:12.5px}details p{font-size:11.5px}
+  section.sec{margin-top:28px;padding-top:23px}.sec h2{font-size:18px;margin-bottom:11px}
+  .two>div:first-child{padding:12px}.two p{font-size:12.5px}.spec{padding-inline:8px}.spec div{padding:8px 0;font-size:11.5px}
+  .news{margin-top:30px;padding:23px 0}.news h2{font-size:18px}.news p{font-size:11.5px}
+  footer{padding-top:23px}.legal{font-size:10.5px}
+  .sb{padding:7px 10px calc(7px + env(safe-area-inset-bottom))}.sb .cta{height:42px;font-size:12.5px}.sb b{font-size:15px}
+}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
-<div class="top" id="tp">Oferta promocional: camiseta como cortesia + contribuição de envio/logística de R$ 50,00</div>
+<div class="top" id="tp">Cortesia promocional • contribuição única de envio: R$ 50,00 • enquanto durar o estoque</div>
 <header class="w hd">
   <a class="logo" href="#"><i></i>Minha Loja</a>
   <form class="search" id="sf"><label class="sr" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Busque por produto, time ou marca"><button aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button></form>
@@ -223,7 +265,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
     <div class="opt"><div class="oh"><b>Cor: <span style="font-weight:400">Preta</span></b></div><div class="sw"><button type="button" aria-label="Preta" aria-pressed="true" style="background:#111"></button></div></div>
     <div class="opt"><div class="oh"><b>Tamanho</b><button type="button" id="gb">Guia de medidas</button></div><div class="sz" id="sz" role="group" aria-label="Tamanho"></div><p class="msg" id="sm" role="alert"></p></div>
 
-    <div class="buy" id="buy"><div class="qty"><button type="button" id="mi" aria-label="Diminuir">&minus;</button><output id="qt">1</output><button type="button" id="pl" aria-label="Aumentar">+</button></div><button class="cta" id="add" type="button">Adicionar camiseta grátis</button></div>
+    <div class="buy" id="buy"><div class="qty"><button type="button" id="mi" aria-label="Diminuir">&minus;</button><output id="qt">1</output><button type="button" id="pl" aria-label="Aumentar">+</button></div><button class="cta" id="add" type="button">Adicionar à sacola</button></div>
     <button class="cta2" id="now" type="button">Continuar para os dados de envio</button><p class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Modo demonstrativo — nenhum pagamento é processado</p>
 
     <ul class="tr">
@@ -312,7 +354,7 @@ $('#zf').onsubmit=e=>{e.preventDefault();const m=$('#zm');const ok=$('#zp').valu
 $('#nf').onsubmit=e=>{e.preventDefault();e.target.reset();toast('Cadastro realizado. Obrigado!')};
 $('#sf').onsubmit=e=>{e.preventDefault();toast('Demonstração: conecte aqui o seu catálogo.')};
 const A=CFG.avaliacoes,t=[],st=n=>'★'.repeat(Math.round(n))+'☆'.repeat(5-Math.round(n));
-$('#tp').textContent='Oferta promocional: camiseta como cortesia + contribuição única de R$ 50,00 para envio e logística';$('#tp').hidden=false;
+$('#tp').textContent='Cortesia promocional • contribuição única de envio: R$ 50,00 • enquanto durar o estoque';$('#tp').hidden=false;
 if(CFG.pixOff)$('#inst').insertAdjacentHTML('afterend','<p class="save">Você economiza '+brl(CFG.preco-pix)+' pagando no Pix</p>');
 $('#br').innerHTML=CFG.marca?'Marca: <a href="#">'+CFG.marca+'</a>':'';$('#rf').textContent=CFG.ref?'Cód. '+CFG.ref:'';if(CFG.vendedor)$('#vd').textContent='Vendido e entregue por '+CFG.vendedor+'.';
 $('#rs').textContent=A.total?st(A.media):'';$('#rl').textContent=A.total?'('+A.total+' avaliações)':'Seja o primeiro a avaliar';
