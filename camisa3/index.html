@@ -180,9 +180,11 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .toast{max-width:calc(100vw - 28px);text-align:center}
   dialog:not(.lb){box-shadow:0 -8px 28px #0002}
   dialog:not(.lb) .sub{margin:10px 0 6px;font-size:13px}
-  /* A imagem deve definir a altura da galeria; não deve ser recortada. */
-  .gal .mn{aspect-ratio:auto;min-height:280px;height:auto}
-  .gal .mn img{width:100%;height:auto;max-height:none;object-fit:contain;padding:10px}
+  /* Enquadramento uniforme: a foto inteira aparece sem cortes. */
+  .gal .mn{aspect-ratio:4/5;min-height:0;height:auto;background:#f4f5f7;border-radius:0}
+  .gal .mn img{width:100%;height:100%;object-fit:contain;padding:14px;background:#f4f5f7}
+  .gal .th button{background:#f4f5f7}.gal .th button img{object-fit:contain;padding:2px;background:#f4f5f7}
+  .gal .mn .ar{background:#fffffff2}.gal .mn .ct{background:#0d2238cc}
 }
 </style>
 </head>
