@@ -410,6 +410,19 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .pr .big{font-size:26px}
   .inst{font-size:11px}
 }
+
+/* Oferta integrada ao painel: destaque único e acabamento mais editorial */
+.offer-lead{display:flex;flex-direction:column;align-items:flex-start;gap:3px;margin:0 0 13px;padding:4px 0 12px 12px;background:transparent;border:0;border-left:3px solid #16734a;border-bottom:1px solid #e2ebe5;border-radius:0;box-shadow:none;color:#3d444f}
+.offer-lead .offer-tag{display:block;min-height:0;padding:0;background:none;color:#16734a;font-size:10px;font-weight:800;letter-spacing:.08em;line-height:1.2;text-transform:uppercase}
+.offer-lead .free-offer{display:block;margin-top:1px;color:#171717;font-size:24px;line-height:1.08;font-weight:800;letter-spacing:-.02em}
+.offer-lead .offer-detail{font-size:13px;line-height:1.35;color:#3d444f}
+.offer-lead .offer-detail b{color:#171717;font-weight:800}
+@media(max-width:520px){
+  .offer-lead{gap:3px;margin-bottom:11px;padding:3px 0 10px 10px}
+  .offer-lead .offer-tag{font-size:9px}
+  .offer-lead .free-offer{font-size:21px}
+  .offer-lead .offer-detail{font-size:12px}
+}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
@@ -434,10 +447,9 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   </div>
 
   <div class="inf">
-    <div class="offer-kicker">Cortesia promocional</div>
     <div class="brand" id="br"></div>
     <h1>Camiseta Casual Corinthians</h1>
-    <p class="offer-lead"><span class="offer-tag">OFERTA ESPECIAL</span><strong class="free-offer">CAMISETA GRÁTIS</strong><span class="offer-detail">Contribuição única de <b>R$ 50,00</b> para envio e logística.</span></p>
+    <p class="offer-lead"><span class="offer-tag">Oferta especial</span><strong class="free-offer">CAMISETA GRÁTIS</strong><span class="offer-detail">Contribuição única de <b>R$ 50,00</b> para envio e logística.</span></p>
 
     <div class="pr">
       <span class="de" id="de"></span>
