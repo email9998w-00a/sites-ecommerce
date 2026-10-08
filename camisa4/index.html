@@ -36,11 +36,18 @@
     .search svg,.header-actions svg,.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
     .header-actions{display:flex;gap:6px}
     .header-actions button{border:0;background:none;padding:8px 10px;display:flex;align-items:center;gap:7px;font-size:13px;color:#30343a}
-    .nav{border-block:1px solid var(--line)}
+    .nav{position:relative;border-block:1px solid var(--line)}
     .nav-inner{min-height:44px;display:flex;align-items:center;gap:30px;overflow:auto;white-space:nowrap;scrollbar-width:none}
     .nav-inner::-webkit-scrollbar{display:none}
     .nav a{text-decoration:none;font-size:13px;font-weight:600;color:#343941}
     .nav a:hover{color:var(--muted)}
+    .nav-more{display:none;position:relative;flex:none}
+    .nav-more>summary{display:flex;align-items:center;gap:4px;padding:0;list-style:none;cursor:pointer;font-size:12px;font-weight:600}
+    .nav-more>summary::-webkit-details-marker{display:none}
+    .nav-more>summary::after{content:"⌄";font-size:14px;color:var(--muted)}
+    .nav-more-menu{position:absolute;top:calc(100% + 10px);right:0;z-index:15;min-width:158px;padding:6px;border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:0 8px 24px #10182818}
+    .nav-more-menu a{display:block;padding:9px 10px;border-radius:5px;font-size:12px}
+    .nav-more-menu a:hover{background:#f5f6f7;text-decoration:none}
     .crumbs{display:flex;align-items:center;gap:9px;overflow:auto;white-space:nowrap;padding:17px 0;color:var(--muted);font-size:12px;scrollbar-width:none}
     .crumbs a{text-decoration:none}.crumbs a:hover{text-decoration:underline}.crumbs span:last-child{color:var(--ink)}
     .product{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:clamp(32px,5vw,68px);align-items:start}
@@ -55,7 +62,6 @@
     .gallery-count{position:absolute;right:12px;bottom:12px;padding:4px 9px;border-radius:999px;background:#171717d9;color:#fff;font-size:11px}
     .arrow{position:absolute;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:40px;height:40px;border:1px solid #e8e8e8;border-radius:50%;background:#fffffff2;color:#252525;font-size:23px;box-shadow:0 2px 8px #00000012}
     .arrow.prev{left:12px}.arrow.next{right:12px}
-    .mobile-dots{display:none}
     .info{padding:8px 0 0}
     .seller{margin:0 0 7px;color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
     h1{margin:0;font-size:clamp(25px,2.5vw,32px);line-height:1.2;letter-spacing:-.04em;font-weight:700;text-wrap:balance}
@@ -81,9 +87,6 @@
     .add{margin-top:18px}
     .payment-note{display:flex;justify-content:center;align-items:center;gap:7px;margin:9px 0 0;color:var(--muted);font-size:11px;text-align:center}
     .payment-note svg{width:15px;height:15px;color:var(--green);flex:none}
-    .confidence{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0 0;padding:14px 0;border-block:1px solid var(--line)}
-    .confidence-item{display:flex;align-items:flex-start;gap:8px;color:#363c43;font-size:11px;line-height:1.4}
-    .confidence-item svg{width:17px;height:17px;flex:none;color:#626b74}
     .shipping{margin-top:20px;padding:16px;border:1px solid #e3e6e9;border-radius:10px;background:#fafbfc}
     .shipping h2{margin:0;font-size:15px;letter-spacing:-.01em}
     .shipping p{margin:4px 0 12px;color:var(--muted);font-size:12px;line-height:1.45}
@@ -131,31 +134,30 @@
     .dialog-actions .secondary{border:1px solid var(--line);background:#fff;color:#333}
     .toast{position:fixed;left:50%;bottom:24px;z-index:20;max-width:calc(100% - 32px);padding:11px 16px;border-radius:8px;background:#25282d;color:#fff;font-size:13px;text-align:center;opacity:0;transform:translate(-50%,10px);pointer-events:none;transition:opacity .18s,transform .18s}
     .toast.show{opacity:1;transform:translate(-50%,0)}
-    .prototype-note{margin:26px auto 0;padding:11px 14px;border:1px solid #eadfbf;border-radius:8px;background:#fffcf2;color:#67582d;font-size:11px;line-height:1.5}
+    .prototype-note{margin:22px auto 0;padding:10px 13px;border:1px solid #e7e9ec;border-radius:8px;background:#fafbfc;color:#626a73;font-size:11px;line-height:1.45}
     @media(max-width:900px){
       .wrap{width:min(100% - 32px,var(--max))}.header{grid-template-columns:auto 1fr auto;gap:12px;min-height:66px}.search{display:none}.header-actions button span{display:none}.header-actions button{min-width:42px;min-height:42px;justify-content:center;padding:7px}
       .nav-inner{gap:22px;min-height:41px}.nav a{font-size:12px}.product{grid-template-columns:minmax(0,1fr);gap:18px}.gallery{position:static;grid-template-columns:minmax(0,1fr)}
-      .hero{border-radius:0;margin-inline:-16px;aspect-ratio:1/1}.hero img{padding:12px}.thumbs{display:flex;order:2;overflow:auto;padding:8px 0;scrollbar-width:none}.thumbs::-webkit-scrollbar{display:none}.thumb{flex:0 0 52px;width:52px;height:64px}
-      .mobile-dots{display:flex;justify-content:center;gap:6px;margin-top:-20px;z-index:2;pointer-events:none}.mobile-dots span{width:6px;height:6px;border-radius:99px;background:#aaa}.mobile-dots span.active{width:18px;background:#222}
-      .info{padding-top:0}.details-grid{grid-template-columns:1fr;gap:28px}.content-section{margin-top:42px;padding-top:28px}.mobile-buy{position:fixed;inset:auto 0 0;z-index:10;display:flex;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:#fffffff5;backdrop-filter:blur(10px);transform:translateY(110%);transition:transform .2s}.mobile-buy.visible{transform:translateY(0);box-shadow:0 -4px 18px #00000012}.mobile-buy-copy{flex:1;min-width:0;color:var(--muted);font-size:10px;line-height:1.25}.mobile-buy-copy strong{display:block;color:#171717;font-size:15px}.mobile-buy .primary{width:auto;min-width:48%;min-height:44px;padding:8px 12px;font-size:12px}.newsletter-inner{align-items:flex-start;flex-direction:column;gap:15px}.newsletter-form{width:100%}body{padding-bottom:72px}
+      .hero{border-radius:0;margin-inline:-16px;aspect-ratio:1.08/1}.hero img{padding:12px}.thumbs{display:flex;order:2;overflow:auto;padding:8px 0;scrollbar-width:none}.thumbs::-webkit-scrollbar{display:none}.thumb{flex:0 0 52px;width:52px;height:64px}
+      .info{padding-top:0}.details-grid{grid-template-columns:1fr;gap:28px}.content-section{margin-top:42px;padding-top:28px}.mobile-buy{position:fixed;inset:auto 0 0;z-index:10;display:flex;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:#fffffff5;backdrop-filter:blur(10px);transform:translateY(110%);transition:transform .2s}.mobile-buy.visible{transform:translateY(0);box-shadow:0 -4px 18px #00000012}.mobile-buy-copy{flex:1;min-width:0;color:var(--muted);font-size:10px;line-height:1.25}.mobile-buy-copy strong{display:block;color:#171717;font-size:15px}.mobile-buy .primary{width:auto;min-width:48%;min-height:44px;padding:8px 12px;font-size:12px}.newsletter-inner{align-items:flex-start;flex-direction:column;gap:15px}.newsletter-form{width:100%}body{padding-bottom:0}body.mobile-buy-active{padding-bottom:72px}
     }
     @media(max-width:560px){
-      body{font-size:14px}.wrap{width:calc(100% - 28px)}.promo{padding:7px 12px;font-size:11px}.logo{font-size:18px}.logo-mark{width:24px;height:24px;border-width:6px}.nav-inner{gap:19px}.nav a{font-size:11px}.crumbs{padding:11px 0;font-size:11px}.crumbs>*:not(:nth-child(3)){display:none}.crumbs a:nth-child(3)::before{content:"‹  "}
-      .hero{margin-inline:-14px;aspect-ratio:1/1}.hero img{padding:8px}.hero-label{left:10px;top:10px}.arrow{width:34px;height:34px}.arrow.prev{left:8px}.arrow.next{right:8px}.thumbs{padding:7px 0;gap:7px}.thumb{flex-basis:47px;width:47px;height:58px}
-      h1{font-size:22px}.seller{font-size:10px}.no-reviews{font-size:11px}.offer{margin-top:16px;padding:12px 13px}.offer-price{font-size:29px}.offer-note{font-size:12px}.option{margin-top:17px}.option-heading{font-size:13px}.sizes{gap:6px}.sizes button{height:43px;font-size:13px}.add{margin-top:14px}.primary{min-height:49px;font-size:14px}.payment-note{font-size:10px}.confidence{margin-top:15px;padding:12px 0;gap:5px}.confidence-item{flex-direction:column;align-items:center;gap:5px;text-align:center;font-size:9.5px}.confidence-item svg{width:17px;height:17px}.shipping{margin-top:15px;padding:13px}.shipping h2{font-size:14px}.shipping p{font-size:11px}.cep-form{height:42px}.cep-form input{font-size:14px}.cep-form button{padding-inline:13px;font-size:11px}.shipping-policy{font-size:10px!important}
-      .content-section{margin-top:34px;padding-top:23px}.section-title{font-size:18px;margin-bottom:13px}.details-grid{gap:22px}.details-grid p{font-size:13px}.specs li{font-size:12px;padding:10px 0}.newsletter{margin-top:38px;padding:25px 0}.newsletter h2{font-size:17px}.newsletter p{font-size:11px}.footer-grid{grid-template-columns:1fr 1fr;gap:22px 16px}footer{padding:25px 0 20px}.legal{font-size:9px}.mobile-buy{padding-inline:12px;gap:8px}.mobile-buy .primary{min-width:54%;font-size:11px}.mobile-buy-copy{font-size:9px}.mobile-buy-copy strong{font-size:14px}.prototype-note{margin-top:20px;font-size:10px}
+      body{font-size:14px}.wrap{width:calc(100% - 28px)}.promo{padding:7px 12px;font-size:11px;white-space:nowrap}.logo{font-size:18px}.logo-mark{width:24px;height:24px;border-width:6px}.nav-inner{gap:16px;min-height:40px;overflow:visible}.nav a{font-size:11px}.nav-inner>a:nth-of-type(n+5){display:none}.nav-more{display:block}.nav-more>summary{font-size:11px}.crumbs{padding:11px 0;font-size:11px}.crumbs>*:not(:nth-child(3)){display:none}.crumbs a:nth-child(3)::before{content:"‹  "}
+      .hero{margin-inline:-14px;aspect-ratio:1.12/1}.hero img{padding:8px}.hero-label{left:10px;top:10px}.arrow{width:34px;height:34px}.arrow.prev{left:8px}.arrow.next{right:8px}.thumbs{padding:7px 0;gap:7px}.thumb{flex-basis:47px;width:47px;height:58px}
+      h1{font-size:22px}.seller{font-size:10px}.no-reviews{font-size:11px}.offer{margin-top:16px;padding:12px 13px}.offer-price{font-size:29px}.offer-note{font-size:12px}.option{margin-top:17px}.option-heading{font-size:13px}.sizes{gap:6px}.sizes button{height:43px;font-size:13px}.add{margin-top:14px}.primary{min-height:49px;font-size:14px}.payment-note{font-size:10px}.shipping{margin-top:15px;padding:13px}.shipping h2{font-size:14px}.shipping p{font-size:11px}.cep-form{height:42px}.cep-form input{font-size:14px}.cep-form button{padding-inline:13px;font-size:11px}.shipping-policy{font-size:10px!important}
+      .content-section{margin-top:30px;padding-top:21px}.section-title{font-size:18px;margin-bottom:13px}.details-grid{gap:20px}.details-grid p{font-size:13px}.specs li{font-size:12px;padding:10px 0}.footer-grid{grid-template-columns:1fr 1fr;gap:22px 16px}footer{padding:25px 0 20px}.legal{font-size:10px}.mobile-buy{padding-inline:12px;gap:8px}.mobile-buy .primary{min-width:54%;font-size:11px}.mobile-buy-copy{font-size:10px}.mobile-buy-copy strong{font-size:14px}.prototype-note{margin-top:16px;font-size:10px}
     }
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <div class="promo">Oferta promocional • consulte o frete pelo CEP antes de finalizar</div>
+  <div class="promo">Oferta promocional • frete informado antes do pagamento</div>
   <header class="wrap header">
     <a class="logo" href="#topo" aria-label="Minha Loja — início"><span class="logo-mark" aria-hidden="true"></span>Minha Loja</a>
     <form class="search" id="searchForm" role="search"><label class="sr-only" for="searchInput">Buscar produtos</label><input id="searchInput" type="search" placeholder="Buscar produtos, times ou marcas"><button aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button></form>
     <div class="header-actions"><button type="button" id="accountBtn"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span>Entrar</span></button><button type="button" id="bagBtn" aria-label="Sacola"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>Sacola (<b id="bagCount">0</b>)</span></button></div>
   </header>
-  <nav class="nav" aria-label="Categorias"><div class="wrap nav-inner"><a href="#produto">Camisas de time</a><a href="#produto">Masculino</a><a href="#produto">Feminino</a><a href="#produto">Infantil</a><a href="#produto">Calçados</a><a href="#produto">Acessórios</a><a href="#produto">Lançamentos</a><a href="#produto">Ofertas</a></div></nav>
+  <nav class="nav" aria-label="Categorias"><div class="wrap nav-inner"><a href="#produto">Camisas de time</a><a href="#produto">Masculino</a><a href="#produto">Feminino</a><a href="#produto">Infantil</a><a href="#produto">Calçados</a><a href="#produto">Acessórios</a><a href="#produto">Lançamentos</a><a href="#produto">Ofertas</a><details class="nav-more"><summary>Mais</summary><div class="nav-more-menu"><a href="#produto">Calçados</a><a href="#produto">Acessórios</a><a href="#produto">Lançamentos</a><a href="#produto">Ofertas</a></div></details></div></nav>
 
   <main class="wrap" id="topo">
     <nav class="crumbs" aria-label="Você está em"><a href="#topo">Início</a><span>/</span><a href="#produto">Camisas de time</a><span>/</span><span>Camiseta Casual Corinthians</span></nav>
@@ -168,13 +170,11 @@
           <button class="arrow next" type="button" aria-label="Próxima foto">›</button>
           <span class="gallery-count" id="galleryCount"></span>
         </div>
-        <div class="mobile-dots" id="mobileDots" aria-hidden="true"></div>
       </div>
 
       <div class="info">
         <p class="seller" id="sellerName" hidden></p>
         <h1 id="productTitle">Camiseta Casual Corinthians</h1>
-        <div class="no-reviews"><span aria-hidden="true">☆</span><span>Ainda sem avaliações</span><a href="#avaliacoes">Seja o primeiro a avaliar</a></div>
 
         <div class="offer" aria-label="Preço promocional">
           <p class="offer-label">Valor promocional da camiseta</p>
@@ -191,34 +191,27 @@
         <button class="primary add" id="addButton" type="button">Adicionar à sacola</button>
         <p class="payment-note"><svg viewBox="0 0 24 24" class="icon"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Nenhum pagamento é solicitado nesta prévia.</p>
 
-        <div class="confidence" aria-label="Informações úteis">
-          <div class="confidence-item"><svg viewBox="0 0 24 24" class="icon"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5M18 3v4h-4M6 21v-4h4"/></svg><span>Política de troca<br>consulte as condições</span></div>
-          <div class="confidence-item"><svg viewBox="0 0 24 24" class="icon"><path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z"/><circle cx="7.5" cy="18" r="1.5"/><circle cx="17.5" cy="18" r="1.5"/></svg><span>Frete e prazo<br>antes de pagar</span></div>
-          <div class="confidence-item"><svg viewBox="0 0 24 24" class="icon"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg><span>Compra consciente<br>informações claras</span></div>
-        </div>
-
         <div class="shipping" id="shipping">
           <h2>Consulte frete e prazo</h2>
-          <p>Informe o CEP para ver as opções de entrega. O valor total deve estar disponível antes de você confirmar a compra.</p>
+          <p>Informe o CEP para consultar as modalidades e o valor total antes do pagamento.</p>
           <form class="cep-form" id="cepForm"><label class="sr-only" for="cep">CEP</label><input id="cep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000"><button type="submit">Consultar</button></form>
           <p class="shipping-result" id="shippingResult" role="status" aria-live="polite"></p>
-          <p class="shipping-policy">Esta versão é uma prévia visual: o cálculo real de frete ainda precisa ser conectado. Não são exibidos valores ou prazos estimados sem consulta à transportadora.</p>
+          <p class="shipping-policy">Prévia: conecte o cálculo de frete para consultar valores e prazos reais.</p>
         </div>
 
         <div class="accordions">
-          <details><summary>Descrição do produto</summary><p>Camiseta casual na cor preta. Consulte as informações de composição e modelagem com o vendedor antes de concluir a compra.</p></details>
           <details><summary>Cuidados com a peça</summary><p>Lavar conforme as instruções da etiqueta. Para preservar a estampa e o tecido, evite alvejantes e siga a temperatura recomendada pelo fabricante.</p></details>
           <details><summary>Entrega, troca e devolução</summary><p>Consulte os prazos, as condições de troca e devolução e a responsabilidade pelo frete diretamente na política da loja antes de finalizar.</p></details>
         </div>
       </div>
     </section>
 
-    <div class="prototype-note"><strong>Prévia de loja:</strong> antes de publicar, cadastre a identificação real do vendedor, CNPJ e canais de atendimento; conecte cálculo de frete e checkout; e substitua as informações provisórias pelas políticas comerciais aplicáveis.</div>
+    <div class="prototype-note"><strong>Prévia:</strong> cadastre vendedor e políticas reais e conecte frete e checkout antes de publicar.</div>
 
     <section class="content-section" aria-labelledby="descriptionTitle">
       <div class="details-grid">
-        <div><h2 class="section-title" id="descriptionTitle">Sobre o produto</h2><p>Uma opção casual para compor o visual no dia a dia. Confira o caimento, a composição e as instruções da etiqueta. A disponibilidade e as condições promocionais devem ser confirmadas no momento da compra.</p></div>
-        <div><h2 class="section-title">Características</h2><ul class="specs"><li><span>Cor</span><strong>Preta</strong></li><li><span>Material</span><strong>Algodão — confirme a composição</strong></li><li><span>Modelagem</span><strong>Consulte o guia de medidas</strong></li><li><span>Referência</span><strong>Informação não cadastrada</strong></li></ul></div>
+        <div><h2 class="section-title" id="descriptionTitle">Sobre o produto</h2><p>Camiseta casual na cor preta. Confira a etiqueta e as medidas cadastradas para confirmar composição e caimento antes da compra.</p></div>
+        <div><h2 class="section-title">Características</h2><ul class="specs"><li><span>Cor</span><strong>Preta</strong></li><li><span>Composição</span><strong>Não informada</strong></li><li><span>Guia de medidas</span><strong>Não cadastrado</strong></li></ul></div>
       </div>
     </section>
 
@@ -228,10 +221,8 @@
       <details><summary>Quanto custa o frete?</summary><p>O valor depende do endereço e da modalidade de entrega. Consulte pelo CEP e confira o total antes de concluir o pedido. Nesta prévia, o cálculo ainda não está conectado.</p></details>
       <details><summary>A compra é finalizada por esta página?</summary><p>Não. Esta é uma prévia de interface e não processa pedidos nem pagamentos. O checkout deve ser conectado antes da publicação.</p></details>
     </section>
-    <section class="content-section" id="relacionados" aria-labelledby="relatedTitle"><h2 class="section-title" id="relatedTitle">Você também pode gostar</h2><p class="related-empty">Produtos relacionados serão exibidos quando forem cadastrados.</p></section>
   </main>
 
-  <section class="newsletter" aria-label="Novidades"><div class="wrap newsletter-inner"><div><h2>Receba novidades</h2><p>Cadastre seu e-mail para receber lançamentos e ofertas da loja.</p></div><form class="newsletter-form" id="newsletterForm"><label class="sr-only" for="email">Seu e-mail</label><input id="email" type="email" autocomplete="email" required placeholder="Seu e-mail"><button type="submit">Cadastrar</button></form></div></section>
   <footer><div class="wrap"><div class="footer-grid">
     <div><h2>Atendimento</h2><a href="#duvidas">Dúvidas frequentes</a><a href="#shipping">Entrega e frete</a><a href="#avaliacoes">Avaliações</a></div>
     <div><h2>Políticas</h2><a href="#politicas" id="policyLink">Trocas e devoluções</a><a href="#politicas">Privacidade</a><a href="#politicas">Termos de uso</a></div>
@@ -240,7 +231,7 @@
   </div><div class="legal">© <span id="year"></span> Minha Loja. Dados comerciais e políticas devem ser preenchidos pelo responsável antes da publicação.</div></div></footer>
 
   <div class="mobile-buy" id="mobileBuy" aria-label="Ação de compra"><div class="mobile-buy-copy"><span>Valor da camiseta</span><strong>R$ 0,00</strong></div><button class="primary" id="mobileAdd" type="button">Adicionar à sacola</button></div>
-  <dialog id="sizeDialog"><h2>Guia de medidas</h2><p>As medidas precisam ser cadastradas pelo vendedor antes da publicação. Compare a tabela real do produto com uma peça que você já usa.</p><table><thead><tr><th>Tamanho</th><th>Disponibilidade</th></tr></thead><tbody><tr><td>P</td><td>Consulte o vendedor</td></tr><tr><td>M</td><td>Consulte o vendedor</td></tr><tr><td>G</td><td>Consulte o vendedor</td></tr><tr><td>GG</td><td>Indisponível nesta prévia</td></tr></tbody></table><div class="dialog-actions"><button class="secondary" type="button" data-close="sizeDialog">Fechar</button></div></dialog>
+  <dialog id="sizeDialog"><h2>Guia de medidas</h2><p>A tabela de medidas ainda não foi cadastrada nesta prévia. Confirme as medidas com a loja antes de escolher seu tamanho.</p><div class="dialog-actions"><button class="secondary" type="button" data-close="sizeDialog">Fechar</button></div></dialog>
   <dialog id="bagDialog"><h2>Sacola</h2><div id="bagContent"></div><div class="dialog-actions"><button class="secondary" type="button" data-close="bagDialog">Continuar comprando</button><button type="button" id="checkoutButton">Continuar</button></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -256,7 +247,7 @@
       seller:''
     };
     const $=s=>document.querySelector(s);
-    const thumbs=$('#thumbs'),hero=$('#hero'),count=$('#galleryCount'),dots=$('#mobileDots');
+    const thumbs=$('#thumbs'),hero=$('#hero'),count=$('#galleryCount');
     let activeImage=0,selectedSize='',bag=[];
     const money=n=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(n);
     $('#year').textContent=new Date().getFullYear();
@@ -269,12 +260,10 @@
       const img=document.createElement('img');img.src=image;img.alt=`${PRODUCT.name} — foto ${activeImage+1}`;img.fetchPriority=activeImage===0?'high':'auto';hero.insertBefore(img,hero.querySelector('.hero-label'));
       count.textContent=`${activeImage+1} / ${PRODUCT.images.length}`;
       [...thumbs.children].forEach((button,i)=>button.setAttribute('aria-current',String(i===activeImage)));
-      [...dots.children].forEach((dot,i)=>dot.classList.toggle('active',i===activeImage));
     }
     PRODUCT.images.forEach((src,i)=>{
       const button=document.createElement('button');button.type='button';button.className='thumb';button.setAttribute('aria-label',`Ver foto ${i+1}`);button.setAttribute('aria-current',String(i===0));
       const img=document.createElement('img');img.src=src;img.alt='';img.loading='lazy';button.append(img);button.addEventListener('click',()=>renderGallery(i));thumbs.append(button);
-      const dot=document.createElement('span');if(i===0)dot.className='active';dots.append(dot);
     });
     renderGallery(0);
     $('.prev').addEventListener('click',e=>{e.stopPropagation();renderGallery(activeImage-1)});
@@ -308,9 +297,8 @@
     $('#cepForm').addEventListener('submit',e=>{e.preventDefault();const result=$('#shippingResult');const digits=$('#cep').value.replace(/\D/g,'');result.className='shipping-result';if(digits.length!==8){result.textContent='Digite um CEP válido com 8 números.';result.classList.add('error');return}result.textContent='Consulta registrada na interface. Para exibir valor e prazo reais, conecte este formulário à transportadora ou plataforma de frete.';result.classList.add('notice')});
     $('#searchForm').addEventListener('submit',e=>{e.preventDefault();toast('Conecte a busca ao catálogo de produtos.')});
     $('#accountBtn').addEventListener('click',()=>toast('A área do cliente precisa ser conectada ao sistema da loja.'));
-    $('#newsletterForm').addEventListener('submit',e=>{e.preventDefault();toast('Conecte o formulário a uma ferramenta de e-mail antes de publicar.');e.currentTarget.reset()});
     const mobileBuy=$('#mobileBuy'),buyButton=$('#addButton');
-    if('IntersectionObserver'in window){let buyVisible=true;const io=new IntersectionObserver(([entry])=>{buyVisible=entry.isIntersecting;mobileBuy.classList.toggle('visible',!buyVisible&&window.scrollY>260)},{threshold:.05});io.observe(buyButton);addEventListener('scroll',()=>{if(!buyVisible)mobileBuy.classList.toggle('visible',window.scrollY>260)},{passive:true})}
+    if('IntersectionObserver'in window){let buyVisible=true;const syncBar=()=>{const visible=!buyVisible&&window.scrollY>260;mobileBuy.classList.toggle('visible',visible);document.body.classList.toggle('mobile-buy-active',visible)};const io=new IntersectionObserver(([entry])=>{buyVisible=entry.isIntersecting;syncBar()},{threshold:.05});io.observe(buyButton);addEventListener('scroll',syncBar,{passive:true})}
   </script>
 </body>
 </html>
