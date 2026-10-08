@@ -454,6 +454,21 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .lock{margin-top:6px}
   .tr{margin-top:14px;padding-block:11px}
 }
+
+/* Assinatura de e-commerce: benefício visível, preço protagonista e CTA de compra */
+.photo-offer{position:absolute;left:12px;top:12px;z-index:2;padding:6px 9px;border-radius:5px;background:#b4232c;color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;box-shadow:0 2px 7px #0003}
+.pr{background:#fbfdfb;border:1px solid #e0ebe3;border-radius:9px;padding:11px 12px;margin-top:11px}
+.pr .de{display:block;color:#6b7480}
+.pr .big{font-size:36px;letter-spacing:-.04em}
+.pr .pix{padding:3px 8px;border-radius:999px}
+.cta{background:#171717;box-shadow:0 6px 14px #17171733}
+.cta:hover{background:#000;box-shadow:0 8px 18px #17171740}
+.gal .mn{border:1px solid #eef0f2}
+@media(max-width:520px){
+  .photo-offer{left:10px;top:10px;padding:5px 8px;font-size:10px}
+  .pr{margin-top:10px;padding:10px 11px}
+  .pr .big{font-size:28px}
+}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
@@ -560,7 +575,7 @@ function toast(t){const e=$('#ts');e.textContent=t;e.classList.add('on');clearTi
 $('#de').textContent='De '+brl(CFG.de);$('#pix').textContent='R$ 0,00';$('#sp').textContent='Total R$ 50,00';
 $('#inst').innerHTML='Envio e logística: <b>R$ 50,00</b>';
 const off=0;
-function show(i){cur=(i+N)%N;const u=CFG.imagens[cur],m=$('#mn');m.innerHTML=(off>0?'<span class="badge">'+off+'% OFF</span>':'')+(u?'<img src="'+u+'" alt="'+CFG.nome+' - foto '+(cur+1)+'">':'<span>Foto '+(cur+1)+'<br>Adicione a URL em CFG.imagens</span>')+(N>1?'<button class="ar l" data-d="-1" aria-label="Foto anterior">&lsaquo;</button><button class="ar r" data-d="1" aria-label="Próxima foto">&rsaquo;</button><span class="ct">'+(cur+1)+'/'+N+'</span><span class="dots">'+CFG.imagens.map((_,j)=>'<i'+(j===cur?' class="on"':'')+'></i>').join('')+'</span>':'');
+function show(i){cur=(i+N)%N;const u=CFG.imagens[cur],m=$('#mn');m.innerHTML='<span class="photo-offer">GRÁTIS</span>'+(off>0?'<span class="badge">'+off+'% OFF</span>':'')+(u?'<img src="'+u+'" alt="'+CFG.nome+' - foto '+(cur+1)+'">':'<span>Foto '+(cur+1)+'<br>Adicione a URL em CFG.imagens</span>')+(N>1?'<button class="ar l" data-d="-1" aria-label="Foto anterior">&lsaquo;</button><button class="ar r" data-d="1" aria-label="Próxima foto">&rsaquo;</button><span class="ct">'+(cur+1)+'/'+N+'</span><span class="dots">'+CFG.imagens.map((_,j)=>'<i'+(j===cur?' class="on"':'')+'></i>').join('')+'</span>':'');
 document.querySelectorAll('#th button').forEach((b,j)=>b.setAttribute('aria-current',j===cur))}
 CFG.imagens.forEach((u,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver foto '+(i+1));b.innerHTML=u?'<img src="'+u+'" alt="">':i+1;b.onclick=()=>show(i);$('#th').appendChild(b)});show(0);
 Object.entries(CFG.estoque).forEach(([t,n])=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.disabled=n<1;b.setAttribute('aria-pressed','false');if(n<1)b.title='Esgotado';
