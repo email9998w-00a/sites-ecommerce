@@ -40,7 +40,7 @@
     .search button{width:48px;border:0;background:var(--brand);color:#fff;display:grid;place-items:center}
     .search svg,.header-actions svg,.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
     .header-actions{display:flex;gap:6px}
-    .header-actions button{border:0;background:none;padding:8px 10px;display:flex;align-items:center;gap:7px;font-size:13px;color:#30343a}
+    .header-actions button,.header-actions .help-link{border:0;background:none;padding:8px 10px;display:flex;align-items:center;gap:7px;font-size:13px;color:#30343a;text-decoration:none}
     .nav{position:relative;border-block:1px solid var(--line)}
     .nav-inner{min-height:44px;display:flex;align-items:center;gap:30px;overflow:auto;white-space:nowrap;scrollbar-width:none}
     .nav-inner::-webkit-scrollbar{display:none}
@@ -78,6 +78,16 @@
     .offer-price{margin-top:3px;color:var(--red);font-size:36px;font-weight:800;line-height:1.08;letter-spacing:-.05em}
     .offer-note{margin:7px 0 0;color:#434a52;font-size:12px;line-height:1.45}
     .offer-note strong{color:#202328}
+    .scarcity-signals{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+    .scarcity-signals[hidden],.scarcity-chip[hidden]{display:none}
+    .scarcity-chip{display:inline-flex;align-items:center;gap:6px;max-width:100%;padding:6px 9px;border:1px solid #efc6cc;border-radius:6px;background:#fff;color:var(--red-dark);font-size:11px;font-weight:700;line-height:1.25}
+    .scarcity-stock::before{content:"●";font-size:8px;color:var(--red)}
+    .today-scarcity{display:flex;align-items:center;flex-wrap:wrap;gap:5px 12px;margin:8px 0 -3px;padding:9px 11px;border:1px solid #efc1c9;border-radius:8px;background:var(--red-soft);color:var(--red-dark);font-size:12px;line-height:1.3}
+    .today-scarcity[hidden]{display:none}
+    .today-scarcity-title{display:inline-flex;align-items:center;gap:7px;font-weight:800;letter-spacing:.01em}
+    .today-scarcity-title::before{content:"!";display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;line-height:1}
+    .today-timer{font-size:11px;font-weight:700;white-space:nowrap}
+    .today-scarcity:not([hidden])+.add{margin-top:10px}
     .option{margin-top:22px}
     .option-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:9px;font-size:14px}
     .option-heading strong{font-weight:650}
@@ -90,6 +100,7 @@
     .size-message{min-height:20px;margin:7px 0 0;color:var(--red);font-size:12px;font-weight:600}
     .primary{width:100%;min-height:52px;padding:12px 18px;border:0;border-radius:8px;background:var(--red);color:#fff;font-size:15px;font-weight:700;box-shadow:0 5px 14px #bd102a30;transition:background .16s,transform .16s}
     .primary:hover{background:var(--red-dark);transform:translateY(-1px)}
+    .primary:disabled{background:#777d86;box-shadow:none;cursor:not-allowed;transform:none}
     .add{margin-top:18px}
     .payment-note{display:flex;justify-content:center;align-items:center;gap:7px;margin:9px 0 0;color:var(--muted);font-size:11px;text-align:center}
     .payment-note svg{width:15px;height:15px;color:var(--green);flex:none}
@@ -124,9 +135,9 @@
     .newsletter-form input{min-width:0;flex:1;padding:0 12px;border:1px solid #d8dce1;border-right:0;border-radius:7px 0 0 7px;background:#fff;font-size:13px}
     .newsletter-form button{padding:0 15px;border:0;border-radius:0 7px 7px 0;background:#25282d;color:#fff;font-size:12px;font-weight:650}
     footer{padding:32px 0 24px;background:#17191c;color:#d0d3d7;font-size:12px}
-    .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+    .footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
     footer h2{margin:0 0 9px;color:#fff;font-size:13px}footer a{display:block;padding:4px 0;color:#d0d3d7;text-decoration:none}footer a:hover{color:#fff;text-decoration:underline}
-    .footer-placeholder{color:#aeb4bc;font-size:11px;line-height:1.5}
+    .footer-note{color:#aeb4bc;font-size:11px;line-height:1.5}
     .legal{margin-top:23px;padding-top:16px;border-top:1px solid #34383d;color:#aeb4bc;font-size:10px}
     .mobile-buy{display:none}
     dialog{width:min(92vw,450px);padding:22px;border:0;border-radius:12px;box-shadow:0 18px 60px #0003}
@@ -137,6 +148,7 @@
     dialog th,dialog td{padding:10px 7px;border-bottom:1px solid var(--line);text-align:center}
     .dialog-actions{display:flex;gap:9px;margin-top:16px}
     .dialog-actions button{flex:1;min-height:42px;border:0;border-radius:7px;background:#171717;color:#fff;font-size:13px;font-weight:650}
+    .dialog-actions button:disabled{background:#858a91;color:#fff;cursor:not-allowed}
     .dialog-actions .secondary{border:1px solid var(--line);background:#fff;color:#333}
     .toast{position:fixed;left:50%;bottom:24px;z-index:20;max-width:calc(100% - 32px);padding:11px 16px;border-radius:8px;background:#25282d;color:#fff;font-size:13px;text-align:center;opacity:0;transform:translate(-50%,10px);pointer-events:none;transition:opacity .18s,transform .18s}
     .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -150,20 +162,35 @@
     @media(max-width:560px){
       body{font-size:14px}.wrap{width:calc(100% - 28px)}.promo{padding:7px 10px;font-size:10px}.promo-inner{gap:7px;flex-wrap:wrap;min-height:28px;line-height:1.2}.promo-free{font-size:10px}.promo-price{font-size:10px}.promo-sep{display:none}.promo-note{font-size:10px}.logo{font-size:18px}.logo-mark{width:24px;height:24px;border-width:6px}.nav-inner{gap:16px;min-height:40px;overflow:visible}.nav a{font-size:11px}.nav-inner>a:nth-of-type(n+5){display:none}.nav-more{display:block}.nav-more>summary{font-size:11px}.crumbs{padding:11px 0;font-size:11px}.crumbs>*:not(:nth-child(3)){display:none}.crumbs a:nth-child(3)::before{content:"‹  "}
       .hero{margin-inline:-14px;aspect-ratio:1.12/1}.hero img{padding:8px}.hero-label{left:10px;top:10px}.arrow{width:34px;height:34px}.arrow.prev{left:8px}.arrow.next{right:8px}.thumbs{padding:7px 0;gap:7px}.thumb{flex-basis:47px;width:47px;height:58px}
-      h1{font-size:22px}.seller{font-size:10px}.offer{margin-top:15px;padding:11px 12px 12px 14px}.offer-label{font-size:9px;margin-bottom:3px}.offer-main{font-size:18px}.offer-price{font-size:30px}.offer-note{font-size:11px;margin-top:5px}.option{margin-top:17px}.option-heading{font-size:13px}.sizes{gap:6px}.sizes button{height:43px;font-size:13px}.add{margin-top:14px}.primary{min-height:49px;font-size:14px}.payment-note{font-size:10px}.shipping{margin-top:15px;padding:13px}.shipping h2{font-size:14px}.shipping p{font-size:11px}.cep-form{height:42px}.cep-form input{font-size:14px}.cep-form button{padding-inline:13px;font-size:11px}.shipping-policy{font-size:10px!important}
+      h1{font-size:22px}.seller{font-size:10px}.offer{margin-top:15px;padding:11px 12px 12px 14px}.offer-label{font-size:9px;margin-bottom:3px}.offer-main{font-size:18px}.offer-price{font-size:30px}.offer-note{font-size:11px;margin-top:5px}.scarcity-signals{gap:5px;margin-top:8px}.scarcity-chip{padding:5px 7px;font-size:10px}.today-scarcity{gap:5px 8px;margin-top:7px;padding:8px 9px;font-size:11px}.today-timer{font-size:10px}.today-scarcity:not([hidden])+.add{margin-top:8px}.option{margin-top:17px}.option-heading{font-size:13px}.sizes{gap:6px}.sizes button{height:43px;font-size:13px}.add{margin-top:14px}.primary{min-height:49px;font-size:14px}.payment-note{font-size:10px}.shipping{margin-top:15px;padding:13px}.shipping h2{font-size:14px}.shipping p{font-size:11px}.cep-form{height:42px}.cep-form input{font-size:14px}.cep-form button{padding-inline:13px;font-size:11px}.shipping-policy{font-size:10px!important}
       .content-section{margin-top:30px;padding-top:21px}.section-title{font-size:18px;margin-bottom:13px}.details-grid{gap:20px}.details-grid p{font-size:13px}.specs li{font-size:12px;padding:10px 0}.footer-grid{grid-template-columns:1fr 1fr;gap:22px 16px}footer{padding:25px 0 20px}.legal{font-size:10px}.mobile-buy{padding-inline:12px;gap:8px}.mobile-buy .primary{min-width:54%;font-size:11px}.mobile-buy-copy{font-size:10px}.mobile-buy-copy strong{font-size:14px}.prototype-note{margin-top:16px;font-size:10px}
     }
+    .size-message:empty{min-height:0;margin-top:0}
+    @media(max-width:560px){
+      .hero{aspect-ratio:1.2/1}
+      .hero-label{display:none}
+      .thumbs{padding:6px 0}
+      .thumb{flex-basis:44px;width:44px;height:54px}
+      .option{margin-top:15px}
+      .today-scarcity{flex-wrap:nowrap;gap:5px 8px;margin-top:7px;padding:7px 8px;font-size:10px}
+      .today-scarcity-title{gap:5px;font-size:10px;white-space:nowrap}
+      .today-timer{font-size:9px}
+      .today-scarcity:not([hidden])+.add{margin-top:7px}
+      .reviews-empty{padding:14px}
+      .footer-grid>div:last-child{grid-column:1/-1}
+    }
+    @media(max-width:370px){.nav-inner{gap:12px}.nav-inner>a:nth-of-type(4){display:none}.nav-more{margin-left:auto}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <div class="promo"><div class="wrap promo-inner"><span class="promo-free">CAMISETA GRÁTIS</span><span class="promo-price">R$ 0,00</span><span class="promo-sep" aria-hidden="true"></span><span class="promo-note">Frete e logística à parte • consulte pelo CEP antes de pagar</span></div></div>
+  <div class="promo"><div class="wrap promo-inner"><span class="promo-free" id="promoFree">CAMISETA GRÁTIS</span><span class="promo-price" id="promoPrice">R$ 0,00</span><span class="promo-sep" id="promoSeparator" aria-hidden="true"></span><span class="promo-note" id="promoNote">Frete à parte • valor antes de pagar</span></div></div>
   <header class="wrap header">
     <a class="logo" href="#topo" aria-label="Minha Loja — início"><span class="logo-mark" aria-hidden="true"></span>Minha Loja</a>
     <form class="search" id="searchForm" role="search"><label class="sr-only" for="searchInput">Buscar produtos</label><input id="searchInput" type="search" placeholder="Buscar produtos, times ou marcas"><button aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button></form>
-    <div class="header-actions"><button type="button" id="accountBtn"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span>Entrar</span></button><button type="button" id="bagBtn" aria-label="Sacola"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>Sacola (<b id="bagCount">0</b>)</span></button></div>
+    <div class="header-actions"><a class="help-link" href="#duvidas" aria-label="Ir para dúvidas frequentes"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 1 1 4.3 1.7c-1.1 1-1.9 1.4-1.9 3"/><path d="M12 17.5h.01"/></svg><span>Ajuda</span></a><button type="button" id="bagBtn" aria-label="Sacola"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span>Sacola (<b id="bagCount">0</b>)</span></button></div>
   </header>
-  <nav class="nav" aria-label="Categorias"><div class="wrap nav-inner"><a href="#produto">Camisas de time</a><a href="#produto">Masculino</a><a href="#produto">Feminino</a><a href="#produto">Infantil</a><a href="#produto">Calçados</a><a href="#produto">Acessórios</a><a href="#produto">Lançamentos</a><a href="#produto">Ofertas</a><details class="nav-more"><summary>Mais</summary><div class="nav-more-menu"><a href="#produto">Calçados</a><a href="#produto">Acessórios</a><a href="#produto">Lançamentos</a><a href="#produto">Ofertas</a></div></details></div></nav>
+  <nav class="nav" aria-label="Categorias"><div class="wrap nav-inner"><a href="#produto">Camisas de time</a><a href="#produto">Masculino</a><a href="#produto">Feminino</a><a href="#produto">Infantil</a><a href="#produto">Calçados</a><a href="#produto">Acessórios</a><a href="#produto">Lançamentos</a><a href="#produto">Ofertas</a><details class="nav-more"><summary>Mais</summary><div class="nav-more-menu"><a href="#produto">Infantil</a><a href="#produto">Calçados</a><a href="#produto">Acessórios</a><a href="#produto">Lançamentos</a><a href="#produto">Ofertas</a></div></details></div></nav>
 
   <main class="wrap" id="topo">
     <nav class="crumbs" aria-label="Você está em"><a href="#topo">Início</a><span>/</span><a href="#produto">Camisas de time</a><span>/</span><span>Camiseta Casual Corinthians</span></nav>
@@ -171,7 +198,7 @@
       <div class="gallery" aria-label="Galeria do produto">
         <div class="thumbs" id="thumbs"></div>
         <div class="hero" id="hero" role="group" aria-label="Fotos do produto">
-          <span class="hero-label">CAMISETA GRÁTIS</span>
+          <span class="hero-label" id="imageOfferLabel">CAMISETA GRÁTIS</span>
           <button class="arrow prev" type="button" aria-label="Foto anterior">‹</button>
           <button class="arrow next" type="button" aria-label="Próxima foto">›</button>
           <span class="gallery-count" id="galleryCount"></span>
@@ -183,10 +210,12 @@
         <h1 id="productTitle">Camiseta Casual Corinthians</h1>
 
         <div class="offer" aria-label="Oferta da camiseta grátis">
-          <p class="offer-label">Oferta promocional</p>
-          <p class="offer-main">CAMISETA GRÁTIS</p>
+          <p class="offer-label" id="offerLabel">Oferta promocional</p>
+          <p class="offer-main" id="offerTitle">CAMISETA GRÁTIS</p>
           <div class="offer-price" id="price">R$ 0,00</div>
-          <p class="offer-note"><strong>A camiseta custa R$ 0,00.</strong> Frete e logística são à parte: consulte valor e prazo pelo CEP antes de pagar.</p>
+          <div class="scarcity-signals" id="scarcitySignals" hidden><span class="scarcity-chip scarcity-stock" id="stockSignal" hidden></span></div>
+          <span class="sr-only" id="scarcityStatus" role="status" aria-live="polite"></span>
+          <p class="offer-note" id="offerNote"><strong>A camiseta custa R$ 0,00.</strong> Frete e logística são à parte: consulte valor e prazo pelo CEP antes de pagar.</p>
         </div>
 
         <div class="option">
@@ -195,15 +224,16 @@
           <p class="size-message" id="sizeMessage" role="status" aria-live="polite"></p>
         </div>
 
+        <div class="today-scarcity" id="todayScarcity" hidden><span class="today-scarcity-title">Oferta grátis termina hoje</span><span class="today-timer" id="timerSignal" role="timer" aria-live="off"></span></div>
         <button class="primary add" id="addButton" type="button">Adicionar camiseta grátis à sacola</button>
-        <p class="payment-note"><svg viewBox="0 0 24 24" class="icon"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Nenhum pagamento é solicitado nesta prévia.</p>
+        <p class="payment-note">Prévia demonstrativa: pedidos e pagamentos não são processados.</p>
 
         <div class="shipping" id="shipping">
           <h2>Consulte frete e prazo</h2>
           <p>Informe o CEP para consultar as modalidades e o valor total antes do pagamento.</p>
           <form class="cep-form" id="cepForm"><label class="sr-only" for="cep">CEP</label><input id="cep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000"><button type="submit">Consultar</button></form>
           <p class="shipping-result" id="shippingResult" role="status" aria-live="polite"></p>
-          <p class="shipping-policy">Prévia: conecte o cálculo de frete para consultar valores e prazos reais.</p>
+          <p class="shipping-policy">Consulta indisponível nesta demonstração: nenhum valor ou prazo de frete foi consultado.</p>
         </div>
 
         <div class="accordions">
@@ -212,8 +242,6 @@
         </div>
       </div>
     </section>
-
-    <div class="prototype-note"><strong>Prévia:</strong> cadastre vendedor e políticas reais e conecte frete e checkout antes de publicar.</div>
 
     <section class="content-section" aria-labelledby="descriptionTitle">
       <div class="details-grid">
@@ -231,15 +259,14 @@
   </main>
 
   <footer><div class="wrap"><div class="footer-grid">
-    <div><h2>Atendimento</h2><a href="#duvidas">Dúvidas frequentes</a><a href="#shipping">Entrega e frete</a><a href="#avaliacoes">Avaliações</a></div>
-    <div><h2>Políticas</h2><a href="#politicas" id="policyLink">Trocas e devoluções</a><a href="#politicas">Privacidade</a><a href="#politicas">Termos de uso</a></div>
-    <div><h2>Sobre a loja</h2><p class="footer-placeholder">Cadastre aqui a razão social, o CNPJ, o endereço e os canais reais de atendimento antes de publicar.</p></div>
-    <div><h2>Pagamento</h2><p class="footer-placeholder">Exiba somente os meios de pagamento aceitos pelo checkout real.</p></div>
-  </div><div class="legal">© <span id="year"></span> Minha Loja. Dados comerciais e políticas devem ser preenchidos pelo responsável antes da publicação.</div></div></footer>
+    <div><h2>Ajuda</h2><a href="#duvidas">Dúvidas frequentes</a><a href="#shipping">Frete e prazo</a></div>
+    <div><h2>Produto</h2><a href="#descriptionTitle">Características</a><a href="#avaliacoes">Avaliações</a></div>
+    <div><h2>Sobre esta página</h2><p class="footer-note">Prévia visual sem processamento de pedidos. Antes de vender, cadastre identificação e atendimento do lojista, políticas e dados do produto; conecte estoque, frete e checkout.</p></div>
+  </div><div class="legal">© <span id="year"></span> Minha Loja · Prévia demonstrativa, sem processamento de pedidos ou pagamentos.</div></div></footer>
 
-  <div class="mobile-buy" id="mobileBuy" aria-label="Ação de compra"><div class="mobile-buy-copy"><span>CAMISETA GRÁTIS</span><strong>R$ 0,00</strong></div><button class="primary" id="mobileAdd" type="button">Adicionar grátis</button></div>
-  <dialog id="sizeDialog"><h2>Guia de medidas</h2><p>A tabela de medidas ainda não foi cadastrada nesta prévia. Confirme as medidas com a loja antes de escolher seu tamanho.</p><div class="dialog-actions"><button class="secondary" type="button" data-close="sizeDialog">Fechar</button></div></dialog>
-  <dialog id="bagDialog"><h2>Sacola</h2><div id="bagContent"></div><div class="dialog-actions"><button class="secondary" type="button" data-close="bagDialog">Continuar comprando</button><button type="button" id="checkoutButton">Continuar</button></div></dialog>
+  <div class="mobile-buy" id="mobileBuy" aria-label="Ação de compra"><div class="mobile-buy-copy"><span id="mobileDealLabel">CAMISETA GRÁTIS</span><strong id="mobileDealPrice">R$ 0,00</strong></div><button class="primary" id="mobileAdd" type="button">Adicionar grátis</button></div>
+  <dialog id="sizeDialog"><h2>Tabela de medidas</h2><p>As medidas deste modelo ainda não foram informadas. Compare com uma camiseta que você já usa e confirme a tabela com o lojista antes de escolher.</p><div class="dialog-actions"><button class="secondary" type="button" data-close="sizeDialog">Fechar</button></div></dialog>
+  <dialog id="bagDialog"><h2>Sacola (prévia)</h2><div id="bagContent"></div><div class="dialog-actions"><button class="secondary" type="button" data-close="bagDialog">Continuar comprando</button><button type="button" id="checkoutButton" disabled>Checkout indisponível</button></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -253,10 +280,12 @@
       measurements:null,
       seller:''
     };
+    // Preencha somente com estoque real e data/hora final da campanha em ISO 8601 com fuso.
+    // null mantém o respectivo aviso oculto nesta prévia, sem fabricar escassez.
+    const SCARCITY={inventoryRemaining:null,lowStockThreshold:5,offerEndsAt:'2026-10-08T23:59:59-03:00'};
     const $=s=>document.querySelector(s);
     const thumbs=$('#thumbs'),hero=$('#hero'),count=$('#galleryCount');
     let activeImage=0,selectedSize='',bag=[];
-    const money=n=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(n);
     $('#year').textContent=new Date().getFullYear();
     if(PRODUCT.seller){$('#sellerName').textContent=PRODUCT.seller;$('#sellerName').hidden=false}
 
@@ -283,6 +312,58 @@
       button.addEventListener('click',()=>{selectedSize=item.name;[...sizeContainer.children].forEach(b=>b.setAttribute('aria-pressed',String(b===button)));$('#sizeMessage').textContent=''});
       sizeContainer.append(button);
     });
+
+    let scarcityInterval=null;
+    const scarcitySignals=$('#scarcitySignals'),stockSignal=$('#stockSignal'),timerSignal=$('#timerSignal'),todayScarcity=$('#todayScarcity');
+    const brazilDate=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'});
+    const brazilDeadline=new Intl.DateTimeFormat('pt-BR',{timeZone:'America/Sao_Paulo',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});
+    const brazilTime=new Intl.DateTimeFormat('pt-BR',{timeZone:'America/Sao_Paulo',hour:'2-digit',minute:'2-digit'});
+    const pad=n=>String(n).padStart(2,'0');
+    function formatRemaining(ms){
+      const total=Math.max(0,Math.floor(ms/1000)),days=Math.floor(total/86400),hours=Math.floor(total%86400/3600),minutes=Math.floor(total%3600/60),seconds=total%60;
+      return days?`${days}d ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`:`${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    }
+    function disablePurchase(message){
+      $('#addButton').disabled=true;$('#mobileAdd').disabled=true;
+      [...sizeContainer.children].forEach(button=>button.disabled=true);
+      $('#scarcityStatus').textContent=message;
+    }
+    function closeOffer(){
+      if(scarcityInterval)clearInterval(scarcityInterval);
+      stockSignal.hidden=true;timerSignal.hidden=true;todayScarcity.hidden=true;scarcitySignals.hidden=true;
+      $('#promoFree').textContent='OFERTA ENCERRADA';$('#promoPrice').hidden=true;$('#promoSeparator').hidden=true;$('#promoNote').textContent='Esta promoção não está mais disponível.';
+      $('#imageOfferLabel').textContent='OFERTA ENCERRADA';$('#offerLabel').textContent='Promoção encerrada';$('#offerTitle').textContent='Oferta encerrada';$('#price').hidden=true;
+      $('#offerNote').textContent='Esta condição promocional terminou.';$('#mobileDealLabel').textContent='Oferta encerrada';$('#mobileDealPrice').textContent='—';
+      $('#addButton').textContent='Oferta encerrada';$('#mobileAdd').textContent='Encerrada';disablePurchase('A oferta promocional foi encerrada.');
+    }
+    function updateScarcity(){
+      const units=SCARCITY.inventoryRemaining;
+      let soldOut=Number.isSafeInteger(units)&&units===0;
+      stockSignal.hidden=true;timerSignal.hidden=true;todayScarcity.hidden=true;
+      if(soldOut){stockSignal.textContent='Esgotado';stockSignal.hidden=false;disablePurchase('Produto esgotado.');}
+      else if(Number.isSafeInteger(units)&&units>0&&units<=SCARCITY.lowStockThreshold){
+        stockSignal.textContent=units===1?'Última unidade disponível':`Restam ${units} unidades`;
+        stockSignal.hidden=false;$('#scarcityStatus').textContent=stockSignal.textContent;
+      }
+      const endsAt=SCARCITY.offerEndsAt?Date.parse(SCARCITY.offerEndsAt):NaN;
+      if(!soldOut&&Number.isFinite(endsAt)){
+        if(endsAt<=Date.now()){closeOffer();return;}
+        const deadline=brazilDeadline.format(new Date(endsAt));
+        const drawTimer=()=>{
+          const remaining=endsAt-Date.now();
+          if(remaining<=0){closeOffer();return;}
+          const expiresToday=brazilDate.format(new Date(endsAt))===brazilDate.format(new Date());
+          if(!expiresToday){todayScarcity.hidden=true;timerSignal.hidden=true;return;}
+          timerSignal.textContent=`Até ${brazilTime.format(new Date(endsAt))} · ${formatRemaining(remaining)}`;
+          timerSignal.title=`Fim da oferta: ${deadline} (horário de Brasília)`;
+          timerSignal.setAttribute('aria-label',`Oferta grátis termina hoje, até ${deadline}, horário de Brasília; restam ${formatRemaining(remaining)}`);
+          timerSignal.hidden=false;todayScarcity.hidden=false;
+        };
+        drawTimer();scarcityInterval=setInterval(drawTimer,1000);
+      }
+      scarcitySignals.hidden=stockSignal.hidden;
+    }
+    updateScarcity();
     $('#sizeGuideBtn').addEventListener('click',()=>$('#sizeDialog').showModal());
     document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>$('#'+button.dataset.close).close()));
 
@@ -294,16 +375,13 @@
     function renderBag(){
       const content=$('#bagContent');content.replaceChildren();
       if(!bag.length){content.textContent='Sua sacola está vazia.';return}
-      bag.forEach((item,index)=>{const row=document.createElement('div');row.style.cssText='display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #e5e7eb;font-size:13px';const label=document.createElement('span');label.textContent=`${item.name} — tamanho ${item.size}`;const remove=document.createElement('button');remove.type='button';remove.textContent='Remover';remove.className='text-button';remove.addEventListener('click',()=>{bag.splice(index,1);$('#bagCount').textContent=bag.length;renderBag()});row.append(label,remove);content.append(row)});
-      const note=document.createElement('p');note.textContent='Camiseta: R$ 0,00. Frete e logística à parte; consulte CEP, valor e prazo antes de qualquer pagamento.';content.append(note);
+      bag.forEach((item,index)=>{const row=document.createElement('div');row.style.cssText='display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #e5e7eb;font-size:13px';const label=document.createElement('span');label.textContent=`${item.name} — tamanho ${item.size}`;const price=document.createElement('strong');price.textContent='R$ 0,00';price.style.whiteSpace='nowrap';const remove=document.createElement('button');remove.type='button';remove.textContent='Remover';remove.className='text-button';remove.setAttribute('aria-label',`Remover ${item.name}, tamanho ${item.size}`);remove.addEventListener('click',()=>{bag.splice(index,1);$('#bagCount').textContent=bag.length;renderBag()});row.append(label,price,remove);content.append(row)});
+      const note=document.createElement('p');note.textContent='Subtotal da camiseta: R$ 0,00. O frete não está calculado nesta prévia; nenhum pedido será enviado.';content.append(note);
     }
     $('#addButton').addEventListener('click',addToBag);$('#mobileAdd').addEventListener('click',addToBag);$('#bagBtn').addEventListener('click',()=>{renderBag();$('#bagDialog').showModal()});
-    $('#checkoutButton').addEventListener('click',()=>{if(!bag.length){$('#bagDialog').close();toast('Sua sacola está vazia.');return}$('#bagDialog').close();toast('Prévia visual: conecte o checkout real antes de publicar. Nenhum pedido foi enviado.')});
-
     $('#cep').addEventListener('input',e=>{const d=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=d.length>5?`${d.slice(0,5)}-${d.slice(5)}`:d});
-    $('#cepForm').addEventListener('submit',e=>{e.preventDefault();const result=$('#shippingResult');const digits=$('#cep').value.replace(/\D/g,'');result.className='shipping-result';if(digits.length!==8){result.textContent='Digite um CEP válido com 8 números.';result.classList.add('error');return}result.textContent='Consulta registrada na interface. Para exibir valor e prazo reais, conecte este formulário à transportadora ou plataforma de frete.';result.classList.add('notice')});
-    $('#searchForm').addEventListener('submit',e=>{e.preventDefault();toast('Conecte a busca ao catálogo de produtos.')});
-    $('#accountBtn').addEventListener('click',()=>toast('A área do cliente precisa ser conectada ao sistema da loja.'));
+    $('#cepForm').addEventListener('submit',e=>{e.preventDefault();const result=$('#shippingResult');const digits=$('#cep').value.replace(/\D/g,'');result.className='shipping-result';if(digits.length!==8){result.textContent='Digite um CEP válido com 8 números.';result.classList.add('error');return}result.textContent='A cotação real não está disponível nesta demonstração. Nenhuma transportadora foi consultada e nenhum valor foi estimado.';result.classList.add('notice')});
+    $('#searchForm').addEventListener('submit',e=>{e.preventDefault();const query=$('#searchInput').value.trim().toLocaleLowerCase('pt-BR');if(!query){toast('Digite o nome do produto que procura.');return}const catalogText=`${PRODUCT.name} camiseta preta camisa time`.toLocaleLowerCase('pt-BR');if(catalogText.includes(query)){document.querySelector('#produto').scrollIntoView({behavior:'smooth',block:'start'});toast('Produto encontrado nesta prévia.')}else toast('Nenhum produto correspondente nesta prévia.')});
     const mobileBuy=$('#mobileBuy'),buyButton=$('#addButton');
     if('IntersectionObserver'in window){let buyVisible=true;const syncBar=()=>{const visible=!buyVisible&&window.scrollY>260;mobileBuy.classList.toggle('visible',visible);document.body.classList.toggle('mobile-buy-active',visible)};const io=new IntersectionObserver(([entry])=>{buyVisible=entry.isIntersecting;syncBar()},{threshold:.05});io.observe(buyButton);addEventListener('scroll',syncBar,{passive:true})}
   </script>
