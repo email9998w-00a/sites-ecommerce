@@ -514,6 +514,32 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .stock-note{margin-top:6px;font-size:10.5px}
   .stock-note span{font-size:12px}
 }
+
+/* Acabamento visual final */
+.stock-note{color:#8f2430;font-size:11.5px}
+.stock-note span{color:#b4232c;font-size:12px}
+.stock-note b{font-weight:800}
+.offer-lead .offer-tag{color:#16734a}
+.pr .pix{white-space:nowrap}
+.tr svg{color:#16734a}
+.ship h2{color:#171717}
+@media(max-width:520px){
+  .stock-note{font-size:10.5px}
+  .stock-note span{font-size:11px}
+}
+
+/* Conversão mobile: ação persistente assim que o usuário deixa a galeria */
+@media(max-width:900px){
+  .sb{background:#fff;backdrop-filter:blur(8px);border-top:1px solid #dfe4e8}
+  .sb div{padding-left:2px}
+  .sb b{color:#16734a}
+  .sb .cta{box-shadow:0 3px 10px #0003}
+}
+@media(max-width:520px){
+  .sb{gap:9px}
+  .sb div{min-width:0}
+  .sb .cta{flex-basis:56%;font-weight:800}
+}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
@@ -550,7 +576,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
     <div class="rt"><span class="stars" id="rs" aria-hidden="true"></span><a href="#avaliacoes" id="rl"></a><span id="rf"></span><button type="button" id="shr" class="shr">Compartilhar</button></div>
 
     <div class="opt"><div class="oh"><b>Cor: <span style="font-weight:400">Preta</span></b></div><div class="sw"><button type="button" aria-label="Preta" aria-pressed="true" style="background:#111"></button></div></div>
-    <div class="opt"><div class="oh"><b>Tamanho</b><button type="button" id="gb">Guia de medidas</button></div><div class="sz" id="sz" role="group" aria-label="Tamanho"></div><p class="msg" id="sm" role="alert"></p><p class="stock-note" id="stockNote" hidden></p></div>
+    <div class="opt"><div class="oh"><b>Tamanho</b><button type="button" id="gb">Guia de medidas</button></div><div class="sz" id="sz" role="group" aria-label="Tamanho"></div><p class="msg" id="sm" role="alert"></p><p class="stock-note" id="stockNote" aria-live="polite" hidden></p></div>
 
     <div class="buy" id="buy"><div class="qty"><button type="button" id="mi" aria-label="Diminuir">&minus;</button><output id="qt">1</output><button type="button" id="pl" aria-label="Aumentar">+</button></div><button class="cta" id="add" type="button">Receber camiseta grátis</button></div>
     <button class="cta2" id="now" type="button">Continuar para os dados de envio</button><p class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Sem cobrança recorrente • nenhum pagamento é processado nesta demonstração</p>
@@ -623,7 +649,7 @@ const off=0;
 function show(i){cur=(i+N)%N;const u=CFG.imagens[cur],m=$('#mn');m.innerHTML='<span class="photo-offer">GRÁTIS</span>'+(off>0?'<span class="badge">'+off+'% OFF</span>':'')+(u?'<img src="'+u+'" alt="'+CFG.nome+' - foto '+(cur+1)+'">':'<span>Foto '+(cur+1)+'<br>Adicione a URL em CFG.imagens</span>')+(N>1?'<button class="ar l" data-d="-1" aria-label="Foto anterior">&lsaquo;</button><button class="ar r" data-d="1" aria-label="Próxima foto">&rsaquo;</button><span class="ct">'+(cur+1)+'/'+N+'</span><span class="dots">'+CFG.imagens.map((_,j)=>'<i'+(j===cur?' class="on"':'')+'></i>').join('')+'</span>':'');
 document.querySelectorAll('#th button').forEach((b,j)=>b.setAttribute('aria-current',j===cur))}
 CFG.imagens.forEach((u,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver foto '+(i+1));b.innerHTML=u?'<img src="'+u+'" alt="">':i+1;b.onclick=()=>show(i);$('#th').appendChild(b)});show(0);
-const available=Object.values(CFG.estoque).filter(n=>n>0);const remaining=available.length?Math.min(...available):0;if(remaining>0&&remaining<=3){const sn=$('#stockNote');sn.hidden=false;sn.innerHTML='<span aria-hidden="true">●</span> Restam apenas <b>'+remaining+' unidades disponíveis</b>.';}
+const available=Object.values(CFG.estoque).filter(n=>n>0);const remaining=available.length?Math.min(...available):0;if(remaining>0&&remaining<=3){const sn=$('#stockNote');sn.hidden=false;sn.innerHTML='<span aria-hidden="true">●</span> <b>Últimas '+remaining+' unidades</b> disponíveis.';}
 Object.entries(CFG.estoque).forEach(([t,n])=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.disabled=n<1;b.setAttribute('aria-pressed','false');if(n<1)b.title='Esgotado';
 b.onclick=()=>{size=t;$('#ss').textContent='Tamanho '+t+', no Pix';document.querySelectorAll('#sz button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#sz').classList.remove('bad');const m=$('#sm');m.className='msg';m.textContent=n<=3?'Restam apenas '+n+' unidades no tamanho '+t+'.':''};$('#sz').appendChild(b)});
 $('#mn').onclick=e=>{const d=e.target.closest('[data-d]');if(d)return show(cur+ +d.dataset.d);const u=CFG.imagens[cur];if(!u)return;const l=$('#lb');l.innerHTML='<img src="'+u+'" alt="'+CFG.nome+'"><form method="dialog"><button aria-label="Fechar">&times;</button></form>';l.showModal()};
@@ -657,7 +683,7 @@ const M=Object.entries(CFG.medidas);if(M.length)$('#mt').innerHTML='<tr><th>Tama
 if(CFG.whatsapp){const w='https://wa.me/'+CFG.whatsapp.replace(/\D/g,'');['#wa','#wf'].forEach(x=>{$(x).hidden=false;$(x).href=w})}
 $('#lg').textContent=['© 2026 '+(CFG.empresa||'Minha Loja'),CFG.cnpj&&'CNPJ '+CFG.cnpj,CFG.endereco].filter(Boolean).join(' - ');
 if(CFG.relacionados.length)$('#rel').innerHTML=CFG.relacionados.map(q=>'<a class="card" href="'+(q.url||'#')+'"><div class="mn">'+(q.img?'<img src="'+q.img+'" alt="">':'')+'</div><b>'+q.nome+'</b><span>'+brl(q.preco)+'</span></a>').join('');else $('#rls').hidden=true;
-if('IntersectionObserver'in window){let a=0,b=0;const up=()=>{const v=!a&&!b&&scrollY>240;$('#sb').classList.toggle('on',v);document.body.classList.toggle('sbon',v)};addEventListener('scroll',up,{passive:true});new IntersectionObserver(([x])=>{a=x.isIntersecting;up()}).observe($('#buy'));new IntersectionObserver(([x])=>{b=x.isIntersecting;up()}).observe($('.news'))}
+if('IntersectionObserver'in window){let a=0,b=0;const up=()=>{const v=!a&&!b&&scrollY>120;$('#sb').classList.toggle('on',v);document.body.classList.toggle('sbon',v)};addEventListener('scroll',up,{passive:true});new IntersectionObserver(([x])=>{a=x.isIntersecting;up()}).observe($('#buy'));new IntersectionObserver(([x])=>{b=x.isIntersecting;up()}).observe($('.news'))}
 const ld=document.createElement('script');ld.type='application/ld+json';
 const ok=Object.values(CFG.estoque).some(n=>n>0),o={'@context':'https://schema.org','@type':'Product',name:CFG.nome,image:CFG.imagens.filter(Boolean),offers:{'@type':'Offer',priceCurrency:'BRL',price:CFG.preco.toFixed(2),availability:'https://schema.org/'+(ok?'InStock':'OutOfStock')}};
 if(CFG.marca)o.brand={'@type':'Brand',name:CFG.marca};if(CFG.ref)o.sku=CFG.ref;if(A.total)o.aggregateRating={'@type':'AggregateRating',ratingValue:A.media,reviewCount:A.total};
