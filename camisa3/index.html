@@ -391,6 +391,25 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   .offer-lead .offer-detail{font-size:12px}
   .offer-lead small{font-size:10.5px}
 }
+
+/* Redução de informação no primeiro bloco de compra */
+.offer-lead{gap:3px;padding:12px 14px;margin-bottom:12px}
+.offer-lead .free-offer{font-size:24px}
+.offer-lead .offer-detail{font-size:13px}
+.offer-lead small{display:none}
+.pr{margin-top:13px;padding-top:12px}
+.pr .de{margin-bottom:1px;font-size:12px}
+.pr .big{font-size:34px}
+.pr .pix{font-size:12px}
+.inst{margin-top:4px;font-size:13px}
+@media(max-width:520px){
+  .offer-lead{gap:3px;padding:10px 11px;margin-bottom:10px}
+  .offer-lead .free-offer{font-size:21px}
+  .offer-lead .offer-detail{font-size:12px}
+  .pr{margin-top:11px;padding-top:10px}
+  .pr .big{font-size:26px}
+  .inst{font-size:11px}
+}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
@@ -418,11 +437,11 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
     <div class="offer-kicker">Cortesia promocional</div>
     <div class="brand" id="br"></div>
     <h1>Camiseta Casual Corinthians</h1>
-    <p class="offer-lead"><span class="offer-tag">OFERTA ESPECIAL</span><strong class="free-offer">Camiseta grátis</strong><span class="offer-detail">Você paga somente <b>R$ 50,00</b> de envio e logística.</span><small>Sem cobrança recorrente. Escolha o tamanho para receber a sua.</small></p>
+    <p class="offer-lead"><span class="offer-tag">OFERTA ESPECIAL</span><strong class="free-offer">CAMISETA GRÁTIS</strong><span class="offer-detail">Contribuição única de <b>R$ 50,00</b> para envio e logística.</span></p>
 
     <div class="pr">
       <span class="de" id="de"></span>
-      <div><span class="big" id="pix"></span><span class="pix">R$ 0,00 na camiseta</span></div>
+      <div><span class="big" id="pix"></span><span class="pix">camiseta grátis</span></div>
       <p class="inst" id="inst"></p>
     </div>
     <div class="rt"><span class="stars" id="rs" aria-hidden="true"></span><a href="#avaliacoes" id="rl"></a><span id="rf"></span><button type="button" id="shr" class="shr">Compartilhar</button></div>
@@ -495,8 +514,8 @@ const N=CFG.imagens.length;
 const $=s=>document.querySelector(s),brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 const pix=+(CFG.preco*(1-CFG.pixOff/100)).toFixed(2);let size='',qty=1,cur=0,tm;
 function toast(t){const e=$('#ts');e.textContent=t;e.classList.add('on');clearTimeout(tm);tm=setTimeout(()=>e.classList.remove('on'),2600)}
-$('#de').textContent='Valor normal: '+brl(CFG.de);$('#pix').textContent='R$ 0,00';$('#sp').textContent='Total R$ 50,00';
-$('#inst').innerHTML='<strong>Camiseta: R$ 0,00</strong><br>Contribuição única de envio e logística: <b>R$ 50,00</b>';
+$('#de').textContent='De '+brl(CFG.de);$('#pix').textContent='R$ 0,00';$('#sp').textContent='Total R$ 50,00';
+$('#inst').innerHTML='Envio e logística: <b>R$ 50,00</b>';
 const off=0;
 function show(i){cur=(i+N)%N;const u=CFG.imagens[cur],m=$('#mn');m.innerHTML=(off>0?'<span class="badge">'+off+'% OFF</span>':'')+(u?'<img src="'+u+'" alt="'+CFG.nome+' - foto '+(cur+1)+'">':'<span>Foto '+(cur+1)+'<br>Adicione a URL em CFG.imagens</span>')+(N>1?'<button class="ar l" data-d="-1" aria-label="Foto anterior">&lsaquo;</button><button class="ar r" data-d="1" aria-label="Próxima foto">&rsaquo;</button><span class="ct">'+(cur+1)+'/'+N+'</span><span class="dots">'+CFG.imagens.map((_,j)=>'<i'+(j===cur?' class="on"':'')+'></i>').join('')+'</span>':'');
 document.querySelectorAll('#th button').forEach((b,j)=>b.setAttribute('aria-current',j===cur))}
