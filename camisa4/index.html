@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#171717">
-  <meta name="description" content="Camiseta Casual Corinthians. Consulte as condições da oferta, escolha seu tamanho e confira o frete antes de finalizar.">
+  <meta name="theme-color" content="#bd102a">
+  <meta name="description" content="Camiseta Casual Corinthians grátis: preço da camiseta R$ 0,00. Frete e logística à parte, consultados pelo CEP antes do pagamento.">
   <meta property="og:type" content="product">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Camiseta Casual Corinthians | Minha Loja">
@@ -17,7 +17,7 @@
       color-scheme:light;
       --ink:#191b1f;--muted:#68717c;--line:#e5e7eb;--surface:#fff;--canvas:#f7f8fa;
       --brand:#171717;--brand-hover:#343434;--green:#187548;--green-soft:#eef7f1;
-      --red:#a52c37;--radius:12px;--shadow:0 8px 28px #1018280c;--max:1200px
+      --red:#bd102a;--red-dark:#940d21;--red-soft:#fff4f5;--radius:12px;--shadow:0 8px 28px #1018280c;--max:1200px
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:20px}
@@ -26,7 +26,12 @@
     :focus-visible{outline:3px solid #86b7f2;outline-offset:3px}
     .wrap{width:min(var(--max),100% - 40px);margin-inline:auto}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    .promo{background:#171717;color:#fff;text-align:center;padding:8px 16px;font-size:12px;font-weight:600;letter-spacing:.01em}
+    .promo{background:var(--red);color:#fff;padding:8px 16px;font-size:12px;font-weight:600;letter-spacing:.01em}
+    .promo-inner{display:flex;justify-content:center;align-items:center;gap:11px;min-height:24px}
+    .promo-free{font-weight:800;letter-spacing:.055em}
+    .promo-price{padding:2px 7px;border-radius:4px;background:#fff;color:var(--red-dark);font-size:11px;font-weight:800;white-space:nowrap}
+    .promo-sep{width:1px;height:17px;background:#ffffff80}
+    .promo-note{font-size:11px;font-weight:500}
     .header{display:grid;grid-template-columns:auto minmax(200px,1fr) auto;align-items:center;gap:36px;min-height:76px}
     .logo{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:20px;font-weight:800;letter-spacing:-.04em;white-space:nowrap}
     .logo-mark{display:grid;place-items:center;width:27px;height:27px;border:7px solid #171717;border-radius:50%}
@@ -58,7 +63,7 @@
     .thumb img{width:100%;height:100%;object-fit:contain;padding:3px}
     .hero{position:relative;aspect-ratio:4/5;overflow:hidden;border:1px solid #eef0f2;border-radius:12px;background:#f6f6f6;cursor:zoom-in}
     .hero img{width:100%;height:100%;object-fit:contain;padding:12px}
-    .hero-label{position:absolute;left:14px;top:14px;padding:6px 10px;border-radius:5px;background:#fff;color:#222;font-size:11px;font-weight:700;box-shadow:0 2px 8px #00000012}
+    .hero-label{position:absolute;left:14px;top:14px;padding:7px 10px;border-radius:5px;background:var(--red);color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;box-shadow:0 3px 10px #6c071d33}
     .gallery-count{position:absolute;right:12px;bottom:12px;padding:4px 9px;border-radius:999px;background:#171717d9;color:#fff;font-size:11px}
     .arrow{position:absolute;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:40px;height:40px;border:1px solid #e8e8e8;border-radius:50%;background:#fffffff2;color:#252525;font-size:23px;box-shadow:0 2px 8px #00000012}
     .arrow.prev{left:12px}.arrow.next{right:12px}
@@ -67,10 +72,11 @@
     h1{margin:0;font-size:clamp(25px,2.5vw,32px);line-height:1.2;letter-spacing:-.04em;font-weight:700;text-wrap:balance}
     .no-reviews{display:flex;align-items:center;gap:8px;margin-top:10px;color:var(--muted);font-size:12px}
     .no-reviews a{color:#40464e;text-underline-offset:3px}
-    .offer{margin-top:22px;padding:15px 16px;border:1px solid #e4e8e5;border-radius:10px;background:#fafcfb}
-    .offer-label{margin:0 0 2px;color:var(--muted);font-size:12px;font-weight:500}
-    .offer-price{font-size:32px;font-weight:800;line-height:1.15;letter-spacing:-.045em}
-    .offer-note{margin:5px 0 0;color:#434a52;font-size:13px;line-height:1.45}
+    .offer{position:relative;margin-top:20px;padding:15px 17px 14px 19px;border:1px solid #f0cbd1;border-left:4px solid var(--red);border-radius:10px;background:linear-gradient(110deg,#fff6f7 0%,#fff 78%);box-shadow:0 4px 14px #7e15200a}
+    .offer-label{margin:0 0 4px;color:var(--red-dark);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .offer-main{margin:0;color:#202126;font-size:20px;font-weight:800;line-height:1.15;letter-spacing:-.035em}
+    .offer-price{margin-top:3px;color:var(--red);font-size:36px;font-weight:800;line-height:1.08;letter-spacing:-.05em}
+    .offer-note{margin:7px 0 0;color:#434a52;font-size:12px;line-height:1.45}
     .offer-note strong{color:#202328}
     .option{margin-top:22px}
     .option-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:9px;font-size:14px}
@@ -82,8 +88,8 @@
     .sizes button[aria-pressed="true"]{border:2px solid #171717;background:#171717;color:#fff}
     .sizes button:disabled{color:#a6abb2;background:repeating-linear-gradient(135deg,#fff 0 6px,#f1f2f3 6px 7px);text-decoration:line-through;cursor:not-allowed}
     .size-message{min-height:20px;margin:7px 0 0;color:var(--red);font-size:12px;font-weight:600}
-    .primary{width:100%;min-height:52px;padding:12px 18px;border:0;border-radius:8px;background:var(--brand);color:#fff;font-size:15px;font-weight:700;box-shadow:0 4px 12px #1111111c;transition:background .16s,transform .16s}
-    .primary:hover{background:var(--brand-hover);transform:translateY(-1px)}
+    .primary{width:100%;min-height:52px;padding:12px 18px;border:0;border-radius:8px;background:var(--red);color:#fff;font-size:15px;font-weight:700;box-shadow:0 5px 14px #bd102a30;transition:background .16s,transform .16s}
+    .primary:hover{background:var(--red-dark);transform:translateY(-1px)}
     .add{margin-top:18px}
     .payment-note{display:flex;justify-content:center;align-items:center;gap:7px;margin:9px 0 0;color:var(--muted);font-size:11px;text-align:center}
     .payment-note svg{width:15px;height:15px;color:var(--green);flex:none}
@@ -142,16 +148,16 @@
       .info{padding-top:0}.details-grid{grid-template-columns:1fr;gap:28px}.content-section{margin-top:42px;padding-top:28px}.mobile-buy{position:fixed;inset:auto 0 0;z-index:10;display:flex;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:#fffffff5;backdrop-filter:blur(10px);transform:translateY(110%);transition:transform .2s}.mobile-buy.visible{transform:translateY(0);box-shadow:0 -4px 18px #00000012}.mobile-buy-copy{flex:1;min-width:0;color:var(--muted);font-size:10px;line-height:1.25}.mobile-buy-copy strong{display:block;color:#171717;font-size:15px}.mobile-buy .primary{width:auto;min-width:48%;min-height:44px;padding:8px 12px;font-size:12px}.newsletter-inner{align-items:flex-start;flex-direction:column;gap:15px}.newsletter-form{width:100%}body{padding-bottom:0}body.mobile-buy-active{padding-bottom:72px}
     }
     @media(max-width:560px){
-      body{font-size:14px}.wrap{width:calc(100% - 28px)}.promo{padding:7px 12px;font-size:11px;white-space:nowrap}.logo{font-size:18px}.logo-mark{width:24px;height:24px;border-width:6px}.nav-inner{gap:16px;min-height:40px;overflow:visible}.nav a{font-size:11px}.nav-inner>a:nth-of-type(n+5){display:none}.nav-more{display:block}.nav-more>summary{font-size:11px}.crumbs{padding:11px 0;font-size:11px}.crumbs>*:not(:nth-child(3)){display:none}.crumbs a:nth-child(3)::before{content:"‹  "}
+      body{font-size:14px}.wrap{width:calc(100% - 28px)}.promo{padding:7px 10px;font-size:10px}.promo-inner{gap:7px;flex-wrap:wrap;min-height:28px;line-height:1.2}.promo-free{font-size:10px}.promo-price{font-size:10px}.promo-sep{display:none}.promo-note{font-size:10px}.logo{font-size:18px}.logo-mark{width:24px;height:24px;border-width:6px}.nav-inner{gap:16px;min-height:40px;overflow:visible}.nav a{font-size:11px}.nav-inner>a:nth-of-type(n+5){display:none}.nav-more{display:block}.nav-more>summary{font-size:11px}.crumbs{padding:11px 0;font-size:11px}.crumbs>*:not(:nth-child(3)){display:none}.crumbs a:nth-child(3)::before{content:"‹  "}
       .hero{margin-inline:-14px;aspect-ratio:1.12/1}.hero img{padding:8px}.hero-label{left:10px;top:10px}.arrow{width:34px;height:34px}.arrow.prev{left:8px}.arrow.next{right:8px}.thumbs{padding:7px 0;gap:7px}.thumb{flex-basis:47px;width:47px;height:58px}
-      h1{font-size:22px}.seller{font-size:10px}.no-reviews{font-size:11px}.offer{margin-top:16px;padding:12px 13px}.offer-price{font-size:29px}.offer-note{font-size:12px}.option{margin-top:17px}.option-heading{font-size:13px}.sizes{gap:6px}.sizes button{height:43px;font-size:13px}.add{margin-top:14px}.primary{min-height:49px;font-size:14px}.payment-note{font-size:10px}.shipping{margin-top:15px;padding:13px}.shipping h2{font-size:14px}.shipping p{font-size:11px}.cep-form{height:42px}.cep-form input{font-size:14px}.cep-form button{padding-inline:13px;font-size:11px}.shipping-policy{font-size:10px!important}
+      h1{font-size:22px}.seller{font-size:10px}.offer{margin-top:15px;padding:11px 12px 12px 14px}.offer-label{font-size:9px;margin-bottom:3px}.offer-main{font-size:18px}.offer-price{font-size:30px}.offer-note{font-size:11px;margin-top:5px}.option{margin-top:17px}.option-heading{font-size:13px}.sizes{gap:6px}.sizes button{height:43px;font-size:13px}.add{margin-top:14px}.primary{min-height:49px;font-size:14px}.payment-note{font-size:10px}.shipping{margin-top:15px;padding:13px}.shipping h2{font-size:14px}.shipping p{font-size:11px}.cep-form{height:42px}.cep-form input{font-size:14px}.cep-form button{padding-inline:13px;font-size:11px}.shipping-policy{font-size:10px!important}
       .content-section{margin-top:30px;padding-top:21px}.section-title{font-size:18px;margin-bottom:13px}.details-grid{gap:20px}.details-grid p{font-size:13px}.specs li{font-size:12px;padding:10px 0}.footer-grid{grid-template-columns:1fr 1fr;gap:22px 16px}footer{padding:25px 0 20px}.legal{font-size:10px}.mobile-buy{padding-inline:12px;gap:8px}.mobile-buy .primary{min-width:54%;font-size:11px}.mobile-buy-copy{font-size:10px}.mobile-buy-copy strong{font-size:14px}.prototype-note{margin-top:16px;font-size:10px}
     }
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <div class="promo">Oferta promocional • frete informado antes do pagamento</div>
+  <div class="promo"><div class="wrap promo-inner"><span class="promo-free">CAMISETA GRÁTIS</span><span class="promo-price">R$ 0,00</span><span class="promo-sep" aria-hidden="true"></span><span class="promo-note">Frete e logística à parte • consulte pelo CEP antes de pagar</span></div></div>
   <header class="wrap header">
     <a class="logo" href="#topo" aria-label="Minha Loja — início"><span class="logo-mark" aria-hidden="true"></span>Minha Loja</a>
     <form class="search" id="searchForm" role="search"><label class="sr-only" for="searchInput">Buscar produtos</label><input id="searchInput" type="search" placeholder="Buscar produtos, times ou marcas"><button aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button></form>
@@ -165,7 +171,7 @@
       <div class="gallery" aria-label="Galeria do produto">
         <div class="thumbs" id="thumbs"></div>
         <div class="hero" id="hero" role="group" aria-label="Fotos do produto">
-          <span class="hero-label">Oferta promocional</span>
+          <span class="hero-label">CAMISETA GRÁTIS</span>
           <button class="arrow prev" type="button" aria-label="Foto anterior">‹</button>
           <button class="arrow next" type="button" aria-label="Próxima foto">›</button>
           <span class="gallery-count" id="galleryCount"></span>
@@ -176,10 +182,11 @@
         <p class="seller" id="sellerName" hidden></p>
         <h1 id="productTitle">Camiseta Casual Corinthians</h1>
 
-        <div class="offer" aria-label="Preço promocional">
-          <p class="offer-label">Valor promocional da camiseta</p>
+        <div class="offer" aria-label="Oferta da camiseta grátis">
+          <p class="offer-label">Oferta promocional</p>
+          <p class="offer-main">CAMISETA GRÁTIS</p>
           <div class="offer-price" id="price">R$ 0,00</div>
-          <p class="offer-note">O <strong>frete e o prazo</strong> devem ser consultados pelo CEP e exibidos antes de qualquer pagamento.</p>
+          <p class="offer-note"><strong>A camiseta custa R$ 0,00.</strong> Frete e logística são à parte: consulte valor e prazo pelo CEP antes de pagar.</p>
         </div>
 
         <div class="option">
@@ -188,7 +195,7 @@
           <p class="size-message" id="sizeMessage" role="status" aria-live="polite"></p>
         </div>
 
-        <button class="primary add" id="addButton" type="button">Adicionar à sacola</button>
+        <button class="primary add" id="addButton" type="button">Adicionar camiseta grátis à sacola</button>
         <p class="payment-note"><svg viewBox="0 0 24 24" class="icon"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Nenhum pagamento é solicitado nesta prévia.</p>
 
         <div class="shipping" id="shipping">
@@ -230,7 +237,7 @@
     <div><h2>Pagamento</h2><p class="footer-placeholder">Exiba somente os meios de pagamento aceitos pelo checkout real.</p></div>
   </div><div class="legal">© <span id="year"></span> Minha Loja. Dados comerciais e políticas devem ser preenchidos pelo responsável antes da publicação.</div></div></footer>
 
-  <div class="mobile-buy" id="mobileBuy" aria-label="Ação de compra"><div class="mobile-buy-copy"><span>Valor da camiseta</span><strong>R$ 0,00</strong></div><button class="primary" id="mobileAdd" type="button">Adicionar à sacola</button></div>
+  <div class="mobile-buy" id="mobileBuy" aria-label="Ação de compra"><div class="mobile-buy-copy"><span>CAMISETA GRÁTIS</span><strong>R$ 0,00</strong></div><button class="primary" id="mobileAdd" type="button">Adicionar grátis</button></div>
   <dialog id="sizeDialog"><h2>Guia de medidas</h2><p>A tabela de medidas ainda não foi cadastrada nesta prévia. Confirme as medidas com a loja antes de escolher seu tamanho.</p><div class="dialog-actions"><button class="secondary" type="button" data-close="sizeDialog">Fechar</button></div></dialog>
   <dialog id="bagDialog"><h2>Sacola</h2><div id="bagContent"></div><div class="dialog-actions"><button class="secondary" type="button" data-close="bagDialog">Continuar comprando</button><button type="button" id="checkoutButton">Continuar</button></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -288,7 +295,7 @@
       const content=$('#bagContent');content.replaceChildren();
       if(!bag.length){content.textContent='Sua sacola está vazia.';return}
       bag.forEach((item,index)=>{const row=document.createElement('div');row.style.cssText='display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #e5e7eb;font-size:13px';const label=document.createElement('span');label.textContent=`${item.name} — tamanho ${item.size}`;const remove=document.createElement('button');remove.type='button';remove.textContent='Remover';remove.className='text-button';remove.addEventListener('click',()=>{bag.splice(index,1);$('#bagCount').textContent=bag.length;renderBag()});row.append(label,remove);content.append(row)});
-      const note=document.createElement('p');note.textContent='Frete e prazo precisam ser consultados e exibidos antes de qualquer pagamento.';content.append(note);
+      const note=document.createElement('p');note.textContent='Camiseta: R$ 0,00. Frete e logística à parte; consulte CEP, valor e prazo antes de qualquer pagamento.';content.append(note);
     }
     $('#addButton').addEventListener('click',addToBag);$('#mobileAdd').addEventListener('click',addToBag);$('#bagBtn').addEventListener('click',()=>{renderBag();$('#bagDialog').showModal()});
     $('#checkoutButton').addEventListener('click',()=>{if(!bag.length){$('#bagDialog').close();toast('Sua sacola está vazia.');return}$('#bagDialog').close();toast('Prévia visual: conecte o checkout real antes de publicar. Nenhum pedido foi enviado.')});
