@@ -562,12 +562,6 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
 .sz-hint{font-size:11px;font-weight:500;color:#68717c;letter-spacing:0}
 .sz-hint.is-error{color:#b4232c;font-weight:700}
 @media(max-width:520px){.sz-hint{font-size:10px}}
-
-/* Sacola: edição clara dos itens e resumo sem custos ocultos */
-.cart-lines{display:grid;gap:14px;margin:4px 0 16px}.cart-line{display:flex;align-items:center;gap:12px;padding:0 0 14px;border-bottom:1px solid var(--line)}.cart-line-copy{flex:1;min-width:0;font-size:14px}.cart-line-copy b{display:block;overflow-wrap:anywhere}.cart-line-copy small{color:var(--mut)}.cart-controls{display:flex;align-items:center;gap:8px;margin-top:8px}.cart-controls button{width:32px;height:32px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font-weight:700}.cart-controls output{min-width:20px;text-align:center;font-weight:700}.cart-controls .cart-remove{width:auto;padding:0 9px;color:#a3212d;font-size:12px;font-weight:600}.cart-note{margin:10px 0;color:var(--mut);font-size:13px;line-height:1.45}.cart-total{font-size:16px;border-top:1px solid var(--line);padding-top:12px}.cart-empty{text-align:center;padding:12px 0;color:var(--mut)}@media(max-width:520px){.cart-line-copy{font-size:13px}.cart-controls{gap:6px}.cart-controls button{width:30px;height:30px}}
-
-/* Checkout em três etapas — interface demonstrativa, sem cobrança */
-.checkout-dialog{width:min(94vw,560px);max-width:560px;max-height:min(92dvh,900px);padding:0;border:0;border-radius:14px;overflow:auto;box-shadow:0 18px 60px #0004}.checkout-dialog::backdrop{background:#101820a8;backdrop-filter:blur(2px)}.co-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:12px;padding:16px 20px;background:#0d2238;color:#fff}.co-head h2{flex:1;margin:0;font-size:18px}.co-close{width:38px;height:38px;border:0;border-radius:8px;background:#ffffff1c;color:#fff;font-size:24px;line-height:1}.co-progress{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px 20px;border-bottom:1px solid var(--line);background:#fff}.co-progress span{padding:8px 5px;border-bottom:3px solid var(--line);text-align:center;color:var(--mut);font-size:12px;font-weight:700}.co-progress span.active{border-color:#171717;color:#171717}.co-body{padding:20px;overflow-y:auto}.co-step h3{margin:0 0 5px;font-size:19px}.co-step>p{margin:0 0 16px;color:var(--mut);font-size:13px}.co-field{display:grid;gap:5px;margin:12px 0}.co-field label{font-weight:600;font-size:13px}.co-field input{width:100%;height:44px;border:1px solid #c5cad3;border-radius:7px;padding:0 11px;background:#fff}.co-row{display:grid;grid-template-columns:2fr 1fr;gap:10px}.co-buttons{display:flex;gap:10px;margin-top:18px}.co-buttons button{min-height:46px;padding:9px 14px;border-radius:8px;font-weight:700}.co-back{flex:1;border:1px solid var(--line);background:#fff}.co-next{flex:2;border:0;background:#171717;color:#fff}.co-note{padding:11px 12px;border-radius:8px;background:#f5f6f8;color:#4c5662;font-size:12px;line-height:1.45}.co-options{display:grid;gap:8px;margin:12px 0}.co-option{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid var(--line);border-radius:8px;cursor:pointer}.co-option:has(input:checked){border-color:#171717;background:#f7f7f7}.co-option input{accent-color:#171717}.co-option strong{margin-left:auto;white-space:nowrap}.co-summary-line{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.co-summary-line small{display:block;color:var(--mut)}.co-grand-total{font-size:16px;font-weight:800}.co-pay-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.co-pay-options label{display:flex;gap:8px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:13px}.co-pay-options input{accent-color:#171717}.co-demo{margin:12px 0;padding:11px;border-left:3px solid #9a6b16;background:#fff8e8;color:#5d4a24;font-size:12px;line-height:1.45}@media(max-width:520px){.checkout-dialog{width:100vw;max-width:none;max-height:94dvh;margin:auto 0 0;border-radius:14px 14px 0 0}.co-head{padding:13px 15px}.co-progress{padding:11px 12px;gap:4px}.co-progress span{font-size:10px}.co-body{padding:16px}.co-row{grid-template-columns:1fr 86px}.co-option{padding:10px;font-size:12px}.co-buttons button{font-size:13px}}
 </style>
 </head>
 <body><a class="skip" href="#main">Pular para o conteúdo</a>
@@ -577,7 +571,7 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
   <form class="search" id="sf"><label class="sr" for="q">Buscar produtos</label><input id="q" type="search" placeholder="Busque por produto, time ou marca"><button aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button></form>
   <div class="act"><button type="button" class="st" id="st" aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span>Buscar</span></button>
     <button type="button"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg><span>Entrar</span></button>
-    <button type="button" id="bg" aria-label="Sacola"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><em id="cc" aria-live="polite" aria-label="0 itens na sacola">0</em><span>Sacola</span></button>
+    <button type="button" id="bg" aria-label="Sacola"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><em id="cc">0</em><span>Sacola</span></button>
   </div>
 </header>
 <nav class="nav" aria-label="Categorias"><div class="w"><a href="#">Camisas de time</a><a href="#">Masculino</a><a href="#">Feminino</a><a href="#">Infantil</a><a href="#">Calçados</a><a href="#">Acessórios</a><a href="#">Lançamentos</a><a href="#">Ofertas</a></div></nav>
@@ -655,45 +649,8 @@ section.sec{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
 </div><div class="legal" id="lg"></div></div></footer>
 
   <div class="sb" id="sb"><div><span id="ss">Camiseta grátis</span><b id="sp">Escolha o envio depois</b></div><button class="cta" id="sadd" type="button" aria-describedby="ctaNote">Continuar</button></div>
-<dialog id="co" class="checkout-dialog" aria-labelledby="co-title">
-  <header class="co-head"><h2 id="co-title">Finalizar solicitação</h2><button type="button" class="co-close" id="co-close" aria-label="Fechar checkout">×</button></header>
-  <nav class="co-progress" aria-label="Etapas do checkout"><span id="co-nav-1" class="active">1. Cadastro</span><span id="co-nav-2">2. Entrega</span><span id="co-nav-3">3. Revisão</span></nav>
-  <div class="co-body">
-    <section class="co-step" id="co-step-1"><h3>Dados para contato</h3><p>Informe quem receberá a camiseta e as atualizações do pedido.</p>
-      <form id="co-form-1"><div class="co-field"><label for="co-name">Nome completo</label><input id="co-name" name="name" autocomplete="name" required minlength="3" placeholder="Seu nome e sobrenome"></div>
-        <div class="co-field"><label for="co-email">E-mail</label><input id="co-email" name="email" type="email" autocomplete="email" required placeholder="voce@exemplo.com"></div>
-        <div class="co-field"><label for="co-phone">Telefone/WhatsApp</label><input id="co-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required minlength="10" placeholder="(11) 99999-9999"></div>
-        <div class="co-buttons"><button type="button" class="co-back" id="co-back-cart">Voltar à sacola</button><button type="submit" class="co-next">Continuar para entrega</button></div>
-      </form>
-    </section>
-    <section class="co-step" id="co-step-2" hidden><h3>Endereço e envio</h3><p>Preencha o destino e selecione uma contribuição ilustrativa para envio/logística.</p>
-      <form id="co-form-2"><div class="co-field"><label for="co-cep">CEP</label><input id="co-cep" name="cep" autocomplete="postal-code" inputmode="numeric" required minlength="8" maxlength="9" placeholder="00000-000"></div>
-        <div class="co-row"><div class="co-field"><label for="co-street">Rua/avenida</label><input id="co-street" name="street" autocomplete="address-line1" required></div><div class="co-field"><label for="co-number">Número</label><input id="co-number" name="number" required></div></div>
-        <div class="co-field"><label for="co-complement">Complemento (opcional)</label><input id="co-complement" name="complement" autocomplete="address-line2"></div>
-        <div class="co-field"><label for="co-neighborhood">Bairro</label><input id="co-neighborhood" name="neighborhood" required></div>
-        <div class="co-row"><div class="co-field"><label for="co-city">Cidade</label><input id="co-city" name="city" autocomplete="address-level2" required></div><div class="co-field"><label for="co-state">UF</label><input id="co-state" name="state" autocomplete="address-level1" maxlength="2" required></div></div>
-        <fieldset style="border:0;padding:0;margin:12px 0"><legend style="font-weight:700;font-size:13px">Contribuição de envio/logística <span style="color:var(--sale)">(selecione uma)</span></legend>
-          <div class="co-options">
-            <label class="co-option"><input type="radio" name="co-rate" value="10" required><span>Devoto</span><strong>R$ 10,00</strong></label>
-            <label class="co-option"><input type="radio" name="co-rate" value="15"><span>Protetor</span><strong>R$ 15,00</strong></label>
-            <label class="co-option"><input type="radio" name="co-rate" value="20"><span>Padrinho</span><strong>R$ 20,00</strong></label>
-            <label class="co-option"><input type="radio" name="co-rate" value="50"><span>Benfeitor</span><strong>R$ 50,00</strong></label>
-          </div>
-        </fieldset>
-        <p class="co-demo">Valores meramente demonstrativos, reproduzidos do checkout de referência; não são cotação real de transportadora. Confirme o custo e as condições de envio antes de publicar.</p>
-        <div class="co-buttons"><button type="button" class="co-back" data-co-prev="1">Voltar</button><button type="submit" class="co-next">Revisar pedido</button></div>
-      </form>
-    </section>
-    <section class="co-step" id="co-step-3" hidden><h3>Revise o pedido</h3><p>Confira itens, endereço e valor antes de prosseguir.</p>
-      <div id="co-review"></div><div class="co-summary-line"><span>Envio/logística — <span id="co-rate-name"></span></span><strong id="co-rate-value"></strong></div><div class="co-summary-line co-grand-total"><span>Total demonstrativo</span><strong id="co-total"></strong></div>
-      <div style="margin-top:16px;font-weight:700;font-size:13px">Forma de pagamento (somente demonstração)</div><div class="co-pay-options"><label><input type="radio" name="co-payment" value="Pix" checked>Pix</label><label><input type="radio" name="co-payment" value="Cartão">Cartão</label></div>
-      <p class="co-demo">Esta página não está conectada a um processador. Nenhum pagamento será criado ou cobrado; não informe dados de cartão.</p>
-      <div class="co-buttons"><button type="button" class="co-back" data-co-prev="2">Voltar</button><button type="button" class="co-next" id="co-finish">Concluir demonstração</button></div>
-    </section>
-  </div>
-</dialog>
 <dialog id="dg"><h2>Guia de medidas</h2><table id="mt"></table><form method="dialog"><button>Fechar</button></form></dialog>
-<dialog id="lb" class="lb" aria-label="Foto ampliada"></dialog><dialog id="mc" aria-label="Sacola de compras"></dialog><a class="wa" id="wf" aria-label="Fale conosco no WhatsApp" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z"/><path d="M9.5 8.5c0 3 3 6 6 6l1-1.500-2-1-1 .8c-.9-.4-1.800-1.300-2.200-2.200l.8-1z"/></svg><span>Fale conosco</span></a>
+<dialog id="lb" class="lb" aria-label="Foto ampliada"></dialog><dialog id="mc" aria-label="Sacola"></dialog><a class="wa" id="wf" aria-label="Fale conosco no WhatsApp" target="_blank" rel="noopener" hidden><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z"/><path d="M9.5 8.5c0 3 3 6 6 6l1-1.500-2-1-1 .8c-.9-.4-1.800-1.300-2.200-2.200l.8-1z"/></svg><span>Fale conosco</span></a>
 <div class="toast" id="ts" role="status" aria-live="polite"></div>
 
 <script>
@@ -722,46 +679,10 @@ let sx=0;$('#mn').ontouchstart=e=>sx=e.touches[0].clientX;$('#mn').ontouchend=e=
 $('#lb').onclick=e=>{if(e.target===e.currentTarget)e.currentTarget.close()};
 $('#pl').onclick=()=>$('#qt').textContent=++qty;$('#mi').onclick=()=>$('#qt').textContent=qty=Math.max(1,qty-1);
 function need(){if(size)return false;$('#sz').classList.add('bad');const m=$('#sm');m.className='msg err';m.textContent='Escolha um tamanho para continuar.';$('#szHint').textContent='• escolha um tamanho';$('#szHint').classList.add('is-error');$('#sz').scrollIntoView({block:'center',behavior:'smooth'});return true}
-const cart=[];
-function cartCount(){return cart.reduce((sum,item)=>sum+item.qty,0)}
-function syncCartBadge(){const count=cartCount();$('#cc').textContent=count;$('#cc').setAttribute('aria-label',count+(count===1?' item na sacola':' itens na sacola'))}
-function renderCart(){
- const dialog=$('#mc');
- if(!cart.length){dialog.innerHTML='<h2>Sacola vazia</h2><p class="cart-empty">Adicione a camiseta e escolha o tamanho para continuar.</p><form method="dialog" class="ac"><button class="cta2" value="back">Continuar comprando</button></form>';return}
- const rows=cart.map((item,i)=>'<article class="cart-line"><div class="th1">'+(CFG.imagens[0]?'<img src="'+CFG.imagens[0]+'" alt="">':'')+'</div><div class="cart-line-copy"><b>'+CFG.nome+'</b><small>Tamanho '+item.size+' · Preta</small><div class="cart-controls" aria-label="Controles de quantidade"><button type="button" data-cart-dec="'+i+'" aria-label="Diminuir quantidade">−</button><output aria-live="polite">'+item.qty+'</output><button type="button" data-cart-inc="'+i+'" aria-label="Aumentar quantidade">+</button><button type="button" class="cart-remove" data-cart-remove="'+i+'">Remover</button></div></div><strong>R$ 0,00</strong></article>').join('');
- dialog.innerHTML='<h2>Sacola ('+cartCount()+(cartCount()===1?' item':' itens')+')</h2><div class="cart-lines">'+rows+'</div><div class="sub"><span>Subtotal das camisetas</span><b>R$ 0,00</b></div><div class="sub"><span>Envio e logística</span><b>A definir</b></div><div class="sub cart-total"><strong>Total nesta etapa</strong><strong>R$ 0,00</strong></div><p class="cart-note">A camiseta é gratuita. O valor do envio e da logística será informado e escolhido antes da confirmação. Nenhum pagamento é processado nesta demonstração.</p><form method="dialog" class="ac"><button class="cta" value="go">Continuar para os dados de envio</button><button class="cta2" value="back">Continuar comprando</button></form>';
-}
-function add(){
- if(need())return;
- const stock=Number(CFG.estoque[size]||0),existing=cart.find(item=>item.size===size);
- if(existing?existing.qty+qty>stock:qty>stock){toast('Quantidade maior que o estoque disponível para este tamanho.');return}
- if(existing)existing.qty+=qty;else cart.push({size,qty});
- syncCartBadge();renderCart();$('#mc').returnValue='';$('#mc').showModal()
-}
-$('#mc').addEventListener('click',e=>{
- const inc=e.target.closest('[data-cart-inc]'),dec=e.target.closest('[data-cart-dec]'),remove=e.target.closest('[data-cart-remove]');
- if(!inc&&!dec&&!remove)return;
- const i=Number((inc||dec||remove).dataset.cartInc??(inc||dec||remove).dataset.cartDec??(inc||dec||remove).dataset.cartRemove),item=cart[i];if(!item)return;
- if(remove){cart.splice(i,1)}else if(dec){if(item.qty>1)item.qty--;else cart.splice(i,1)}else{const stock=Number(CFG.estoque[item.size]||0);if(item.qty>=stock){toast('Estoque máximo disponível para este tamanho.');return}item.qty++}
- syncCartBadge();if(!cart.length){$('#mc').close();toast('Item removido da sacola.');return}renderCart()
-});
-const checkoutData={name:'',email:'',phone:'',rate:0,payment:'Pix'};
-function showCheckoutStep(n){[1,2,3].forEach(i=>{$('#co-step-'+i).hidden=i!==n;$('#co-nav-'+i).classList.toggle('active',i===n)});$('#co-step-'+n).scrollIntoView({block:'start'});$('#co').scrollTop=0}
-function renderCheckoutReview(){
- const rows=cart.map(item=>'<div class="co-summary-line"><span>'+CFG.nome+'<small>Tamanho '+item.size+' · Preta · Qtd. '+item.qty+'</small></span><strong>R$ 0,00</strong></div>').join('');
- $('#co-review').innerHTML=rows+'<div class="co-summary-line"><span>Subtotal das camisetas</span><strong>R$ 0,00</strong></div><div class="co-summary-line"><span>Entrega para</span><strong>'+checkoutData.cep+', '+checkoutData.city+' / '+checkoutData.state+'</strong></div>';
- const selected=document.querySelector('input[name="co-rate"]:checked');checkoutData.rate=Number(selected.value);checkoutData.payment=document.querySelector('input[name="co-payment"]:checked')?.value||'Pix';
- const names={10:'Devoto',15:'Protetor',20:'Padrinho',50:'Benfeitor'};$('#co-rate-name').textContent=names[checkoutData.rate]+' (demonstração)';$('#co-rate-value').textContent=brl(checkoutData.rate);$('#co-total').textContent=brl(checkoutData.rate)
-}
-function openCheckout(){if(!cart.length){toast('Adicione a camiseta à sacola antes de continuar.');return}$('#co-form-1').reset();$('#co-form-2').reset();checkoutData.rate=0;$('#co').returnValue='';showCheckoutStep(1);$('#co').showModal()}
-$('#mc').addEventListener('close',()=>{if($('#mc').returnValue==='go')openCheckout()});
-$('#co-close').onclick=()=>$('#co').close();$('#co-back-cart').onclick=()=>{$('#co').close();renderCart();$('#mc').showModal()};
-document.querySelectorAll('[data-co-prev]').forEach(b=>b.onclick=()=>showCheckoutStep(Number(b.dataset.coPrev)));
-$('#co-form-1').onsubmit=e=>{e.preventDefault();checkoutData.name=$('#co-name').value.trim();checkoutData.email=$('#co-email').value.trim();checkoutData.phone=$('#co-phone').value.trim();showCheckoutStep(2)};
-$('#co-cep').addEventListener('input',e=>{let v=e.target.value.replace(/\D/g,'').slice(0,8);if(v.length>5)v=v.slice(0,5)+'-'+v.slice(5);e.target.value=v});
-$('#co-form-2').onsubmit=e=>{e.preventDefault();const rate=document.querySelector('input[name="co-rate"]:checked');if(!rate){toast('Selecione a contribuição de envio/logística.');return}checkoutData.cep=$('#co-cep').value.trim();checkoutData.street=$('#co-street').value.trim();checkoutData.number=$('#co-number').value.trim();checkoutData.complement=$('#co-complement').value.trim();checkoutData.neighborhood=$('#co-neighborhood').value.trim();checkoutData.city=$('#co-city').value.trim();checkoutData.state=$('#co-state').value.trim().toUpperCase();renderCheckoutReview();showCheckoutStep(3)};
-$('#co-finish').onclick=()=>{toast('Demonstração concluída. Nenhum pagamento foi processado.');$('#co').close()};
-
+let cq=0;
+function add(){if(need())return;cq+=qty;$('#cc').textContent=cq;const shipping='A definir';
+$('#mc').innerHTML='<h2>Resumo da oferta</h2><div class="ln"><div class="th1">'+(CFG.imagens[0]?'<img src="'+CFG.imagens[0]+'" alt="">':'')+'</div><div><b>'+CFG.nome+'</b><br><small>Tamanho '+size+', Preto</small><br><small>Quantidade: '+qty+'</small></div></div><div class="sub"><span>Camiseta (cortesia)</span><b>R$ 0,00</b></div><div class="sub"><span>Envio e logística</span><b>'+shipping+'</b></div><div class="sub" style="font-size:16px"><strong>Total da camiseta</strong><strong>R$ 0,00</strong></div><p style="font-size:13px;color:var(--mut);margin:8px 0">A camiseta é gratuita. O valor do envio e da logística será escolhido depois, antes da confirmação.</p><form method="dialog" class="ac"><button class="cta" value="go">Continuar para os dados de envio</button><button class="cta2" value="back">Continuar comprando</button></form>';$('#mc').returnValue='';$('#mc').showModal()}
+$('#mc').onclose=()=>{if($('#mc').returnValue==='go')toast('Demonstração: conecte aqui o seu checkout.')};
 $('#add').onclick=add;$('#sadd').onclick=add;$('#now').onclick=()=>$('#ship').scrollIntoView({behavior:'smooth',block:'center'});
 $('#gb').onclick=()=>$('#dg').showModal();
 $('#zp').oninput=e=>{const v=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=v.length>5?v.slice(0,5)+'-'+v.slice(5):v};
@@ -778,7 +699,7 @@ if(A.lista.length)$('#rv').insertAdjacentHTML('afterend','<div class="rl">'+A.li
 $('#fpg').innerHTML='Camiseta: <b>R$ 0,00</b>. O valor do envio e da logística será escolhido depois.';
 $('#shr').onclick=async()=>{try{if(navigator.share)await navigator.share({title:CFG.nome,url:location.href});else{await navigator.clipboard.writeText(location.href);toast('Link copiado.')}}catch(e){}};
 $('#st').onclick=()=>{const f=$('#sf');f.classList.toggle('open');if(f.classList.contains('open'))$('#q').focus()};
-$('#bg').onclick=()=>{renderCart();$('#mc').returnValue='';$('#mc').showModal()};
+$('#bg').onclick=()=>cq?$('#mc').showModal():toast('Sua sacola está vazia.');
 document.querySelectorAll('[data-s]').forEach(e=>{const v=CFG[e.dataset.s];if(v)e.querySelector('b').textContent=v;else e.hidden=true});
 const M=Object.entries(CFG.medidas);if(M.length)$('#mt').innerHTML='<tr><th>Tamanho</th><th>Peito (cm)</th><th>Comprimento (cm)</th></tr>'+M.map(([k,v])=>'<tr><td>'+k+'</td><td>'+v[0]+'</td><td>'+v[1]+'</td></tr>').join('');else $('#gb').hidden=true;
 if(CFG.whatsapp){const w='https://wa.me/'+CFG.whatsapp.replace(/\D/g,'');['#wa','#wf'].forEach(x=>{$(x).hidden=false;$(x).href=w})}
