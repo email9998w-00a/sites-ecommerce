@@ -275,12 +275,16 @@
     .offer-price{margin-top:4px;color:#fff;font-size:42px;font-weight:900;letter-spacing:-.045em}
     .offer-note{position:relative;margin-top:10px;padding-top:9px;border-top:1px solid #ffffff55;color:#fff2f7;font-size:11px;line-height:1.4}
     .offer-note strong{color:#fff}
+    .shipping p:last-of-type{margin:6px 0 0}
+    .shipping p strong{color:#252a30}
     @media(max-width:560px){
       .offer{margin-top:15px;padding:14px 14px 13px;border-radius:13px;box-shadow:0 7px 17px #760a3924}
       .offer-label{margin-bottom:6px;font-size:8px}
       .offer-main{font-size:21px}
       .offer-price{font-size:37px}
       .offer-note{margin-top:8px;padding-top:7px;font-size:10px}
+      .shipping{margin-top:16px;padding:14px}
+      .shipping p{margin:6px 0 0;line-height:1.45}
     }
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
@@ -339,9 +343,7 @@
 
         <div class="shipping" id="shipping">
           <h2>Frete e prazo</h2>
-          <p>O valor depende do CEP e precisa ser informado antes do pagamento. A cotação automática ainda não está ativa nesta prévia.</p>
-          <form class="cep-form" id="cepForm"><label class="sr-only" for="cep">CEP</label><input id="cep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000"><button type="submit">Consultar</button></form>
-          <p class="shipping-result" id="shippingResult" role="status" aria-live="polite"></p>
+          <p><strong>Frete cobrado à parte.</strong> O valor depende do CEP; a cotação automática ainda não está ativa nesta prévia.</p>
         </div>
 
         <div class="accordions">
@@ -361,7 +363,7 @@
     <section class="content-section" id="avaliacoes" aria-labelledby="reviewsTitle"><h2 class="section-title" id="reviewsTitle">Avaliações de clientes</h2><div class="reviews-empty">Este produto ainda não tem avaliações publicadas. Quando houver avaliações verificadas, elas aparecerão aqui.</div></section>
     <section class="content-section faq" id="duvidas" aria-labelledby="faqTitle"><h2 class="section-title" id="faqTitle">Dúvidas frequentes</h2>
       <details><summary>Como escolho o tamanho?</summary><p>Use o guia de medidas e compare com uma peça que você já tenha. Se a tabela ainda não estiver disponível, confirme as medidas com o vendedor antes de comprar.</p></details>
-      <details><summary>Quanto custa o frete?</summary><p>O valor depende do endereço e da modalidade de entrega. Consulte pelo CEP e confira o total antes de concluir o pedido. Nesta prévia, o cálculo ainda não está conectado.</p></details>
+      <details><summary>Quanto custa o frete?</summary><p>O frete é cobrado à parte e varia conforme o CEP e a modalidade. A cotação não está disponível nesta prévia; numa loja publicada, o valor total deve aparecer antes da conclusão do pedido.</p></details>
       <details><summary>A compra é finalizada por esta página?</summary><p>Não. Esta é uma prévia de interface e não processa pedidos nem pagamentos. O checkout deve ser conectado antes da publicação.</p></details>
     </section>
   </main>
@@ -489,8 +491,6 @@
       const note=document.createElement('p');note.textContent='Subtotal da camiseta: R$ 0,00. O frete não está calculado nesta prévia; nenhum pedido será enviado.';content.append(note);
     }
     $('#addButton').addEventListener('click',addToBag);$('#mobileAdd').addEventListener('click',addToBag);$('#bagBtn').addEventListener('click',()=>{renderBag();$('#bagDialog').showModal()});
-    $('#cep').addEventListener('input',e=>{const d=e.target.value.replace(/\D/g,'').slice(0,8);e.target.value=d.length>5?`${d.slice(0,5)}-${d.slice(5)}`:d});
-    $('#cepForm').addEventListener('submit',e=>{e.preventDefault();const result=$('#shippingResult');const digits=$('#cep').value.replace(/\D/g,'');result.className='shipping-result';if(digits.length!==8){result.textContent='Digite um CEP válido com 8 números.';result.classList.add('error');return}result.textContent='A cotação real não está disponível nesta demonstração. Nenhuma transportadora foi consultada e nenhum valor foi estimado.';result.classList.add('notice')});
     const mobileBuy=$('#mobileBuy'),buyButton=$('#addButton');
     if('IntersectionObserver'in window){let buyVisible=true;const syncBar=()=>{const visible=!buyVisible&&window.scrollY>260;mobileBuy.classList.toggle('visible',visible);document.body.classList.toggle('mobile-buy-active',visible)};const io=new IntersectionObserver(([entry])=>{buyVisible=entry.isIntersecting;syncBar()},{threshold:.05});io.observe(buyButton);addEventListener('scroll',syncBar,{passive:true})}
   </script>
